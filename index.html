@@ -528,6 +528,12 @@
         .anim-left       { opacity:0; transform:translateX(-50px); transition: opacity 1.0s ease-out, transform 1.0s ease-out; transition-delay: 0.3s; }
         .anim-right      { opacity:0; transform:translateX(50px);  transition: opacity 1.0s ease-out, transform 1.0s ease-out; transition-delay: 0.5s; }
         .anim-top-scroll { opacity:0; transform:translateY(-40px); transition: opacity 1.0s ease-out, transform 1.0s ease-out; }
+        /* Page-switch animations (O mně, Kontakt) */
+        .pa-from-left   { opacity:0; transform:translateX(-50px); transition: opacity 1.0s ease-out, transform 1.0s ease-out; }
+        .pa-from-right  { opacity:0; transform:translateX(50px);  transition: opacity 1.0s ease-out, transform 1.0s ease-out; }
+        .pa-from-top    { opacity:0; transform:translateY(-40px); transition: opacity 1.0s ease-out, transform 1.0s ease-out; }
+        .pa-from-bottom { opacity:0; transform:translateY(30px);  transition: opacity 1.0s ease-out, transform 1.0s ease-out; }
+        .pa-visible     { opacity:1 !important; transform:translate(0,0) !important; }
         .anim-in         { opacity:1 !important; transform:translate(0,0) !important; }
         .anim-quote { opacity:0; transform:translateY(20px); transition: opacity 2.5s ease-in-out, transform 2.5s ease-in-out; transition-delay: 0.3s; }
         .anim-quote.anim-in { opacity:1 !important; transform:translateY(0) !important; }
@@ -1310,8 +1316,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function animatePage(page) {
         if (!page) return;
-        page.querySelectorAll('.anim-top,.anim-left,.anim-right,.anim-top-scroll').forEach(function(el) {
-            el.classList.remove('anim-top','anim-left','anim-right','anim-top-scroll','anim-in');
+        page.querySelectorAll('.anim-top,.anim-left,.anim-right,.anim-top-scroll,.pa-from-left,.pa-from-right,.pa-from-top,.pa-from-bottom,.pa-visible').forEach(function(el) {
+            el.classList.remove('anim-top','anim-left','anim-right','anim-top-scroll','anim-in','pa-from-left','pa-from-right','pa-from-top','pa-from-bottom','pa-visible');
             el.style.transitionDelay = '';
         });
         var h1 = page.querySelector('.hero h1, .svc-hero-content h1');
@@ -1321,17 +1327,32 @@ document.addEventListener('DOMContentLoaded', function() {
         if (h2s[1]) { h2s[1].classList.add('anim-right'); io.observe(h2s[1]); }
         var quote = page.querySelector('#kh-quote');
         if (quote && !quote.classList.contains('anim-quote')) { quote.classList.add('anim-quote'); ioQuote.observe(quote); }
-        // O mně: heading fade-left, photo fade-right
-        if (page.id === 'o-mne') {
-            var omneH = page.querySelector('.page-header h1');
-            if (omneH) { omneH.classList.add('anim-left'); io.observe(omneH); }
-            var omnePhoto = page.querySelector('.about-photo-wrap');
-            if (omnePhoto) { omnePhoto.classList.add('anim-right'); omnePhoto.style.transitionDelay = '0.3s'; io.observe(omnePhoto); }
+        // Helper: reset + animate a list of {el, cls, delay} on page switch
+        function pageAnim(items) {
+            var PA = ['pa-from-left','pa-from-right','pa-from-top','pa-from-bottom','pa-visible'];
+            items.forEach(function(t) {
+                if (!t.el) return;
+                t.el.classList.remove.apply(t.el.classList, PA);
+                void t.el.offsetWidth;          // force reflow so transition triggers
+                t.el.classList.add(t.cls);
+                setTimeout(function() { t.el.classList.add('pa-visible'); }, 60 + (t.delay || 0));
+            });
         }
-        // Kontakt: heading fade-top-scroll
+        // O mně
+        if (page.id === 'o-mne') {
+            pageAnim([
+                { el: page.querySelector('.page-header h1'),    cls: 'pa-from-left',   delay: 0   },
+                { el: page.querySelector('.about-photo-frame'), cls: 'pa-from-right',  delay: 300 },
+                { el: page.querySelector('.about-text'),        cls: 'pa-from-bottom', delay: 500 }
+            ]);
+        }
+        // Kontakt
         if (page.id === 'kontakt') {
-            var kontaktH = page.querySelector('.page-header h1');
-            if (kontaktH) { kontaktH.classList.add('anim-top-scroll'); io.observe(kontaktH); }
+            pageAnim([
+                { el: page.querySelector('.page-header h1'),    cls: 'pa-from-top',   delay: 0   },
+                { el: page.querySelector('.contact-info-box'),  cls: 'pa-from-left',  delay: 300 },
+                { el: page.querySelector('.form-wrap'),         cls: 'pa-from-right', delay: 300 }
+            ]);
         }
     }
 
