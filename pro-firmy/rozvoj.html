@@ -344,6 +344,20 @@
     document.addEventListener('click', function(){ document.querySelectorAll('.dropdown').forEach(function(d){ d.classList.remove('open'); }); });
     var mBtn = document.getElementById('mobileMenuBtn');
     if(mBtn) mBtn.addEventListener('click', function(){ document.getElementById('navLinks').classList.toggle('open'); });
+
+    // Dropdown: stay open while hovering toggle OR menu (with 200ms close delay)
+    document.querySelectorAll('.dropdown').forEach(function(dd) {
+        var menu = dd.querySelector('.dropdown-menu');
+        var timer;
+        function show() { clearTimeout(timer); dd.classList.add('open'); }
+        function hide() { timer = setTimeout(function() { dd.classList.remove('open'); }, 200); }
+        dd.addEventListener('mouseenter', show);
+        dd.addEventListener('mouseleave', hide);
+        if (menu) {
+            menu.addEventListener('mouseenter', show);
+            menu.addEventListener('mouseleave', hide);
+        }
+    });
     </script>
 
 
