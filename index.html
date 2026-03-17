@@ -221,13 +221,16 @@
         .pain-questions { margin-top: 3rem; }
         .pain-q {
             font-size: 1.15rem;
-            padding: 1.1rem 1rem; border-bottom: 1px solid rgba(200,186,168,0.5); border-left: 3px solid var(--sage-dark);
-            margin-bottom: 0.4rem; background: rgba(255,255,255,0.5);
+            padding: 0.85rem 0.5rem;
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 0;
             font-family: Georgia, 'Times New Roman', serif;
-            font-size: 1.2rem; font-weight: 300; font-style: italic;
-            display: flex; align-items: baseline; gap: 0.8rem;
+            font-weight: 300; font-style: italic;
+            cursor: pointer;
+            transition: background 0.3s;
+            border-radius: 4px;
         }
-        .pain-q::before { content: ""; color: var(--sage); font-style: normal; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.9rem; flex-shrink: 0; }
+        .pain-q:hover { background: rgba(143, 189, 189, 0.18); }
         .pain-right { padding-top: 1rem; }
         .pain-step { display: flex; gap: 1.5rem; margin-bottom: 2.5rem; }
         .pain-num {
@@ -352,7 +355,7 @@
         .steps-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin: 3rem 0; border: 1px solid var(--beige-warm); }
         .step { padding: 2.5rem 2rem; border-right: 1px solid var(--beige-warm); }
         .step:last-child { border-right: none; }
-        .step-num { font-family: Georgia, 'Times New Roman', serif; font-size: 3rem; font-weight: 300; color: var(--sage-pale); line-height: 1; margin-bottom: 1rem; }
+        .step-num { font-family: Georgia, 'Times New Roman', serif; font-size: 80px; font-weight: 700; color: var(--sage); opacity: 0.25; line-height: 1; margin-bottom: 0.5rem; }
         .step h4 { font-weight: 500; margin-bottom: 0.6rem; font-size: 0.95rem; }
         .step p { font-size: 0.88rem; color: var(--text-light); line-height: 1.65; }
         .price-box { text-align: center; padding: 3rem; background: var(--beige); margin: 3rem 0; }
@@ -444,6 +447,9 @@
             /* STEPS */
             .steps-row { grid-template-columns: 1fr; }
             .step { border-right: none; border-bottom: 1px solid var(--beige-warm); padding: 1.8rem 0; }
+            .step-num { font-size: 52px; }
+            .tc-slide { padding: 0 2.5rem; }
+            .tc-quote { font-size: 56px; }
 
             /* ABOUT */
             .about-inner { grid-template-columns: 1fr; gap: 2rem; }
@@ -538,6 +544,37 @@
         .anim-quote { opacity:0; transform:translateY(20px); transition: opacity 2.5s ease-in-out, transform 2.5s ease-in-out; transition-delay: 0.3s; }
         .anim-quote.anim-in { opacity:1 !important; transform:translateY(0) !important; }
         .dropdown-toggle.active { color: var(--sage-dark); border-bottom-color: var(--sage); }
+        
+        /* TESTIMONIALS CAROUSEL */
+        .tc-carousel { position: relative; max-width: 820px; margin: 0 auto; overflow: hidden; padding-bottom: 0.5rem; }
+        .tc-slide { display: none; flex-direction: column; gap: 1.5rem; padding: 0 4rem; }
+        .tc-slide.tc-active { display: flex; animation: tcFade 0.6s ease; }
+        @keyframes tcFade { from { opacity: 0; } to { opacity: 1; } }
+        .tc-quote { font-family: Georgia, 'Times New Roman', serif; font-size: 80px; color: white; opacity: 0.2; line-height: 1; margin-bottom: -0.5rem; user-select: none; }
+        .tc-text { font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.8; }
+        .tc-text strong { color: white; }
+        .tc-author { display: flex; align-items: center; gap: 0.9rem; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1.2rem; margin-top: 0.5rem; }
+        .tc-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--sage); display: flex; align-items: center; justify-content: center; font-weight: 600; color: white; font-size: 0.85rem; flex-shrink: 0; }
+        .tc-name { font-weight: 600; font-size: 0.9rem; color: white; }
+        .tc-role { font-size: 0.8rem; color: rgba(255,255,255,0.65); }
+        .tc-arrow { position: absolute; top: 38%; transform: translateY(-50%); background: none; border: none; color: white; font-size: 3.5rem; cursor: pointer; padding: 0 0.3rem; opacity: 0.5; transition: opacity 0.2s; line-height: 1; z-index: 10; }
+        .tc-arrow:hover { opacity: 1; }
+        .tc-prev { left: 0; }
+        .tc-next { right: 0; }
+        .tc-dots { text-align: center; margin-top: 2rem; }
+        .tc-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.35); margin: 0 5px; cursor: pointer; transition: background 0.3s; }
+        .tc-dot.tc-dot-active { background: white; }
+        /* FAQ ACCORDION */
+        .faq-list { border: 1px solid var(--sand); border-radius: 12px; overflow: hidden; margin-top: 3rem; }
+        .faq-item { border-bottom: 1px solid var(--sand); }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-q { width: 100%; background: none; border: none; padding: 1.4rem 1.8rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 1.05rem; font-weight: 600; color: var(--text); text-align: left; transition: background 0.2s; gap: 1rem; font-family: inherit; }
+        .faq-q:hover { background: var(--sage-section); }
+        .faq-arrow { font-size: 1.4rem; color: var(--sage); transition: transform 0.3s ease; flex-shrink: 0; display: inline-block; }
+        .faq-item.open .faq-arrow { transform: rotate(90deg); }
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .faq-item.open .faq-a { max-height: 600px; }
+        .faq-a p { padding: 0 1.8rem 1.4rem; color: var(--text-light); line-height: 1.7; margin: 0; }
         </style>
 </head>
 <body>
@@ -569,6 +606,7 @@
                     </div>
                 </li>
                 <li><span class="nav-link" id="nav-o-mne" onclick="showPage(&#39;o-mne&#39;)">O mně</span></li>
+                <li><span class="nav-link" id="nav-faq" onclick="showPage(&#39;faq&#39;)">FAQ</span></li>
                 <li><span class="nav-link" id="nav-kontakt" onclick="showPage(&#39;kontakt&#39;)">Kontakt</span></li>
             </ul>
             <div class="lang-switcher">
@@ -602,14 +640,13 @@
                 <span class="section-label">Poznáváte se?</span>
                 <h2 class="section-title" data-lang-key="q-h2-1">Otázky, se kterými přicházejí moji klienti</h2>
                 <div class="pain-questions" style="margin-top:2.5rem;">
-                    <div class="pain-q">Dělám práci, která dává smysl – ale přesto jsem vyčerpaný/á. Proč?</div>
-                    <div class="pain-q">Mám vzdělání i zkušenosti, ale nevím, kam dál.</div>
-                    <div class="pain-q">Nevím, v čem jsem dobrý/á. Jak zjistím své silné stránky?</div>
-                    <div class="pain-q">Je mi 40+ a ptám se, jestli tohle chci až do důchodu.</div>
-                    <div class="pain-q">Chci se posunout, ale nevím jak. Co je ten správný krok?</div>
-                    <div class="pain-q">Práce mě dřív bavila – teď už ne. Jak najít smysl tam, kde jsem?</div>
-                    <div class="pain-q">Jsem nový manažer a nevím, jak vést tým po svém.</div>
-                    <div class="pain-q">Firma mi dala budget na rozvoj – chci ho využít smysluplně.</div>
+                    <div class="pain-q"><strong style="color:var(--sage-dark);font-style:normal;">Dělám práci,</strong> která dává smysl – ale přesto jsem vyčerpaný/á. Proč?</div>
+                    <div class="pain-q"><strong style="color:var(--sage-dark);font-style:normal;">Mám vzdělání</strong> i zkušenosti, ale nevím, kam dál.</div>
+                    <div class="pain-q"><strong style="color:var(--sage-dark);font-style:normal;">Nevím, v čem</strong> jsem dobrý/á. Jak zjistím své silné stránky?</div>
+                    <div class="pain-q"><strong style="color:var(--sage-dark);font-style:normal;">Je mi 40+</strong> a ptám se, jestli tohle chci až do důchodu.</div>
+                    <div class="pain-q"><strong style="color:var(--sage-dark);font-style:normal;">Chci se posunout,</strong> ale nevím jak. Co je ten správný krok?</div>
+                    <div class="pain-q"><strong style="color:var(--sage-dark);font-style:normal;">Práce mě dřív</strong> bavila – teď už ne. Jak najít smysl tam, kde jsem?</div>
+                    <div class="pain-q"><strong style="color:var(--sage-dark);font-style:normal;">Vím, co nechci.</strong> Ale nevím, co chci.</div>
                 </div>
             </div>
         </section>
@@ -687,28 +724,34 @@
             <div class="wrap">
                 <span class="section-label" style="text-align:center;display:block;color:var(--sage-light);">Reference</span>
                 <h2 class="section-title" style="text-align:center;margin-bottom:3rem;color:white;" data-lang-key="ref-h2">Co říkají klienti</h2>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:960px;margin:0 auto;" class="testimonials-grid-inner">
-                    <div style="background:white;border-radius:12px;padding:2.2rem;display:flex;flex-direction:column;gap:1.2rem;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-                        <div style="font-family:Georgia, &#39;Times New Roman&#39;, serif;font-size:2.5rem;color:var(--sage-dark);line-height:1;">"</div>
-                        <p style="font-size:0.92rem;color:var(--text-light);line-height:1.75;flex:1;">Working with Katarína was a deeply meaningful and empowering experience for me. She created a safe and supportive environment where I felt free to share even my deepest thoughts and things I had never said out loud before. Working with her feels very natural and unforced, conversations flow easily, without pressure or judgment. Through our sessions, Katarína helped me reconnect with myself and rediscover a part of me that I had forgotten over time. She is like a mirror — helping you truly see who you are and gently guiding you back to your authentic self. She strengthened me, helped me see the bigger picture, and drew my attention to important things that were very close, yet somehow outside my awareness. <strong style="color:var(--text)">I wholeheartedly recommend Katarína to anyone who feels stuck, overwhelmed, or disconnected from themselves and is looking for clarity, confidence, and a safe space for both personal and professional growth.</strong></p>
-                        <div style="display:flex;align-items:center;gap:0.9rem;border-top:1px solid var(--border);padding-top:1.2rem;">
-                            <div style="width:40px;height:40px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;font-weight:600;color:white;font-size:0.85rem;flex-shrink:0;">AS</div>
+                <div class="tc-carousel" id="testimonials-carousel">
+                    <div class="tc-slide tc-active">
+                        <div class="tc-quote">"</div>
+                        <p class="tc-text">Working with Katarína was a deeply meaningful and empowering experience for me. She created a safe and supportive environment where I felt free to share even my deepest thoughts and things I had never said out loud before. Working with her feels very natural and unforced, conversations flow easily, without pressure or judgment. Through our sessions, Katarína helped me reconnect with myself and rediscover a part of me that I had forgotten over time. She is like a mirror — helping you truly see who you are and gently guiding you back to your authentic self. She strengthened me, helped me see the bigger picture, and drew my attention to important things that were very close, yet somehow outside my awareness. <strong>I wholeheartedly recommend Katarína to anyone who feels stuck, overwhelmed, or disconnected from themselves and is looking for clarity, confidence, and a safe space for both personal and professional growth.</strong></p>
+                        <div class="tc-author">
+                            <div class="tc-avatar">AS</div>
                             <div>
-                                <div style="font-weight:600;font-size:0.9rem;color:var(--text)">Aleksandra Stojnic</div>
-                                <div style="font-size:0.8rem;color:var(--text-light)">Expert Learning Experience &amp; New Way of Working, Uniqa</div>
+                                <div class="tc-name">Aleksandra Stojnic</div>
+                                <div class="tc-role">Expert Learning Experience &amp; New Way of Working, Uniqa</div>
                             </div>
                         </div>
                     </div>
-                    <div style="background:white;border-radius:12px;padding:2.2rem;display:flex;flex-direction:column;gap:1.2rem;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-                        <div style="font-family:Georgia, &#39;Times New Roman&#39;, serif;font-size:2.5rem;color:var(--sage-dark);line-height:1;">"</div>
-                        <p style="font-size:0.92rem;color:var(--text-light);line-height:1.75;flex:1;">I had 10 coaching sessions with Katka and they really shifted how I think about myself and my next steps. With her, I felt safe talking about things I normally keep to myself. She's warm and easy to talk to, but at the same time she doesn't let you stay in your comfort zone — in a good way. I felt supported, but also gently challenged to look at things differently and turn insights into action. What I appreciated a lot was that she didn't use a fixed coaching formula. She truly adjusted her style to me, to what I needed in that moment and how I naturally work as a person. Her mentoring was equally valuable, especially in the areas of career development and HR. She helped me bring structure and clarity to complex topics and arrive at concrete decisions I could move forward with. We also went through the Gallup CliftonStrengths assessment together, which helped me better understand what I'm naturally good at and where it makes sense to seek complementarity within my team. <strong style="color:var(--text)">Working with Katka wasn't just "professional development". It strengthened my clarity, self-awareness, and ability to trust my own decisions — something I value greatly.</strong></p>
-                        <div style="display:flex;align-items:center;gap:0.9rem;border-top:1px solid var(--border);padding-top:1.2rem;">
-                            <div style="width:40px;height:40px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;font-weight:600;color:white;font-size:0.85rem;flex-shrink:0;">JN</div>
+                    <div class="tc-slide">
+                        <div class="tc-quote">"</div>
+                        <p class="tc-text">I had 10 coaching sessions with Katka and they really shifted how I think about myself and my next steps. With her, I felt safe talking about things I normally keep to myself. She&#39;s warm and easy to talk to, but at the same time she doesn&#39;t let you stay in your comfort zone — in a good way. I felt supported, but also gently challenged to look at things differently and turn insights into action. What I appreciated a lot was that she didn&#39;t use a fixed coaching formula. She truly adjusted her style to me, to what I needed in that moment and how I naturally work as a person. Her mentoring was equally valuable, especially in the areas of career development and HR. She helped me bring structure and clarity to complex topics and arrive at concrete decisions I could move forward with. We also went through the Gallup CliftonStrengths assessment together, which helped me better understand what I&#39;m naturally good at and where it makes sense to seek complementarity within my team. <strong>Working with Katka wasn&#39;t just "professional development". It strengthened my clarity, self-awareness, and ability to trust my own decisions — something I value greatly.</strong></p>
+                        <div class="tc-author">
+                            <div class="tc-avatar">JN</div>
                             <div>
-                                <div style="font-weight:600;font-size:0.9rem;color:var(--text)">Jan Neuzil</div>
-                                <div style="font-size:0.8rem;color:var(--text-light)">R&amp;D Manager, Thermo Fisher Scientific</div>
+                                <div class="tc-name">Jan Neuzil</div>
+                                <div class="tc-role">R&amp;D Manager, Thermo Fisher Scientific</div>
                             </div>
                         </div>
+                    </div>
+                    <button class="tc-arrow tc-prev" onclick="tcMove(-1)">&#8249;</button>
+                    <button class="tc-arrow tc-next" onclick="tcMove(1)">&#8250;</button>
+                    <div class="tc-dots">
+                        <span class="tc-dot tc-dot-active" onclick="tcGoTo(0)"></span>
+                        <span class="tc-dot" onclick="tcGoTo(1)"></span>
                     </div>
                 </div>
                 <p style="text-align:center;margin-top:2rem;font-size:0.85rem;color:var(--text-light)">Ověřené reference na <a href="https://www.linkedin.com/in/katkahrouzkova/" target="_blank" style="color:var(--sage-light);text-decoration:underline">LinkedIn</a></p>
@@ -991,6 +1034,13 @@
     if(s) s.style.display = 'block';
   }
 
+  function toggleFaq(btn) {
+    var item = btn.closest('.faq-item');
+    var wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(i) { i.classList.remove('open'); });
+    if (!wasOpen) item.classList.add('open');
+  }
+
   function navigateTo(id) {
     // Navigate to page without closing dropdown - dropdown closes naturally when mouse leaves
     showPage(id);
@@ -1019,7 +1069,59 @@
       if(!dd.contains(e.target)) dd.classList.remove('open');
     });
   });
+
+  // Testimonials carousel
+  (function() {
+    var slides = document.querySelectorAll('#testimonials-carousel .tc-slide');
+    var dots   = document.querySelectorAll('#testimonials-carousel .tc-dot');
+    if (!slides.length) return;
+    var current = 0, timer;
+    function tcShow(n) {
+      slides[current].classList.remove('tc-active');
+      dots[current].classList.remove('tc-dot-active');
+      current = (n + slides.length) % slides.length;
+      slides[current].classList.add('tc-active');
+      dots[current].classList.add('tc-dot-active');
+    }
+    window.tcMove = function(dir) { clearInterval(timer); tcShow(current + dir); startTimer(); };
+    window.tcGoTo = function(n)   { clearInterval(timer); tcShow(n);             startTimer(); };
+    function startTimer() { timer = setInterval(function() { tcShow(current + 1); }, 6000); }
+    startTimer();
+  })();
 </script>
+
+
+    <!-- FAQ -->
+    <div id="faq" class="page">
+        <div class="page-header"><div class="wrap"><span class="section-label">Odpovědi na vaše otázky</span><h1>Časté otázky</h1><p>Koučink, mentoring nebo terapie? A co vlastně čekat od naší spolupráce?</p></div></div>
+        <section style="background:white;padding:4rem 0 6rem;">
+            <div class="wrap" style="max-width:780px;">
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-q" onclick="toggleFaq(this)">
+                            <span>Jaký je rozdíl mezi koučinkem a terapií?</span>
+                            <span class="faq-arrow">›</span>
+                        </button>
+                        <div class="faq-a"><p>Odpověď bude doplněna.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" onclick="toggleFaq(this)">
+                            <span>Co je mentoring a kdy je vhodný?</span>
+                            <span class="faq-arrow">›</span>
+                        </button>
+                        <div class="faq-a"><p>Odpověď bude doplněna.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" onclick="toggleFaq(this)">
+                            <span>Jak probíhá první setkání?</span>
+                            <span class="faq-arrow">›</span>
+                        </button>
+                        <div class="faq-a"><p>Odpověď bude doplněna.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
         <!-- OBCHODNÍ PODMÍNKY -->
         <div id="obchodni-podminky" class="page">
@@ -1269,8 +1371,8 @@
         document.getElementById('btn-en').classList.toggle('active', lang === 'en');
         var t={'nav-cta':{cz:'Chci bezplatnou konzultaci',en:'Book a free consultation'},'q-h2-1':{cz:'Otázky, se kterými přicházejí moji klienti',en:'Questions my clients bring'},'svc-h2':{cz:'Vyberte si cestu, která vám sedí',en:'Choose the path that suits you'},'corp-h2':{cz:'Investujete do rozvoje svých lidí?',en:'Investing in your development'},'contact-write-h3':{cz:'Napište mi',en:'Write to me'},'ref-h2':{cz:'Co říkají klienti',en:'What clients say'},'cta-h2':{cz:'Jste připraveni na změnu?',en:'Ready for a change?'},'svc-kou-btn':{cz:'Začněme společně',en:'Start together'},'kou-help-h2':{cz:'S čím vám pomůžu',en:'How I can help'},'kou-how-h2':{cz:'Jak to probíhá',en:'How it works'},'contact-reserve-btn':{cz:'Rezervovat konzultaci',en:'Book a consultation'},'gallup-btn':{cz:'Objednat Gallup',en:'Book Gallup'},'rdl-btn':{cz:'Zjistit více',en:'Learn more'},'about-h2':{cz:'Pojďme se poznat',en:'Get to know each other'},'contact-free-h3':{cz:'30 minut zdarma',en:'30 minutes free'},'contact-btn':{cz:'Odeslat zprávu',en:'Send message'}};
         document.querySelectorAll('[data-lang-key]').forEach(function(el){var k=el.getAttribute('data-lang-key');if(t[k]&&t[k][lang])el.innerHTML=t[k][lang];});
-        var n={cz:{'nav-home':'Domů','nav-o-mne':'O mně','nav-kontakt':'Kontakt'},en:{'nav-home':'Home','nav-o-mne':'About me','nav-kontakt':'Contact'}};
-        ['nav-home','nav-o-mne','nav-kontakt'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=n[lang][id];});
+        var n={cz:{'nav-home':'Domů','nav-o-mne':'O mně','nav-faq':'FAQ','nav-kontakt':'Kontakt'},en:{'nav-home':'Home','nav-o-mne':'About me','nav-faq':'FAQ','nav-kontakt':'Contact'}};
+        ['nav-home','nav-o-mne','nav-faq','nav-kontakt'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=n[lang][id];});
         var dt=document.querySelector('.dropdown-toggle');if(dt)dt.innerHTML=(lang==='en')?'Services':'Služby';
         var h1=document.querySelector('.hero h1');if(h1)h1.innerHTML=(lang==='en')?'KNOW YOURSELF BETTER.<br><em>work and live in a way that suits you</em>':'POZNEJTE SE LÉPE.<br><em>pracujte a žijte způsobem, který vám sedí</em>';
         var hs=document.querySelector('.hero-sub');if(hs)hs.textContent=(lang==='en')?'I will help you understand yourself better – whether you are navigating a career change, workplace relationships, or simply looking for what comes next.':'Pomůžu vám lépe porozumět sobě – ať řešíte kariéru, vztahy v práci, nebo prostě hledáte, co dál.';
@@ -1291,8 +1393,8 @@ document.querySelectorAll('[data-lang-key]').forEach(function(el){
 var t={'nav-cta':{cz:'Chci bezplatnou konzultaci',en:'Book a free consultation'},'q-h2-1':{cz:'Otázky, se kterými přicházejí moji klienti',en:'Questions my clients bring'},'svc-h2':{cz:'Vyberte si cestu, která vám sedí',en:'Choose the path that suits you'},'corp-h2':{cz:'Investujete do rozvoje svých lidí?',en:'Investing in your development'},'contact-write-h3':{cz:'Napište mi',en:'Write to me'},'ref-h2':{cz:'Co říkají klienti',en:'What clients say'},'cta-h2':{cz:'Jste připraveni na změnu?',en:'Ready for a change?'},'svc-kou-btn':{cz:'Začněme společně',en:'Start together'},'kou-help-h2':{cz:'S čím vám pomůžu',en:'How I can help'},'kou-how-h2':{cz:'Jak to probíhá',en:'How it works'},'contact-reserve-btn':{cz:'Rezervovat konzultaci',en:'Book a consultation'},'gallup-btn':{cz:'Objednat Gallup',en:'Book Gallup'},'rdl-btn':{cz:'Zjistit více',en:'Learn more'},'about-h2':{cz:'Pojďme se poznat',en:'Get to know each other'},'contact-free-h3':{cz:'30 minut zdarma',en:'30 minutes free'},'contact-btn':{cz:'Odeslat zprávu',en:'Send message'}};
 var k=el.getAttribute('data-lang-key');if(t[k]&&t[k][lang])el.innerHTML=t[k][lang];
 });
-var n={cz:{'nav-home':'Domů','nav-o-mne':'O mně','nav-kontakt':'Kontakt'},en:{'nav-home':'Home','nav-o-mne':'About me','nav-kontakt':'Contact'}};
-['nav-home','nav-o-mne','nav-kontakt'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=n[lang][id];});
+var n={cz:{'nav-home':'Domů','nav-o-mne':'O mně','nav-faq':'FAQ','nav-kontakt':'Kontakt'},en:{'nav-home':'Home','nav-o-mne':'About me','nav-faq':'FAQ','nav-kontakt':'Contact'}};
+['nav-home','nav-o-mne','nav-faq','nav-kontakt'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=n[lang][id];});
 var dt=document.querySelector('.dropdown-toggle');if(dt)dt.innerHTML=(lang==='en')?'Services':'Služby';
 var h1=document.querySelector('.hero h1');if(h1)h1.innerHTML=(lang==='en')?'KNOW YOURSELF BETTER.<br><em>work and live in a way that suits you</em>':'POZNEJTE SE LÉPE.<br><em>pracujte a žijte způsobem, který vám sedí</em>';
 var hs=document.querySelector('.hero-sub');if(hs)hs.textContent=(lang==='en')?'I will help you understand yourself better.':'Pomůžu vám lépe porozumět sobě.';
