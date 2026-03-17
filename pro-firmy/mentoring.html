@@ -208,7 +208,22 @@
             .cta-banner h2 { font-size: 2rem; }
             section { padding: 3rem 0; }
         }
-    </style>
+    
+        /* === Scroll animations === */
+        @keyframes heroFadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0);    }
+        }
+        .animate-hidden {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animate-visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        </style>
 </head>
 <body>
     <nav>
@@ -331,5 +346,43 @@
     var mBtn = document.getElementById('mobileMenuBtn');
     if(mBtn) mBtn.addEventListener('click', function(){ document.getElementById('navLinks').classList.toggle('open'); });
     </script>
+
+<script>
+(function() {
+    var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+            if (e.isIntersecting) {
+                e.target.classList.add('animate-visible');
+                io.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Sections
+        document.querySelectorAll('section').forEach(function(s) {
+            if (s.closest('nav')) return;
+            s.classList.add('animate-hidden');
+            io.observe(s);
+        });
+        // Staggered cards
+        var groups = new Map();
+        document.querySelectorAll('.service-card, .sd-card, .step, .cred-item').forEach(function(card) {
+            if (card.closest('nav')) return;
+            var p = card.parentElement;
+            if (!groups.has(p)) groups.set(p, []);
+            groups.get(p).push(card);
+        });
+        groups.forEach(function(cards) {
+            cards.forEach(function(card, i) {
+                card.classList.add('animate-hidden');
+                card.style.transitionDelay = (i * 0.1) + 's';
+                io.observe(card);
+            });
+        });
+    });
+})();
+</script>
+
 </body>
 </html>
