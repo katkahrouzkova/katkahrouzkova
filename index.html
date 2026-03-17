@@ -1461,8 +1461,9 @@ document.addEventListener('DOMContentLoaded', function() {
         page.querySelectorAll('.anim-top,.anim-left,.anim-right,.anim-top-scroll,.pa-from-left,.pa-from-right,.pa-from-top,.pa-from-bottom,.pa-visible').forEach(function(el) {
             el.classList.remove('anim-top','anim-left','anim-right','anim-top-scroll','anim-in','pa-from-left','pa-from-right','pa-from-top','pa-from-bottom','pa-visible');
             el.style.transitionDelay = '';
+            el.style.animationDelay = '';
         });
-        var h1 = page.querySelector('.hero h1, .svc-hero-content h1');
+        var h1 = page.querySelector('.hero h1, .svc-hero-content h1, .page-header h1');
         if (h1) { void h1.offsetWidth; h1.classList.add('anim-top'); }
         var h2s = Array.from(page.querySelectorAll('.section-title'));
         if (h2s[0]) { h2s[0].classList.add('anim-left');  io.observe(h2s[0]); }
@@ -1480,18 +1481,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(function() { t.el.classList.add('pa-visible'); }, 60 + (t.delay || 0));
             });
         }
-        // O mně – only h1 animates via IO (fadeInUp)
-        if (page.id === 'o-mne') {
-            var h1omne = page.querySelector('.page-header h1');
-            if (h1omne) { h1omne.classList.add('pa-from-bottom'); io.observe(h1omne); }
-        }
-        // Kontakt – only h1 animates via IO (fadeInUp), body is static
-        if (page.id === 'kontakt') {
-            var h1k = page.querySelector('.page-header h1');
-            if (h1k) { h1k.classList.add('pa-from-bottom'); io.observe(h1k); }
-        }
-        // FAQ – stagger fadeInUp via IntersectionObserver
+        // FAQ – fadeInDown for page header, IO stagger for accordion items
         if (page.id === 'faq') {
+            pageAnim([
+                { el: page.querySelector('.page-header .section-label'), cls: 'pa-from-top', delay: 120 },
+                { el: page.querySelector('.page-header p'),               cls: 'pa-from-top', delay: 280 }
+            ]);
             var ioFaq = new IntersectionObserver(function(entries) {
                 entries.forEach(function(e) {
                     if (e.isIntersecting) { e.target.classList.add('faq-visible'); ioFaq.unobserve(e.target); }
