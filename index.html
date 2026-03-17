@@ -1033,6 +1033,16 @@
     if(nav) nav.classList.remove('open');
   }
 
+  // Handle deep-link from pro-firmy pages (e.g. ../index.html#o-mne)
+  document.addEventListener('DOMContentLoaded', function() {
+    var hash = window.location.hash.slice(1);
+    if (!hash) {
+      showPage('home');
+    } else {
+      showPage(hash);
+    }
+  });
+
   function handleForm(e) {
     e.preventDefault();
     var s = document.getElementById('form-success');
