@@ -104,7 +104,8 @@
         .lang-switch button:hover, .lang-switch button.active {
             background: var(--sage); color: white; border-color: var(--sage-dark);
         }
-        .page { display: none; min-height: 100vh; }
+        .page { display: none; min-height: 100vh; pointer-events: none; }
+        .page.active { pointer-events: auto; }
         .page.active { display: block; }
         .wrap { max-width: 1180px; margin: 0 auto; padding: 0 2.5rem; }
 
@@ -719,7 +720,7 @@
                         <span class="service-arrow">→ Více</span>
                     </div>
                 </div>
-                <p style="text-align:center;"><button class="btn" onclick="window.location.href='index.html#kontakt'" style="background:var(--sage-dark);color:white;">NAPIŠTE MI</button></p>
+                <p style="text-align:center;"><button class="btn" onclick="showPage('kontakt')" style="background:var(--sage-dark);color:white;">NAPIŠTE MI</button></p>
             </div>
         </section>
         </div>
@@ -1425,22 +1426,7 @@
 </script>
 
 
-<script>
-function setLang(lang){
-document.getElementById('btn-cz').classList.toggle('active',lang==='cz');
-document.getElementById('btn-en').classList.toggle('active',lang==='en');
-document.querySelectorAll('[data-lang-key]').forEach(function(el){
-var t={'nav-cta':{cz:'Chci bezplatnou konzultaci',en:'Book a free consultation'},'q-h2-1':{cz:'Otázky, se kterými přicházejí moji klienti',en:'Questions my clients bring'},'svc-h2':{cz:'Vyberte si cestu, která vám sedí',en:'Choose the path that suits you'},'corp-h2':{cz:'Investujete do rozvoje svých lidí?',en:'Investing in your development'},'contact-write-h3':{cz:'Napište mi',en:'Write to me'},'ref-h2':{cz:'Co říkají klienti',en:'What clients say'},'cta-h2':{cz:'Jste připraveni na změnu?',en:'Ready for a change?'},'svc-kou-btn':{cz:'Začněme společně',en:'Start together'},'kou-help-h2':{cz:'S čím vám pomůžu',en:'How I can help'},'kou-how-h2':{cz:'Jak to probíhá',en:'How it works'},'contact-reserve-btn':{cz:'Rezervovat konzultaci',en:'Book a consultation'},'gallup-btn':{cz:'Objednat Gallup',en:'Book Gallup'},'rdl-btn':{cz:'Zjistit více',en:'Learn more'},'about-h2':{cz:'Pojďme se poznat',en:'Get to know each other'},'contact-free-h3':{cz:'30 minut zdarma',en:'30 minutes free'},'contact-btn':{cz:'Odeslat zprávu',en:'Send message'}};
-var k=el.getAttribute('data-lang-key');if(t[k]&&t[k][lang])el.innerHTML=t[k][lang];
-});
-var n={cz:{'nav-home':'Domů','nav-o-mne':'O mně','nav-faq':'FAQ','nav-kontakt':'Kontakt'},en:{'nav-home':'Home','nav-o-mne':'About me','nav-faq':'FAQ','nav-kontakt':'Contact'}};
-['nav-home','nav-o-mne','nav-faq','nav-kontakt'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=n[lang][id];});
-var dt=document.querySelector('.dropdown-toggle');if(dt)dt.innerHTML=(lang==='en')?'Services':'Služby';
-var h1=document.querySelector('.hero h1');if(h1)h1.innerHTML=(lang==='en')?'KNOW YOURSELF BETTER.<br><em>work and live in a way that suits you</em>':'POZNEJTE SE LÉPE.<br><em>pracujte a žijte způsobem, který vám sedí</em>';
-var hs=document.querySelector('.hero-sub');if(hs)hs.textContent=(lang==='en')?'I will help you understand yourself better.':'Pomůžu vám lépe porozumět sobě.';
-try{localStorage.setItem('kh-lang',lang);}catch(e){}
-}
-</script>
+
 
 
 <script>
