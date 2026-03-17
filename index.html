@@ -519,29 +519,16 @@
         /* Skryje/zobrazí texty podľa jazyka */
         [data-en] { }
         .lang-en [data-cz]:not([data-en]) { }
-
         
-        /* === Scroll animations === */
-        @keyframes heroFadeUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to   { opacity: 1; transform: translateY(0);    }
-        }
-        .animate-hidden {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .animate-visible {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-
-        /* Hero load animations */
-        .hero-eyebrow { animation: heroFadeUp 0.6s ease-out 0.1s both; }
-        .hero h1      { animation: heroFadeUp 0.7s ease-out 0.2s both; }
-        .hero-sub     { animation: heroFadeUp 0.6s ease-out 0.4s both; }
-        .hero-creds   { animation: heroFadeUp 0.5s ease-out 0.55s both; }
-        .hero .btn    { animation: heroFadeUp 0.5s ease-out 0.65s both; }
+        /* === Animations === */
+        @keyframes fadeFromTop   { from { opacity:0; transform:translateY(-40px); } to { opacity:1; transform:translateY(0); } }
+        @keyframes fadeFromLeft  { from { opacity:0; transform:translateX(-50px); } to { opacity:1; transform:translateX(0); } }
+        @keyframes fadeFromRight { from { opacity:0; transform:translateX(50px);  } to { opacity:1; transform:translateX(0); } }
+        .anim-top   { animation: fadeFromTop 0.8s ease-out both; }
+        .anim-left  { opacity:0; transform:translateX(-50px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+        .anim-right { opacity:0; transform:translateX(50px);  transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+        .anim-in    { opacity:1 !important; transform:translate(0,0) !important; }
+        .dropdown-toggle.active { color: var(--sage-dark); border-bottom-color: var(--sage); }
         </style>
 </head>
 <body>
@@ -1304,63 +1291,35 @@ try{localStorage.setItem('kh-lang',lang);}catch(e){}
 }
 </script>
 
+
 <script>
-(function() {
+document.addEventListener('DOMContentLoaded', function() {
     var io = new IntersectionObserver(function(entries) {
         entries.forEach(function(e) {
-            if (e.isIntersecting) {
-                e.target.classList.add('animate-visible');
-                io.unobserve(e.target);
-            }
+            if (e.isIntersecting) { e.target.classList.add('anim-in'); io.unobserve(e.target); }
         });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.2 });
 
-    function prepareCards(container) {
-        var groups = new Map();
-        (container || document).querySelectorAll('.service-card, .sd-card, .step, .cred-item, .pain-step, .phase').forEach(function(card) {
-            if (card.closest('nav') || card.classList.contains('animate-hidden')) return;
-            var p = card.parentElement;
-            if (!groups.has(p)) groups.set(p, []);
-            groups.get(p).push(card);
+    function animatePage(page) {
+        if (!page) return;
+        page.querySelectorAll('.anim-top,.anim-left,.anim-right').forEach(function(el) {
+            el.classList.remove('anim-top','anim-left','anim-right','anim-in');
         });
-        groups.forEach(function(cards) {
-            cards.forEach(function(card, i) {
-                card.classList.add('animate-hidden');
-                card.style.transitionDelay = (i * 0.1) + 's';
-                io.observe(card);
+        var h1 = page.querySelector('.hero h1, .svc-hero-content h1');
+        if (h1) { void h1.offsetWidth; h1.classList.add('anim-top'); }
+        var h2s = Array.from(page.querySelectorAll('.section-title'));
+        if (h2s[0]) { h2s[0].classList.add('anim-left');  io.observe(h2s[0]); }
+        if (h2s[1]) { h2s[1].classList.add('anim-right'); io.observe(h2s[1]); }
+    }
+
+    animatePage(document.querySelector('.page.active'));
+    document.querySelectorAll('.page').forEach(function(page) {
+        new MutationObserver(function(muts) {
+            muts.forEach(function(m) {
+                if (m.attributeName === 'class' && page.classList.contains('active')) animatePage(page);
             });
-        });
-    }
-
-    function prepareSections(container) {
-        (container || document).querySelectorAll('section').forEach(function(s) {
-            if (s.closest('nav') || s.classList.contains('animate-hidden')) return;
-            s.classList.add('animate-hidden');
-            io.observe(s);
-        });
-    }
-
-    function preparePage(page) {
-        prepareSections(page);
-        prepareCards(page);
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        var active = document.querySelector('.page.active');
-        if (active) preparePage(active);
-
-        // Watch page switches via MutationObserver
-        document.querySelectorAll('.page').forEach(function(page) {
-            new MutationObserver(function(muts) {
-                muts.forEach(function(m) {
-                    if (m.attributeName === 'class' && page.classList.contains('active')) {
-                        preparePage(page);
-                    }
-                });
-            }).observe(page, { attributes: true });
-        });
+        }).observe(page, { attributes: true });
     });
-})();
+});
 </script>
-
 </body></html>
