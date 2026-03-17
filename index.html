@@ -1480,19 +1480,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(function() { t.el.classList.add('pa-visible'); }, 60 + (t.delay || 0));
             });
         }
-        // O mně – only heading animates
+        // O mně – only h1 animates via IO (fadeInUp)
         if (page.id === 'o-mne') {
-            pageAnim([
-                { el: page.querySelector('.page-header h1'), cls: 'pa-from-bottom', delay: 0 }
-            ]);
+            var h1omne = page.querySelector('.page-header h1');
+            if (h1omne) { h1omne.classList.add('pa-from-bottom'); io.observe(h1omne); }
         }
-        // Kontakt
+        // Kontakt – only h1 animates via IO (fadeInUp), body is static
         if (page.id === 'kontakt') {
-            pageAnim([
-                { el: page.querySelector('.page-header h1'),    cls: 'pa-from-top',   delay: 0   },
-                { el: page.querySelector('.contact-info-box'),  cls: 'pa-from-left',  delay: 300 },
-                { el: page.querySelector('.form-wrap'),         cls: 'pa-from-right', delay: 300 }
-            ]);
+            var h1k = page.querySelector('.page-header h1');
+            if (h1k) { h1k.classList.add('pa-from-bottom'); io.observe(h1k); }
         }
         // FAQ – stagger fadeInUp via IntersectionObserver
         if (page.id === 'faq') {
