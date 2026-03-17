@@ -61,13 +61,14 @@
         }
         .nav-link:hover, .nav-link.active { color: var(--sage-dark); border-bottom-color: var(--sage); }
         .dropdown { position: relative; }
-        .dropdown::after {
+        /* Bridge the gap so :hover chain doesn't break between toggle and menu */
+        .dropdown-menu::before {
             content: '';
             position: absolute;
-            bottom: -14px;
+            top: -16px;
             left: 0;
-            width: 100%;
-            height: 14px;
+            right: 0;
+            height: 16px;
         }
         .dropdown-toggle {
             font-size: 0.85rem; font-weight: 400; letter-spacing: 0.07em;
@@ -359,7 +360,7 @@
         document.querySelectorAll('.dropdown').forEach(function(d){ if(d!==li) d.classList.remove('open'); });
         li.classList.toggle('open');
     }
-    document.addEventListener('click', function(){ document.querySelectorAll('.dropdown').forEach(function(d){ d.classList.remove('open'); }); });
+    document.addEventListener('click', function(e){ document.querySelectorAll('.dropdown').forEach(function(d){ if(!d.contains(e.target)) d.classList.remove('open'); }); });
     var mBtn = document.getElementById('mobileMenuBtn');
     if(mBtn) mBtn.addEventListener('click', function(){ document.getElementById('navLinks').classList.toggle('open'); });
 
