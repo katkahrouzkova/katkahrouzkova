@@ -1,0 +1,6 @@
+.DS_Store
+*.gz
+*.py
+cast.txt
+js_cast.txt
+texty.txt
