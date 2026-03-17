@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR mentoring – Katka Hrouzková</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --sage: #5B8A8A;
+            --sage-dark: #2E6B6B;
+            --sage-light: #8FBDBD;
+            --sage-pale: #C8E0E0;
+            --beige: #EEF0F2;
+            --beige-warm: #E4E8EC;
+            --beige-dark: #B0BCC4;
+            --cream: #F5F7F8;
+            --white: #FFFFFF;
+            --text: #1C2B2B;
+            --text-light: #4A6060;
+            --text-muted: #8AABAB;
+            --sand: #DDE6E8;
+            --sage-section: #EBF2F2;
+            --dark-section: #1C3333;
+            --petrol: #1A5C5C;
+            --mint: #D6EDED;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(250,248,245,0.97);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(168,196,188,0.2);
+            padding: 1.1rem 0;
+        }
+        nav .wrap {
+            max-width: 1180px; margin: 0 auto;
+            padding: 0 2.5rem;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 1.45rem; font-weight: 500;
+            color: var(--sage-dark);
+            letter-spacing: 0.02em; cursor: pointer;
+        }
+        .nav-links { display: flex; gap: 2.2rem; list-style: none; align-items: center; }
+        .nav-link {
+            font-size: 0.85rem; font-weight: 400; letter-spacing: 0.07em;
+            text-transform: uppercase; color: var(--text-light);
+            cursor: pointer; transition: color 0.3s;
+            padding-bottom: 2px; border-bottom: 1px solid transparent;
+            text-decoration: none;
+        }
+        .nav-link:hover, .nav-link.active { color: var(--sage-dark); border-bottom-color: var(--sage); }
+        .dropdown { position: relative; }
+        .dropdown-toggle {
+            font-size: 0.85rem; font-weight: 400; letter-spacing: 0.07em;
+            text-transform: uppercase; color: var(--text-light);
+            cursor: pointer; display: flex; align-items: center; gap: 0.3rem;
+            transition: color 0.3s; padding-bottom: 2px; border-bottom: 1px solid transparent;
+        }
+        .dropdown-toggle::after { content: "↓"; font-size: 0.75rem; transition: transform 0.3s; }
+        .dropdown:hover .dropdown-toggle { color: var(--sage-dark); border-bottom-color: var(--sage); }
+        .dropdown:hover .dropdown-toggle::after { transform: rotate(180deg); }
+        .dropdown-menu {
+            display: none; position: absolute;
+            top: calc(100% + 14px); left: 50%;
+            transform: translateX(-50%);
+            background: var(--white);
+            width: 620px; border-radius: 2px;
+            box-shadow: 0 12px 48px rgba(44,53,48,0.1);
+            padding: 1rem;
+            border: 1px solid rgba(168,196,188,0.3);
+        }
+        .dropdown.open .dropdown-menu, .dropdown:focus-within .dropdown-menu { display: block; animation: menuIn 0.18s ease; }
+        @media (hover: hover) { .dropdown:hover .dropdown-menu { display: block; } }
+        @keyframes menuIn {
+            from { opacity: 0; transform: translateX(-50%) translateY(-5px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+        .dmg { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+        .dmi {
+            padding: 1rem 1.1rem; background: var(--cream);
+            cursor: pointer; transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+        .dmi:hover { background: white; border-color: var(--sage-pale); }
+        .dmi h4 { font-size: 0.88rem; font-weight: 500; color: var(--text); margin-bottom: 0.2rem; }
+        .dmi p { font-size: 0.78rem; color: var(--text-light); line-height: 1.4; }
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            border: 1px solid var(--sage-light);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-left: 1.5rem;
+            flex-shrink: 0;
+        }
+        .lang-switcher button {
+            background: transparent;
+            border: none;
+            padding: 0.28rem 0.75rem;
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: background 0.2s, color 0.2s;
+            font-family: inherit;
+        }
+        .lang-switcher button.active {
+            background: var(--sage);
+            color: var(--white);
+        }
+        .lang-switcher button:hover:not(.active) {
+            background: var(--sage-pale);
+        }
+        .wrap { max-width: 1180px; margin: 0 auto; padding: 0 2.5rem; }
+        .btn {
+            display: inline-block; background: var(--sage-dark); color: white;
+            padding: 0.95rem 2.4rem;
+            font-size: 0.85rem; letter-spacing: 0.09em; text-transform: uppercase;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 400;
+            border: none; cursor: pointer; transition: all 0.3s; text-decoration: none;
+        }
+        .btn:hover { background: var(--beige); }
+        .btn-white { background: white; color: var(--sage-dark); }
+        .btn-white:hover { background: var(--beige); }
+        section { padding: 6rem 0; }
+        .section-label {
+            font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+            color: var(--sage); font-weight: 400; margin-bottom: 0.9rem; display: block;
+        }
+        .section-title {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-variant-ligatures: none; font-feature-settings: 'liga' 0;
+            font-size: 2.8rem; font-weight: 400; line-height: 1.15;
+            color: var(--text); margin-bottom: 1.5rem; letter-spacing: -0.01em;
+        }
+        .section-intro { font-size: 1.02rem; color: var(--text-light); line-height: 1.8; max-width: 580px; }
+        .svc-hero {
+            position: relative;
+            height: 420px;
+            margin-top: 72px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+        }
+        .svc-hero-overlay {
+            position: absolute; inset: 0;
+            z-index: 2;
+            background: linear-gradient(to top, rgba(20,48,48,0.88) 0%, rgba(20,48,48,0.35) 60%, rgba(20,48,48,0.05) 100%);
+        }
+        .svc-hero-content {
+            position: relative; z-index: 3;
+            padding: 3rem 4rem 3.5rem;
+            max-width: 900px;
+        }
+        .svc-hero-content .section-label { color: rgba(255,255,255,0.65); margin-bottom: 0.8rem; }
+        .svc-hero-content h1 { color: white; font-family: Georgia, serif; font-size: 3rem; font-weight: 300; margin-bottom: 1rem; line-height: 1.15; }
+        .svc-hero-content h1 em { font-style: italic; color: var(--sage-pale); }
+        .svc-hero-content p { color: rgba(255,255,255,0.82); font-size: 1.05rem; line-height: 1.7; max-width: 580px; }
+        .sd-intro {
+            background: var(--cream); border-left: 2px solid var(--sage);
+            padding: 2.5rem 3rem; margin: 3rem 0 4rem;
+        }
+        .sd-intro h3 { font-family: Georgia, 'Times New Roman', serif; font-size: 1.6rem; font-weight: 400; margin-bottom: 1rem; color: var(--text); font-variant-ligatures: none; font-feature-settings: 'liga' 0; }
+        .sd-intro p { color: var(--text-light); line-height: 1.8; margin-bottom: 1.1rem; }
+        .sd-intro p:last-child { margin-bottom: 0; }
+        .sd-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.2rem; margin: 3rem 0; }
+        .sd-card { padding: 1.8rem 2rem; background: var(--cream); border: 1px solid var(--beige-warm); }
+        .sd-card h4 { font-weight: 500; font-size: 0.93rem; margin-bottom: 0.6rem; color: var(--text); }
+        .sd-card p { font-size: 0.88rem; color: var(--text-light); line-height: 1.65; }
+        .cta-banner { background: var(--petrol); color: white; padding: 5rem 0; text-align: center; }
+        .cta-banner h2 { font-family: Georgia, 'Times New Roman', serif; font-size: 2.8rem; font-weight: 400; margin-bottom: 1rem; }
+        .cta-banner p { font-size: 1rem; opacity: 0.8; margin-bottom: 2.5rem; }
+        footer { background: var(--text); color: rgba(255,255,255,0.55); padding: 2.5rem 0; text-align: center; font-size: 0.83rem; }
+        footer a { color: var(--sage-light); text-decoration: none; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: var(--text); margin: 4px 0; transition: all 0.3s; }
+        @media (max-width: 768px) {
+            nav { padding: 0 1.2rem; }
+            .nav-links { display: none; }
+            .dropdown-menu { position: static; width: 100%; transform: none; box-shadow: none; border: none; border-radius: 0; padding: 0.5rem 0 0.5rem 1rem; background: var(--beige); }
+            .dmg { grid-template-columns: 1fr !important; gap: 0 !important; }
+            .dmi { padding: 0.7rem 0.5rem; border-bottom: 1px solid var(--beige-warm); }
+            .dmi h4 { font-size: 0.9rem; margin-bottom: 0.2rem; }
+            .dmi p { font-size: 0.8rem; }
+            .logo { font-size: 1rem; }
+            .mobile-menu-btn { display: block; }
+            .nav-links.open { display: flex !important; flex-direction: column; position: absolute; top: 72px; left: 0; right: 0; background: var(--cream); padding: 1.5rem 1.5rem 2rem; gap: 0.5rem; border-bottom: 1px solid var(--beige-warm); z-index: 99; }
+            .nav-links.open li { padding: 0.4rem 0; }
+            .svc-hero { height: 280px; margin-top: 60px; }
+            .svc-hero-content { padding: 1.5rem 1.5rem 2rem; }
+            .svc-hero-content h1 { font-size: 2rem; }
+            .wrap { padding: 0 1.5rem; }
+            .section-title { font-size: 1.9rem; }
+            .cta-banner { padding: 3rem 0; }
+            .cta-banner h2 { font-size: 2rem; }
+            section { padding: 3rem 0; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="wrap">
+            <div class="logo" onclick="window.location.href='../index.html'">Katka Hrouzková</div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn"><span></span><span></span><span></span></button>
+            <ul class="nav-links" id="navLinks">
+                <li><a class="nav-link" href="../index.html">Domů</a></li>
+                <li class="dropdown">
+                    <span class="dropdown-toggle" onclick="toggleDropdown(event)">Služby</span>
+                    <div class="dropdown-menu">
+                        <div class="dmg">
+                            <div class="dmi" onclick="window.location.href='../index.html'"><h4>1:1 Koučování</h4><p>Pravidelná podpora při rozhodování a kariérních změnách.</p></div>
+                            <div class="dmi" onclick="window.location.href='../index.html'"><h4>PRISM Brain Mapping</h4><p>Pochopte, jak přirozeně fungujete. Vědecky podložené.</p></div>
+                            <div class="dmi" onclick="window.location.href='../index.html'"><h4>Gallup CliftonStrengths</h4><p>Odhalte, v čem přirozeně vynikáte – a stavějte na tom.</p></div>
+                            <div class="dmi" onclick="window.location.href='../index.html'"><h4>Redesign Your Life</h4><p>Roční transformační program. Kompletní kariérní proměna.</p></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <span class="dropdown-toggle" onclick="toggleDropdown(event)">Pro firmy</span>
+                    <div class="dropdown-menu">
+                        <div class="dmg" style="grid-template-columns:1fr;">
+                            <div class="dmi" onclick="window.location.href='nabor.html'"><h4>Výběr správných lidí</h4><p>Najděte člověka, který na dané místo skutečně sedí.</p></div>
+                            <div class="dmi" onclick="window.location.href='rozvoj.html'"><h4>Rozvoj týmu</h4><p>Pochopte, jak váš tým přirozeně funguje a kde může růst.</p></div>
+                            <div class="dmi" onclick="window.location.href='mentoring.html'"><h4>HR mentoring</h4><p>Zkušený sparring partner pro HR manažery a HRBP.</p></div>
+                        </div>
+                    </div>
+                </li>
+                <li><a class="nav-link" href="../index.html">O mně</a></li>
+                <li><a class="nav-link" href="../index.html">Kontakt</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <button class="active">CZ</button>
+                <button>EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="svc-hero" style="background:var(--petrol);display:flex;align-items:flex-end;padding-bottom:0;">
+        <div class="svc-hero-overlay"></div>
+        <div class="svc-hero-content">
+            <span class="section-label" style="color:rgba(255,255,255,0.65);">HR mentoring</span>
+            <h1>Řešíte HR témata, ale nemáte <em>koho se zeptat?</em></h1>
+            <p>17 let v HR v globálních korporacích. Jsem váš sparring partner – bez frází, s konkrétními výstupy.</p>
+        </div>
+    </div>
+
+    <!-- KOMU JE URČENO -->
+    <section style="background:var(--cream);padding:5rem 0;">
+        <div class="wrap">
+            <span class="section-label">Pro koho</span>
+            <h2 class="section-title">Komu je to určeno</h2>
+            <div class="sd-cards" style="grid-template-columns:1fr 1fr;margin-top:2.5rem;">
+                <div class="sd-card">
+                    <h4>HR manažerům a HRBP</h4>
+                    <p>Potřebujete probrat strategii, nastavit procesy nebo si ujasnit další krok.</p>
+                </div>
+                <div class="sd-card">
+                    <h4>Manažerům s HR agendou</h4>
+                    <p>Řešíte nábor, onboarding nebo rozvoj svého týmu a chcete se opřít o zkušeného partnera.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CO RESIME SPOLECNE -->
+    <section style="background:var(--beige);padding:5rem 0;">
+        <div class="wrap">
+            <span class="section-label">Obsah spolupráce</span>
+            <h2 class="section-title">Co řešíme společně</h2>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem;">
+                <div class="sd-intro" style="margin:0;">
+                    <h3>Konzultace na míru</h3>
+                    <p>Série setkání zaměřená na konkrétní téma: L&amp;D strategie, hiring, onboarding, performance cykly. Výstupem je konkrétní doporučení nebo plán.</p>
+                </div>
+                <div class="sd-intro" style="margin:0;">
+                    <h3>HR mentoring</h3>
+                    <p>Dlouhodobá pravidelná podpora. Otevřená témata, váš tempo, konkrétní výstupy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JAK PROBÍHA SPOLUPRÁCE -->
+    <section style="background:var(--cream);padding:5rem 0;">
+        <div class="wrap">
+            <span class="section-label">Spolupráce</span>
+            <h2 class="section-title">Jak probíhá spolupráce</h2>
+            <div class="sd-intro">
+                <p style="color:var(--text-muted);font-style:italic;">Časový a finanční rozsah doplním brzy.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-banner">
+        <div class="wrap">
+            <h2>Chcete si promluvit o vaší situaci?</h2>
+            <p></p>
+            <a class="btn btn-white" href="mailto:katka@katkahrouzkova.cz">NAPIŠTE MI</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap">
+            <p>© 2025 Katka Hrouzková · <a href="../index.html">katkahrouzkova.cz</a></p>
+        </div>
+    </footer>
+
+    <script>
+    function toggleDropdown(e) {
+        e.stopPropagation();
+        var li = e.target.closest('.dropdown');
+        document.querySelectorAll('.dropdown').forEach(function(d){ if(d!==li) d.classList.remove('open'); });
+        li.classList.toggle('open');
+    }
+    document.addEventListener('click', function(){ document.querySelectorAll('.dropdown').forEach(function(d){ d.classList.remove('open'); }); });
+    var mBtn = document.getElementById('mobileMenuBtn');
+    if(mBtn) mBtn.addEventListener('click', function(){ document.getElementById('navLinks').classList.toggle('open'); });
+    </script>
+</body>
+</html>
