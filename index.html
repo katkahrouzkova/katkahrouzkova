@@ -524,10 +524,11 @@
         @keyframes fadeFromTop   { from { opacity:0; transform:translateY(-40px); } to { opacity:1; transform:translateY(0); } }
         @keyframes fadeFromLeft  { from { opacity:0; transform:translateX(-50px); } to { opacity:1; transform:translateX(0); } }
         @keyframes fadeFromRight { from { opacity:0; transform:translateX(50px);  } to { opacity:1; transform:translateX(0); } }
-        .anim-top   { animation: fadeFromTop 1.2s ease-out both; }
-        .anim-left  { opacity:0; transform:translateX(-50px); transition: opacity 1.0s ease-out, transform 1.0s ease-out; transition-delay: 0.3s; }
-        .anim-right { opacity:0; transform:translateX(50px);  transition: opacity 1.0s ease-out, transform 1.0s ease-out; transition-delay: 0.5s; }
-        .anim-in    { opacity:1 !important; transform:translate(0,0) !important; }
+        .anim-top        { animation: fadeFromTop 1.2s ease-out both; }
+        .anim-left       { opacity:0; transform:translateX(-50px); transition: opacity 1.0s ease-out, transform 1.0s ease-out; transition-delay: 0.3s; }
+        .anim-right      { opacity:0; transform:translateX(50px);  transition: opacity 1.0s ease-out, transform 1.0s ease-out; transition-delay: 0.5s; }
+        .anim-top-scroll { opacity:0; transform:translateY(-40px); transition: opacity 1.0s ease-out, transform 1.0s ease-out; }
+        .anim-in         { opacity:1 !important; transform:translate(0,0) !important; }
         .anim-quote { opacity:0; transform:translateY(20px); transition: opacity 2.5s ease-in-out, transform 2.5s ease-in-out; transition-delay: 0.3s; }
         .anim-quote.anim-in { opacity:1 !important; transform:translateY(0) !important; }
         .dropdown-toggle.active { color: var(--sage-dark); border-bottom-color: var(--sage); }
@@ -1309,8 +1310,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function animatePage(page) {
         if (!page) return;
-        page.querySelectorAll('.anim-top,.anim-left,.anim-right').forEach(function(el) {
-            el.classList.remove('anim-top','anim-left','anim-right','anim-in');
+        page.querySelectorAll('.anim-top,.anim-left,.anim-right,.anim-top-scroll').forEach(function(el) {
+            el.classList.remove('anim-top','anim-left','anim-right','anim-top-scroll','anim-in');
+            el.style.transitionDelay = '';
         });
         var h1 = page.querySelector('.hero h1, .svc-hero-content h1');
         if (h1) { void h1.offsetWidth; h1.classList.add('anim-top'); }
@@ -1319,6 +1321,18 @@ document.addEventListener('DOMContentLoaded', function() {
         if (h2s[1]) { h2s[1].classList.add('anim-right'); io.observe(h2s[1]); }
         var quote = page.querySelector('#kh-quote');
         if (quote && !quote.classList.contains('anim-quote')) { quote.classList.add('anim-quote'); ioQuote.observe(quote); }
+        // O mně: heading fade-left, photo fade-right
+        if (page.id === 'o-mne') {
+            var omneH = page.querySelector('.page-header h1');
+            if (omneH) { omneH.classList.add('anim-left'); io.observe(omneH); }
+            var omnePhoto = page.querySelector('.about-photo-wrap');
+            if (omnePhoto) { omnePhoto.classList.add('anim-right'); omnePhoto.style.transitionDelay = '0.3s'; io.observe(omnePhoto); }
+        }
+        // Kontakt: heading fade-top-scroll
+        if (page.id === 'kontakt') {
+            var kontaktH = page.querySelector('.page-header h1');
+            if (kontaktH) { kontaktH.classList.add('anim-top-scroll'); io.observe(kontaktH); }
+        }
     }
 
     animatePage(document.querySelector('.page.active'));
