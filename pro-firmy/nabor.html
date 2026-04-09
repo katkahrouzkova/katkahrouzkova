@@ -238,7 +238,21 @@
         .anim-quote { opacity:0; transition: opacity 2s ease-in; }
         .anim-quote.anim-in { opacity:1 !important; }
         .dropdown-toggle.active { color: var(--sage-dark); border-bottom-color: var(--sage); }
-        </style>
+                .pb-card {
+            background: var(--cream);
+            border: 1px solid var(--beige-warm);
+            border-radius: 4px;
+            padding: 1.1rem 1.2rem;
+            margin-bottom: 0.75rem;
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+        .pb-card.visible { opacity: 1; transform: translateY(0); }
+        .pb-card:hover { border-color: var(--sage); box-shadow: 0 4px 16px rgba(91,138,138,0.12); transform: translateY(-3px); }
+        .pb-card h4 { font-size: 0.88rem; font-weight: 500; color: var(--text); margin-bottom: 0.35rem; }
+        .pb-card p { font-size: 0.83rem; color: var(--text-light); line-height: 1.6; margin: 0; }
+</style>
 </head>
 <body>
     <nav>
@@ -425,5 +439,19 @@ document.addEventListener('DOMContentLoaded', function() {
     if (h2s[1]) { h2s[1].classList.add('anim-right'); io.observe(h2s[1]); }
 });
 </script>
+    <script>
+        var pbCards = document.querySelectorAll('.pb-card');
+        var pbObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var card = entry.target;
+                    var index = Array.from(pbCards).indexOf(card);
+                    setTimeout(function() { card.classList.add('visible'); }, (index % 5) * 100);
+                    pbObserver.unobserve(card);
+                }
+            });
+        }, { threshold: 0.1 });
+        pbCards.forEach(function(card) { pbObserver.observe(card); });
+    </script>
 </body>
 </html>
