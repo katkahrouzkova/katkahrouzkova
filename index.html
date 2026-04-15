@@ -251,7 +251,7 @@
         .service-card {
             background: white; padding: 2rem 1.7rem;
             cursor: pointer; transition: all 0.3s;
-            border: 1px solid transparent; position: relative;
+            border: 1px solid var(--sage-light); position: relative; display: flex; flex-direction: column;
         }
         .service-card:hover {
             border-color: var(--sage-light);
@@ -260,11 +260,11 @@
         }
         .service-icon { font-size: 1.6rem; margin-bottom: 1.3rem; display: block; width:2.2rem;height:2.2rem; }
         .service-icon svg { width:100%;height:100%;stroke:var(--sage-dark);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round; }
-        .service-card h3 {
+        .service-card h3 {text-align:center;
             font-family: Georgia, 'Times New Roman', serif;
             font-size: 1.35rem; font-weight: 400; color: var(--text); margin-bottom: 0.7rem;
         }
-        .service-card p { font-size: 0.86rem; color: var(--text-light); line-height: 1.6; }
+        .service-card p { font-size: 0.86rem; color: var(--text-light); line-height: 1.6; text-align:center; }
         .service-arrow { position: absolute; bottom: 1.7rem; right: 1.7rem; color: var(--sage); transition: transform 0.3s; }
         .service-card:hover .service-arrow { transform: translate(3px, -3px); }
 
@@ -677,9 +677,26 @@
                 <p style="font-size:1.05rem;color:var(--text-light);line-height:1.9;max-width:100%;margin-top:2rem;font-style:italic;color:var(--sage-dark);font-size:1.1rem;">Každý krok vědomé změny je váš osobní redesign. Změna není pohodlná, tak jako nevyšlapané boty – a my spolu tu novou cestu prozkoumáme, aby se vám v těch botách dobře chodilo.</p>
             </div>
         </section>
+        <section class="pain-section" style="background:var(--beige-warm);">
+        <section class="pain-section" style="background:var(--beige-warm);">
+            <div class="wrap">
+                <span class="section-label">Poznáváte se?</span>
+                <h2 class="section-title" data-lang-key="q-h2-1">Otázky, se kterými přicházejí moji klienti</h2>
+                <div class="pain-questions" style="margin-top:2.5rem;">
+                    <div class="pain-q" data-lang-key="q-q1"><strong style="color:var(--sage-dark);font-style:normal;">Dělám práci,</strong> která dává smysl – ale přesto jsem vyčerpaný/á. Proč?</div>
+                    <div class="pain-q" data-lang-key="q-q2"><strong style="color:var(--sage-dark);font-style:normal;">Mám vzdělání</strong> i zkušenosti, ale nevím, kam dál.</div>
+                    <div class="pain-q" data-lang-key="q-q3"><strong style="color:var(--sage-dark);font-style:normal;">Nevím, v čem</strong> jsem dobrý/á. Jak zjistím své silné stránky?</div>
+                    <div class="pain-q" data-lang-key="q-q4"><strong style="color:var(--sage-dark);font-style:normal;">Je mi 40+</strong> a ptám se, jestli tohle chci až do důchodu.</div>
+                    <div class="pain-q" data-lang-key="q-q5"><strong style="color:var(--sage-dark);font-style:normal;">Chci se posunout,</strong> ale nevím jak. Co je ten správný krok?</div>
+                    <div class="pain-q" data-lang-key="q-q6"><strong style="color:var(--sage-dark);font-style:normal;">Práce mě dřív</strong> bavila – teď už ne. Jak najít smysl tam, kde jsem?</div>
+                    <div class="pain-q"><strong style="color:var(--sage-dark);font-style:normal;">Vím, co nechci.</strong> Ale nevím, co chci.</div>
+                </div>
+            </div>
+        </section>
 
         <section style="background:var(--petrol);padding:5rem 0;">
-                <h2 style="font-family:Georgia,serif;font-size:2rem;color:white;line-height:1.4;max-width:700px;margin:0 auto 1rem;text-align:center;">Co vás čeká, když se ozvete?</h2>
+            <div class="wrap">
+                <h2 style="font-family:Georgia,serif;font-size:2rem;color:white;line-height:1.4;max-width:700px;margin:0 auto 1rem;text-align:center;" data-lang-key="q-h2-2">Pokud vás oslovila alespoň jedna otázka, nejste sami.</h2><p style="font-size:1.2rem;color:rgba(255,255,255,0.85);line-height:1.7;max-width:600px;margin:0 auto 3rem;text-align:center;" data-lang-key="q-intro">Jsou na začátku každého rozhovoru, který vedu.</p>
                 <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;max-width:900px;margin:0 auto;" class="gains-grid">
                     <div style="background:rgba(255,255,255,0.08);border-radius:12px;padding:1.8rem;border:1px solid rgba(255,255,255,0.15);">
                         <div style="width:2.2rem;height:2.2rem;border-radius:50%;background:rgba(255,255,255,0.2);color:white;display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:600;margin-bottom:1rem;">1</div>
@@ -700,15 +717,16 @@
             </div>
         </section>
 
+        <section style="background:var(--mint);padding:5rem 2rem;"><div style="max-width:900px;margin:0 auto;text-align:center;"><p id="kh-quote" style="font-family:Georgia,serif;font-style:italic;font-size:2.5rem;color:var(--petrol);line-height:1.5;margin-bottom:1.5rem;">„Všimnu si věcí, které vám unikají. A slyším i to, co neříkáte.“</p><p style="font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage-dark);">— Katka Hrouzková</p></div></section>
         <section class="services-section" style="background:var(--sage-section);">
             <div class="wrap">
                 <span class="section-label">Jak pracujeme</span>
                 <h2 class="section-title" data-lang-key="svc-h2">Vyberte si cestu, která vám sedí</h2>
                 <div class="services-grid">
-                    <div class="service-card" onclick="showPage(&#39;koucovani&#39;)"><span class="service-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><line x1="9" y1="10" x2="15" y2="10"></line><line x1="9" y1="14" x2="13" y2="14"></line></svg></span><h3>1:1 Koučování</h3><p>Pravidelná podpora při rozhodování, kariérních změnách nebo leadership rozvoji.</p><span class="service-arrow">↗</span></div>
-                    <div class="service-card" onclick="showPage(&#39;prism&#39;)"><span class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><line x1="2" y1="12" x2="22" y2="12"></line></svg></span><h3><em>PRISM</em> Brain Mapping</h3><p>Zjistěte, jak přirozeně fungujete – a proč vám některé věci jdou snadno, jiné stojí zbytečně moc energie.</p><span class="service-arrow">↗</span></div>
-                    <div class="service-card" onclick="showPage(&#39;gallup&#39;)"><span class="service-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span><h3>Gallup CliftonStrengths</h3><p>Odhalte, v čem přirozeně vynikáte – a stavějte kariéru i život na tom, co vám jde.</p><span class="service-arrow">↗</span></div>
-                    <div class="service-card" onclick="showPage(&#39;transformace&#39;)"><span class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg></span><h3>Redesign Your Life</h3><p>Roční program: talentový profil + AI job crafting + koučování. Kompletní proměna.</p><span class="service-arrow">↗</span></div>
+                    <div class="service-card" onclick="showPage(&#39;koucovani&#39;)"><h3>1:1 Koučování</h3><p>Pravidelná podpora při rozhodování, kariérních změnách nebo leadership rozvoji.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div>
+                    <div class="service-card" onclick="showPage(&#39;prism&#39;)"><h3><em>PRISM</em> Brain Mapping</h3><p>Zjistěte, jak přirozeně fungujete – a proč vám některé věci jdou snadno, jiné stojí zbytečně moc energie.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div>
+                    <div class="service-card" onclick="showPage(&#39;gallup&#39;)"><h3>Gallup CliftonStrengths</h3><p>Odhalte, v čem přirozeně vynikáte – a stavějte kariéru i život na tom, co vám jde.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div>
+                    <div class="service-card" onclick="showPage(&#39;transformace&#39;)"><h3>Redesign Your Life</h3><p>Roční program: talentový profil + AI job crafting + koučování. Kompletní proměna.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div>
                 </div>
             </div>
         </section>
@@ -722,19 +740,19 @@
                 <p class="section-intro" style="margin-bottom:3rem;">Investujete do rozvoje svých lidí? Dám vašim lidem skutečnou podporu – ne jen kurz.</p>
                 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-bottom:3rem;">
                     <div class="service-card" onclick="window.location.href='pro-firmy/nabor.html'">
-                        <span class="service-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
+                        
                         <h3>Výběr správných lidí</h3>
                         <p>Najděte člověka, který na dané místo skutečně sedí.</p>
                         <span class="service-arrow">→ Více</span>
                     </div>
                     <div class="service-card" onclick="window.location.href='pro-firmy/rozvoj.html'">
-                        <span class="service-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span>
+                        
                         <h3>Rozvoj týmu</h3>
                         <p>Pochopte, jak váš tým přirozeně funguje a kde může růst.</p>
                         <span class="service-arrow">→ Více</span>
                     </div>
                     <div class="service-card" onclick="window.location.href='pro-firmy/mentoring.html'">
-                        <span class="service-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></span>
+                        
                         <h3>HR mentoring</h3>
                         <p>Zkušený sparring partner pro HR manažery a HRBP.</p>
                         <span class="service-arrow">→ Více</span>
@@ -801,10 +819,10 @@
         </div>
         <section style="background:white"><div class="wrap">
             <div class="services-grid" style="margin-top:0">
-                <div class="service-card" onclick="showPage(&#39;koucovani&#39;)"><span class="service-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><line x1="9" y1="10" x2="15" y2="10"></line><line x1="9" y1="14" x2="13" y2="14"></line></svg></span><h3>1:1 Koučování</h3><p>Pravidelné sessions pro každého, kdo cítí, že je čas na změnu.</p><span class="service-arrow">↗</span></div>
-                <div class="service-card" onclick="showPage(&#39;prism&#39;)"><span class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><line x1="2" y1="12" x2="22" y2="12"></line></svg></span><h3><em>PRISM</em> Brain Mapping</h3><p>Zmapuje, jak přirozeně myslíte, komunikujete a pracujete – a proč s některými lidmi a situacemi bojujete víc než s jinými.</p><span class="service-arrow">↗</span></div>
-                <div class="service-card" onclick="showPage(&#39;gallup&#39;)"><span class="service-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span><h3>Gallup CliftonStrengths</h3><p>Odhalte, v čem přirozeně vynikáte – a stavějte na tom.</p><span class="service-arrow">↗</span></div>
-                <div class="service-card" onclick="showPage(&#39;transformace&#39;)"><span class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg></span><h3>Redesign Your Life</h3><p>Roční program pro lidi, kteří chtějí víc – od diagnostiky přes koučování až po konkrétní změnu.</p><span class="service-arrow">↗</span></div>
+                <div class="service-card" onclick="showPage(&#39;koucovani&#39;)"><h3>1:1 Koučování</h3><p>Pravidelné sessions pro každého, kdo cítí, že je čas na změnu.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div>
+                <div class="service-card" onclick="showPage(&#39;prism&#39;)"><h3><em>PRISM</em> Brain Mapping</h3><p>Zmapuje, jak přirozeně myslíte, komunikujete a pracujete – a proč s některými lidmi a situacemi bojujete víc než s jinými.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div>
+                <div class="service-card" onclick="showPage(&#39;gallup&#39;)"><h3>Gallup CliftonStrengths</h3><p>Odhalte, v čem přirozeně vynikáte – a stavějte na tom.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div>
+                <div class="service-card" onclick="showPage(&#39;transformace&#39;)"><h3>Redesign Your Life</h3><p>Roční program pro lidi, kteří chtějí víc – od diagnostiky přes koučování až po konkrétní změnu.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div>
             </div>
             <div style="margin:3rem 0;">
                 <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'" style="width:100%;text-align:left;background:var(--beige);border:none;padding:1.5rem 2rem;font-family:Georgia,serif;font-size:1.2rem;font-weight:400;color:var(--text);cursor:pointer;border-radius:8px;display:flex;justify-content:space-between;align-items:center;">Nevíte, která služba je pro vás? <span>↓</span></button>
