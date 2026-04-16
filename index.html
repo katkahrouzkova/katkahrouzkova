@@ -1089,17 +1089,6 @@
     if(aboutImg) aboutImg.src = photoB64;
   });
 
-  // Kopia footera do vsetkych page sekcii
-  document.addEventListener('DOMContentLoaded', function() {
-    var footer = document.querySelector('footer');
-    if(!footer) return;
-    var pages = document.querySelectorAll('.page');
-    pages.forEach(function(page) {
-      var fc = footer.cloneNode(true);
-      page.appendChild(fc);
-    });
-  });
-
   function showPage(id) {
     document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
     var page = document.getElementById(id);
@@ -1583,4 +1572,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+    <footer style="background:var(--text);color:rgba(255,255,255,0.55);padding:2.5rem 0;text-align:center;font-size:0.83rem;">
+        <div class="wrap">
+            <p>© 2026 Katka Hrouzková · Koučink &amp; Talentové poradenství</p>
+            <p style="margin-top:0.4rem;"><a href="mailto:hrouzkova.katka@gmail.com" style="color:#8FBDBD;">hrouzkova.katka@gmail.com</a></p>
+            <p style="margin-top:0.8rem;font-size:0.8rem;opacity:0.6;">
+                <a href="#" onclick="showPage('obchodni-podminky');return false;" style="color:inherit;text-decoration:underline;">Obchodní podmínky</a>
+                &nbsp;·&nbsp;
+                <a href="#" onclick="showPage('gdpr');return false;" style="color:inherit;text-decoration:underline;">Podmínky ochrany osobních údajů</a>
+            </p>
+        </div>
+    </footer>
 </body></html>
