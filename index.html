@@ -393,7 +393,7 @@
         .phase h4 { font-weight: 500; margin-bottom: 0.4rem; font-size: 0.95rem; }
         .phase p { font-size: 0.9rem; color: var(--text-light); line-height: 1.7; }
 
-        footer { background: var(--text); color: rgba(255,255,255,0.55); padding: 2.5rem 0; text-align: center; font-size: 0.83rem; position:relative; z-index:10; }
+        footer { background: var(--text); color: rgba(255,255,255,0.55); padding: 2.5rem 0; text-align: center; font-size: 0.83rem; }
         footer a { color: var(--sage-light); text-decoration: none; }
 
         @media (max-width: 1024px) {
@@ -802,12 +802,7 @@
                             <div style="display:flex;align-items:center;gap:1rem;margin-top:1.5rem;"><div style="width:42px;height:42px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;color:white;font-size:0.85rem;font-weight:500;">OK</div><div><div style="color:white;font-weight:500;">Olga Komínková</div><div style="color:var(--sage-light);font-size:0.85rem;">Brand &amp; Product Marketing Manager, TRL Space Systems</div></div></div>
                         </div>
                     </div>
-                    <button onclick="longMove(1)" style="background:none;border:1px solid rgba(255,255,255,0.3);color:white;min-width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.2rem;align-self:center;">&#8250;</button>
-                    </div>
-                    <div style="display:flex;justify-content:center;gap:0.5rem;margin-top:1.5rem;">
-                        <span id="ld0" onclick="longGoTo(0)" style="width:8px;height:8px;border-radius:50%;background:white;display:inline-block;opacity:1;cursor:pointer;"></span>
-                        <span id="ld1" onclick="longGoTo(1)" style="width:8px;height:8px;border-radius:50%;background:white;display:inline-block;opacity:0.3;cursor:pointer;"></span>
-                        <span id="ld2" onclick="longGoTo(2)" style="width:8px;height:8px;border-radius:50%;background:white;display:inline-block;opacity:0.3;cursor:pointer;"></span>
+                    <div style="display:flex;gap:0.5rem;align-self:center;"><span id="ld0" onclick="longGoTo(0)" style="width:8px;height:8px;border-radius:50%;background:white;display:inline-block;opacity:1;cursor:pointer;"></span><span id="ld1" onclick="longGoTo(1)" style="width:8px;height:8px;border-radius:50%;background:white;display:inline-block;opacity:0.3;cursor:pointer;"></span><span id="ld2" onclick="longGoTo(2)" style="width:8px;height:8px;border-radius:50%;background:white;display:inline-block;opacity:0.3;cursor:pointer;"></span></div><button onclick="longMove(1)" style="background:none;border:1px solid rgba(255,255,255,0.3);color:white;min-width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.2rem;align-self:center;"><button onclick="longMove(1)" style="background:none;border:1px solid rgba(255,255,255,0.3);color:white;min-width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.2rem;align-self:center;">&#8250;</button>#8250;</button>
                     </div>
                 </div>
             </div>
@@ -1112,9 +1107,6 @@
     window.scrollTo(0, 0);
     var nav = document.getElementById('navLinks');
     if(nav) nav.classList.remove('open');
-    // Presun footer do aktivnej page
-    var footer = document.querySelector('body > footer');
-    if(footer && page) { page.appendChild(footer); }
   }
 
   // Handle deep-link from pro-firmy pages (e.g. ../index.html#o-mne)
