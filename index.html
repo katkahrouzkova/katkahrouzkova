@@ -393,7 +393,7 @@
         .phase h4 { font-weight: 500; margin-bottom: 0.4rem; font-size: 0.95rem; }
         .phase p { font-size: 0.9rem; color: var(--text-light); line-height: 1.7; }
 
-        footer { background: var(--text); color: rgba(255,255,255,0.55); padding: 2.5rem 0; text-align: center; font-size: 0.83rem; }
+        footer { background: var(--text); color: rgba(255,255,255,0.55); padding: 2.5rem 0; text-align: center; font-size: 0.83rem; } .has-active-page footer { display: none; } .has-active-page footer { display: none; }
         footer a { color: var(--sage-light); text-decoration: none; }
 
         @media (max-width: 1024px) {
@@ -1098,7 +1098,7 @@
   });
 
   function showPage(id) {
-    document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
+    document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); }); document.body.classList.add('has-active-page');
     var page = document.getElementById(id);
     if(page) page.classList.add('active');
     document.querySelectorAll('.nav-link').forEach(function(l){ l.classList.remove('active'); });
