@@ -831,6 +831,7 @@
             dots[refIdx].style.opacity = "1";
         }
         function refMove(dir) { refGoTo((refIdx + dir + 3) % 3); }
+        setInterval(function(){ refMove(1); }, 5000);
         </script>
 
                 <section style="background:var(--sage-section);padding:5rem 0;">
