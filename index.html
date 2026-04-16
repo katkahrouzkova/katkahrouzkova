@@ -1112,6 +1112,9 @@
     window.scrollTo(0, 0);
     var nav = document.getElementById('navLinks');
     if(nav) nav.classList.remove('open');
+    // Presun footer do aktivnej page
+    var footer = document.querySelector('body > footer');
+    if(footer && page) { page.appendChild(footer); }
   }
 
   // Handle deep-link from pro-firmy pages (e.g. ../index.html#o-mne)
