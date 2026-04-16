@@ -1097,6 +1097,17 @@
     if(aboutImg) aboutImg.src = photoB64;
   });
 
+  // Kopia footera do vsetkych page sekcii
+  document.addEventListener('DOMContentLoaded', function() {
+    var footer = document.querySelector('footer');
+    if(!footer) return;
+    var pages = document.querySelectorAll('.page');
+    pages.forEach(function(page) {
+      var fc = footer.cloneNode(true);
+      page.appendChild(fc);
+    });
+  });
+
   function showPage(id) {
     document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
     var page = document.getElementById(id);
