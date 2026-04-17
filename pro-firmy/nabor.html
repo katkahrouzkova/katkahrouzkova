@@ -311,7 +311,18 @@
             <span class="section-label">PRISM Benchmark</span>
             <h2 class="section-title">Šablona úspěchu</h2>
             <p class="section-intro" style="margin-bottom:2.5rem;max-width:100%;">PRISM Benchmark porovnává přirozené chování člověka s konkrétními nároky dané pozice. Cílem je mít správného člověka na správném místě – a rozhodovat na základě dat, ne pocitů.</p>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+            <div style="margin: 2.5rem 0; padding: 2rem; background-color: #F5F7F8; border-left: 4px solid #5B8A8A; border-radius: 8px;">
+                <p style="margin-bottom: 1.5rem; line-height: 1.7;"><strong>Proč PRISM Benchmark a ne jen klasický pohovor?</strong> Pohovor prověří odbornost. Životopis ukáže historii. PRISM Benchmark ukáže něco jiného – zda má kandidát přirozené předpoklady pro to, co od něj budete na dané pozici skutečně vyžadovat.</p>
+                <p style="margin-bottom: 1.5rem; line-height: 1.7;">Nástroj pracuje ve dvou krocích. Nejprve definujeme profil úspěchu pro konkrétní roli. Teprve pak porovnáme profil kandidáta s těmito požadavky. Výsledkem je objektivní míra shody, bez subjektivního zkreslení z pohovoru.</p>
+                <p style="margin-bottom: 0; line-height: 1.7;"><strong>Co to znamená v praxi:</strong> Špatně vybraný člověk firmu stojí 6–12 měsíčních platů. PRISM Benchmark toto riziko zásadně snižuje. Stejný nástroj pomáhá i při povyšování interních expertů – identifikuje, kde bude nový manažer potřebovat podporu.</p>
+            </div>
+            
+            <style>
+                .prism-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+                .prism-grid > div:nth-child(2) { background-color: rgba(91, 138, 138, 0.07); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(91, 138, 138, 0.15); }
+                .prism-grid > div:nth-child(2) .pb-card { background: white; }
+            </style>
+            <div class="prism-grid">
                 <div>
                     <div style="font-size:0.78rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--sage);border-bottom:2px solid var(--sage);padding-bottom:0.5rem;margin-bottom:1rem;">Externí kandidát – výběr na novou pozici</div>
                     <div class="pb-card"><h4>Definice „ideálu úspěchu"</h4><p>Benchmark vytváří přesnou šablonu chování, která je pro danou roli kritická, ještě před začátkem výběrového řízení.</p></div>
@@ -390,9 +401,15 @@
         </div>
     </section>
 
-    <footer>
+    <footer style="background:var(--text);color:rgba(255,255,255,0.55);padding:2.5rem 0;text-align:center;font-size:0.83rem;">
         <div class="wrap">
-            <p>© 2025 Katka Hrouzková · <a href="../index.html">katkahrouzkova.cz</a></p>
+            <p>© 2026 Katka Hrouzková · Koučink &amp; Talentové poradenství</p>
+            <p style="margin-top:0.4rem;"><a href="mailto:hrouzkova.katka@gmail.com" style="color:#8FBDBD;">hrouzkova.katka@gmail.com</a></p>
+            <p style="margin-top:0.8rem;font-size:0.8rem;opacity:0.6;">
+                <a href="#" onclick="showPage('obchodni-podminky');return false;" style="color:inherit;text-decoration:underline;">Obchodní podmínky</a>
+                &nbsp;·&nbsp;
+                <a href="#" onclick="showPage('gdpr');return false;" style="color:inherit;text-decoration:underline;">Podmínky ochrany osobních údajů</a>
+            </p>
         </div>
     </footer>
 
