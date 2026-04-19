@@ -790,11 +790,12 @@
                             <div style="display:flex;align-items:center;gap:1rem;margin-top:1.5rem;"><div><div style="color:white;font-weight:500;">Olga Komínková</div><div style="color:rgba(255,255,255,0.85);font-size:0.85rem;">Brand &amp; Product Marketing Manager, TRL Space Systems</div></div></div>
                         </div>
                     </div>
-                    <button onclick="longMove(1)" style="background:none;border:1px solid rgba(255,255,255,0.3);color:white;min-width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.2rem;align-self:center;">&#8250;</button>
-                        <div class="rls" style="display:none;">
+<div class="rls" style="display:none;">
                             <p style="font-size:0.95rem;color:rgba(255,255,255,0.8);line-height:1.9;">Spolupráce s Katkou má pro mě dlouhodobý přínos především v tom, že mi pomáhá průběžně si ujasňovat směr a vracet se tam, kde chci být. Díky jejímu vedení se v řešených tématech kontinuálně posouvám a daří se mi naplňovat mé vize.<br><br>Na Katce oceňuji především její schopnost držet strukturu a zároveň klást velmi přesné otázky, které mi přirozeně ukazují nové úhly pohledu, což mi pomáhá rychleji dojít k řešení.<br><br><strong style="color:white;">Její služby bych doporučila všem, kteří chtějí mít v životě větší jasno a systematicky se posouvat dál i v dlouhodobém horizontu.</strong></p>
                             <div style="display:flex;align-items:center;gap:1rem;margin-top:1.5rem;"><div style="display:none;">TŠ</div><div><strong style="color:white;display:block;font-size:1rem;">Tereza Špačková</strong><span style="font-size:0.8rem;color:var(--sage-light);">Senior Compliance Specialist for Pensions &amp; Investments | UNIQA</span></div></div>
                         </div>
+                    <button onclick="longMove(1)" style="background:none;border:1px solid rgba(255,255,255,0.3);color:white;min-width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.2rem;align-self:center;">&#8250;</button>
+                        
                     </div>
                     <div style="display:flex;justify-content:center;gap:0.5rem;margin-top:1.5rem;">
                         <span id="ld0" onclick="longGoTo(0)" style="width:8px;height:8px;border-radius:50%;background:white;display:inline-block;opacity:1;cursor:pointer;"></span>
@@ -824,7 +825,7 @@
             slides[lIdx].style.display="block";
             document.getElementById("ld"+lIdx).style.opacity="1";
         }
-        function longMove(dir){longGoTo((lIdx+dir+3)%3);}
+        function longMove(dir){longGoTo((lIdx+dir+4)%4);}
         </script>
 
         <div class="cta-banner">
