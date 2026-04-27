@@ -1,0 +1,38 @@
+    <nav>
+        <div class="wrap">
+            <div class="logo" onclick="showPage(&#39;home&#39;)">Katka Hrouzková</div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" id="mobileMenuBtn"><span></span><span></span><span></span></button>
+            <ul class="nav-links" id="navLinks">
+                <li><span class="nav-link active" id="nav-home" onclick="showPage(&#39;home&#39;)">Domů</span></li>
+                <li class="dropdown">
+                    <span class="dropdown-toggle" onclick="toggleDropdown(event);showPage(&#39;sluzby-prehled&#39;)">Pro jednotlivce</span>
+                    <div class="dropdown-menu">
+                        <div class="dmg">
+                            <div class="dmi" onclick="navigateTo(&#39;koucovani&#39;)"><h4>1:1 Koučování</h4><p>Pravidelná podpora při rozhodování a kariérních změnách.</p></div>
+                            <div class="dmi" onclick="navigateTo(&#39;prism&#39;)"><h4><em>PRISM</em> Brain Mapping</h4><p>Pochopte, jak přirozeně fungujete. Vědecky podložené.</p></div>
+                            <div class="dmi" onclick="navigateTo(&#39;gallup&#39;)"><h4>Gallup CliftonStrengths</h4><p>Odhalte, v čem přirozeně vynikáte – a stavějte na tom.</p></div>
+                            <div class="dmi" onclick="navigateTo(&#39;transformace&#39;)"><h4>Redesign Your Life</h4><p>Dlouhodobý program. Kompletní kariérní proměna.</p></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <span class="dropdown-toggle" onclick="window.location.href='pro-firmy/index.html'">Pro firmy</span>
+                    <div class="dropdown-menu">
+                        <div class="dmg" style="grid-template-columns:1fr;">
+                            <div class="dmi" onclick="window.location.href='pro-firmy/nabor.html'"><h4>Výběr správných lidí</h4><p>Využijte data z PRISM mapování k výběru kandidátů. Najděte ty, kteří skvěle zapadnou do týmu a budou přirozeně vynikat v tom, co od nich potřebujete.</p></div>
+                            <div class="dmi" onclick="window.location.href='pro-firmy/rozvoj.html'"><h4>Rozvoj týmu</h4><p>Týmové workshopy a mapování potenciálu. Pochopte dynamiku svého týmu, zefektivněte komunikaci a rozdělte role tak, aby všem dávaly smysl.</p></div>
+                            <div class="dmi" onclick="window.location.href='pro-firmy/mentoring.html'"><h4>HR mentoring</h4><p>Ideální pro firmy, které nemají vlastní seniorní HR. Pomůžu vám nastavit funkční procesy – od efektivních náborů přes hodnocení až po budování firemní kultury.</p></div>
+                        </div>
+                    </div>
+                </li>
+                <li><span class="nav-link" id="nav-o-mne" onclick="showPage(&#39;o-mne&#39;)">O mně</span></li>
+                <li><span class="nav-link" id="nav-faq" onclick="showPage(&#39;faq&#39;)">FAQ</span></li>
+                <li><span class="nav-link" id="nav-kontakt" onclick="showPage(&#39;kontakt&#39;)">Kontakt</span></li>
+            </ul>
+            <div class="lang-switcher">
+                <button id="btn-cz" class="active" onclick="setLang('cz')">CZ</button>
+                <button id="btn-en" onclick="setLang('en')">EN</button>
+            </div>
+        </div>
+    </nav>
+

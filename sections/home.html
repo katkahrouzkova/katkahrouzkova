@@ -1,0 +1,181 @@
+    <div id="home" class="page active">
+        <div class="hero">
+            <div class="hero-left">
+                <span class="hero-eyebrow">Koučink &amp; Talentové poradenství</span>
+                <h1>POZNEJTE SE LÉPE.<br><em>pracujte a žijte způsobem, který vám sedí</em></h1>
+                <p class="hero-sub">Pomůžu vám lépe porozumět vlastnímu potenciálu. Nespoléhám jen na teorii – propojuji psychologii, poznatky z neurověd a práci s talenty s více než 17 lety praxe v globálním HR a certifikovaným koučinkem.</p>
+                <p class="hero-creds">Psychologie · 17 let v globálním HR · <em>PRISM</em> Brain Mapping certifikace · Inpram certifikace (Gallup CliftonStrengths) · Erickson koučink</p>
+                <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-top:0.5rem;"><button class="btn" onclick="showPage('kontakt')">Domluvit 30 minut zdarma</button><span onclick="showPage('o-mne')" style="color:var(--sage-dark);font-size:0.85rem;cursor:pointer;text-decoration:underline;letter-spacing:0.04em;">Přečtěte si můj příběh</span></div>
+            </div>
+            <div class="hero-right">
+            <div class="hero-photo-wrap">
+                <img class="hero-photo" id="hero-img" alt="Katka Hrouzková" src="../images/hero-img.png">
+                <div class="hero-overlay"></div>
+            </div>
+            </div><!-- /hero-right -->
+        </div>
+
+        <section style="background:var(--mint);padding:4rem 0 5rem 0;">
+            <div class="wrap">
+                <h3 id="ryl-title" style="font-style:italic;color:var(--text);font-size:1.4rem;font-family:Georgia,serif;font-weight:400;margin-bottom:1.5rem;min-height:2.5rem;display:block;"></h3>
+                <script>var t="Redesign Your Life",i=0,dir=1;function type(){if(dir===1){document.getElementById("ryl-title").textContent=t.slice(0,i++);if(i>t.length){dir=-1;i=t.length;setTimeout(type,2000);}else{setTimeout(type,150);}}else{document.getElementById("ryl-title").textContent=t.slice(0,i--);if(i<0){dir=1;i=0;setTimeout(type,1000);}else{setTimeout(type,100);}}}type();</script>
+                <style>@keyframes typing{from{width:0}to{width:100%}}@keyframes blink{from,to{border-color:transparent}50%{border-color:var(--sage-dark);}}</style>
+                <p style="font-size:1.05rem;color:var(--text-light);line-height:1.9;max-width:100%;margin-bottom:1.5rem;">Když si pořídíte nové boty, první týden trochu tlačí. Víte, že jsou správné – vybrali jste je pečlivě, sedí na noze, líbí se vám. Ale chvíli trvá, než se tvar přizpůsobí právě vám.</p>
+                <p style="font-size:1.05rem;color:var(--text-light);line-height:1.9;max-width:100%;margin-bottom:1.5rem;">Redesign života je podobný. Není to o tom, že něco bylo špatně. Je to o tom, že jste vyrostli z něčeho, co vám dřív sedělo – a teď potřebujete něco, co bude odpovídat tomu, kým jste dneska.</p>
+                <p style="font-size:1.05rem;color:var(--text-light);line-height:1.9;max-width:100%;margin-bottom:1.5rem;">Někdy to znamená pojmenovat, proč vás práce, která vám dřív dávala smysl, teď unavuje. Jindy je to o tom přiznat si, že jste se celé roky přizpůsobovali ostatním – a zapomněli, co vlastně chcete vy.</p>
+                <p style="font-size:1.05rem;color:var(--text-light);line-height:1.9;max-width:100%;margin-top:2rem;font-style:italic;color:#8a8a8a;font-size:1.1rem;">Každý krok vědomé změny je váš osobní redesign. Změna není pohodlná, tak jako nevyšlapané boty – a my spolu tu novou cestu prozkoumáme, aby se vám v těch botách dobře chodilo.</p>
+            </div>
+        </section>
+
+
+
+        <section style="background:var(--cream);padding:4rem 0;">
+            <div class="wrap">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:800px;margin:0 auto;">
+                    <div onclick="document.querySelector('.services-section').scrollIntoView({behavior:'smooth'})" style="background:var(--sage-dark);color:white;padding:2.5rem 2rem;cursor:pointer;text-align:center;">
+                        <h3 style="font-family:Georgia,serif;font-weight:400;font-size:1.2rem;margin-bottom:0.75rem;color:white;">Hledám cestu pro sebe</h3>
+                        <p style="font-size:0.9rem;opacity:0.85;line-height:1.6;">Koučink, talentové nástroje a programy pro jednotlivce</p>
+                    </div>
+                    <div onclick="document.getElementById('pro-firmy').scrollIntoView({behavior:'smooth'})" style="background:white;border:2px solid var(--sage-dark);color:var(--sage-dark);padding:2.5rem 2rem;cursor:pointer;text-align:center;">
+                        <h3 style="font-family:Georgia,serif;font-weight:400;font-size:1.2rem;margin-bottom:0.75rem;">Hledám rozvoj pro firmu</h3>
+                        <p style="font-size:0.9rem;color:var(--text-light);line-height:1.6;">Výběr lidí, rozvoj týmu a HR mentoring</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="services-section" style="background:var(--sage-section);">
+            <div class="wrap">
+                <span class="section-label">Jak pracujeme</span>
+                <h2 class="section-title" data-lang-key="svc-h2">Vyberte si cestu, která vám sedí</h2>
+                <div class="services-grid">
+                    <div class="service-card" onclick="showPage(&#39;koucovani&#39;)" style="position:relative;overflow:hidden;"><svg style="position:absolute;bottom:-15px;left:50%;transform:translateX(-50%);opacity:0.25;" viewBox="0 0 280 160" fill="none" xmlns="http://www.w3.org/2000/svg" width="290" height="160"><path d="M10 155 A130 130 0 0 1 270 155" stroke="#7fa8a8" stroke-width="2" fill="none"/><path d="M30 155 A110 110 0 0 1 250 155" stroke="#7fa8a8" stroke-width="2" fill="none"/><path d="M50 155 A90 90 0 0 1 230 155" stroke="#7fa8a8" stroke-width="2" fill="none"/><path d="M70 155 A70 70 0 0 1 210 155" stroke="#7fa8a8" stroke-width="2" fill="none"/><path d="M90 155 A50 50 0 0 1 190 155" stroke="#7fa8a8" stroke-width="2" fill="none"/><path d="M110 155 A30 30 0 0 1 170 155" stroke="#7fa8a8" stroke-width="2" fill="none"/></svg><h3>1:1 Koučování</h3><p>Pravidelná podpora při rozhodování, kariérních změnách nebo leadership rozvoji.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div>
+                    <div class="service-card" onclick="showPage(&#39;prism&#39;)" style="position:relative;overflow:hidden;"><svg style="position:absolute;top:-10px;right:-10px;opacity:0.15;" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="160"><circle cx="20" cy="20" r="6" fill="#7fa8a8"/><circle cx="50" cy="20" r="6" fill="#7fa8a8"/><circle cx="80" cy="20" r="6" fill="#7fa8a8"/><circle cx="110" cy="20" r="6" fill="#7fa8a8"/><circle cx="140" cy="20" r="6" fill="#7fa8a8"/><circle cx="20" cy="50" r="6" fill="#7fa8a8"/><circle cx="50" cy="50" r="6" fill="#7fa8a8"/><circle cx="80" cy="50" r="6" fill="#7fa8a8"/><circle cx="110" cy="50" r="6" fill="#7fa8a8"/><circle cx="140" cy="50" r="6" fill="#7fa8a8"/><circle cx="20" cy="80" r="6" fill="#7fa8a8"/><circle cx="50" cy="80" r="6" fill="#7fa8a8"/><circle cx="80" cy="80" r="6" fill="#7fa8a8"/><circle cx="110" cy="80" r="6" fill="#7fa8a8"/><circle cx="140" cy="80" r="6" fill="#7fa8a8"/><circle cx="20" cy="110" r="6" fill="#7fa8a8"/><circle cx="50" cy="110" r="6" fill="#7fa8a8"/><circle cx="80" cy="110" r="6" fill="#7fa8a8"/><circle cx="110" cy="110" r="6" fill="#7fa8a8"/><circle cx="140" cy="110" r="6" fill="#7fa8a8"/></svg><h3><em>PRISM</em> Brain Mapping</h3><p>Zjistěte, jak přirozeně fungujete – a proč vám některé věci jdou snadno, jiné stojí zbytečně moc energie.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div>
+                    <div class="service-card" onclick="showPage(&#39;gallup&#39;)" style="position:relative;overflow:hidden;"><svg style="position:absolute;top:0;right:-10px;opacity:0.12;" viewBox="0 0 160 300" fill="none" xmlns="http://www.w3.org/2000/svg" width="100" height="300"><line x1="15" y1="0" x2="15" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="35" y1="0" x2="35" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="55" y1="0" x2="55" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="75" y1="0" x2="75" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="95" y1="0" x2="95" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="115" y1="0" x2="115" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="135" y1="0" x2="135" y2="300" stroke="#7fa8a8" stroke-width="4"/></svg><h3>Gallup CliftonStrengths</h3><p>Odhalte, v čem přirozeně vynikáte – a stavějte kariéru i život na tom, co vám jde.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div>
+                    <div class="service-card" onclick="showPage(&#39;transformace&#39;)" style="position:relative;overflow:hidden;"><svg style="position:absolute;bottom:-10px;right:-10px;opacity:0.15;" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="160"><polyline points="10,140 60,80 10,20" stroke="#7fa8a8" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/><polyline points="55,140 105,80 55,20" stroke="#7fa8a8" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/><polyline points="100,140 150,80 100,20" stroke="#7fa8a8" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg><h3>Redesign Your Life</h3><p>Dlouhodobý program: talentový profil + AI job crafting + koučování. Kompletní proměna.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div>
+                </div>
+            </div>
+                <div style="text-align:center;margin-top:1rem;padding-bottom:0;"><p style="font-size:1.1rem;color:var(--text-light);margin-bottom:1.2rem;">Nevíte, která cesta je pro vás?</p><button class="btn" onclick="showPage('kontakt')">Napište mi</button></div>
+        </section>
+
+
+        <div id="pro-firmy">
+        <section style="background:var(--sage-section);padding:5rem 0;">
+            <div class="wrap">
+                <span class="section-label">Pro firmy</span>
+                <h2 class="section-title">Skutečný rozvoj, ne jen další školení</h2>
+                <p class="section-intro" style="margin-bottom:3rem;">Pomáhám firmám investovat do lidí tak, aby to mělo skutečný dopad.</p>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-bottom:3rem;">
+                    <div class="service-card" onclick="window.location.href='pro-firmy/nabor.html'">
+                        <h3>Výběr správných lidí</h3>
+                        <p>Využijte data z PRISM mapování k výběru kandidátů. Najděte ty, kteří skvěle zapadnou do týmu a budou přirozeně vynikat v tom, co od nich potřebujete.</p>
+                        <div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div>
+                    </div>
+                    <div class="service-card" onclick="window.location.href='pro-firmy/rozvoj.html'">
+                        <h3>Rozvoj týmu</h3>
+                        <p>Týmové workshopy a mapování potenciálu. Pochopte dynamiku svého týmu, zefektivněte komunikaci a rozdělte role tak, aby všem dávaly smysl.</p>
+                        <div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div>
+                    </div>
+                    <div class="service-card" onclick="window.location.href='pro-firmy/mentoring.html'">
+                        <h3>HR mentoring</h3>
+                        <p>Ideální pro firmy, které nemají vlastní seniorní HR. Pomůžu vám nastavit funkční procesy – od efektivních náborů přes hodnocení až po budování firemní kultury.</p>
+                        <div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div>
+                    </div>
+                </div>
+                <p style="text-align:center;"><button class="btn" onclick="showPage('kontakt')" style="background:var(--sage-dark);color:white;">NAPIŠTE MI</button></p>
+            </div>
+        </section>
+        </div>
+
+        <section style="background:var(--dark-section); padding:6rem 0;">
+            <div class="wrap">
+                <span class="section-label" style="text-align:center;display:block;color:var(--sage-light);">Reference</span>
+                <h2 class="section-title" style="text-align:center;margin-bottom:3rem;color:white;">Co říkají klienti</h2>
+                <div style="max-width:720px;margin:0 auto 4rem;text-align:center;overflow:hidden;min-height:150px;">
+                    <div id="ref-short-track" style="display:flex;transition:transform 0.6s ease;">
+                        <div style="min-width:100%;padding:0 1rem;">
+                            <p style="font-family:Georgia,serif;font-size:1.5rem;font-style:italic;color:white;line-height:1.6;margin-bottom:1rem;">„Na Katce je vidět, že je profík. Má hluboké zkušenosti, ale přistupuje k vám s lidskostí a opravdovým zájmem.“</p>
+                            <p style="font-size:0.85rem;color:white;font-weight:600;">Aleksandra Thomas &middot; Expert Learning Experience, Uniqa</p>
+                        </div>
+                        <div style="min-width:100%;padding:0 1rem;">
+                            <p style="font-family:Georgia,serif;font-size:1.5rem;font-style:italic;color:white;line-height:1.6;margin-bottom:1rem;">„Katka nejede podle šablony. Svůj styl přizpůsobila mně. Pomohla mi vnést řád do složitých témat a dojít ke konkrétním rozhodnutím.“</p>
+                            <p style="font-size:0.85rem;color:white;font-weight:600;">Jan Neužil &middot; R&amp;D Manager, Thermo Fisher Scientific</p>
+                        </div>
+                        <div style="min-width:100%;padding:0 1rem;">
+                            <p style="font-family:Georgia,serif;font-size:1.5rem;font-style:italic;color:white;line-height:1.6;margin-bottom:1rem;">„Přínos její práce vidím v tom, že propojuje sebereflexi s praktickým dopadem do reálného života i práce.“</p>
+                            <p style="font-size:0.85rem;color:white;font-weight:600;">Olga Komínková &middot; Brand &amp; Product Marketing Manager, TRL Space Systems</p>
+                        </div>
+                        <div style="min-width:100%;padding:0 1rem;">
+                            <p style="font-family:Georgia,serif;font-size:1.5rem;font-style:italic;color:white;line-height:1.6;margin-bottom:1rem;">„Na Katce oceňuji především její schopnost držet strukturu a zároveň klást velmi přesné otázky, které mi přirozeně ukazují nové úhly pohledu, což mi pomáhá rychleji dojít k řešení.“</p>
+                            <p style="font-size:0.85rem;color:white;font-weight:600;">Tereza Špačková &middot; Senior Compliance Specialist, UNIQA</p>
+                        </div>
+                    </div>
+                    <div style="display:flex;justify-content:center;gap:0.5rem;margin-top:1.5rem;">
+                        <span id="sd0" onclick="shortGoTo(0)" style="width:8px;height:8px;border-radius:50%;background:white;display:inline-block;opacity:1;cursor:pointer;"></span>
+                        <span id="sd1" onclick="shortGoTo(1)" style="width:8px;height:8px;border-radius:50%;background:white;display:inline-block;opacity:0.3;cursor:pointer;"></span>
+                        <span id="sd2" onclick="shortGoTo(2)" style="width:8px;height:8px;border-radius:50%;background:white;display:inline-block;opacity:0.3;cursor:pointer;"></span>
+                        <span id="sd3" onclick="shortGoTo(3)" style="width:8px;height:8px;border-radius:50%;background:white;display:inline-block;opacity:0.3;cursor:pointer;"></span>
+                    </div>
+                </div>
+                <div style="max-width:900px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.15);padding-top:3rem;">
+                    <div style="display:flex;align-items:center;gap:1rem;">
+                    <button onclick="longMove(-1)" style="background:none;border:1px solid rgba(255,255,255,0.3);color:white;min-width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.2rem;align-self:center;">&#8249;</button>
+                    <div style="flex:1;">
+                        <div class="rls" style="display:block;">
+                            <p style="font-size:0.95rem;color:rgba(255,255,255,0.8);line-height:1.9;">Spolupráce s Katkou pro mě byla důležitá. Vytvořila prostor, kde jsem mohla bez obav říct i věci, které jsem nikdy předtím nevyslovila nahlas. Všechno šlo přirozeně, bez tlaku nebo nějakého hodnocení.<br><br>Katka mi pomohla se znovu najít. Funguje jako zrcadlo – člověk díky ní uvidí, kým skutečně je. Pomohla mi získat odstup a ukázala mi souvislosti, které jsem měla přímo před nosem, ale doteď jsem je neviděla.<br><br>Na Katce je vidět, že je profík. Má hluboké zkušenosti, ale přistupuje k vám s lidskostí a opravdovým zájmem.<br><br><strong style="color:white;">Doporučuji ji každému, kdo se cítí zaseknoutý nebo přetížený a hledá klid a jistotu v práci i v sobě.</strong><br><a href="https://www.linkedin.com/in/katarinahrouzkova/" target="_blank" rel="noopener" style="font-size:0.8rem;color:white;opacity:0.9;display:block;margin-top:0.8rem;">Originál reference v angličtině →</a></p>
+                            <div style="display:flex;align-items:center;gap:1rem;margin-top:1.5rem;"><div><div style="color:white;font-weight:500;">Aleksandra Thomas</div><div style="color:rgba(255,255,255,0.85);font-size:0.85rem;">Expert Learning Experience &amp; New Way of Working, Uniqa</div></div></div>
+                        </div>
+                        <div class="rls" style="display:none;">
+                            <p style="font-size:0.95rem;color:rgba(255,255,255,0.8);line-height:1.9;">S Katkou jsem absolvoval deset sezení, která mi fakt změnila pohled na mě i na to, co dál. Cítil jsem se u ní bezpečně a mluvil i o věcech, které si normálně nechávám pro sebe. Je vřelá a dobře se s ní povídá, ale zároveň mě nenechala v komfortní zóně – v dobrém slova smyslu.<br><br>Moc jsem ocenil, že Katka nejede podle šablony. Svůj styl přizpůsobila mně. Pomohla mi vnést řád do složitých témat a došel jsem ke konkrétním rozhodnutím.<br><br>Probrali jsme i moje silné stránky podle Gallupu. Pomohlo mi to pochopit, v čem jsem přirozeně dobrý a kde v týmu hledat lidi, kteří mě svými dary doplní.<br><br><strong style="color:white;">Tahle spolupráce mi dodala vnitřní klid a sebevědomí. Víc si teď věřím při rozhodování.</strong><br><a href="https://www.linkedin.com/in/katarinahrouzkova/" target="_blank" rel="noopener" style="font-size:0.8rem;color:white;opacity:0.9;display:block;margin-top:0.8rem;">Originál reference v angličtině →</a></p>
+                            <div style="display:flex;align-items:center;gap:1rem;margin-top:1.5rem;"><div><div style="color:white;font-weight:500;">Jan Neužil</div><div style="color:rgba(255,255,255,0.85);font-size:0.85rem;">R&amp;D Manager, Thermo Fisher Scientific</div></div></div>
+                        </div>
+                        <div class="rls" style="display:none;">
+                            <p style="font-size:0.95rem;color:rgba(255,255,255,0.8);line-height:1.9;">Konzultace mi přinesly hlavně větší jasno v tom, jak přemýšlím sama o sobě, o své kariéře i o své roli v týmu. Katy mi pomohla pojmenovat věci, které jsem dříve neumila přesně uchopit. Dařilo se nám převádět témata do konkrétních kroků, které jsem pak mohla využít v praxi.<br><br>Nejlepší pro mě byla kombinace bezpečné atmosféry a zároveň velmi přesných otázek, které mě nutily více přemýšlet. Díky Katce jsem si nastavila jasnější směr ve svém pracovním i soukromém životě.<br><br>Doporučila bych je lidem, kteří stojí na profesní nebo osobní křižovatce a chtějí se v sobě lépe zorientovat.<br><br><strong style="color:white;">Přínos její práce vidím v tom, že propojuje sebereflexi s praktickým dopadem do reálného života i práce.</strong></p>
+                            <div style="display:flex;align-items:center;gap:1rem;margin-top:1.5rem;"><div><div style="color:white;font-weight:500;">Olga Komínková</div><div style="color:rgba(255,255,255,0.85);font-size:0.85rem;">Brand &amp; Product Marketing Manager, TRL Space Systems</div></div></div>
+                        </div>
+                    </div>
+<div class="rls" style="display:none;">
+                            <p style="font-size:0.95rem;color:rgba(255,255,255,0.8);line-height:1.9;">Spolupráce s Katkou má pro mě dlouhodobý přínos především v tom, že mi pomáhá průběžně si ujasňovat směr a vracet se tam, kde chci být. Díky jejímu vedení se v řešených tématech kontinuálně posouvám a daří se mi naplňovat mé vize.<br><br>Na Katce oceňuji především její schopnost držet strukturu a zároveň klást velmi přesné otázky, které mi přirozeně ukazují nové úhly pohledu, což mi pomáhá rychleji dojít k řešení.<br><br><strong style="color:white;">Její služby bych doporučila všem, kteří chtějí mít v životě větší jasno a systematicky se posouvat dál i v dlouhodobém horizontu.</strong></p>
+                            <div style="display:flex;align-items:center;gap:1rem;margin-top:1.5rem;"><div style="display:none;">TŠ</div><div><strong style="color:white;display:block;font-size:1rem;">Tereza Špačková</strong><span style="font-size:0.85rem;color:white;">Senior Compliance Specialist for Pensions &amp; Investments | UNIQA</span></div></div>
+                        </div>
+                    <button onclick="longMove(1)" style="background:none;border:1px solid rgba(255,255,255,0.3);color:white;min-width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.2rem;align-self:center;">&#8250;</button>
+                        
+                    </div>
+                    <div style="display:flex;justify-content:center;gap:0.5rem;margin-top:1.5rem;">
+                        <span id="ld0" onclick="longGoTo(0)" style="width:8px;height:8px;border-radius:50%;background:white;display:inline-block;opacity:1;cursor:pointer;"></span>
+                        <span id="ld1" onclick="longGoTo(1)" style="width:8px;height:8px;border-radius:50%;background:white;display:inline-block;opacity:0.3;cursor:pointer;"></span>
+                        <span id="ld2" onclick="longGoTo(2)" style="width:8px;height:8px;border-radius:50%;background:white;display:inline-block;opacity:0.3;cursor:pointer;"></span>
+                        <span id="ld3" onclick="longGoTo(3)" style="width:8px;height:8px;border-radius:50%;background:white;display:inline-block;opacity:0.3;cursor:pointer;"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+        var sIdx=0;
+        function shortGoTo(n){
+            var track=document.getElementById("ref-short-track");
+            document.getElementById("sd"+sIdx).style.opacity="0.3";
+            sIdx=n;
+            track.style.transform="translateX(-"+(sIdx*100)+"%)";
+            document.getElementById("sd"+sIdx).style.opacity="1";
+        }
+        setInterval(function(){shortGoTo((sIdx+1)%4);},5000);
+        var lIdx=0;
+        function longGoTo(n){
+            var slides=document.querySelectorAll(".rls");
+            slides[lIdx].style.display="none";
+            document.getElementById("ld"+lIdx).style.opacity="0.3";
+            lIdx=n;
+            slides[lIdx].style.display="block";
+            document.getElementById("ld"+lIdx).style.opacity="1";
+        }
+        function longMove(dir){longGoTo((lIdx+dir+4)%4);}
+        </script>
+
+        <div class="cta-banner">
+            <div class="wrap"><h2 data-lang-key="cta-h2">Jste připraveni na změnu?</h2><p data-lang-key="cta-p">Napište mi a probereme, jak vám můžu pomoct. První 30 minut je zdarma.</p><button class="btn btn-white" onclick="showPage(&#39;kontakt&#39;)" data-lang-key="svc-kou-btn">Začněme společně</button></div>
+        </div>
+    </div>
+
+    <!-- PRO JEDNOTLIVCE PŘEHLED -->
