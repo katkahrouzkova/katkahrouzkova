@@ -10,6 +10,10 @@
             --bg: #f8f9fa;
             --text: #333;
             --accent: #e67e22;
+            --nav-height: 70px;
+        }
+        * {
+            box-sizing: border-box;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -17,12 +21,33 @@
             margin: 0;
             background-color: var(--bg);
             color: var(--text);
+            padding-top: var(--nav-height);
+        }
+        nav {
+            height: var(--nav-height);
+            background: white;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        nav a {
+            margin: 0 1.5rem;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
         }
         header {
             background: white;
-            padding: 2rem;
+            padding: 4rem 2rem;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-bottom: 1px solid #eee;
         }
         .container {
             max-width: 1100px;
@@ -30,7 +55,6 @@
             padding: 2rem;
         }
         
-        /* Carousel Styling */
         .testimonials-section {
             padding: 4rem 0;
             overflow: hidden;
@@ -48,7 +72,7 @@
         }
         .carousel-track {
             display: flex;
-            width: calc(350px * 10); /* Double the items for seamless loop */
+            width: max-content;
             animation: scroll 40s linear infinite;
         }
         .carousel-track:hover {
@@ -92,13 +116,19 @@
 
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 3rem;
             font-size: 0.8rem;
             color: #888;
+            background: white;
         }
     </style>
 </head>
 <body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="#reference">Reference</a>
+</nav>
 
 <header>
     <h1>Katka Hrouzková</h1>
@@ -111,7 +141,7 @@
     </section>
 </div>
 
-<section class="testimonials-section">
+<section id="reference" class="testimonials-section">
     <h2 class="section-title">Reference</h2>
     <div class="carousel-viewport">
         <div class="carousel-track">
