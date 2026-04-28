@@ -158,11 +158,11 @@
                 <h2 class="section-title" style="text-align:center;margin-bottom:3rem;color:white;">Co říkají klienti</h2>
                 <div style=”max-width:720px;margin:0 auto 2rem;text-align:center;”>
                   <div style=”position:relative;min-height:160px;overflow:hidden;”>
-                    <div class=”sref” style=”opacity:1;transition:opacity 0.5s;”><p style=”font-family:Georgia,serif;font-size:1.4rem;font-style:italic;color:white;line-height:1.6;margin-bottom:0.8rem;”>„Na Katce je vidět, že je profík. Má hluboké zkušenosti, ale přistupuje k vám s lidskostí a opravdovým zájmem.”</p><p style=”font-size:0.85rem;color:white;font-weight:600;”>Aleksandra Thomas · Expert Learning Experience, Uniqa</p></div>
-                    <div class=”sref” style=”opacity:0;position:absolute;top:0;left:0;width:100%;transition:opacity 0.5s;”><p style=”font-family:Georgia,serif;font-size:1.4rem;font-style:italic;color:white;line-height:1.6;margin-bottom:0.8rem;”>„Katka nejede podle šablony. Svůj styl přizpůsobila mně. Pomohla mi vnést řád do složitých témat a dojít ke konkrétním rozhodnutím.”</p><p style=”font-size:0.85rem;color:white;font-weight:600;”>Jan Neužil · R&amp;D Manager, Thermo Fisher Scientific</p></div>
-                    <div class=”sref” style=”opacity:0;position:absolute;top:0;left:0;width:100%;transition:opacity 0.5s;”><p style=”font-family:Georgia,serif;font-size:1.4rem;font-style:italic;color:white;line-height:1.6;margin-bottom:0.8rem;”>„Přínos její práce vidím v tom, že propojuje sebereflexi s praktickým dopadem do reálného života i práce.”</p><p style=”font-size:0.85rem;color:white;font-weight:600;”>Olga Komínková · Brand &amp; Product Marketing Manager, TRL Space Systems</p></div>
-                    <div class=”sref” style=”opacity:0;position:absolute;top:0;left:0;width:100%;transition:opacity 0.5s;”><p style=”font-family:Georgia,serif;font-size:1.4rem;font-style:italic;color:white;line-height:1.6;margin-bottom:0.8rem;”>„Na Katce oceňuji především její schopnost držet strukturu a zároveň klást velmi přesné otázky, které mi přirozeně ukazují nové úhly pohledu, což mi pomáhá rychleji dojít k řešení.”</p><p style=”font-size:0.85rem;color:white;font-weight:600;”>Tereza Špačková · Senior Compliance Specialist, UNIQA</p></div>
-                    <div class=”sref” style=”opacity:0;position:absolute;top:0;left:0;width:100%;transition:opacity 0.5s;”><p style=”font-family:Georgia,serif;font-size:1.4rem;font-style:italic;color:white;line-height:1.6;margin-bottom:0.8rem;”>„Z každé hodiny jsem odcházela s pocitem, že situace není zdaleka tak černá, jak se mi zdálo.”</p><p style=”font-size:0.85rem;color:white;font-weight:600;”>Anežka Dvořáková · Inspektorka vína, SZPI</p></div>
+                    <div class=”sref”><p style=”font-family:Georgia,serif;font-size:1.4rem;font-style:italic;color:white;line-height:1.6;margin-bottom:0.8rem;”>„Na Katce je vidět, že je profík. Má hluboké zkušenosti, ale přistupuje k vám s lidskostí a opravdovým zájmem.”</p><p style=”font-size:0.85rem;color:white;font-weight:600;”>Aleksandra Thomas · Expert Learning Experience, Uniqa</p></div>
+                    <div class=”sref”><p style=”font-family:Georgia,serif;font-size:1.4rem;font-style:italic;color:white;line-height:1.6;margin-bottom:0.8rem;”>„Katka nejede podle šablony. Svůj styl přizpůsobila mně. Pomohla mi vnést řád do složitých témat a dojít ke konkrétním rozhodnutím.”</p><p style=”font-size:0.85rem;color:white;font-weight:600;”>Jan Neužil · R&amp;D Manager, Thermo Fisher Scientific</p></div>
+                    <div class=”sref”><p style=”font-family:Georgia,serif;font-size:1.4rem;font-style:italic;color:white;line-height:1.6;margin-bottom:0.8rem;”>„Přínos její práce vidím v tom, že propojuje sebereflexi s praktickým dopadem do reálného života i práce.”</p><p style=”font-size:0.85rem;color:white;font-weight:600;”>Olga Komínková · Brand &amp; Product Marketing Manager, TRL Space Systems</p></div>
+                    <div class=”sref”><p style=”font-family:Georgia,serif;font-size:1.4rem;font-style:italic;color:white;line-height:1.6;margin-bottom:0.8rem;”>„Na Katce oceňuji především její schopnost držet strukturu a zároveň klást velmi přesné otázky, které mi přirozeně ukazují nové úhly pohledu, což mi pomáhá rychleji dojít k řešení.”</p><p style=”font-size:0.85rem;color:white;font-weight:600;”>Tereza Špačková · Senior Compliance Specialist, UNIQA</p></div>
+                    <div class=”sref”><p style=”font-family:Georgia,serif;font-size:1.4rem;font-style:italic;color:white;line-height:1.6;margin-bottom:0.8rem;”>„Z každé hodiny jsem odcházela s pocitem, že situace není zdaleka tak černá, jak se mi zdálo.”</p><p style=”font-size:0.85rem;color:white;font-weight:600;”>Anežka Dvořáková · Inspektorka vína, SZPI</p></div>
                   </div>
                   <div style=”display:flex;justify-content:center;gap:0.5rem;margin-top:1rem;” id=”sref-dots”></div>
                 </div>
@@ -209,19 +209,20 @@
           var slides=document.querySelectorAll('.sref');
           var dotsEl=document.getElementById('sref-dots');
           var cur=0;
-          slides.forEach(function(_,i){
+          slides.forEach(function(s,i){
+            s.style.display=i===0?'block':'none';
+            s.style.opacity='1';
+            s.style.position='static';
             var d=document.createElement('span');
             d.style.cssText='width:8px;height:8px;border-radius:50%;background:white;display:inline-block;cursor:pointer;opacity:'+(i===0?'1':'0.3');
             d.onclick=function(){go(i);};
             dotsEl.appendChild(d);
           });
           function go(n){
-            slides[cur].style.opacity='0';
-            slides[cur].style.position='absolute';
+            slides[cur].style.display='none';
             dotsEl.children[cur].style.opacity='0.3';
             cur=n;
-            slides[cur].style.opacity='1';
-            slides[cur].style.position= cur===0?'relative':'absolute';
+            slides[cur].style.display='block';
             dotsEl.children[cur].style.opacity='1';
           }
           setInterval(function(){go((cur+1)%slides.length);},5000);
