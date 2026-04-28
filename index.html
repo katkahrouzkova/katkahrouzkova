@@ -105,6 +105,18 @@
         max-width: 100%;
         max-height: 100%;
     }
+
+    /* Hero Typing Cursor */
+    .hero-cursor {
+        display: inline-block;
+        animation: blink-cursor 1s step-end infinite;
+        color: inherit;
+        font-weight: normal;
+    }
+    @keyframes blink-cursor {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+    }
   </style>
 </head>
 <body>
@@ -153,7 +165,21 @@
         <div class="hero">
             <div class="hero-left">
                 <span class="hero-eyebrow">Koučink &amp; Talentové poradenství</span>
-                <h1>POZNEJTE SE LÉPE.<br><em>pracujte a žijte způsobem, který vám sedí</em></h1>
+                <h1><span id="hero-typing"></span><span class="hero-cursor">|</span><br><em>Pracujte a žijte způsobem, který vám sedí</em></h1>
+                <script>
+                    var heroPhrases = ["Žijte naplno.", "Poznejte se lépe.", "Objevte své talenty.", "Najděte svou cestu."];
+                    var hPIdx = 0, hCIdx = 0, hDel = false;
+                    function hType(){
+                        var cur = heroPhrases[hPIdx];
+                        if(hDel) hCIdx--; else hCIdx++;
+                        document.getElementById("hero-typing").textContent = cur.substring(0, hCIdx);
+                        var spd = hDel ? 50 : 100;
+                        if(!hDel && hCIdx === cur.length){ hDel = true; spd = 2000; }
+                        else if(hDel && hCIdx === 0){ hDel = false; hPIdx = (hPIdx+1)%heroPhrases.length; spd = 500; }
+                        setTimeout(hType, spd);
+                    }
+                    hType();
+                </script>
                 <p class="hero-sub">Pomůžu vám lépe porozumět vlastnímu potenciálu. Nespoléhám jen na teorii – propojuji psychologii, poznatky z neurověd a práci s talenty s více než 17 lety praxe v globálním HR a certifikovaným koučinkem.</p>
                 <p class="hero-creds">Psychologie · 17 let v globálním HR · <em>PRISM</em> Brain Mapping certifikace · Inpram certifikace (Gallup CliftonStrengths) · Erickson koučink</p>
                 <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-top:0.5rem;"><button class="btn" onclick="showPage('kontakt')">Domluvit 30 minut zdarma</button></div>
