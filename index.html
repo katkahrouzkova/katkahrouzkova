@@ -156,25 +156,25 @@
             <div class="wrap">
                 <span class="section-label" style="text-align:center;display:block;color:var(--sage-light);">Reference</span>
                 <h2 class="section-title" style="text-align:center;margin-bottom:3rem;color:white;">Co říkají klienti</h2>
-                <div style=”max-width:720px;width:100%;margin:0 auto 2rem;text-align:center;position:relative;”>
-                    <div id=”ref-short-track” style=”position:relative;width:100%;min-height:240px;”>
-                        <div style=”position:absolute;top:0;left:0;width:100%;padding:0 1rem;opacity:1;transition:opacity 0.6s ease;pointer-events:auto;”>
+                <div style=”max-width:720px;width:100%;margin:0 auto 2rem;text-align:center;”>
+                    <div id=”ref-short-track”>
+                        <div style=”padding:0 1rem;”>
                             <p style=”font-family:Georgia,serif;font-size:1.5rem;font-style:italic;color:white;line-height:1.6;margin-bottom:1rem;”>„Na Katce je vidět, že je profík. Má hluboké zkušenosti, ale přistupuje k vám s lidskostí a opravdovým zájmem.”</p>
                             <p style=”font-size:0.85rem;color:white;font-weight:600;”>Aleksandra Thomas &middot; Expert Learning Experience, Uniqa</p>
                         </div>
-                        <div style=”position:absolute;top:0;left:0;width:100%;padding:0 1rem;opacity:0;transition:opacity 0.6s ease;pointer-events:none;”>
+                        <div style=”display:none;padding:0 1rem;”>
                             <p style=”font-family:Georgia,serif;font-size:1.5rem;font-style:italic;color:white;line-height:1.6;margin-bottom:1rem;”>„Katka nejede podle šablony. Svůj styl přizpůsobila mně. Pomohla mi vnést řád do složitých témat a dojít ke konkrétním rozhodnutím.”</p>
                             <p style=”font-size:0.85rem;color:white;font-weight:600;”>Jan Neužil &middot; R&amp;D Manager, Thermo Fisher Scientific</p>
                         </div>
-                        <div style=”position:absolute;top:0;left:0;width:100%;padding:0 1rem;opacity:0;transition:opacity 0.6s ease;pointer-events:none;”>
+                        <div style=”display:none;padding:0 1rem;”>
                             <p style=”font-family:Georgia,serif;font-size:1.5rem;font-style:italic;color:white;line-height:1.6;margin-bottom:1rem;”>„Přínos její práce vidím v tom, že propojuje sebereflexi s praktickým dopadem do reálného života i práce.”</p>
                             <p style=”font-size:0.85rem;color:white;font-weight:600;”>Olga Komínková &middot; Brand &amp; Product Marketing Manager, TRL Space Systems</p>
                         </div>
-                        <div style=”position:absolute;top:0;left:0;width:100%;padding:0 1rem;opacity:0;transition:opacity 0.6s ease;pointer-events:none;”>
+                        <div style=”display:none;padding:0 1rem;”>
                             <p style=”font-family:Georgia,serif;font-size:1.5rem;font-style:italic;color:white;line-height:1.6;margin-bottom:1rem;”>„Na Katce oceňuji především její schopnost držet strukturu a zároveň klást velmi přesné otázky, které mi přirozeně ukazují nové úhly pohledu, což mi pomáhá rychleji dojít k řešení.”</p>
                             <p style=”font-size:0.85rem;color:white;font-weight:600;”>Tereza Špačková &middot; Senior Compliance Specialist, UNIQA</p>
                         </div>
-                        <div style=”position:absolute;top:0;left:0;width:100%;padding:0 1rem;opacity:0;transition:opacity 0.6s ease;pointer-events:none;”>
+                        <div style=”display:none;padding:0 1rem;”>
                             <p style=”font-family:Georgia,serif;font-size:1.5rem;font-style:italic;color:white;line-height:1.6;margin-bottom:1rem;”>„Z každé hodiny jsem odcházela s pocitem, že situace není zdaleka tak černá, jak se mi zdálo.”</p>
                             <p style=”font-size:0.85rem;color:white;font-weight:600;”>Anežka Dvořáková &middot; Inspektorka vína, SZPI</p>
                         </div>
@@ -229,12 +229,10 @@
         var sIdx=0;
         function shortGoTo(n){
             var slides=document.querySelectorAll("#ref-short-track > div");
-            slides[sIdx].style.opacity="0";
-            slides[sIdx].style.pointerEvents="none";
+            slides[sIdx].style.display="none";
             document.getElementById("sd"+sIdx).style.opacity="0.3";
             sIdx=n;
-            slides[sIdx].style.opacity="1";
-            slides[sIdx].style.pointerEvents="auto";
+            slides[sIdx].style.display="block";
             document.getElementById("sd"+sIdx).style.opacity="1";
         }
         setInterval(function(){shortGoTo((sIdx+1)%5);},5000);
