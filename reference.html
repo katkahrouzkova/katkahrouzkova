@@ -7,18 +7,35 @@
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 <style>
-.ref-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2.5rem; }
-.ref-card { background: white; padding: 3rem 2.5rem; border-radius: 16px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); position: relative; }
-.ref-author { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
-.ref-avatar { width: 50px; height: 50px; border-radius: 50%; background: var(--beige); color: var(--sage-dark); display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.1rem; flex-shrink: 0; }
-.ref-info h4 { margin: 0 0 0.2rem 0; color: var(--petrol); font-family: Georgia, serif; font-size: 1.1rem; }
-.ref-info p { margin: 0; color: var(--text-light); font-size: 0.85rem; }
-.ref-text { border-left: 3px solid var(--sage-dark); padding-left: 1.5rem; font-size: 1rem; color: var(--text); line-height: 1.8; }
-.ref-text p { margin-bottom: 1rem; }
-.ref-text p:last-child { margin-bottom: 0; }
-@media (max-width: 768px) {
-  .ref-grid { grid-template-columns: 1fr; }
+.ref-grid {
+  columns: 3;
+  column-gap: 1.5rem;
 }
+.ref-card {
+  background: white;
+  padding: 1.8rem 1.8rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+  position: relative;
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  width: 100%;
+}
+.ref-card:nth-child(odd) { transform: rotate(-0.4deg); }
+.ref-card:nth-child(even) { transform: rotate(0.3deg); }
+.ref-card:hover { transform: rotate(0deg) translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.09); transition: all 0.3s ease; }
+.ref-author { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.2rem; }
+.ref-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--beige); color: var(--sage-dark); display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem; flex-shrink: 0; }
+.ref-info h4 { margin: 0 0 0.2rem 0; color: var(--petrol); font-family: Georgia, serif; font-size: 0.95rem; }
+.ref-info p { margin: 0; color: var(--text-light); font-size: 0.78rem; }
+.ref-quote { font-size: 2.5rem; color: var(--sage-pale); font-family: Georgia, serif; line-height: 1; margin-bottom: 0.5rem; }
+.ref-text { font-size: 0.9rem; color: var(--text); line-height: 1.7; }
+.ref-text p { margin-bottom: 0.8rem; }
+.ref-text p:last-child { margin-bottom: 0; }
+.ref-text strong { color: var(--text); font-size: 0.88rem; }
+@media (max-width: 900px) { .ref-grid { columns: 2; } }
+@media (max-width: 600px) { .ref-grid { columns: 1; } }
 </style>
 </head>
 <body style="background:var(--cream);">
@@ -51,6 +68,7 @@
     <div class="ref-grid">
         
         <div class="ref-card">
+            <div class="ref-quote">&#8220;</div>
             <div class="ref-author">
                 <div class="ref-avatar">AT</div>
                 <div class="ref-info">
@@ -68,6 +86,7 @@
         </div>
 
         <div class="ref-card">
+            <div class="ref-quote">&#8220;</div>
             <div class="ref-author">
                 <div class="ref-avatar">JN</div>
                 <div class="ref-info">
@@ -85,6 +104,7 @@
         </div>
 
         <div class="ref-card">
+            <div class="ref-quote">&#8220;</div>
             <div class="ref-author">
                 <div class="ref-avatar">OK</div>
                 <div class="ref-info">
@@ -101,6 +121,7 @@
         </div>
 
         <div class="ref-card">
+            <div class="ref-quote">&#8220;</div>
             <div class="ref-author">
                 <div class="ref-avatar">TŠ</div>
                 <div class="ref-info">
@@ -116,6 +137,7 @@
         </div>
 
         <div class="ref-card">
+            <div class="ref-quote">&#8220;</div>
             <div class="ref-author">
                 <div class="ref-avatar">AD</div>
                 <div class="ref-info">
