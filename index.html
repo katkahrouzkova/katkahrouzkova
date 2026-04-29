@@ -32,6 +32,14 @@
 .slide-in-left {opacity:0;transform:translateX(-40px);transition:all 1s ease-out;}
 .slide-in-right {opacity:0;transform:translateX(40px);transition:all 1s ease-out;}
 .slide-in-left.in-view, .slide-in-right.in-view {opacity:1;transform:translateX(0);}
+.fade-up {opacity:0; transform:translateY(30px); transition:all 0.8s ease-out;}
+.fade-up.in-view {opacity:1; transform:translateY(0);}
+.pulse-btn {animation:pulse-soft 2s infinite;}
+@keyframes pulse-soft {
+  0% { box-shadow: 0 0 0 0 rgba(143,166,161, 0.6); }
+  70% { box-shadow: 0 0 0 15px rgba(143,166,161, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(143,166,161, 0); }
+}
 
 /* Interaktivne Tlacidla v Rozcestniku */
 .hover-btn {width:100%;padding:1.2rem;background:transparent;color:var(--sage-dark);border:2px solid var(--sage-dark);border-radius:8px;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.3s;}
@@ -58,14 +66,15 @@
 @media (max-width:768px){.hero-centered h1 {font-size:2.5rem;}}
 
 /* Bloky v sluzbach */
-.sluzba-block {display:flex;flex-direction:column;gap:1rem;padding:1.5rem;background:#fafafa;border:1px solid #eee;border-radius:16px;cursor:pointer;transition:all 0.3s ease;margin-bottom:1rem;text-align:left;}
+.sluzba-block {display:flex;flex-direction:column;gap:1rem;padding:1.5rem;background:#fafafa;border:1px solid #eee;border-radius:16px;cursor:pointer;transition:all 0.3s ease;margin-bottom:1rem;text-align:left;height:100%;}
 .sluzba-block:hover {background:white;box-shadow:0 10px 25px rgba(0,0,0,0.08);transform:translateY(-5px);border-color:var(--sage-pale);}
 .sluzba-block h4 {margin:0 0 0.5rem 0;color:var(--text);font-family:Georgia,serif;font-size:1.4rem;font-weight:400;}
 .sluzba-block p {margin:0;font-size:0.95rem;color:var(--text-light);line-height:1.6;}
-.sluzba-icon {width:48px;height:48px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:var(--beige);border-radius:12px;}
+.sluzba-icon {width:48px;height:48px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:var(--beige);border-radius:12px;transition:all 0.3s;}
 .sluzba-icon svg {width:24px;height:24px;color:var(--sage-dark);}
-.sluzba-link {color:var(--sage-dark);font-size:0.95rem;font-weight:600;margin-top:0.5rem;display:inline-block;transition:transform 0.2s;}
+.sluzba-link {color:var(--sage-dark);font-size:0.95rem;font-weight:600;margin-top:auto;padding-top:1rem;display:inline-block;transition:transform 0.2s;}
 .sluzba-block:hover .sluzba-link {transform:translateX(5px);}
+.sluzba-block:hover .sluzba-icon {transform:scale(1.1) rotate(5deg);}
 </style>
 </head>
 <body>
@@ -241,7 +250,77 @@
 </section>
 </div>
 
-<div id="sluzby-prehled" class="page"><div class="svc-hero"><img class="svc-hero-img" src="images/pro-jednotlivce.jpg" alt="Pro jednotlivce" loading="lazy"><div class="svc-hero-overlay"></div><div class="svc-hero-content"><span class="section-label">Nabídka</span><h1>Pro jednotlivce</h1><p>Každý člověk je jiný – proto nabízím různé cesty. Od jednorázového setkání až po dlouhodobý program s plnou podporou.</p></div></div><section style="background:white"><div class="wrap"><div class="services-grid" style="margin-top:0"><div class="service-card" onclick="showPage('koucovani')" style="position:relative;overflow:hidden;"><svg style="position:absolute;bottom:-15px;left:50%;transform:translateX(-50%);opacity:0.25;" viewBox="0 0 280 160" fill="none" xmlns="http://www.w3.org/2000/svg" width="290" height="160"><path d="M10 155 A130 130 0 0 1 270 155" stroke="#7fa8a8" stroke-width="2" fill="none"/><path d="M30 155 A110 110 0 0 1 250 155" stroke="#7fa8a8" stroke-width="2" fill="none"/><path d="M50 155 A90 90 0 0 1 230 155" stroke="#7fa8a8" stroke-width="2" fill="none"/><path d="M70 155 A70 70 0 0 1 210 155" stroke="#7fa8a8" stroke-width="2" fill="none"/><path d="M90 155 A50 50 0 0 1 190 155" stroke="#7fa8a8" stroke-width="2" fill="none"/><path d="M110 155 A30 30 0 0 1 170 155" stroke="#7fa8a8" stroke-width="2" fill="none"/></svg><h3>1:1 Koučování</h3><p>Pravidelné sessions pro každého, kdo cítí, že je čas na změnu.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div><div class="service-card" onclick="showPage('prism')" style="position:relative;overflow:hidden;"><svg style="position:absolute;top:-10px;right:-10px;opacity:0.15;" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="160"><circle cx="20" cy="20" r="6" fill="#7fa8a8"/><circle cx="50" cy="20" r="6" fill="#7fa8a8"/><circle cx="80" cy="20" r="6" fill="#7fa8a8"/><circle cx="110" cy="20" r="6" fill="#7fa8a8"/><circle cx="140" cy="20" r="6" fill="#7fa8a8"/><circle cx="20" cy="50" r="6" fill="#7fa8a8"/><circle cx="50" cy="50" r="6" fill="#7fa8a8"/><circle cx="80" cy="50" r="6" fill="#7fa8a8"/><circle cx="110" cy="50" r="6" fill="#7fa8a8"/><circle cx="140" cy="50" r="6" fill="#7fa8a8"/><circle cx="20" cy="80" r="6" fill="#7fa8a8"/><circle cx="50" cy="80" r="6" fill="#7fa8a8"/><circle cx="80" cy="80" r="6" fill="#7fa8a8"/><circle cx="110" cy="80" r="6" fill="#7fa8a8"/><circle cx="140" cy="80" r="6" fill="#7fa8a8"/><circle cx="20" cy="110" r="6" fill="#7fa8a8"/><circle cx="50" cy="110" r="6" fill="#7fa8a8"/><circle cx="80" cy="110" r="6" fill="#7fa8a8"/><circle cx="110" cy="110" r="6" fill="#7fa8a8"/><circle cx="140" cy="110" r="6" fill="#7fa8a8"/></svg><h3><em>PRISM</em> Brain Mapping</h3><p>Zmapuje, jak přirozeně myslíte, komunikujete a pracujete – a proč s některými lidmi a situacemi bojujete víc než s jinými.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div><div class="service-card" onclick="showPage('gallup')" style="position:relative;overflow:hidden;"><svg style="position:absolute;top:0;right:-10px;opacity:0.12;" viewBox="0 0 160 300" fill="none" xmlns="http://www.w3.org/2000/svg" width="100" height="300"><line x1="15" y1="0" x2="15" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="35" y1="0" x2="35" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="55" y1="0" x2="55" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="75" y1="0" x2="75" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="95" y1="0" x2="95" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="115" y1="0" x2="115" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="135" y1="0" x2="135" y2="300" stroke="#7fa8a8" stroke-width="4"/></svg><h3>Gallup CliftonStrengths</h3><p>Odhalte, v čem přirozeně vynikáte – a stavějte na tom.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div><div class="service-card" onclick="showPage('transformace')" style="position:relative;overflow:hidden;"><svg style="position:absolute;bottom:-10px;right:-10px;opacity:0.15;" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="160"><polyline points="10,140 60,80 10,20" stroke="#7fa8a8" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/><polyline points="55,140 105,80 55,20" stroke="#7fa8a8" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/><polyline points="100,140 150,80 100,20" stroke="#7fa8a8" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg><h3>Redesign Your Life</h3><p>Dlouhodobý program pro lidi, kteří chtějí víc – od sebepoznání přes koučování až po konkrétní změnu.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div></div><div style="text-align:center;margin-top:3rem;padding:2.5rem;background:var(--beige);border-radius:8px;"><p style="font-size:1.1rem;color:var(--text-light);margin-bottom:1.5rem;">Nevíte, která cesta je pro vás? Napište mi a společně přijdeme na to, co vám dává největší smysl.</p><button class="btn" onclick="showPage('kontakt')">Napište mi</button></div></div></section></div>
+<div id="sluzby-prehled" class="page">
+    <div class="svc-hero" style="min-height:60vh; display:flex; align-items:center; justify-content:center; text-align:center;">
+        <img class="svc-hero-img" src="images/pro-jednotlivce.jpg" alt="Pro jednotlivce" loading="lazy">
+        <div class="svc-hero-overlay" style="background: rgba(0,0,0,0.6);"></div>
+        <div class="svc-hero-content wrap" style="position:relative; z-index:2; max-width:800px;">
+            <span class="section-label" style="color:var(--sage-light); font-weight:600; letter-spacing:0.1em; text-transform:uppercase; display:block; margin-bottom:1rem;">Pro jednotlivce</span>
+            <h1 style="font-family:Georgia,serif; font-size:3.5rem; color:white; line-height:1.2;">
+                Pomůžu vám získat zpět <br>
+                <span id="indiv-typing" style="color:var(--sage-light);"></span><span class="hero-cursor">|</span>
+            </h1>
+        </div>
+    </div>
+
+    <section style="background:var(--cream); padding:5rem 0;">
+        <div class="wrap blur-to-focus" style="max-width:800px; text-align:center;">
+            <p style="font-size:1.15rem; color:var(--text-light); line-height:1.8;">Každý člověk je jiný. Někdo potřebuje jen rychlé zrcadlo při těžkém rozhodování, jiný hledá kompletní kariérní restart. Proto nenabízím jednu univerzální šablonu, ale cesty, které se přizpůsobí vaší aktuální situaci.</p>
+        </div>
+    </section>
+
+    <section style="background:white; padding:6rem 0;">
+        <div class="wrap">
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:2rem;">
+                
+                <div class="sluzba-block fade-up" style="transition-delay:0.1s;" onclick="showPage('koucovani')">
+                    <div class="sluzba-icon"><svg viewBox="0 0 280 160" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 155 A130 130 0 0 1 270 155" stroke="currentColor" stroke-width="8" fill="none"/><path d="M50 155 A90 90 0 0 1 230 155" stroke="currentColor" stroke-width="8" fill="none"/><path d="M90 155 A50 50 0 0 1 190 155" stroke="currentColor" stroke-width="8" fill="none"/></svg></div>
+                    <div>
+                        <h4>1:1 Individuální koučování</h4>
+                        <p>Pravidelná podpora a bezpečný prostor pro vaše strategická rozhodnutí, nastavování hranic a prevenci vyhoření.</p>
+                        <span class="sluzba-link">Zjistit víc &rarr;</span>
+                    </div>
+                </div>
+
+                <div class="sluzba-block fade-up" style="transition-delay:0.2s;" onclick="showPage('transformace')">
+                    <div class="sluzba-icon"><svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="10,140 60,80 10,20" stroke="currentColor" stroke-width="12" fill="none" stroke-linejoin="round" stroke-linecap="round"/><polyline points="55,140 105,80 55,20" stroke="currentColor" stroke-width="12" fill="none" stroke-linejoin="round" stroke-linecap="round"/><polyline points="100,140 150,80 100,20" stroke="currentColor" stroke-width="12" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg></div>
+                    <div>
+                        <h4>Redesign Your Life</h4>
+                        <p>Dlouhodobý program. Kariérní profil, AI job crafting a kompletní restart vaší profesní cesty.</p>
+                        <span class="sluzba-link">Zjistit víc &rarr;</span>
+                    </div>
+                </div>
+
+                <div class="sluzba-block fade-up" style="transition-delay:0.3s;" onclick="showPage('prism')">
+                    <div class="sluzba-icon"><svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="15" fill="currentColor"/><circle cx="80" cy="30" r="15" fill="currentColor"/><circle cx="130" cy="30" r="15" fill="currentColor"/><circle cx="30" cy="80" r="15" fill="currentColor"/><circle cx="80" cy="80" r="15" fill="currentColor"/><circle cx="130" cy="80" r="15" fill="currentColor"/><circle cx="30" cy="130" r="15" fill="currentColor"/><circle cx="80" cy="130" r="15" fill="currentColor"/><circle cx="130" cy="130" r="15" fill="currentColor"/></svg></div>
+                    <div>
+                        <h4>PRISM Brain Mapping</h4>
+                        <p>Zmapujte své přirozené chování a zjistěte, proč vás některé role a situace zbytečně vyčerpávají.</p>
+                        <span class="sluzba-link">Zjistit víc &rarr;</span>
+                    </div>
+                </div>
+
+                <div class="sluzba-block fade-up" style="transition-delay:0.4s;" onclick="showPage('gallup')">
+                    <div class="sluzba-icon"><svg viewBox="0 0 160 300" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="0" x2="30" y2="300" stroke="currentColor" stroke-width="12"/><line x1="65" y1="0" x2="65" y2="300" stroke="currentColor" stroke-width="12"/><line x1="100" y1="0" x2="100" y2="300" stroke="currentColor" stroke-width="12"/><line x1="135" y1="0" x2="135" y2="300" stroke="currentColor" stroke-width="12"/></svg></div>
+                    <div>
+                        <h4>Gallup CliftonStrengths</h4>
+                        <p>Odhalte svou unikátní talentovou DNA a postavte svůj další rozvoj na tom, co vám jde úplně samo.</p>
+                        <span class="sluzba-link">Zjistit víc &rarr;</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section style="background:var(--sage-section); padding:5rem 0;">
+        <div class="wrap" style="text-align:center; max-width:600px;">
+            <h3 style="font-family:Georgia,serif; font-size:2rem; color:var(--petrol); margin-bottom:1rem;">Nevíte si s výběrem rady?</h3>
+            <p style="font-size:1.05rem; color:var(--text-light); line-height:1.7; margin-bottom:2.5rem;">Domluvme si nezávazný 30minutový hovor a společně přijdeme na to, co vám v tuto chvíli dává největší smysl.</p>
+            <button class="btn pulse-btn" onclick="showPage('kontakt')">Napište mi</button>
+        </div>
+    </section>
+</div>
 
 <div id="hr-vyzvy" class="page"><div class="svc-hero"><div class="svc-hero-overlay"></div><div class="svc-hero-content wrap"><span class="section-label">Pro firmy</span><h1>Řešení pro aktuální HR výzvy</h1></div></div><div class="wrap" style="max-width:800px;padding:4rem 2rem;"><div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:2.5rem;"><div style="border:1px solid var(--sage-pale);border-radius:4px;overflow:hidden;"><button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none';this.querySelector('.acc-arrow').style.transform=this.nextElementSibling.style.display==='block'?'rotate(180deg)':'rotate(0deg)'" style="width:100%;text-align:left;background:var(--beige);border:none;padding:1.2rem 1.5rem;font-family:Georgia,serif;font-size:1.1rem;font-weight:400;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;">Máme stop stav náborů <span class="acc-arrow" style="transition:transform 0.3s;font-size:0.9rem;">↓</span></button><div style="display:none;padding:1.5rem 1.5rem 2rem;background:white;"><p style="font-size:1rem;color:var(--text-light);line-height:1.8;margin-bottom:1.2rem;">Nábor stojí, ale práce neubývá. Lidé ve firmě zůstávají a jsou pod obrovským tlakem. Musíte zvládnout víc práce se stejným počtem lidí.</p><div style="display:flex;flex-direction:column;gap:1rem;"><div style="display:flex;gap:1rem;align-items:flex-start;"><span style="color:var(--sage);font-size:1.2rem;min-width:24px;">→</span><p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin:0;"><strong style="color:var(--text);">Potřebujete přerozdělit úkoly?</strong> Uděláme společný Gallup workshop. Ukážeme si přirozené talenty a práci rozdělíme tak, aby to celému týmu naprosto vyhovovalo.</p></div><div style="display:flex;gap:1rem;align-items:flex-start;"><span style="color:var(--sage);font-size:1.2rem;min-width:24px;">→</span><p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin:0;"><strong style="color:var(--text);">Přesouváte lidi do nových rolí?</strong> Využijeme PRISM benchmark. Hned uvidíte, kdo do nové židle zapadne a kdo bude potřebovat větší podporu.</p></div><div style="display:flex;gap:1rem;align-items:flex-start;"><span style="color:var(--sage);font-size:1.2rem;min-width:24px;">→</span><p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin:0;"><strong style="color:var(--text);">Jsou klíčoví lidé přetížení?</strong> Ty nejdůležitější podpoříme individuálním koučinkem, aby vám v této těžké době nevyhořeli.</p></div></div></div></div><div style="border:1px solid var(--sage-pale);border-radius:4px;overflow:hidden;"><button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none';this.querySelector('.acc-arrow').style.transform=this.nextElementSibling.style.display==='block'?'rotate(180deg)':'rotate(0deg)'" style="width:100%;text-align:left;background:var(--beige);border:none;padding:1.2rem 1.5rem;font-family:Georgia,serif;font-size:1.1rem;font-weight:400;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;">Procházíme restrukturalizací <span class="acc-arrow" style="transition:transform 0.3s;font-size:0.9rem;">↓</span></button><div style="display:none;padding:1.5rem 1.5rem 2rem;background:white;"><p style="font-size:1rem;color:var(--text-light);line-height:1.8;margin-bottom:1.2rem;">Lidé se neustále přesouvají na nová místa. Staré role zanikají a vznikají úplně nové. Všude je obrovské množství nejistoty a stresu.</p><div style="display:flex;flex-direction:column;gap:1rem;"><div style="display:flex;gap:1rem;align-items:flex-start;"><span style="color:var(--sage);font-size:1.2rem;min-width:24px;">→</span><p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin:0;"><strong style="color:var(--text);">Manažeři potřebují bezpečný prostor?</strong> Dáme jim ho v koučinku, aby tuto náročnou situaci zpracovali a našli nový styl vedení.</p></div><div style="display:flex;gap:1rem;align-items:flex-start;"><span style="color:var(--sage);font-size:1.2rem;min-width:24px;">→</span><p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin:0;"><strong style="color:var(--text);">Kde to v nových týmech dře?</strong> Vytvoříme týmovou mapu přes PRISM. Rychle uvidíte, proč některé kombinace lidí pracují skvěle a jiné vůbec nefungují.</p></div><div style="display:flex;gap:1rem;align-items:flex-start;"><span style="color:var(--sage);font-size:1.2rem;min-width:24px;">→</span><p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin:0;"><strong style="color:var(--text);">Potřebujete rychlý start do výkonu?</strong> Nasadíme Gallup – ukáže manažerovi, jak nejlépe rozdělit úkoly hned od prvního dne.</p></div></div></div></div><div style="border:1px solid var(--sage-pale);border-radius:4px;overflow:hidden;"><button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none';this.querySelector('.acc-arrow').style.transform=this.nextElementSibling.style.display==='block'?'rotate(180deg)':'rotate(0deg)'" style="width:100%;text-align:left;background:var(--beige);border:none;padding:1.2rem 1.5rem;font-family:Georgia,serif;font-size:1.1rem;font-weight:400;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;">Spojujeme týmy po fúzi <span class="acc-arrow" style="transition:transform 0.3s;font-size:0.9rem;">↓</span></button><div style="display:none;padding:1.5rem 1.5rem 2rem;background:white;"><p style="font-size:1rem;color:var(--text-light);line-height:1.8;margin-bottom:1.2rem;">Lidé se pořádně neznají a firemní kultury se výrazně liší. Tým nefunguje jako celek a komunikace těžce vázne.</p><div style="display:flex;flex-direction:column;gap:1rem;"><div style="display:flex;gap:1rem;align-items:flex-start;"><span style="color:var(--sage);font-size:1.2rem;min-width:24px;">→</span><p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin:0;"><strong style="color:var(--text);">Kde jsou skrytá třecí místa?</strong> Uděláme PRISM týmovou mapu. Odhalíme hlavní důvody vnitřních konfliktů a nováčci rychle pochopí, jak v novém prostředí fungovat.</p></div><div style="display:flex;gap:1rem;align-items:flex-start;"><span style="color:var(--sage);font-size:1.2rem;min-width:24px;">→</span><p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin:0;"><strong style="color:var(--text);">Manažeři potřebují nový přístup?</strong> Koučink jim pomůže nastavit efektivní přístup ke konkrétním lidem a usnadní adaptaci na nové prostředí.</p></div></div></div></div><div style="border:1px solid var(--sage-pale);border-radius:4px;overflow:hidden;"><button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none';this.querySelector('.acc-arrow').style.transform=this.nextElementSibling.style.display==='block'?'rotate(180deg)':'rotate(0deg)'" style="width:100%;text-align:left;background:var(--beige);border:none;padding:1.2rem 1.5rem;font-family:Georgia,serif;font-size:1.1rem;font-weight:400;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;">Chceme rozvíjet klíčové experty <span class="acc-arrow" style="transition:transform 0.3s;font-size:0.9rem;">↓</span></button><div style="display:none;padding:1.5rem 1.5rem 2rem;background:white;"><p style="font-size:1rem;color:var(--text-light);line-height:1.8;margin-bottom:1.2rem;">Firma chce investovat do lidí, na kterých jí opravdu záleží. Potřebujete z nich dostat to nejlepší a zároveň si je dlouhodobě udržet.</p><div style="display:flex;flex-direction:column;gap:1rem;"><div style="display:flex;gap:1rem;align-items:flex-start;"><span style="color:var(--sage);font-size:1.2rem;min-width:24px;">→</span><p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin:0;"><strong style="color:var(--text);">Řešíte konkrétní výzvu tady a teď?</strong> Nasadíme individuální koučink – může jít o nástup do nové role nebo zvládání tlaku. Jdeme rovnou k věci.</p></div><div style="display:flex;gap:1rem;align-items:flex-start;"><span style="color:var(--sage);font-size:1.2rem;min-width:24px;">→</span><p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin:0;"><strong style="color:var(--text);">Chcete jít víc do hloubky?</strong> Spojíme koučink s Gallupem a zjistíme, kde vaši experti nechávají silné stránky ležet ladem.</p></div><div style="display:flex;gap:1rem;align-items:flex-start;"><span style="color:var(--sage);font-size:1.2rem;min-width:24px;">→</span><p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin:0;"><strong style="color:var(--text);">Chcete systematický rozvoj?</strong> Nasadíme tříměsíční Leadership program – od hlubokého sebepoznání až po každodenní manažerské výzvy.</p></div></div></div></div></div><div style="text-align:center;"><button class="btn" onclick="showPage('kontakt')">Chci probrat naši aktuální situaci</button></div></div></div>
 
@@ -332,7 +411,7 @@
 <h2 style="font-size:1.2rem;margin:2.5rem 0 1rem;color:var(--sage-dark);">Platební podmínky</h2>
 <p style="color:var(--text-light);line-height:1.7;margin-bottom:1rem;">Platbu lze provést bezhotovostním převodem na bankovní účet Poskytovatele. Platba se provádí na základě vystaveného daňového dokladu se splatností 14 dní, pokud není dohodnuto jinak. Ceny uvedené na webových stránkách jsou konečné.</p>
 <h2 style="font-size:1.2rem;margin:2.5rem 0 1rem;color:var(--sage-dark);">Storno podmínky</h2>
-<p style="color:var(--text-light);line-height:1.7;margin-bottom:1rem;">Zrušení nebo přeložení sezení je možné bez poplatku nejpozději 24 hodin před dohodnutým termínem. Při pozdějším zrušení nebo nedostavení se bez omluvy může být účtován storno poplatek ve výši 50 % ceny sezení.</p>
+<p style="color:var(--text-light);line-height:1.7;margin-bottom:1rem;">Zrušení nebo přeložení sezení je možné bez poplatku nejpozději 24 hodin před dohodnutým termím. Při pozdějším zrušení nebo nedostavení se bez omluvy může být účtován storno poplatek ve výši 50 % ceny sezení.</p>
 <h2 style="font-size:1.2rem;margin:2.5rem 0 1rem;color:var(--sage-dark);">Odstoupení od smlouvy</h2>
 <p style="color:var(--text-light);line-height:1.7;margin-bottom:1rem;">Je-li Zákazníkem spotřebitel, je oprávněn odstoupit od smlouvy ve lhůtě čtrnácti (14) dnů od jejího uzavření. Odstoupí-li Zákazník od smlouvy, vrátí mu Poskytovatel bez zbytečného odkladu všechny přijaté peněžní prostředky.</p>
 <h2 style="font-size:1.2rem;margin:2.5rem 0 1rem;color:var(--sage-dark);">Závěrečná ustanovení</h2>
@@ -380,9 +459,9 @@ function handleForm(e) {
     document.getElementById('form-success').style.display = 'block';
 }
 
-// Logic pre Animacie (spusta sa zarucene bez cakania)
+// Logic pre Animacie (samospúšťací blok pre 100% garanciu načítania bez chýb z predchádzajúcich verzií)
 (function() {
-    // 1. Animacia pisania v Hero
+    // 1. Animacia pisania v Home Hero
     const heroTyping = document.getElementById("hero-typing");
     if (heroTyping) {
         const phrases = ["žijte v souladu se sebou.", "pracujte způsobem, který vám sedí.", "poznejte své silné stránky.", "najděte svůj směr."];
@@ -399,7 +478,24 @@ function handleForm(e) {
         type();
     }
 
-    // 2. Animacia cisel
+    // 2. Animacia pisania pre Pro Jednotlivce Hero
+    const indivTyping = document.getElementById("indiv-typing");
+    if (indivTyping) {
+        const indivPhrases = ["energii.", "jasný směr.", "jistotu v rozhodování.", "radost z práce."];
+        let ipIdx = 0, icIdx = 0, isIdel = false;
+        function typeIndiv() {
+            const currentTxt = indivPhrases[ipIdx];
+            if (isIdel) icIdx--; else icIdx++;
+            indivTyping.textContent = currentTxt.substring(0, icIdx);
+            let speed = isIdel ? 30 : 80;
+            if (!isIdel && icIdx === currentTxt.length) { isIdel = true; speed = 2500; }
+            else if (isIdel && icIdx === 0) { isIdel = false; ipIdx = (ipIdx + 1) % indivPhrases.length; speed = 500; }
+            setTimeout(typeIndiv, speed);
+        }
+        typeIndiv();
+    }
+
+    // 3. Animacia cisel na Home
     const statNums = document.querySelectorAll('.stat-number');
     let statsAnimated = false;
     
@@ -422,7 +518,7 @@ function handleForm(e) {
         });
     }
 
-    // 3. Scroll Observe (Blur, Slide, Stats)
+    // 4. Scroll Observer pre animacie komponentov (Blur, Slide, Stats, Fade Up)
     const observerOptions = { threshold: 0.15 };
     const scrollObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -433,7 +529,8 @@ function handleForm(e) {
                 }
                 if (entry.target.classList.contains('blur-to-focus') || 
                     entry.target.classList.contains('slide-in-left') || 
-                    entry.target.classList.contains('slide-in-right')) {
+                    entry.target.classList.contains('slide-in-right') ||
+                    entry.target.classList.contains('fade-up')) {
                     entry.target.classList.add('in-view');
                 }
             }
@@ -443,11 +540,11 @@ function handleForm(e) {
     const statsSec = document.getElementById('home-stats-section');
     if (statsSec) scrollObserver.observe(statsSec);
     
-    document.querySelectorAll('.blur-to-focus, .slide-in-left, .slide-in-right').forEach(el => {
+    document.querySelectorAll('.blur-to-focus, .slide-in-left, .slide-in-right, .fade-up').forEach(el => {
         scrollObserver.observe(el);
     });
 
-    // 4. Carousel Reference
+    // 5. Carousel Reference logic pre nekonecny posun
     window.lIdx = 0;
     window.longGoTo = function(n) {
         const slides = document.querySelectorAll(".rls");
