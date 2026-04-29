@@ -27,7 +27,7 @@
 /* Animacie */
 .hero-cursor {display:inline-block;animation:blink-cursor 1s step-end infinite;color:inherit;font-weight:normal;}
 @keyframes blink-cursor {0%,100%{opacity:1;}50%{opacity:0;}}
-.blur-to-focus {filter:blur(8px);opacity:0;transform:translateY(15px);transition:all 1.5s cubic-bezier(0.25,0.8,0.25,1);}
+.blur-to-focus {filter:blur(10px);opacity:0;transform:translateY(20px);transition:all 1.5s cubic-bezier(0.25,0.8,0.25,1);}
 .blur-to-focus.in-view {filter:blur(0);opacity:1;transform:translateY(0);}
 .slide-in-left {opacity:0;transform:translateX(-40px);transition:all 1s ease-out;}
 .slide-in-right {opacity:0;transform:translateX(40px);transition:all 1s ease-out;}
@@ -156,7 +156,7 @@
 <div class="timeline-container">
 <div class="timeline-line"></div>
 <div class="timeline-step"><div class="timeline-number">01</div><h4 style="font-size:1.6rem;font-family:Georgia,serif;color:var(--text);margin-bottom:0.8rem;">Nejdřív se poznáme</h4><p style="color:var(--text-light);line-height:1.6;font-size:1rem;">Vše začíná půlhodinovým hovorem zdarma. U virtuálního kafe probereme vaši situaci a zjistíme, jestli si sedneme.</p></div>
-<div class="timeline-step"><div class="timeline-number">02</div><h4 style="font-size:1.6rem;font-family:Georgia,serif;color:var(--text);margin-bottom:0.8rem;">Čas jen pro vás</h4><p style="color:var(--text-light);line-height:1.6;font-size:1rem;">Když zjistíme, že nám to ladí, potkáváme se raz za 3–4 týdny na jednu hodinu – osobně v Brně nebo online.</p></div>
+<div class="timeline-step"><div class="timeline-number">02</div><h4 style="font-size:1.6rem;font-family:Georgia,serif;color:var(--text);margin-bottom:0.8rem;">Čas jen pro vás</h4><p style="color:var(--text-light);line-height:1.6;font-size:1rem;">Když zjistíme, že nám to ladí, potkáváme se jednou za 3–4 týdny na jednu hodinu – osobně v Brně nebo online.</p></div>
 <div class="timeline-step"><div class="timeline-number">03</div><h4 style="font-size:1.6rem;font-family:Georgia,serif;color:var(--text);margin-bottom:0.8rem;">Reálný život</h4><p style="color:var(--text-light);line-height:1.6;font-size:1rem;">Nejedeme podle žádné učebnice. Pracujeme s tím, co vás v práci právě teď pálí. Krok za krokem a ve vašem tempu.</p></div>
 </div>
 </div>
@@ -186,8 +186,6 @@
 
 <div class="cta-banner"><div class="wrap"><h2>Jste připraveni na změnu?</h2><p>Napište mi a probereme, jak vám můžu pomoct. První 30 minut je zdarma.</p><button class="btn btn-white" onclick="showPage('kontakt')">Začněme společně</button></div></div>
 </div>
-
-<div id="sluzby-prehled" class="page"><div class="svc-hero"><img class="svc-hero-img" src="images/pro-jednotlivce.jpg" alt="Pro jednotlivce" loading="lazy"><div class="svc-hero-overlay"></div><div class="svc-hero-content"><span class="section-label">Nabídka</span><h1>Pro jednotlivce</h1><p>Každý člověk je jiný – proto nabízím různé cesty. Od jednorázového setkání až po dlouhodobý program s plnou podporou.</p></div></div><section style="background:white"><div class="wrap"><div class="services-grid" style="margin-top:0"><div class="service-card" onclick="showPage('koucovani')" style="position:relative;overflow:hidden;"><svg style="position:absolute;bottom:-15px;left:50%;transform:translateX(-50%);opacity:0.25;" viewBox="0 0 280 160" fill="none" xmlns="http://www.w3.org/2000/svg" width="290" height="160"><path d="M10 155 A130 130 0 0 1 270 155" stroke="#7fa8a8" stroke-width="2" fill="none"/><path d="M30 155 A110 110 0 0 1 250 155" stroke="#7fa8a8" stroke-width="2" fill="none"/><path d="M50 155 A90 90 0 0 1 230 155" stroke="#7fa8a8" stroke-width="2" fill="none"/><path d="M70 155 A70 70 0 0 1 210 155" stroke="#7fa8a8" stroke-width="2" fill="none"/><path d="M90 155 A50 50 0 0 1 190 155" stroke="#7fa8a8" stroke-width="2" fill="none"/><path d="M110 155 A30 30 0 0 1 170 155" stroke="#7fa8a8" stroke-width="2" fill="none"/></svg><h3>1:1 Koučování</h3><p>Pravidelné sessions pro každého, kdo cítí, že je čas na změnu.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div><div class="service-card" onclick="showPage('prism')" style="position:relative;overflow:hidden;"><svg style="position:absolute;top:-10px;right:-10px;opacity:0.15;" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="160"><circle cx="20" cy="20" r="6" fill="#7fa8a8"/><circle cx="50" cy="20" r="6" fill="#7fa8a8"/><circle cx="80" cy="20" r="6" fill="#7fa8a8"/><circle cx="110" cy="20" r="6" fill="#7fa8a8"/><circle cx="140" cy="20" r="6" fill="#7fa8a8"/><circle cx="20" cy="50" r="6" fill="#7fa8a8"/><circle cx="50" cy="50" r="6" fill="#7fa8a8"/><circle cx="80" cy="50" r="6" fill="#7fa8a8"/><circle cx="110" cy="50" r="6" fill="#7fa8a8"/><circle cx="140" cy="50" r="6" fill="#7fa8a8"/><circle cx="20" cy="80" r="6" fill="#7fa8a8"/><circle cx="50" cy="80" r="6" fill="#7fa8a8"/><circle cx="80" cy="80" r="6" fill="#7fa8a8"/><circle cx="110" cy="80" r="6" fill="#7fa8a8"/><circle cx="140" cy="80" r="6" fill="#7fa8a8"/><circle cx="20" cy="110" r="6" fill="#7fa8a8"/><circle cx="50" cy="110" r="6" fill="#7fa8a8"/><circle cx="80" cy="110" r="6" fill="#7fa8a8"/><circle cx="110" cy="110" r="6" fill="#7fa8a8"/><circle cx="140" cy="110" r="6" fill="#7fa8a8"/></svg><h3><em>PRISM</em> Brain Mapping</h3><p>Zmapuje, jak přirozeně myslíte, komunikujete a pracujete – a proč s některými lidmi a situacemi bojujete víc než s jinými.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div><div class="service-card" onclick="showPage('gallup')" style="position:relative;overflow:hidden;"><svg style="position:absolute;top:0;right:-10px;opacity:0.12;" viewBox="0 0 160 300" fill="none" xmlns="http://www.w3.org/2000/svg" width="100" height="300"><line x1="15" y1="0" x2="15" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="35" y1="0" x2="35" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="55" y1="0" x2="55" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="75" y1="0" x2="75" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="95" y1="0" x2="95" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="115" y1="0" x2="115" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="135" y1="0" x2="135" y2="300" stroke="#7fa8a8" stroke-width="4"/></svg><h3>Gallup CliftonStrengths</h3><p>Odhalte, v čem přirozeně vynikáte – a stavějte na tom.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div><div class="service-card" onclick="showPage('transformace')" style="position:relative;overflow:hidden;"><svg style="position:absolute;bottom:-10px;right:-10px;opacity:0.15;" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="160"><polyline points="10,140 60,80 10,20" stroke="#7fa8a8" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/><polyline points="55,140 105,80 55,20" stroke="#7fa8a8" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/><polyline points="100,140 150,80 100,20" stroke="#7fa8a8" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg><h3>Redesign Your Life</h3><p>Dlouhodobý program pro lidi, kteří chtějí víc – od sebepoznání přes koučování až po konkrétní změnu.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div></div><div style="text-align:center;margin-top:3rem;padding:2.5rem;background:var(--beige);border-radius:8px;"><p style="font-size:1.1rem;color:var(--text-light);margin-bottom:1.5rem;">Nevíte, která cesta je pro vás? Napište mi a společně přijdeme na to, co vám dává největší smysl.</p><button class="btn" onclick="showPage('kontakt')">Napište mi</button></div></div></section></div>
 
 <div id="o-mne" class="page">
 <div class="page-header" style="background:var(--cream);padding:6rem 0 4rem;border-bottom:1px solid #eee;">
@@ -229,6 +227,8 @@
 </section>
 </div>
 
+<div id="sluzby-prehled" class="page"><div class="svc-hero"><img class="svc-hero-img" src="images/pro-jednotlivce.jpg" alt="Pro jednotlivce" loading="lazy"><div class="svc-hero-overlay"></div><div class="svc-hero-content"><span class="section-label">Nabídka</span><h1>Pro jednotlivce</h1><p>Každý člověk je jiný – proto nabízím různé cesty. Od jednorázového setkání až po dlouhodobý program s plnou podporou.</p></div></div><section style="background:white"><div class="wrap"><div class="services-grid" style="margin-top:0"><div class="service-card" onclick="showPage('koucovani')" style="position:relative;overflow:hidden;"><svg style="position:absolute;bottom:-15px;left:50%;transform:translateX(-50%);opacity:0.25;" viewBox="0 0 280 160" fill="none" xmlns="http://www.w3.org/2000/svg" width="290" height="160"><path d="M10 155 A130 130 0 0 1 270 155" stroke="#7fa8a8" stroke-width="2" fill="none"/><path d="M30 155 A110 110 0 0 1 250 155" stroke="#7fa8a8" stroke-width="2" fill="none"/><path d="M50 155 A90 90 0 0 1 230 155" stroke="#7fa8a8" stroke-width="2" fill="none"/><path d="M70 155 A70 70 0 0 1 210 155" stroke="#7fa8a8" stroke-width="2" fill="none"/><path d="M90 155 A50 50 0 0 1 190 155" stroke="#7fa8a8" stroke-width="2" fill="none"/><path d="M110 155 A30 30 0 0 1 170 155" stroke="#7fa8a8" stroke-width="2" fill="none"/></svg><h3>1:1 Koučování</h3><p>Pravidelné sessions pro každého, kdo cítí, že je čas na změnu.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div><div class="service-card" onclick="showPage('prism')" style="position:relative;overflow:hidden;"><svg style="position:absolute;top:-10px;right:-10px;opacity:0.15;" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="160"><circle cx="20" cy="20" r="6" fill="#7fa8a8"/><circle cx="50" cy="20" r="6" fill="#7fa8a8"/><circle cx="80" cy="20" r="6" fill="#7fa8a8"/><circle cx="110" cy="20" r="6" fill="#7fa8a8"/><circle cx="140" cy="20" r="6" fill="#7fa8a8"/><circle cx="20" cy="50" r="6" fill="#7fa8a8"/><circle cx="50" cy="50" r="6" fill="#7fa8a8"/><circle cx="80" cy="50" r="6" fill="#7fa8a8"/><circle cx="110" cy="50" r="6" fill="#7fa8a8"/><circle cx="140" cy="50" r="6" fill="#7fa8a8"/><circle cx="20" cy="80" r="6" fill="#7fa8a8"/><circle cx="50" cy="80" r="6" fill="#7fa8a8"/><circle cx="80" cy="80" r="6" fill="#7fa8a8"/><circle cx="110" cy="80" r="6" fill="#7fa8a8"/><circle cx="140" cy="80" r="6" fill="#7fa8a8"/><circle cx="20" cy="110" r="6" fill="#7fa8a8"/><circle cx="50" cy="110" r="6" fill="#7fa8a8"/><circle cx="80" cy="110" r="6" fill="#7fa8a8"/><circle cx="110" cy="110" r="6" fill="#7fa8a8"/><circle cx="140" cy="110" r="6" fill="#7fa8a8"/></svg><h3><em>PRISM</em> Brain Mapping</h3><p>Zmapuje, jak přirozeně myslíte, komunikujete a pracujete – a proč s některými lidmi a situacemi bojujete víc než s jinými.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div><div class="service-card" onclick="showPage('gallup')" style="position:relative;overflow:hidden;"><svg style="position:absolute;top:0;right:-10px;opacity:0.12;" viewBox="0 0 160 300" fill="none" xmlns="http://www.w3.org/2000/svg" width="100" height="300"><line x1="15" y1="0" x2="15" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="35" y1="0" x2="35" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="55" y1="0" x2="55" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="75" y1="0" x2="75" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="95" y1="0" x2="95" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="115" y1="0" x2="115" y2="300" stroke="#7fa8a8" stroke-width="4"/><line x1="135" y1="0" x2="135" y2="300" stroke="#7fa8a8" stroke-width="4"/></svg><h3>Gallup CliftonStrengths</h3><p>Odhalte, v čem přirozeně vynikáte – a stavějte na tom.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div><div class="service-card" onclick="showPage('transformace')" style="position:relative;overflow:hidden;"><svg style="position:absolute;bottom:-10px;right:-10px;opacity:0.15;" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="160"><polyline points="10,140 60,80 10,20" stroke="#7fa8a8" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/><polyline points="55,140 105,80 55,20" stroke="#7fa8a8" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/><polyline points="100,140 150,80 100,20" stroke="#7fa8a8" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg><h3>Redesign Your Life</h3><p>Dlouhodobý program pro lidi, kteří chtějí víc – od sebepoznání přes koučování až po konkrétní změnu.</p><div style="text-align:center;margin-top:auto;padding-top:1.5rem;"><span style="display:inline-block;padding:0.5rem 1.2rem;border:1px solid #C8D0D0;color:var(--sage-dark);font-size:0.75rem;letter-spacing:0.1em;">ZJISTIT VÍC</span></div></div></div><div style="text-align:center;margin-top:3rem;padding:2.5rem;background:var(--beige);border-radius:8px;"><p style="font-size:1.1rem;color:var(--text-light);margin-bottom:1.5rem;">Nevíte, která cesta je pro vás? Napište mi a společně přijdeme na to, co vám dává největší smysl.</p><button class="btn" onclick="showPage('kontakt')">Napište mi</button></div></div></section></div>
+
 <div id="hr-vyzvy" class="page"><div class="svc-hero"><div class="svc-hero-overlay"></div><div class="svc-hero-content wrap"><span class="section-label">Pro firmy</span><h1>Řešení pro aktuální HR výzvy</h1></div></div><div class="wrap" style="max-width:800px;padding:4rem 2rem;"><div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:2.5rem;"><div style="border:1px solid var(--sage-pale);border-radius:4px;overflow:hidden;"><button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none';this.querySelector('.acc-arrow').style.transform=this.nextElementSibling.style.display==='block'?'rotate(180deg)':'rotate(0deg)'" style="width:100%;text-align:left;background:var(--beige);border:none;padding:1.2rem 1.5rem;font-family:Georgia,serif;font-size:1.1rem;font-weight:400;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;">Máme stop stav náborů <span class="acc-arrow" style="transition:transform 0.3s;font-size:0.9rem;">↓</span></button><div style="display:none;padding:1.5rem 1.5rem 2rem;background:white;"><p style="font-size:1rem;color:var(--text-light);line-height:1.8;margin-bottom:1.2rem;">Nábor stojí, ale práce neubývá.</p></div></div></div></div></div>
 <div id="koucovani" class="page"><div class="svc-hero"><img class="svc-hero-img" src="images/koucovani.jpg" alt="Koučování" loading="lazy"><div class="svc-hero-overlay"></div><div class="svc-hero-content wrap"><span class="section-label">Koučink</span><h1>1:1 Individuální koučování</h1></div></div><div class="wrap" style="max-width:800px;padding:4rem 2rem;"><p style="font-size:1.1rem;color:var(--text-light);line-height:1.9;margin-bottom:3rem;">Znáte ten pocit, když jedete na autopilota a dny se vám slévají v jeden nekonečný kolotoč?</p></div></div>
 <div id="prism" class="page"><div class="svc-hero"><img class="svc-hero-img" src="" alt=""><div class="svc-hero-overlay"></div><div class="svc-hero-content wrap"><span class="section-label">PRISM Brain Mapping</span><h1><em>PRISM</em> Brain Mapping</h1></div></div><div class="wrap" style="max-width:800px;padding:4rem 2rem;"><p style="font-size:1.1rem;color:var(--text-light);line-height:1.9;margin-bottom:3rem;">Znáte ten pocit, když do něčeho dáváte maximum, ale stejně vás to hrozně vyčerpává?</p></div></div>
@@ -246,23 +246,91 @@
 </footer>
 
 <script>
-// Logic pre animacie
+// Všetky JS interakcie poistené v jednom event listeneri
 document.addEventListener("DOMContentLoaded", function() {
-    // Blur to focus observer
-    const blurEls = document.querySelectorAll('.blur-to-focus');
-    const blurObs = new IntersectionObserver(entries => {
-        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in-view'); });
-    }, { threshold: 0.3 });
-    blurEls.forEach(el => blurObs.observe(el));
 
-    // Slide in observer
-    const slideLeftEls = document.querySelectorAll('.slide-in-left');
-    const slideRightEls = document.querySelectorAll('.slide-in-right');
-    const slideObs = new IntersectionObserver(entries => {
-        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in-view'); });
-    }, { threshold: 0.2 });
-    slideLeftEls.forEach(el => slideObs.observe(el));
-    slideRightEls.forEach(el => slideObs.observe(el));
+    // 1. Animacia pisania
+    const heroTyping = document.getElementById("hero-typing");
+    if (heroTyping) {
+        const phrases = ["žijte v souladu se sebou.", "pracujte způsobem, který vám sedí.", "poznejte své silné stránky.", "najděte svůj směr."];
+        let pIdx = 0, cIdx = 0, isDel = false;
+        function type() {
+            const currentTxt = phrases[pIdx];
+            if (isDel) cIdx--; else cIdx++;
+            heroTyping.textContent = currentTxt.substring(0, cIdx);
+            let speed = isDel ? 30 : 80;
+            if (!isDel && cIdx === currentTxt.length) { isDel = true; speed = 2500; }
+            else if (isDel && cIdx === 0) { isDel = false; pIdx = (pIdx + 1) % phrases.length; speed = 500; }
+            setTimeout(type, speed);
+        }
+        type();
+    }
+
+    // 2. Animacia cisel
+    const statsSec = document.getElementById('home-stats-section');
+    const statNums = document.querySelectorAll('#home-stats-section .stat-number');
+    let statsAnimated = false;
+    
+    function animateStats() {
+        statNums.forEach(num => {
+            const target = parseInt(num.getAttribute('data-target'), 10);
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+            function updateCounter() {
+                current += increment;
+                if (current < target) {
+                    num.innerText = Math.ceil(current) + (target === 17 || target === 100 ? '+' : '');
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    num.innerText = target + (target === 17 || target === 100 ? '+' : '');
+                }
+            }
+            updateCounter();
+        });
+    }
+
+    // 3. Scroll Observe (Blur, Slide, Stats)
+    const observerOptions = { threshold: 0.15 };
+    const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Cisla
+                if (entry.target.id === 'home-stats-section' && !statsAnimated) {
+                    statsAnimated = true;
+                    animateStats();
+                }
+                // CSS classy
+                if (entry.target.classList.contains('blur-to-focus') || 
+                    entry.target.classList.contains('slide-in-left') || 
+                    entry.target.classList.contains('slide-in-right')) {
+                    entry.target.classList.add('in-view');
+                }
+            }
+        });
+    }, observerOptions);
+
+    if (statsSec) scrollObserver.observe(statsSec);
+    document.querySelectorAll('.blur-to-focus, .slide-in-left, .slide-in-right').forEach(el => {
+        scrollObserver.observe(el);
+    });
+
+    // 4. Carousel
+    window.lIdx = 0;
+    window.longGoTo = function(n) {
+        const slides = document.querySelectorAll(".rls");
+        if(slides.length === 0) return;
+        slides[window.lIdx].style.display = "none";
+        const oldDot = document.getElementById("ld" + window.lIdx);
+        if(oldDot) oldDot.style.opacity = "0.3";
+        window.lIdx = n;
+        slides[window.lIdx].style.display = "block";
+        const newDot = document.getElementById("ld" + window.lIdx);
+        if(newDot) newDot.style.opacity = "1";
+    };
+    window.longMove = function(dir) {
+        window.longGoTo((window.lIdx + dir + 5) % 5);
+    };
 });
 </script>
 <script src="js/main.js"></script>
