@@ -7,96 +7,106 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 <style>
-/* Reset a stabilné CSS */
-body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--text); }
+/* CSS Reset a globálne štýly */
+body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--text); background: white; }
 h1, h2, h3, h4 { font-family: Georgia, serif; font-weight: 400; color: var(--text); }
 .wrap { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+/* SPA Prepínanie stránok */
+.page { display: none; }
+.page.active { display: block; }
+
+/* Navigácia */
+nav { background: white; border-bottom: 1px solid #eee; padding: 1.5rem 0; position: sticky; top: 0; z-index: 100; }
+.nav-flex { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: 600; cursor: pointer; }
+.nav-links { display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; }
+.nav-link { cursor: pointer; font-size: 0.95rem; transition: color 0.3s; color: var(--text); text-decoration: none; }
+.nav-link:hover, .nav-link.active { color: var(--sage-dark); font-weight: 600; }
+
+/* Hero a sekcie */
+.hero-centered { text-align: center; padding: 8rem 2rem 6rem; background: #fdfdfd; }
+.hero-centered h1 { font-size: 3.5rem; margin-bottom: 1.5rem; }
+.section-label { text-transform: uppercase; letter-spacing: 0.1em; color: var(--sage-dark); font-weight: 600; font-size: 0.85rem; margin-bottom: 1.5rem; display: block; }
+
+/* Mriežka služieb - 4 stĺpce */
+.services-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem; }
+@media (max-width: 1024px) { .services-grid-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 650px) { .services-grid-4 { grid-template-columns: 1fr; } }
+
+.sluzba-block { padding: 2.5rem 1.5rem; background: #fafafa; border: 1px solid #eee; border-radius: 16px; cursor: pointer; transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column; }
+.sluzba-block:hover { background: white; box-shadow: 0 10px 25px rgba(0,0,0,0.08); transform: translateY(-5px); border-color: var(--sage-pale); }
+.sluzba-icon { width: 60px; height: 60px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; background: var(--beige); border-radius: 12px; color: var(--sage-dark); }
+.sluzba-icon svg { width: 35px; height: 35px; }
+
+/* O mně a Badge */
+.about-photo-wrapper { position: relative; display: inline-block; width: 100%; max-width: 350px; }
+.about-badge { position: absolute; bottom: -10px; right: -10px; background: white; padding: 1rem 1.5rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 1rem; border: 1px solid #eee; }
+
+/* Štatistiky */
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: center; margin-top: 3rem; padding-top: 3rem; border-top: 1px solid #eee; }
+.stat-number { font-family: Georgia, serif; font-size: 3rem; color: var(--sage-dark); margin-bottom: 0.5rem; line-height: 1; }
+.stat-label { font-size: 0.85rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em; }
 
 /* Animácie */
 .hero-cursor { display: inline-block; animation: blink-cursor 1s step-end infinite; }
 @keyframes blink-cursor { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 .blur-to-focus { filter: blur(10px); opacity: 0; transform: translateY(20px); transition: all 1.5s ease-out; }
 .blur-to-focus.in-view { filter: blur(0); opacity: 1; transform: translateY(0); }
-.fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-.fade-up.in-view { opacity: 1; transform: translateY(0); }
-
-/* Mriežka 4 stĺpce pre služby */
-.services-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem; }
-@media (max-width: 1024px) { .services-grid-4 { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 650px) { .services-grid-4 { grid-template-columns: 1fr; } }
-
-.sluzba-block { padding: 2.5rem 1.5rem; background: #fafafa; border: 1px solid #eee; border-radius: 16px; cursor: pointer; transition: all 0.3s ease; text-align: left; height: 100%; display: flex; flex-direction: column; }
-.sluzba-block:hover { background: white; box-shadow: 0 10px 25px rgba(0,0,0,0.08); transform: translateY(-5px); border-color: var(--sage-pale); }
-.sluzba-icon { width: 60px; height: 60px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; background: var(--beige); border-radius: 12px; color: var(--sage-dark); }
-.sluzba-icon svg { width: 35px; height: 35px; }
-
-/* O mně a Badge */
-.about-photo-wrapper { position: relative; display: inline-block; width: 100%; max-width: 350px; margin: 0 auto; }
-.about-badge { position: absolute; bottom: -10px; right: -10px; background: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: left; border: 1px solid #eee; }
-
-/* Stats */
-.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: center; margin-top: 3rem; padding-top: 3rem; border-top: 1px solid #eee; }
-.stat-number { font-family: Georgia, serif; font-size: 3rem; color: var(--sage-dark); margin-bottom: 0.5rem; line-height: 1; }
-.stat-label { font-size: 0.85rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em; }
-
-/* Kontakt grid */
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; }
-@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 
-<nav>
-<div class="wrap" style="display:flex; justify-content:space-between; align-items:center; padding:1.5rem 0;">
-    <div class="logo" onclick="showPage('home')" style="font-weight:600; font-size:1.5rem; cursor:pointer;">Katka Hrouzková</div>
-    <ul class="nav-links" style="display:flex; gap:2rem; list-style:none; margin:0; padding:0;">
+<nav><div class="wrap nav-flex">
+    <div class="logo" onclick="showPage('home')">Katka Hrouzková</div>
+    <ul class="nav-links">
         <li><span class="nav-link active" id="nav-home" onclick="showPage('home')">Domů</span></li>
-        <li><span class="nav-link" onclick="showPage('sluzby-prehled')">Pro jednotlivce</span></li>
-        <li><span class="nav-link" onclick="showPage('pro-firmy-prehled')">Pro firmy</span></li>
-        <li><span class="nav-link" onclick="showPage('o-mne')">O mně</span></li>
-        <li><span class="nav-link" onclick="showPage('reference')">Reference</span></li>
-        <li><span class="nav-link" onclick="showPage('faq')">FAQ</span></li>
-        <li><span class="nav-link" onclick="showPage('kontakt')">Kontakt</span></li>
+        <li><span class="nav-link" id="nav-sluzby-prehled" onclick="showPage('sluzby-prehled')">Pro jednotlivce</span></li>
+        <li><span class="nav-link" id="nav-pro-firmy-prehled" onclick="showPage('pro-firmy-prehled')">Pro firmy</span></li>
+        <li><span class="nav-link" id="nav-o-mne" onclick="showPage('o-mne')">O mně</span></li>
+        <li><span class="nav-link" id="nav-reference" onclick="showPage('reference')">Reference</span></li>
+        <li><span class="nav-link" id="nav-faq" onclick="showPage('faq')">FAQ</span></li>
+        <li><span class="nav-link" id="nav-kontakt" onclick="showPage('kontakt')">Kontakt</span></li>
     </ul>
-</div>
-</nav>
+</div></nav>
 
 <div id="home" class="page active">
-    <div class="hero-centered wrap" style="text-align:center; padding:10rem 2rem 6rem;">
-        <span class="section-label" style="text-transform:uppercase; letter-spacing:0.1em; color:var(--sage-dark); font-weight:600; font-size:0.85rem; margin-bottom:1.5rem; display:block;">Koučink & Talentové poradenství</span>
-        <h1 style="font-size:3.5rem; margin-bottom:1.5rem;">Poznejte se lépe.<br><span id="hero-typing" style="color:var(--sage-dark);"></span><span class="hero-cursor">|</span></h1>
-        <p style="font-size:1.15rem; color:var(--text-light); max-width:750px; margin:0 auto 2.5rem; line-height:1.8;">Pomůžu vám lépe porozumět vlastnímu potenciálu. Nespoléhám jen na teorii – propojuji psychologii, poznatky z neurověd a 17 let praxe.</p>
+    <div class="hero-centered wrap">
+        <span class="section-label">Koučink & Talentové poradenství</span>
+        <h1>Poznejte se lépe.<br><span id="hero-typing" style="color:var(--sage-dark);"></span><span class="hero-cursor">|</span></h1>
+        <p style="font-size:1.15rem; max-width:750px; margin:0 auto 2.5rem; color:var(--text-light); line-height:1.8;">Pomůžu vám lépe porozumět vlastnímu potenciálu. Nespoléhám jen na teorii – propojuji psychologii, poznatky z neurověd a práci s talenty s více než 17 lety praxe.</p>
         <button class="btn" onclick="showPage('kontakt')">Domluvit 30 minut zdarma</button>
     </div>
 
     <section style="background:var(--mint); padding:6rem 0;"><div class="wrap blur-to-focus" style="text-align:center;">
-        <h3 style="font-style:italic; font-size:2rem; margin-bottom:2rem;">Redesign Your Life</h3>
-        <p style="font-size:1.1rem; color:var(--text-light); line-height:1.9; max-width:800px; margin:0 auto;">Když si pořídíte nové boty, první týden trochu tlačí. Víte, že jsou správné, ale chvíli trvá, než se přizpůsobí právě vám. Kariérní a firemní změny jsou podobné.</p>
+        <h3 style="font-style:italic; font-size:2.2rem; margin-bottom:2rem;">Redesign Your Life</h3>
+        <p style="font-size:1.1rem; color:var(--text-light); line-height:1.9; max-width:850px; margin:0 auto;">Když si pořídíte nové boty, první týden trochu tlačí. Víte, že jsou správné, ale chvíli trvá, než se přizpůsobí právě vám. Kariérní a firemní změny jsou podobné. Jde jen o to, že jste zkrátka vyrostli z něčeho, co vám dřív perfektně sedělo.</p>
     </div></section>
 </div>
 
 <div id="sluzby-prehled" class="page">
     <div class="page-header" style="background:var(--cream); padding:6rem 0 4rem; text-align:center;"><div class="wrap">
-        <span class="section-label" style="text-transform:uppercase; letter-spacing:0.1em; color:var(--sage-dark); font-weight:600; font-size:0.85rem; display:block; margin-bottom:1rem;">Pro jednotlivce</span>
-        <h1>Pomůžu vám získat zpět energii a směr</h1>
+        <span class="section-label">Pro jednotlivce</span>
+        <h1>Služby pro váš osobní a profesní růst</h1>
+        <p style="font-size:1.2rem; max-width:800px; margin:1.5rem auto 0; color:var(--text-light);">Nenabízím univerzální řešení. Každá spolupráce je přizpůsobena vaší aktuální situaci a cílům.</p>
     </div></div>
     <section style="background:white; padding:6rem 0;"><div class="wrap">
         <div class="services-grid-4">
-            <div class="sluzba-block fade-up">
+            <div class="sluzba-block">
                 <div class="sluzba-icon"><svg viewBox="0 0 280 160" fill="none"><path d="M10 155 A130 130 0 0 1 270 155" stroke="currentColor" stroke-width="8" fill="none"/></svg></div>
-                <h4>1:1 Koučování</h4><p>Pravidelná podpora při strategických rozhodnutích a změnách.</p>
+                <h4>1:1 Koučování</h4><p>Pravidelná podpora a bezpečný prostor pro vaše strategická rozhodnutí a životní změny.</p>
             </div>
-            <div class="sluzba-block fade-up" style="transition-delay:0.1s;">
+            <div class="sluzba-block">
                 <div class="sluzba-icon"><svg viewBox="0 0 160 160" fill="none"><polyline points="10,140 60,80 10,20" stroke="currentColor" stroke-width="12" fill="none"/></svg></div>
-                <h4>Redesign Your Life</h4><p>Kompletní kariérní restart postavený na vašich silných stránkách.</p>
+                <h4>Redesign Your Life</h4><p>Kompletní kariérní restart postavený na vašich přirozených talentech a AI job craftingu.</p>
             </div>
-            <div class="sluzba-block fade-up" style="transition-delay:0.2s;">
+            <div class="sluzba-block">
                 <div class="sluzba-icon"><svg viewBox="0 0 160 160" fill="none"><circle cx="30" cy="30" r="15" fill="currentColor"/><circle cx="80" cy="30" r="15" fill="currentColor"/><circle cx="130" cy="30" r="15" fill="currentColor"/><circle cx="30" cy="80" r="15" fill="currentColor"/><circle cx="80" cy="80" r="15" fill="currentColor"/><circle cx="130" cy="80" r="15" fill="currentColor"/></svg></div>
-                <h4>PRISM Brain Mapping</h4><p>Zjistěte, jak přirozeně fungujete a co vám dává energii.</p>
+                <h4>PRISM Brain Mapping</h4><p>Neurověda, která vám ukáže, jak přirozeně reagujete a co vás reálně vyčerpává.</p>
             </div>
-            <div class="sluzba-block fade-up" style="transition-delay:0.3s;">
-                <div class="sluzba-icon"><svg viewBox="0 0 160 300" fill="none"><line x1="30" y1="0" x2="30" y2="300" stroke="currentColor" stroke-width="12"/></svg></div>
-                <h4>Gallup Talenty</h4><p>Odhalte svou unikátní talentovou DNA a naučte se na ní stavět.</p>
+            <div class="sluzba-block">
+                <div class="sluzba-icon"><svg viewBox="0 0 160 300" fill="none"><line x1="30" y1="0" x2="30" y2="300" stroke="currentColor" stroke-width="12"/><line x1="70" y1="0" x2="70" y2="300" stroke="currentColor" stroke-width="12"/><line x1="110" y1="0" x2="110" y2="300" stroke="currentColor" stroke-width="12"/></svg></div>
+                <h4>Gallup Talenty</h4><p>Odhalte svou unikátní talentovou DNA a naučte se na ní stavět svůj další úspěch.</p>
             </div>
         </div>
     </div></section>
@@ -104,50 +114,53 @@ h1, h2, h3, h4 { font-family: Georgia, serif; font-weight: 400; color: var(--tex
 
 <div id="pro-firmy-prehled" class="page">
     <div class="page-header" style="background:var(--cream); padding:6rem 0 4rem; text-align:center;"><div class="wrap">
-        <h1>Pro firmy</h1>
-        <p style="font-size:1.15rem; max-width:800px; margin:1.5rem auto 0; line-height:1.8;">Stavím rozvoj na datech a psychologii. Pomáhám týmům, aby si rozuměly a efektivně spolupracovaly.</p>
+        <span class="section-label">Pro firmy</span>
+        <h1>Rozvoj týmů a leadershipu</h1>
+        <p style="font-size:1.15rem; max-width:850px; margin:1.5rem auto 0; line-height:1.8; color:var(--text-light);">Stavím rozvoj na datech a psychologii. Pomáhám firmám tvořit týmy, které si rozumí, a lídry, kteří vědí, jak pracovat s lidmi.</p>
     </div></div>
     <section style="background:white; padding:6rem 0;"><div class="wrap">
         <div class="services-grid-4">
-            <div class="sluzba-block"><h4>Výběr a onboarding</h4><p>Využijte data z PRISM pro přesný výběr kandidátů.</p></div>
-            <div class="sluzba-block"><h4>Rozvoj týmu</h4><p>Workshopy pro pochopení týmové dynamiky a výkonu.</p></div>
-            <div class="sluzba-block"><h4>HR mentoring</h4><p>Podpora pro majitele firem a HR oddělení.</p></div>
-            <div class="sluzba-block"><h4>Řešení HR výzev</h4><p>Pomoc při restrukturalizaci nebo stop stavu náborů.</p></div>
+            <div class="sluzba-block"><h4>Výběr a onboarding</h4><p>Využijte data z PRISM pro přesný výběr kandidátů a jejich integraci.</p></div>
+            <div class="sluzba-block"><h4>Rozvoj týmu</h4><p>Workshopy pro pochopení týmové dynamiky a zefektivnění komunikace.</p></div>
+            <div class="sluzba-block"><h4>HR mentoring</h4><p>Podpora pro majitele firem a HR oddělení bez seniorního zastoupení.</p></div>
+            <div class="sluzba-block"><h4>Řešení HR výzev</h4><p>Konkrétní pomoc při restrukturalizaci nebo stop stavech náborů.</p></div>
         </div>
     </div></section>
 </div>
 
 <div id="o-mne" class="page">
-    <section style="background:white; padding:8rem 0;"><div class="wrap">
-        <div style="display:grid; grid-template-columns:1fr 2fr; gap:5rem; align-items:start;">
-            <div style="text-align:center;">
-                <div class="about-photo-wrapper"><img src="images/about-img.png" style="width:100%; border-radius:50%;"></div>
-            </div>
-            <div>
-                <h2 style="font-size:3rem; margin-bottom:2rem;">O mně</h2>
-                <p style="font-size:1.05rem; line-height:1.9; margin-bottom:1.5rem;">Roky jsem budovala kariéru v korporátu. Pak jsem se zastavila, přehodnotila všechno – a začala znovu. Tentokrát po svém. Po mateřské dovolené se mi změnily priority. Najednou jsem věděla, že chci dělat práci, která má smysl – kde skutečně pomáhám lidem, ne jen plním firemní cíle.</p>
-                <p style="font-size:1.05rem; line-height:1.9; margin-bottom:1.5rem;">Vždy jsem měla přirozenou schopnost vést hluboké rozhovory, číst mezi řádky, vidět co se děje pod povrchem. Absolvovala jsem Erickson koučovací výcvik a certifikaci na Gallup metodu přes Inpram. Ale zároveň jsem sama zažívala to, co řeší moji klienti dnes.</p>
-                <div class="stats-grid" id="home-stats-section">
-                    <div><div class="stat-number" data-target="17">0</div><div class="stat-label">let v HR</div></div>
-                    <div><div class="stat-number" data-target="100">0</div><div class="stat-label">hodin koučinku</div></div>
-                    <div><div class="stat-number" data-target="5">0</div><div class="stat-label">let psychologie</div></div>
-                </div>
-            </div>
+<div class="page-header" style="background:var(--cream); padding:6rem 0 4rem;"><div class="wrap"><h1>Kdo jsem</h1></div></div>
+<section style="background:white; padding:5rem 0"><div class="wrap"><div style="display:grid; grid-template-columns:1fr 2fr; gap:5rem;">
+    <div><img src="images/about-img.png" style="width:100%; border-radius:15px; margin-bottom:1.5rem;">
+        <div style="background:var(--beige); padding:1.5rem; border-radius:12px; text-align:center;">
+            <p style="font-size:0.9rem; margin:0; font-weight:600; color:var(--sage-dark);">ICF Member</p>
+            <p style="font-size:0.85rem; margin-top:0.5rem; color:var(--text-light);">Aktivní členka International Coaching Federation Global.</p>
         </div>
-    </div></section>
+    </div>
+    <div>
+        <h2 style="margin-bottom:2rem;">Katka Hrouzková</h2>
+        <p style="font-size:1.05rem; line-height:1.8; margin-bottom:1.5rem;">Roky jsem budovala kariéru v korporátu. Pak jsem se zastavila, přehodnotila všechno – a začala znovu. Tentokrát po svém. Po mateřské dovolené se mi změnily priority. Najednou jsem věděla, že chci dělat práci, která má smysl – kde skutečně pomáhám lidem, ne jen plním firemní cíle.</p>
+        <p style="font-size:1.05rem; line-height:1.8; margin-bottom:1.5rem;">Absolvovala jsem Erickson koučovací výcvik a certifikaci na Gallup metodu přes Inpram. Dnes propojuji své zkušenosti z globálního HR s moderními nástroji pro rozvoj talentů.</p>
+        <div class="stats-grid" id="home-stats-section">
+            <div><div class="stat-number" data-target="17">0</div><div class="stat-label">let v HR</div></div>
+            <div><div class="stat-number" data-target="100">0</div><div class="stat-label">hodin koučinku</div></div>
+            <div><div class="stat-number" data-target="5">0</div><div class="stat-label">let psychologie</div></div>
+        </div>
+    </div>
+</div></div></section>
 </div>
 
 <div id="reference" class="page">
-    <div class="page-header" style="background:var(--cream); padding:6rem 0 4rem; text-align:center;"><div class="wrap"><h1>Reference</h1></div></div>
+    <div class="page-header" style="background:var(--cream); padding:6rem 0 4rem; text-align:center;"><div class="wrap"><h1>Co říkají klienti</h1></div></div>
     <section style="background:white; padding:6rem 0;"><div class="wrap">
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem;">
-            <div style="background:#fafafa; padding:2.5rem; border-radius:15px; border-left:4px solid var(--sage-dark);">
-                <p style="font-style:italic;">"Katka má hluboké zkušenosti, ale přistupuje k vám s lidskostí a opravdovým zájmem."</p>
-                <p style="font-weight:600; margin-top:1.5rem;">Aleksandra Thomas</p>
+            <div style="background:#fafafa; padding:2rem; border-radius:15px; border-left:4px solid var(--sage-dark);">
+                <p style="font-style:italic;">"Spolupráce s Katkou mi otevřela oči v tom, jak využívat své talenty v každodenní práci."</p>
+                <p style="font-weight:600; margin-top:1rem;">— Jana M., HR Manažerka</p>
             </div>
-            <div style="background:#fafafa; padding:2.5rem; border-radius:15px; border-left:4px solid var(--sage-dark);">
-                <p style="font-style:italic;">"Pomohla mi vnést řád do složitých témat a dojít ke konkrétním rozhodnutím."</p>
-                <p style="font-weight:600; margin-top:1.5rem;">Jan Neužil</p>
+            <div style="background:#fafafa; padding:2rem; border-radius:15px; border-left:4px solid var(--sage-dark);">
+                <p style="font-style:italic;">"Katka nejede podle šablony. Pomohla mi vnést řád do složitých témat a dojít k rozhodnutím."</p>
+                <p style="font-weight:600; margin-top:1rem;">— Jan N., R&amp;D Manager</p>
             </div>
         </div>
     </div></section>
@@ -158,11 +171,11 @@ h1, h2, h3, h4 { font-family: Georgia, serif; font-weight: 400; color: var(--tex
     <section style="background:white; padding:4rem 0;"><div class="wrap" style="max-width:800px;">
         <div class="faq-item">
             <button class="faq-q" onclick="toggleFaq(this)">Jaký je rozdíl mezi koučinkem a terapií? <span>+</span></button>
-            <div class="faq-a">Koučink je orientovaný na budoucnost a řešení, terapie se věnuje minulosti a léčení hlubších zranění.</div>
+            <div class="faq-a">Koučink je orientovaný na budoucnost a řešení. Terapie se věnuje minulosti a léčení hlubších zranění.</div>
         </div>
         <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)">Kolik sezení budu potřebovat? <span>+</span></button>
-            <div class="faq-a">Záleží na tématu. Nejčastěji klienti volí sérii 6–8 sezení pro udržitelnou změnu.</div>
+            <button class="faq-q" onclick="toggleFaq(this)">Jak probíhá první setkání? <span>+</span></button>
+            <div class="faq-a">Prvních 30 minut je zdarma. Poznáme se, probereme vaši situaci a zjistíme, zda si lidsky sedneme.</div>
         </div>
     </div></section>
 </div>
@@ -170,8 +183,8 @@ h1, h2, h3, h4 { font-family: Georgia, serif; font-weight: 400; color: var(--tex
 <div id="kontakt" class="page">
     <div class="page-header" style="background:var(--cream); padding:8rem 0; text-align:center;"><div class="wrap">
         <h2 style="font-size:3rem; margin-bottom:1.5rem;">Pojďme si popovídat</h2>
-        <p style="font-size:1.5rem; font-weight:600;">hrouzkova.katka@gmail.com</p>
-        <p style="font-size:1.3rem; margin-top:0.5rem;">+420 702 204 830</p>
+        <p style="font-size:1.5rem; font-weight:600; color:var(--text);">hrouzkova.katka@gmail.com</p>
+        <p style="font-size:1.3rem; margin-top:0.5rem; color:var(--text-light);">+420 702 204 830</p>
     </div></div>
 </div>
 
@@ -184,6 +197,8 @@ function showPage(id) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.getElementById(id).classList.add('active');
     document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    const link = document.getElementById('nav-' + id);
+    if(link) link.classList.add('active');
     window.scrollTo(0,0);
 }
 
@@ -237,7 +252,7 @@ function toggleFaq(btn) {
     
     const statsSec = document.getElementById('home-stats-section');
     if (statsSec) obs.observe(statsSec);
-    document.querySelectorAll('.blur-to-focus, .fade-up').forEach(el => obs.observe(el));
+    document.querySelectorAll('.blur-to-focus').forEach(el => obs.observe(el));
 })();
 </script>
 </body>
