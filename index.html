@@ -65,8 +65,12 @@
 .hero-centered h1 {font-family:Georgia,serif;font-size:3.5rem;color:var(--text);line-height:1.2;margin-bottom:2rem;max-width:900px;}
 @media (max-width:768px){.hero-centered h1 {font-size:2.5rem;}}
 
-/* Bloky v sluzbach */
-.sluzba-block {display:flex;flex-direction:column;gap:1rem;padding:1.5rem;background:#fafafa;border:1px solid #eee;border-radius:16px;cursor:pointer;transition:all 0.3s ease;margin-bottom:1rem;text-align:left;height:100%;}
+/* Bloky v sluzbach a fix pre 4 stlpce */
+.services-grid-4 {display:grid; grid-template-columns:repeat(4, 1fr); gap:1.5rem;}
+@media (max-width: 1024px) { .services-grid-4 { grid-template-columns:repeat(2, 1fr); } }
+@media (max-width: 650px) { .services-grid-4 { grid-template-columns:1fr; } }
+
+.sluzba-block {display:flex;flex-direction:column;gap:1rem;padding:1.5rem;background:#fafafa;border:1px solid #eee;border-radius:16px;cursor:pointer;transition:all 0.3s ease;text-align:left;height:100%;}
 .sluzba-block:hover {background:white;box-shadow:0 10px 25px rgba(0,0,0,0.08);transform:translateY(-5px);border-color:var(--sage-pale);}
 .sluzba-block h4 {margin:0 0 0.5rem 0;color:var(--text);font-family:Georgia,serif;font-size:1.4rem;font-weight:400;}
 .sluzba-block p {margin:0;font-size:0.95rem;color:var(--text-light);line-height:1.6;}
@@ -139,7 +143,7 @@
 <div>
 <h2 style="font-family:Georgia,serif;font-size:2.8rem;color:var(--petrol);margin-bottom:1.5rem;">O mně</h2>
 <p style="font-size:1.05rem;color:var(--text-light);line-height:1.8;margin-bottom:1.2rem;">Roky jsem budovala kariéru v korporátu. Pak jsem se zastavila, přehodnotila všechno – a začala znovu. Tentokrát po svém. Po mateřské dovolené se mi změnily priority. Najednou jsem věděla, že chci dělat práci, která má smysl – kde skutečně pomáhám lidem, ne jen plním firemní cíle.</p>
-<p style="font-size:1.05rem;color:var(--text-light);line-height:1.8;margin-bottom:2rem;">Hodně mi v tom pomohly právě <em>PRISM</em> a Gallup konzultace – a moje vlastní koučka, se kterou pracuji dodnes. Rozhodla jsem se odejít z korporátu a věnovat se tomu, co mě nejvíc naplňuje.</p>
+<p style="font-size:1.05rem;color:var(--text-light);line-height:1.8;margin-bottom:2rem;">Hodně mi v tom pomohly právě <em>PRISM</em> a Gallup konzultace – a moje vlastní koučka, seř kterou pracuji dodnes. Rozhodla jsem se odejít z korporátu a věnovat se tomu, co mě nejvíc naplňuje.</p>
 
 <div class="stats-grid" id="home-stats-section">
 <div><div class="stat-number" data-target="17">0</div><div class="stat-label">let v globálním HR</div></div>
@@ -271,15 +275,15 @@
 
     <section style="background:white; padding:6rem 0;">
         <div class="wrap">
-            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:2rem;">
+            <div class="services-grid-4">
                 
                 <div class="sluzba-block fade-up" style="transition-delay:0.1s;" onclick="showPage('koucovani')">
                     <div class="sluzba-icon"><svg viewBox="0 0 280 160" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 155 A130 130 0 0 1 270 155" stroke="currentColor" stroke-width="8" fill="none"/><path d="M50 155 A90 90 0 0 1 230 155" stroke="currentColor" stroke-width="8" fill="none"/><path d="M90 155 A50 50 0 0 1 190 155" stroke="currentColor" stroke-width="8" fill="none"/></svg></div>
                     <div>
                         <h4>1:1 Individuální koučování</h4>
                         <p>Pravidelná podpora a bezpečný prostor pro vaše strategická rozhodnutí, nastavování hranic a prevenci vyhoření.</p>
-                        <span class="sluzba-link">Zjistit víc &rarr;</span>
                     </div>
+                    <span class="sluzba-link">Zjistit víc &rarr;</span>
                 </div>
 
                 <div class="sluzba-block fade-up" style="transition-delay:0.2s;" onclick="showPage('transformace')">
@@ -287,8 +291,8 @@
                     <div>
                         <h4>Redesign Your Life</h4>
                         <p>Dlouhodobý program. Kariérní profil, AI job crafting a kompletní restart vaší profesní cesty.</p>
-                        <span class="sluzba-link">Zjistit víc &rarr;</span>
                     </div>
+                    <span class="sluzba-link">Zjistit víc &rarr;</span>
                 </div>
 
                 <div class="sluzba-block fade-up" style="transition-delay:0.3s;" onclick="showPage('prism')">
@@ -296,8 +300,8 @@
                     <div>
                         <h4>PRISM Brain Mapping</h4>
                         <p>Zmapujte své přirozené chování a zjistěte, proč vás některé role a situace zbytečně vyčerpávají.</p>
-                        <span class="sluzba-link">Zjistit víc &rarr;</span>
                     </div>
+                    <span class="sluzba-link">Zjistit víc &rarr;</span>
                 </div>
 
                 <div class="sluzba-block fade-up" style="transition-delay:0.4s;" onclick="showPage('gallup')">
@@ -305,8 +309,8 @@
                     <div>
                         <h4>Gallup CliftonStrengths</h4>
                         <p>Odhalte svou unikátní talentovou DNA a postavte svůj další rozvoj na tom, co vám jde úplně samo.</p>
-                        <span class="sluzba-link">Zjistit víc &rarr;</span>
                     </div>
+                    <span class="sluzba-link">Zjistit víc &rarr;</span>
                 </div>
 
             </div>
@@ -411,7 +415,7 @@
 <h2 style="font-size:1.2rem;margin:2.5rem 0 1rem;color:var(--sage-dark);">Platební podmínky</h2>
 <p style="color:var(--text-light);line-height:1.7;margin-bottom:1rem;">Platbu lze provést bezhotovostním převodem na bankovní účet Poskytovatele. Platba se provádí na základě vystaveného daňového dokladu se splatností 14 dní, pokud není dohodnuto jinak. Ceny uvedené na webových stránkách jsou konečné.</p>
 <h2 style="font-size:1.2rem;margin:2.5rem 0 1rem;color:var(--sage-dark);">Storno podmínky</h2>
-<p style="color:var(--text-light);line-height:1.7;margin-bottom:1rem;">Zrušení nebo přeložení sezení je možné bez poplatku nejpozději 24 hodin před dohodnutým termím. Při pozdějším zrušení nebo nedostavení se bez omluvy může být účtován storno poplatek ve výši 50 % ceny sezení.</p>
+<p style="color:var(--text-light);line-height:1.7;margin-bottom:1rem;">Zrušení nebo přeložení sezení je možné bez poplatku nejpozději 24 hodin před dohodnutým termínem. Při pozdějším zrušení nebo nedostavení se bez omluvy může být účtován storno poplatek ve výši 50 % ceny sezení.</p>
 <h2 style="font-size:1.2rem;margin:2.5rem 0 1rem;color:var(--sage-dark);">Odstoupení od smlouvy</h2>
 <p style="color:var(--text-light);line-height:1.7;margin-bottom:1rem;">Je-li Zákazníkem spotřebitel, je oprávněn odstoupit od smlouvy ve lhůtě čtrnácti (14) dnů od jejího uzavření. Odstoupí-li Zákazník od smlouvy, vrátí mu Poskytovatel bez zbytečného odkladu všechny přijaté peněžní prostředky.</p>
 <h2 style="font-size:1.2rem;margin:2.5rem 0 1rem;color:var(--sage-dark);">Závěrečná ustanovení</h2>
