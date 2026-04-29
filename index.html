@@ -7,57 +7,67 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 <style>
-/* Obnova stabilního CSS */
-body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
-h1, h2, h3, h4 { font-family: Georgia, serif; font-weight: 400; color: var(--text); }
+/* CSS Reset a základní třídy */
+body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--text); }
+h1, h2, h3, h4 { font-family: Georgia, serif; font-weight: 400; }
+.section-eyebrow { text-transform: uppercase; letter-spacing: 0.1em; color: var(--sage-dark); font-weight: 600; font-size: 0.85rem; margin-bottom: 1rem; display: block; }
 
-.section-eyebrow { 
-    text-transform: uppercase; letter-spacing: 0.1em; color: var(--sage-dark); 
-    font-weight: 600; font-size: 0.85rem; margin-bottom: 1rem; display: block; 
-}
+.carousel-viewport {width:100%;overflow:hidden;position:relative;padding:1rem 0 3rem 0;}
+.carousel-track {display:flex;width:max-content;animation:scroll-left 40s linear infinite;}
+.carousel-track:hover {animation-play-state:paused;}
+.testimonial-card {width:350px;padding:2.5rem;margin:0 1rem;background:white;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.05);flex-shrink:0;display:flex;flex-direction:column;justify-content:space-between;}
+.testimonial-card .quote {font-family:Georgia,serif;font-size:1.15rem;font-style:italic;color:var(--text);line-height:1.6;margin-bottom:1.5rem;}
+.testimonial-card .author {font-size:0.9rem;color:var(--text);font-weight:600;border-top:1px solid #eee;padding-top:1rem;}
+.testimonial-card .position {display:block;font-weight:normal;color:var(--text-light);margin-top:0.2rem;}
+@keyframes scroll-left {0%{transform:translateX(0);}100%{transform:translateX(calc(-350px * 5 - 10rem));}}
 
-/* Certifikace a Badge u fotky */
-.about-photo-wrapper {position:relative;display:inline-block;width:100%;max-width:350px;margin:0 auto;}
-.about-badge {
-    position:absolute;bottom:-10px;right:-10px;background:white;padding:0.8rem 1.2rem;
-    border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.1);display:flex;
-    align-items:center;gap:0.8rem;border:1px solid #eee;z-index:10;
-}
-.icf-mini-logo {
-    width:35px;height:35px;background:#005496;color:white;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:0.65rem;flex-shrink:0;
-}
-
-.cert-logos-row {display:flex; gap:1.5rem; align-items:center; margin-top:2.5rem; flex-wrap:wrap;}
-.cert-text-badge {
-    padding: 0.5rem 1rem; border: 1px solid #C8D0D0; border-radius: 4px; 
-    font-size: 0.75rem; color: var(--sage-dark); letter-spacing: 0.1em; 
-    font-weight: 600; text-transform: uppercase;
-}
-
-/* Mřížka 4 sloupce */
-.services-grid-4 {display:grid; grid-template-columns:repeat(4, 1fr); gap:1.5rem;}
-@media (max-width: 1024px) { .services-grid-4 { grid-template-columns:repeat(2, 1fr); } }
-@media (max-width: 650px) { .services-grid-4 { grid-template-columns:1fr; } }
-
-.sluzba-block {
-    padding:2rem;background:#fafafa;border:1px solid #eee;border-radius:16px;
-    cursor:pointer;transition:all 0.3s ease;height:100%;display:flex;flex-direction:column;
-}
-.sluzba-block:hover {background:white;box-shadow:0 10px 25px rgba(0,0,0,0.08);transform:translateY(-5px);}
-
-/* Stats */
 .stats-grid {display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center;margin-top:3rem;padding-top:3rem;border-top:1px solid #eee;}
 .stat-number {font-family:Georgia,serif;font-size:3rem;color:var(--sage-dark);margin-bottom:0.5rem;line-height:1;}
 .stat-label {font-size:0.85rem;color:var(--text-light);text-transform:uppercase;letter-spacing:0.05em;}
 
-/* Animace */
-.hero-cursor {display:inline-block;animation:blink-cursor 1s step-end infinite;}
+.about-photo-wrapper {position:relative;display:inline-block;width:100%;max-width:350px;margin:0 auto;}
+.about-badge {position:absolute;bottom:-10px;right:-10px;background:white;padding:0.8rem 1.2rem;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.1);display:flex;align-items:center;gap:0.8rem;border:1px solid #eee;z-index:10;}
+.icf-mini-logo {width:35px;height:35px;background:#005496;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:0.65rem;flex-shrink:0;}
+
+.cert-logos-row {display:flex; gap:1.5rem; align-items:center; margin-top:2.5rem; flex-wrap:wrap;}
+.cert-text-badge {padding: 0.5rem 1rem; border: 1px solid #C8D0D0; border-radius: 4px; font-size: 0.75rem; color: var(--sage-dark); letter-spacing: 0.1em; font-weight: 600; text-transform: uppercase;}
+
+.hero-cursor {display:inline-block;animation:blink-cursor 1s step-end infinite;color:inherit;font-weight:normal;}
 @keyframes blink-cursor {0%,100%{opacity:1;}50%{opacity:0;}}
 .blur-to-focus {filter:blur(10px);opacity:0;transform:translateY(20px);transition:all 1.5s cubic-bezier(0.25,0.8,0.25,1);}
 .blur-to-focus.in-view {filter:blur(0);opacity:1;transform:translateY(0);}
 .fade-up {opacity:0; transform:translateY(30px); transition:all 0.8s ease-out;}
 .fade-up.in-view {opacity:1; transform:translateY(0);}
+
+.contact-grid {display:grid;grid-template-columns:1fr 1fr;gap:4rem;}
+.services-grid-4 {display:grid; grid-template-columns:repeat(4, 1fr); gap:1.5rem;}
+@media (max-width: 1024px) { 
+    .services-grid-4 { grid-template-columns:repeat(2, 1fr); } 
+    .contact-grid { grid-template-columns:1fr; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 650px) { .services-grid-4 { grid-template-columns:1fr; } }
+
+.hero-centered {display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10rem 2rem 6rem;min-height:75vh;}
+.hero-centered h1 {font-family:Georgia,serif;font-size:3.5rem;color:var(--text);line-height:1.2;margin-bottom:2rem;max-width:900px;}
+
+.sluzba-block {display:flex;flex-direction:column;gap:1rem;padding:1.5rem;background:#fafafa;border:1px solid #eee;border-radius:16px;cursor:pointer;transition:all 0.3s ease;text-align:left;height:100%;}
+.sluzba-block:hover {background:white;box-shadow:0 10px 25px rgba(0,0,0,0.08);transform:translateY(-5px);border-color:var(--sage-pale);}
+.sluzba-block h4 {margin:0 0 0.5rem 0;color:var(--text);font-family:Georgia,serif;font-size:1.4rem;font-weight:400;}
+.sluzba-block p {margin:0;font-size:0.95rem;color:var(--text-light);line-height:1.6;}
+.sluzba-icon {width:48px;height:48px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:var(--beige);border-radius:12px;transition:all 0.3s;}
+.sluzba-icon svg {width:24px;height:24px;color:var(--sage-dark);}
+.sluzba-link {color:var(--sage-dark);font-size:0.95rem;font-weight:600;margin-top:auto;padding-top:1rem;display:inline-block;transition:transform 0.2s;}
+.sluzba-block:hover .sluzba-link {transform:translateX(5px);}
+
+.timeline-container {display:flex;justify-content:space-between;position:relative;max-width:900px;margin:0 auto;gap:2rem;}
+.timeline-line {position:absolute;top:30px;left:50px;right:50px;height:1px;background:#e0e0e0;z-index:1;}
+.timeline-step {flex:1;text-align:center;position:relative;z-index:2;background:var(--sage-section);padding:0 1rem;}
+.timeline-number {width:60px;height:60px;background:var(--sage-dark);color:white;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:1.2rem;margin:0 auto 1.5rem auto;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+
+.faq-item {border-bottom:1px solid #eee; padding: 0.5rem 0;}
+.faq-q {width:100%;text-align:left;background:none;border:none;padding:1.5rem 0;font-size:1.1rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center; font-family: 'Inter', sans-serif;}
+.faq-a {display:none;padding-bottom:1.5rem;color:var(--text-light);line-height:1.6;}
 </style>
 </head>
 <body>
@@ -78,9 +88,9 @@ h1, h2, h3, h4 { font-family: Georgia, serif; font-weight: 400; color: var(--tex
 </nav>
 
 <div id="home" class="page active">
-<div class="hero-centered wrap" style="text-align:center; padding:10rem 2rem 6rem; min-height:75vh; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+<div class="hero-centered wrap">
 <span class="section-eyebrow">Koučink & Talentové poradenství</span>
-<h1 style="font-size:3.5rem; margin-bottom:1.5rem;">Poznejte se lépe.<br><span id="hero-typing" style="color:var(--sage-dark);"></span><span class="hero-cursor">|</span></h1>
+<h1>Poznejte se lépe.<br><span id="hero-typing" style="color:var(--sage-dark);"></span><span class="hero-cursor">|</span></h1>
 <p style="font-size:1.1rem;color:var(--text-light);line-height:1.8;max-width:750px;margin:0 auto 2.5rem;">Pomůžu vám lépe porozumět vlastnímu potenciálu. Nespoléhám jen na teorii – propojuji psychologii, poznatky z neurověd a práci s talenty s více než 17 lety praxe v globálním HR.</p>
 <button class="btn" onclick="showPage('kontakt')">Domluvit 30 minut zdarma</button>
 </div>
@@ -98,8 +108,10 @@ h1, h2, h3, h4 { font-family: Georgia, serif; font-weight: 400; color: var(--tex
             </div>
         </div>
     </div>
+    <div style="margin-top:2.5rem;"><h3 style="font-style:italic;font-size:1.8rem;">Katka Hrouzková</h3><p style="color:var(--text-light);">Brno & Online</p></div>
 </div>
 <div>
+    <span class="section-eyebrow">Můj příběh</span>
     <h2 style="font-size:2.8rem;color:var(--petrol);margin-bottom:1.5rem;">O mně</h2>
     <p style="font-size:1.05rem;color:var(--text-light);line-height:1.8;margin-bottom:1.2rem;">Roky jsem budovala kariéru v korporátu. Pak jsem se zastavila, přehodnotila všechno – a začala znovu. Tentokrát po svém. Po mateřské dovolené se mi změnily priority. Najednou jsem věděla, že chci dělat práci, která má smysl – kde skutečně pomáhám lidem, ne jen plním firemní cíle.</p>
     
@@ -110,7 +122,7 @@ h1, h2, h3, h4 { font-family: Georgia, serif; font-weight: 400; color: var(--tex
         <span class="cert-text-badge">ICF Member</span>
     </div>
 
-    <div class="stats-grid" id="home-stats-section" style="margin-top:2.5rem;">
+    <div class="stats-grid" id="home-stats-section">
         <div><div class="stat-number" data-target="17">0</div><div class="stat-label">let v globálním HR</div></div>
         <div><div class="stat-number" data-target="100">0</div><div class="stat-label">hodin 1:1 koučinku</div></div>
         <div><div class="stat-number" data-target="5">0</div><div class="stat-label">let studia psychologie</div></div>
@@ -120,29 +132,49 @@ h1, h2, h3, h4 { font-family: Georgia, serif; font-weight: 400; color: var(--tex
 </div>
 
 <div id="sluzby-prehled" class="page">
-<div class="page-header" style="background:var(--cream);padding:6rem 0 4rem;"><div class="wrap">
-    <span class="section-eyebrow">Individuální spolupráce</span>
-    <h1>Pro jednotlivce</h1>
-    <p style="font-size:1.15rem; max-width:800px; line-height:1.8; margin-top:1.5rem;">Každý člověk je jiný. Nenabízím jednu šablonu, ale cesty, které se přizpůsobí vaší aktuální situaci.</p>
-</div></div>
-<section style="background:white;padding:6rem 0;"><div class="wrap"><div class="services-grid-4">
-    <div class="sluzba-block"><h4>1:1 Koučování</h4><p>Pravidelná podpora při strategických rozhodnutích.</p></div>
-    <div class="sluzba-block"><h4>Redesign Your Life</h4><p>Kompletní restart vaší profesní cesty.</p></div>
-    <div class="sluzba-block"><h4>PRISM Mapping</h4><p>Zmapujte své přirozené chování a zdroje energie.</p></div>
-    <div class="sluzba-block"><h4>Gallup Talenty</h4><p>Odhalte svou unikátní talentovou DNA.</p></div>
-</div></div></section>
+    <div class="page-header" style="background:var(--cream);padding:6rem 0 4rem;"><div class="wrap">
+        <span class="section-eyebrow">Individuální spolupráce</span>
+        <h1>Pro jednotlivce</h1>
+        <p style="font-size:1.15rem; max-width:800px; line-height:1.8; margin-top:1.5rem;">Každý člověk je jiný. Nenabízím jednu šablonu, ale cesty, které se přizpůsobí vaší aktuální situaci.</p>
+    </div></div>
+    <section style="background:white;padding:6rem 0;"><div class="wrap"><div class="services-grid-4">
+        
+        <div class="sluzba-block fade-up" style="transition-delay:0.1s;">
+            <div class="sluzba-icon"><svg viewBox="0 0 280 160" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 155 A130 130 0 0 1 270 155" stroke="currentColor" stroke-width="8" fill="none"/><path d="M50 155 A90 90 0 0 1 230 155" stroke="currentColor" stroke-width="8" fill="none"/><path d="M90 155 A50 50 0 0 1 190 155" stroke="currentColor" stroke-width="8" fill="none"/></svg></div>
+            <div><h4>1:1 Individuální koučování</h4><p>Pravidelná podpora a bezpečný prostor pro vaše strategická rozhodnutí.</p></div>
+            <span class="sluzba-link">Zjistit víc &rarr;</span>
+        </div>
+
+        <div class="sluzba-block fade-up" style="transition-delay:0.2s;">
+            <div class="sluzba-icon"><svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="10,140 60,80 10,20" stroke="currentColor" stroke-width="12" fill="none" stroke-linejoin="round" stroke-linecap="round"/><polyline points="55,140 105,80 55,20" stroke="currentColor" stroke-width="12" fill="none" stroke-linejoin="round" stroke-linecap="round"/><polyline points="100,140 150,80 100,20" stroke="currentColor" stroke-width="12" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg></div>
+            <div><h4>Redesign Your Life</h4><p>Dlouhodobý program. Kariérní profil a kompletní restart vaší cesty.</p></div>
+            <span class="sluzba-link">Zjistit víc &rarr;</span>
+        </div>
+
+        <div class="sluzba-block fade-up" style="transition-delay:0.3s;">
+            <div class="sluzba-icon"><svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="15" fill="currentColor"/><circle cx="80" cy="30" r="15" fill="currentColor"/><circle cx="130" cy="30" r="15" fill="currentColor"/><circle cx="30" cy="80" r="15" fill="currentColor"/><circle cx="80" cy="80" r="15" fill="currentColor"/><circle cx="130" cy="80" r="15" fill="currentColor"/><circle cx="30" cy="130" r="15" fill="currentColor"/><circle cx="80" cy="130" r="15" fill="currentColor"/><circle cx="130" cy="130" r="15" fill="currentColor"/></svg></div>
+            <div><h4>PRISM Brain Mapping</h4><p>Zmapujte své přirozené chování a zjistěte, co vám dává energii.</p></div>
+            <span class="sluzba-link">Zjistit víc &rarr;</span>
+        </div>
+
+        <div class="sluzba-block fade-up" style="transition-delay:0.4s;">
+            <div class="sluzba-icon"><svg viewBox="0 0 160 300" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="0" x2="30" y2="300" stroke="currentColor" stroke-width="12"/><line x1="65" y1="0" x2="65" y2="300" stroke="currentColor" stroke-width="12"/><line x1="100" y1="0" x2="100" y2="300" stroke="currentColor" stroke-width="12"/><line x1="135" y1="0" x2="135" y2="300" stroke="currentColor" stroke-width="12"/></svg></div>
+            <div><h4>Gallup CliftonStrengths</h4><p>Odhalte svou unikátní talentovou DNA a stavte na ní.</p></div>
+            <span class="sluzba-link">Zjistit víc &rarr;</span>
+        </div>
+
+    </div></div></section>
 </div>
 
 <div id="pro-firmy-prehled" class="page">
 <div class="page-header" style="background:var(--cream);padding:6rem 0 4rem;"><div class="wrap">
     <span class="section-eyebrow">Týmový rozvoj</span>
     <h1>Pro firmy</h1>
-    <p style="font-size:1.15rem; max-width:850px; line-height:1.8; margin-top:1.5rem;">Stavím rozvoj na datech a psychologii. Pomáhám firmám tvořit týmy, které si rozumí.</p>
 </div></div>
 <section style="background:white;padding:6rem 0;"><div class="wrap"><div class="services-grid-4">
-    <div class="sluzba-block"><h4>Výběr a onboarding</h4><p>Využijte data z PRISM mapování k přesnému výběru.</p></div>
+    <div class="sluzba-block"><h4>Výběr a onboarding</h4><p>Data z PRISM mapování k přesnému výběru.</p></div>
     <div class="sluzba-block"><h4>Rozvoj týmu</h4><p>Gallup workshopy pro pochopení dynamiky.</p></div>
-    <div class="sluzba-block"><h4>HR mentoring</h4><p>Podpora pro vaše HR oddělení nebo majitele firem.</p></div>
+    <div class="sluzba-block"><h4>HR mentoring</h4><p>Podpora pro vaše HR oddělení.</p></div>
     <div class="sluzba-block"><h4>Řešení HR výzev</h4><p>Konkrétní pomoc v náročných situacích.</p></div>
 </div></div></section>
 </div>
@@ -157,8 +189,9 @@ h1, h2, h3, h4 { font-family: Georgia, serif; font-weight: 400; color: var(--tex
     </div>
 </div>
 <div>
-    <p style="font-size:1rem;line-height:1.8;margin-bottom:1.5rem;">Roky jsem budovala kariéru v korporátu. Pak jsem se zastavila, přehodnotila všechno – a začala znovu. Tentokrát po svém. Po mateřské dovolené se mi změnily priority. Najednou jsem věděla, že chci dělat práci, která má smysl – kde skutečně pomáhám lidem, ne jen plním firemní cíle.</p>
-    <p style="font-size:1rem;line-height:1.8;margin-bottom:1.5rem;">Vždy jsem měla přirozenou schopnost vést hluboké rozhovory, číst mezi řádky, vidět co se děje pod povrchem. Absolvovala jsem Erickson koučovací výcvik a certifikaci na Gallup metodu přes Inpram. Ale zároveň jsem sama zažívala to, co řeší moji klienti dnes. V korporátu jsem potlačovala své přirozené preference, skoro jsem vyhořela.</p>
+    <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.5rem;">Roky jsem budovala kariéru v korporátu. Pak jsem se zastavila, přehodnotila všechno – a začala znovu. Tentokrát po svém. Po mateřské dovolené se mi změnily priority. Najednou jsem věděla, že chci dělat práci, která má smysl – kde skutečně pomáhám lidem, ne jen plním firemní cíle.</p>
+    <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.5rem;">Vždy jsem měla přirozenou schopnost vést hluboké rozhovory, číst mezi řádky, vidět co se děje pod povrchem. Absolvovala jsem Erickson koučovací výcvik a certifikaci na Gallup metodu přes Inpram. Ale zároveň jsem sama zažívala to, co řeší moji klienti dnes. V korporátu jsem potlačovala své přirozené preference, skoro jsem vyhořela.</p>
+    <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1.5rem;">Role matky, ženy po čtyřicítce – to všechno s sebou přináší neustálé přizpůsobování potřebám druhých. Skoro jsem se v tom sama ztratila. Potřebovala jsem najít novou Katku – tu starou, výkonnou, už nechtěla existovat. A ta nová je tady. S lepší rovnováhou, s energií a s prací, která mě baví.</p>
     <h3 style="margin:2.5rem 0 1rem; font-weight: 400;">Odbornost a certifikace:</h3>
     <ul style="list-style:none;padding:0;line-height:2.2; color: var(--text-light);">
         <li>• Psychologie – Filozofická fakulta MU Brno</li>
@@ -166,6 +199,7 @@ h1, h2, h3, h4 { font-family: Georgia, serif; font-weight: 400; color: var(--tex
         <li>• Erickson Certified Professional Coach (ECPC)</li>
         <li>• Accredited PRISM Brain Mapping Practitioner</li>
         <li>• Inpram Certified Talent Coach (Gallup CliftonStrengths®)</li>
+        <li>• ICF Member (International Coaching Federation)</li>
     </ul>
 </div></div></div></section>
 </div>
@@ -185,11 +219,7 @@ h1, h2, h3, h4 { font-family: Georgia, serif; font-weight: 400; color: var(--tex
 <section style="background:white;padding:4rem 0;"><div class="wrap" style="max-width:800px;">
     <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">Jaký je rozdíl mezi koučinkem a terapií? <span>+</span></button>
-        <div class="faq-a">Koučink je o budoucnosti a řešení, terapie o léčení minulosti.</div>
-    </div>
-    <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">Jak dlouho trvá spolupráce? <span>+</span></button>
-        <div class="faq-a">Obvykle 4–8 sezení pro udržitelný rozvoj.</div>
+        <div class="faq-a" style="display:none; padding-bottom: 1.5rem;">Koučink je orientovaný na budoucnost a řešení, terapie na léčení minulosti a hlubších bloků.</div>
     </div>
 </div></section>
 </div>
@@ -219,8 +249,13 @@ function showPage(pageId) {
 function toggleFaq(btn) {
     const ans = btn.nextElementSibling;
     const span = btn.querySelector('span');
-    ans.style.display = (ans.style.display === 'block') ? 'none' : 'block';
-    span.textContent = (ans.style.display === 'block') ? '-' : '+';
+    if(ans.style.display === 'block') {
+        ans.style.display = 'none';
+        span.textContent = '+';
+    } else {
+        ans.style.display = 'block';
+        span.textContent = '-';
+    }
 }
 
 (function() {
