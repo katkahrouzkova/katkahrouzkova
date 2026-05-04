@@ -1,0 +1,17 @@
+85  → NAV
+122 → HERO — Redesign Your Life
+130 → Certifikácie (pod hero)
+159 → Vyberte si cestu (Pro jednotlivce / Pro firmy)
+179 → Jak to probíhá
+192 → Referencie
+225 → O mně (krátka)
+270 → Pro jednotlivce — intro
+276 → 1:1 Koučování
+320 → Nevíte si s výběrem? (CTA blok)
+338 → Pro firmy — intro
+343 → Výběr a onboarding / Rozvoj / HR mentoring
+351 → Potřebujete řešení na míru? (CTA blok)
+371 → Kontakt
+397 → 30 minut zdarma
+423 → FAQ
+434 → Obchodní podmínky
