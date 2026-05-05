@@ -92,6 +92,8 @@
 <div class="dmi" onclick="showPage('hr-vyzvy')"><h4>Řešení pro HR výzvy</h4><p>Konkrétní pomoc v náročných situacích.</p></div>
 </div></div></li>
 <li><span class="nav-link" id="nav-o-mne" onclick="showPage('o-mne')">O mně</span></li>
+<li><a href="reference.html" class="nav-link" style="text-decoration:none;color:inherit;">Reference</a></li>
+<li><span class="nav-link" id="nav-faq" onclick="showPage('faq')">FAQ</span></li>
 <li><span class="nav-link" id="nav-kontakt" onclick="showPage('kontakt')">Kontakt</span></li>
 </ul>
 <div class="lang-switcher"><button id="btn-cz" class="active" onclick="setLang('cz')">CZ</button><button id="btn-en" onclick="setLang('en')">EN</button></div>
@@ -257,8 +259,8 @@
 <li style="padding:1.2rem 0;border-bottom:1px solid #eee;color:var(--text-light);display:flex;gap:1rem;align-items:center;"><span style="width:6px;height:6px;background:var(--sage-dark);border-radius:50%;display:inline-block;flex-shrink:0;"></span>Psychologie – Filozofická fakulta, Masarykova univerzita Brno</li>
 <li style="padding:1.2rem 0;border-bottom:1px solid #eee;color:var(--text-light);display:flex;gap:1rem;align-items:center;"><span style="width:6px;height:6px;background:var(--sage-dark);border-radius:50%;display:inline-block;flex-shrink:0;"></span>17+ let v globálním HR – People Business Partner &amp; L&amp;D Lead (Avast, Uniqa, ThermoFisher Scientific)</li>
 <li style="padding:1.2rem 0;border-bottom:1px solid #eee;color:var(--text-light);display:flex;gap:1rem;align-items:center;"><span style="width:6px;height:6px;background:var(--sage-dark);border-radius:50%;display:inline-block;flex-shrink:0;"></span>Inpram Certified Talent Coach (Gallup CliftonStrengths)</li>
-<li style="padding:1.2rem 0;border-bottom:1px solid #eee;color:var(--text-light);display:flex;gap:1rem;align-items:center;"><span style="width:6px;height:6px;background:var(--sage-dark);border-radius:50%;display:inline-block;flex-shrink:0;"></span>PRISM Brain Mapping Certified Professional</li>
-<li style="padding:1.2rem 0;border-bottom:1px solid #eee;color:var(--text-light);display:flex;gap:1rem;align-items:center;"><span style="width:6px;height:6px;background:var(--sage-dark);border-radius:50%;display:inline-block;flex-shrink:0;"></span>Erickson Certified Professional Coach (ACC track)</li>
+<li style="padding:1.2rem 0;border-bottom:1px solid #eee;color:var(--text-light);display:flex;gap:1rem;align-items:center;"><span style="width:6px;height:6px;background:var(--sage-dark);border-radius:50%;display:inline-block;flex-shrink:0;"></span>PRISM Brain Mapping Practitioner</li>
+<li style="padding:1.2rem 0;border-bottom:1px solid #eee;color:var(--text-light);display:flex;gap:1rem;align-items:center;"><span style="width:6px;height:6px;background:var(--sage-dark);border-radius:50%;display:inline-block;flex-shrink:0;"></span>Erickson Certified Professional Coach (ECPC)</li>
 <li style="padding:1.2rem 0;color:var(--text-light);display:flex;gap:1rem;align-items:center;"><span style="width:6px;height:6px;background:var(--sage-dark);border-radius:50%;display:inline-block;flex-shrink:0;"></span>Plynulá čeština, slovenština, angličtina</li>
 </ul>
 
@@ -548,24 +550,7 @@ function handleForm(e) {
         type();
     }
 
-    // 2. Animacia pisania pre Pro Jednotlivce Hero
-    const indivTyping = document.getElementById("indiv-typing");
-    if (indivTyping) {
-        const indivPhrases = ["energii.", "jasný směr.", "jistotu v rozhodování.", "radost z práce."];
-        let ipIdx = 0, icIdx = 0, isIdel = false;
-        function typeIndiv() {
-            const currentTxt = indivPhrases[ipIdx];
-            if (isIdel) icIdx--; else icIdx++;
-            indivTyping.textContent = currentTxt.substring(0, icIdx);
-            let speed = isIdel ? 30 : 80;
-            if (!isIdel && icIdx === currentTxt.length) { isIdel = true; speed = 2500; }
-            else if (isIdel && icIdx === 0) { isIdel = false; ipIdx = (ipIdx + 1) % indivPhrases.length; speed = 500; }
-            setTimeout(typeIndiv, speed);
-        }
-        typeIndiv();
-    }
-
-    // 3. Animacia cisel na Home
+    // 2. Animacia cisel na Home
     const statNums = document.querySelectorAll('.stat-number');
     let statsAnimated = false;
     
@@ -588,7 +573,7 @@ function handleForm(e) {
         });
     }
 
-    // 4. Scroll Observer pre animacie komponentov
+    // 3. Scroll Observer pre animacie komponentov
     const observerOptions = { threshold: 0.15 };
     const scrollObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -616,22 +601,6 @@ function handleForm(e) {
 
 })();
 
-    // Typing Pro Firmy
-    const firmTyping = document.getElementById("firm-typing");
-    if (firmTyping) {
-        const firmPhrases = ["smysluplně.", "s dopadem na praxi.", "moderním způsobem.", "skutečně."];
-        let fpIdx = 0, fcIdx = 0, isFdel = false;
-        function typeFirm() {
-            const currentTxt = firmPhrases[fpIdx];
-            if (isFdel) fcIdx--; else fcIdx++;
-            firmTyping.textContent = currentTxt.substring(0, fcIdx);
-            let speed = isFdel ? 30 : 80;
-            if (!isFdel && fcIdx === currentTxt.length) { isFdel = true; speed = 2500; }
-            else if (isFdel && fcIdx === 0) { isFdel = false; fpIdx = (fpIdx + 1) % firmPhrases.length; speed = 500; }
-            setTimeout(typeFirm, speed);
-        }
-        typeFirm();
-    }
 </script>
 <script src="js/main.js"></script>
 </body>
