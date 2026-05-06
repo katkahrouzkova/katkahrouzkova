@@ -87,9 +87,9 @@
 <div class="dmi" onclick="showPage('individualni-konzultace')">
     <h4>Individuální konzultace</h4>
     <div style="font-size:0.9rem; margin-top:0.5rem; display:flex; flex-direction:column; gap:0.4rem;">
-        <span onclick="event.stopPropagation();showPage('koucovani')" style="color:var(--text-light);cursor:pointer;">↳ 1:1 Koučování</span>
-        <span onclick="event.stopPropagation();showPage('gallup')" style="color:var(--text-light);cursor:pointer;">↳ Gallup CliftonStrengths</span>
-        <span onclick="event.stopPropagation();showPage('prism')" style="color:var(--text-light);cursor:pointer;">↳ PRISM Brain Mapping</span>
+        <span onclick="event.stopPropagation();showPage('koucovani')" style="color:var(--text-light);cursor:pointer; transition:color 0.2s;" onmouseover="this.style.color='var(--sage-dark)'" onmouseout="this.style.color='var(--text-light)'">↳ 1:1 Koučování</span>
+        <span onclick="event.stopPropagation();showPage('gallup')" style="color:var(--text-light);cursor:pointer; transition:color 0.2s;" onmouseover="this.style.color='var(--sage-dark)'" onmouseout="this.style.color='var(--text-light)'">↳ Gallup CliftonStrengths</span>
+        <span onclick="event.stopPropagation();showPage('prism')" style="color:var(--text-light);cursor:pointer; transition:color 0.2s;" onmouseover="this.style.color='var(--sage-dark)'" onmouseout="this.style.color='var(--text-light)'">↳ PRISM Brain Mapping</span>
     </div>
 </div>
 <div class="dmi" onclick="showPage('transformace')"><h4>Redesign Your Life</h4><p>Program osobní změny</p></div>
@@ -145,7 +145,7 @@
 <div class="slide-in-right">
 <span class="section-label" style="color:var(--sage-dark);font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:600;display:block;margin-bottom:1rem;">Kdo vás provede změnou?</span>
 <p style="font-size:1.1rem;color:var(--text-light);line-height:1.8;margin-bottom:1.2rem;">Jsem pragmatický a lidský partner pro váš rozvoj. Do spolupráce vnáším nadhled ze 17 let v globálním HR a hluboké porozumění psychologii.</p>
-<p style="font-size:1.1rem;color:var(--text-light);line-height:1.8;margin-bottom:1.2rem;">Nepřikyvuji – kladu otázky, které vedou k podstatě věci, a pomáhám vám stavět na tom, v čem jste přirozeně dobří.</p>
+<p style="font-size:1.1rem;color:var(--text-light);line-height:1.8;margin-bottom:1.2rem;">Kladu otázky, které vedou k podstatě věci, a pomáhám vám stavět na tom, v čem jste přirozeně dobří.</p>
 <p style="font-size:1.1rem;color:var(--text-light);line-height:1.8;margin-bottom:2rem;">Odcházíte vždy s konkrétními kroky, které fungují v reálném životě i byznysu.</p>
 <button class="btn" style="background:transparent; color:var(--sage-dark); border:2px solid var(--sage-dark);" onclick="showPage('o-mne')">Více o mně a mém přístupu &rarr;</button>
 </div>
@@ -222,7 +222,7 @@
         <div class="svc-hero-content wrap" style="position:relative; z-index:2; max-width:800px;">
             <span class="section-label" style="color:var(--sage-light); font-weight:600; letter-spacing:0.1em; text-transform:uppercase; display:block; margin-bottom:1rem;">Služby</span>
             <h1 style="font-family:Georgia,serif; font-size:3.5rem; color:white; line-height:1.2;">
-                Spolupráce, která vede k… <span id="sluzby-typing" style="color:var(--sage-light);"></span>
+                Spolupráce, která vede k… <br><span id="sluzby-typing" style="color:var(--sage-light);"></span>
             </h1>
         </div>
     </div>
@@ -235,7 +235,7 @@
                     <div class="sluzba-icon"><svg viewBox="0 0 280 160" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 155 A130 130 0 0 1 270 155" stroke="currentColor" stroke-width="8" fill="none"/><path d="M50 155 A90 90 0 0 1 230 155" stroke="currentColor" stroke-width="8" fill="none"/><path d="M90 155 A50 50 0 0 1 190 155" stroke="currentColor" stroke-width="8" fill="none"/></svg></div>
                     <div>
                         <h4 style="font-size:1.8rem;">Individuální konzultace</h4>
-                        <p style="font-size:1.05rem;">Od jednoho setkání po dlouhodobou spolupráci — podle toho, co právě potřebujete.<br>→ 1:1 Koučování<br>→ Gallup CliftonStrengths®<br>→ PRISM Brain Mapping®</p>
+                        <p style="font-size:1.05rem;">Od jednoho setkání po dlouhodobou spolupráci — podle toho, co právě potřebujete.<br><span style="display:inline-block;margin-top:0.5rem;color:var(--sage-dark);" onclick="event.stopPropagation();showPage('koucovani')">→ 1:1 Koučování</span><br><span style="display:inline-block;color:var(--sage-dark);" onclick="event.stopPropagation();showPage('gallup')">→ Gallup CliftonStrengths®</span><br><span style="display:inline-block;color:var(--sage-dark);" onclick="event.stopPropagation();showPage('prism')">→ PRISM Brain Mapping®</span></p>
                     </div>
                 </div>
 
@@ -590,7 +590,7 @@
             <p style="font-size:1.05rem;color:var(--text-light);line-height:1.7;"><strong style="color:var(--text);">Klid:</strong> Rozhodnutí přestane být stres a stane se volbou podloženou daty.</p>
         </div>
 
-        <h2 style="font-family:Georgia,serif;font-size:1.8rem;font-weight:400;color:var(--text);margin-bottom:1.5rem;">S ČÍM PŘICHÁZEJÍ NEJČASTĚJI</h2>
+        <h2 style="font-family:Georgia,serif;font-size:1.8rem;font-weight:400;color:var(--text);margin-bottom:1.5rem;">S ČÍM PŘICHÁZEJÍ LIDÉ NEJČASTĚJI</h2>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:3rem;">
             <div style="padding:1.5rem;background:var(--beige);border-left:3px solid var(--sage);">
                 <h4 style="color:var(--text);margin-bottom:0.5rem;">Výběr vysoké školy nebo oboru</h4>
@@ -682,7 +682,6 @@
 <div class="wrap">
 <span class="section-label" style="color:var(--sage-dark);font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:600;display:block;margin-bottom:1rem;">O mně</span>
 <h1 style="font-family:Georgia,serif;font-size:3.5rem;color:var(--text);margin-bottom:1.5rem;">To, co se děje kolem vás, často odráží to, co se děje ve vás. <span id="omne-typing" style="color:var(--sage-dark);"></span></h1>
-<p style="font-size:1.1rem;color:var(--text-light);line-height:1.8;max-width:600px;">Jsem pragmatický a lidský partner pro změnu. Propojuji psychologii s reálným světem byznysu a pomáhám lidem stavět na tom, v čem jsou přirozeně dobří.</p>
 </div>
 </div>
 <section style="background:white;padding:5rem 0">
@@ -693,12 +692,8 @@
 <p style="text-align:left;font-size:0.8rem;letter-spacing:0.1em;color:var(--text-light);text-transform:uppercase;margin-top:1.5rem;">Katka Hrouzková · Brno</p>
 </div>
 <div>
-<p style="font-size:1rem;color:var(--text-light);line-height:1.8;margin-bottom:1.5rem;">Začínala jsem v recruitmentu. V Hays jsem se naučila číst lidi rychle a rozumět tomu, co firmy skutečně hledají — ne jen to, co napíšou do inzerátu.</p>
-<p style="font-size:1rem;color:var(--text-light);line-height:1.8;margin-bottom:1.5rem;">Pak přišly roky v HR ve velkých mezinárodních firmách. FEI, Avast, UNIQA. Firmy od stovek po tisíce lidí. Viděla jsem spoustu chytrých, pracovitých lidí, kteří se vyčerpávali tím, že se snažili fungovat způsobem, který jim přirozeně nesedí.</p>
-<p style="font-size:1rem;color:var(--text-light);line-height:1.8;margin-bottom:2.5rem;">Sama jsem to zažila a skoro jsem vyhořela. To mě přivedlo ke koučinku a k nástrojům, jako jsou PRISM Brain Mapping a Gallup CliftonStrengths. Hodně mi pomohly i v mé vlastní změně.</p>
 
-<h3 style="font-family:Georgia,serif;font-size:1.8rem;color:var(--sage-dark);margin-bottom:1.5rem;font-weight:400;">Odbornost a certifikace:</h3>
-<ul style="list-style:none;padding:0;margin:0 0 4rem 0;">
+<ul style="list-style:none;padding:0;margin:0 0 2.5rem 0;">
 <li style="padding:1.2rem 0;border-bottom:1px solid #eee;color:var(--text-light);display:flex;gap:1rem;align-items:center;"><span style="width:6px;height:6px;background:var(--sage-dark);border-radius:50%;display:inline-block;flex-shrink:0;"></span>Psychologie, FF MU Brno</li>
 <li style="padding:1.2rem 0;border-bottom:1px solid #eee;color:var(--text-light);display:flex;gap:1rem;align-items:center;"><span style="width:6px;height:6px;background:var(--sage-dark);border-radius:50%;display:inline-block;flex-shrink:0;"></span>17+ let v globálním HR — Hays, FEI / ThermoFisher, Avast, UNIQA</li>
 <li style="padding:1.2rem 0;border-bottom:1px solid #eee;color:var(--text-light);display:flex;gap:1rem;align-items:center;"><span style="width:6px;height:6px;background:var(--sage-dark);border-radius:50%;display:inline-block;flex-shrink:0;"></span>Erickson Certified Coach (ACC track)</li>
@@ -707,20 +702,32 @@
 <li style="padding:1.2rem 0;color:var(--text-light);display:flex;gap:1rem;align-items:center;"><span style="width:6px;height:6px;background:var(--sage-dark);border-radius:50%;display:inline-block;flex-shrink:0;"></span>Čeština, slovenština, angličtina</li>
 </ul>
 
-<div style="margin-top:2rem;">
-<div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap:1.5rem; align-items:start;">
-<img src="images/cert-gallup.png" alt="Gallup Certified" style="width:100%; height:auto; border-radius:4px; box-shadow:0 4px 15px rgba(0,0,0,0.06); border:1px solid #eee;">
-<img src="images/cert-prism.png" alt="PRISM Certified" style="width:100%; height:auto; border-radius:4px; box-shadow:0 4px 15px rgba(0,0,0,0.06); border:1px solid #eee;">
-<img src="images/cert-erickson.png" alt="Erickson Certified" style="width:100%; height:auto; border-radius:4px; box-shadow:0 4px 15px rgba(0,0,0,0.06); border:1px solid #eee;">
-<img src="images/cert-erickson%20team.png" alt="Erickson Team Certified" style="width:100%; height:auto; border-radius:4px; box-shadow:0 4px 15px rgba(0,0,0,0.06); border:1px solid #eee;">
-<img src="images/cert-facilitace.png" alt="Facilitace" style="width:100%; height:auto; border-radius:4px; box-shadow:0 4px 15px rgba(0,0,0,0.06); border:1px solid #eee;">
-</div>
-</div>
+<hr style="border:0;border-top:1px solid #eee;margin:0 0 2.5rem 0;">
 
-<div style="margin-top: 4rem; padding: 2rem; background: var(--sage-section); border-radius: 12px; text-align: center;">
+<p style="font-size:1.05rem;color:var(--text);font-style:italic;margin-bottom:1.5rem;line-height:1.8;">Jsem pragmatický a lidský partner pro změnu. Propojuji psychologii s reálným světem byznysu a pomáhám lidem stavět na tom, v čem jsou přirozeně dobří. Kladu otázky, které jsou někdy nepříjemné, ale důležité. A vždy směřujeme ke konkrétním krokům.</p>
+
+<hr style="border:0;border-top:1px solid #eee;margin:0 0 2.5rem 0;">
+
+<p style="font-size:1rem;color:var(--text-light);line-height:1.8;margin-bottom:1.5rem;">Začínala jsem v recruitmentu. V Hays jsem se naučila číst lidi rychle a rozumět tomu, co firmy skutečně hledají — ne jen to, co napíšou do inzerátu. Pak přišly roky v HR ve velkých mezinárodních firmách. FEI, Avast, UNIQA. Firmy od stovek po tisíce lidí.</p>
+
+<p style="font-size:1rem;color:var(--text-light);line-height:1.8;margin-bottom:2.5rem;">Viděla jsem spoustu chytrých, pracovitých lidí, kteří se vyčerpávali tím, že se snažili fungovat způsobem, který jim přirozeně nesedí. Sama jsem to zažila a skoro jsem vyhořela. To mě přivedlo ke koučinku a k nástrojům, jako jsou PRISM Brain Mapping a Gallup CliftonStrengths. Hodně mi pomohly i v mé vlastní změně.</p>
+
+<hr style="border:0;border-top:1px solid #eee;margin:0 0 2.5rem 0;">
+
+<div style="padding: 2rem; background: var(--sage-section); border-radius: 12px; text-align: center;">
     <h3 style="font-family:Georgia,serif;font-size:1.5rem;color:var(--text);margin-bottom:1rem;">Nevíte, kde začít?</h3>
     <p style="font-size:1.05rem;color:var(--text-light);line-height:1.7;margin-bottom:1.5rem;">Domluvme si nezávazný 30minutový hovor. Úvodní konzultace je zdarma.</p>
     <button class="btn pulse-btn" onclick="showPage('kontakt')">Chci rezervovat</button>
+</div>
+
+<div style="margin-top:4rem;">
+    <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap:1.5rem; align-items:start;">
+        <img src="images/cert-gallup.png" alt="Gallup Certified" style="width:100%; height:auto; border-radius:4px; box-shadow:0 4px 15px rgba(0,0,0,0.06); border:1px solid #eee;">
+        <img src="images/cert-prism.png" alt="PRISM Certified" style="width:100%; height:auto; border-radius:4px; box-shadow:0 4px 15px rgba(0,0,0,0.06); border:1px solid #eee;">
+        <img src="images/cert-erickson.png" alt="Erickson Certified" style="width:100%; height:auto; border-radius:4px; box-shadow:0 4px 15px rgba(0,0,0,0.06); border:1px solid #eee;">
+        <img src="images/cert-erickson%20team.png" alt="Erickson Team Certified" style="width:100%; height:auto; border-radius:4px; box-shadow:0 4px 15px rgba(0,0,0,0.06); border:1px solid #eee;">
+        <img src="images/cert-facilitace.png" alt="Facilitace" style="width:100%; height:auto; border-radius:4px; box-shadow:0 4px 15px rgba(0,0,0,0.06); border:1px solid #eee;">
+    </div>
 </div>
 
 </div>
@@ -802,7 +809,7 @@
 </div>
 
 <div id="kontakt" class="page">
-<div class="page-header"><div class="wrap"><span class="section-label">KONTAKT</span><h1>Začněme společně</h1><p>Napište mi, zavolejte, nebo vyplňte krátký formulář — ozvu se do 2 pracovních dnů.<br>Nebo si rovnou rezervujte termín: <a href="https://calendar.app.google/PFCb8STnoEWmZEep9" target="_blank" style="color:var(--sage-dark);font-weight:bold;">Zarezervovat čas v kalendáři &rarr;</a></p></div></div>
+<div class="page-header"><div class="wrap"><span class="section-label">KONTAKT</span><h1>Začněme společně</h1><p>Napište mi, zavolejte, nebo vyplňte krátký formulář — ozvu se do 2 pracovních dnů.<br>Nebo si rovnou rezervujte termín: <a href="https://calendar.app.google/PFCb8STnoEWmZEep9" target="_blank" style="color:var(--sage-dark);font-weight:bold;text-decoration:underline;">Zarezervovat čas v kalendáři &rarr;</a></p></div></div>
 <section style="background:white;padding:4rem 0 6rem"><div class="wrap" style="max-width:900px">
 <div class="contact-grid">
 <div>
@@ -873,10 +880,10 @@ function toggleFaq(btn) {
     const arrow = btn.querySelector('.faq-arrow');
     if(a.style.display === 'none' || !a.style.display) {
         a.style.display = 'block';
-        arrow.textContent = '−';
+        if(arrow) arrow.textContent = '−';
     } else {
         a.style.display = 'none';
-        arrow.textContent = '+';
+        if(arrow) arrow.textContent = '+';
     }
 }
 
@@ -886,7 +893,7 @@ function handleForm(e) {
 }
 
 // Logic pre Animacie (Typewriters)
-(function() {
+document.addEventListener("DOMContentLoaded", function() {
     const typewriters = [
         { id: "hero-typing", phrases: ["žijte v souladu se sebou.", "pracujte způsobem, který vám sedí.", "poznejte své silné stránky.", "najděte svůj směr."] },
         { id: "sluzby-typing", phrases: ["jasným prioritám a plánu.", "energii místo vyčerpání.", "rozhodnutím podloženým daty.", "výsledkům v reálné praxi."] },
@@ -911,15 +918,14 @@ function handleForm(e) {
                 let speed = isDel ? 30 : 80;
                 
                 if (!isDel && cIdx === currentTxt.length) { 
+                    if (tw.phrases.length === 1) return; // Zastaví sa, ak je iba jedna fáza
                     isDel = true; 
-                    speed = tw.phrases.length === 1 ? 9999999 : 2500; 
+                    speed = 2500; 
                 } else if (isDel && cIdx === 0) { 
                     isDel = false; 
                     pIdx = (pIdx + 1) % tw.phrases.length; 
                     speed = 500; 
                 }
-                
-                if (tw.phrases.length === 1 && cIdx === currentTxt.length) return; // Zastavit ak je len 1 fraza
                 setTimeout(type, speed);
             }
             type();
@@ -944,8 +950,7 @@ function handleForm(e) {
     document.querySelectorAll('.blur-to-focus, .slide-in-left, .slide-in-right, .fade-up').forEach(el => {
         scrollObserver.observe(el);
     });
-
-})();
+});
 
 </script>
 <script src="js/main.js"></script>
