@@ -84,7 +84,14 @@
 <li><span class="nav-link active" id="nav-home" onclick="showPage('home')">Domů</span></li>
 <li class="dropdown"><span class="dropdown-toggle" onclick="toggleDropdown(event);showPage('sluzby-prehled')">Služby ▾</span>
 <div class="dropdown-menu"><div class="dmg">
-<div class="dmi" onclick="showPage('individualni-konzultace')"><h4>Individuální konzultace</h4><p>Koučování, Gallup, PRISM</p></div>
+<div class="dmi" onclick="showPage('individualni-konzultace')">
+    <h4>Individuální konzultace</h4>
+    <div style="font-size:0.9rem; margin-top:0.5rem; display:flex; flex-direction:column; gap:0.4rem;">
+        <span onclick="event.stopPropagation();showPage('koucovani')" style="color:var(--text-light);cursor:pointer;">↳ 1:1 Koučování</span>
+        <span onclick="event.stopPropagation();showPage('gallup')" style="color:var(--text-light);cursor:pointer;">↳ Gallup CliftonStrengths</span>
+        <span onclick="event.stopPropagation();showPage('prism')" style="color:var(--text-light);cursor:pointer;">↳ PRISM Brain Mapping</span>
+    </div>
+</div>
 <div class="dmi" onclick="showPage('transformace')"><h4>Redesign Your Life</h4><p>Program osobní změny</p></div>
 <div class="dmi" onclick="showPage('karierni-poradenstvi')"><h4>Kariérní poradenství</h4><p>Pro studenty a mladé dospělé (15+)</p></div>
 <div class="dmi" onclick="showPage('pro-firmy')"><h4>Firemní spolupráce</h4><p>Strategický partnering</p></div>
@@ -200,10 +207,10 @@
 </div>
 </section>
 
-<div class="cta-banner" style="background:var(--sage-dark);color:white;text-align:center;padding:5rem 2rem;">
+<div class="cta-banner" style="background:var(--sage-dark);text-align:center;padding:5rem 2rem;">
     <div class="wrap blur-to-focus">
-        <h2 style="font-family:Georgia,serif;font-size:2.5rem;margin-bottom:1rem;">Nevíte, kde začít?</h2>
-        <p style="font-size:1.1rem;opacity:0.9;max-width:600px;margin:0 auto 2rem auto;line-height:1.6;">Domluvme si nezávazný 30minutový hovor.<br>Úvodní konzultace je zdarma.</p>
+        <h2 style="font-family:Georgia,serif;font-size:2.5rem;margin-bottom:1rem;color:#ffffff !important;">Nevíte, kde začít?</h2>
+        <p style="font-size:1.1rem;opacity:0.9;max-width:600px;margin:0 auto 2rem auto;line-height:1.6;color:#ffffff !important;">Domluvme si nezávazný 30minutový hovor.<br>Úvodní konzultace je zdarma.</p>
         <button class="btn btn-white pulse-btn" onclick="showPage('kontakt')">Chci si rezervovat konzultaci zdarma</button>
     </div>
 </div>
@@ -215,7 +222,7 @@
         <div class="svc-hero-content wrap" style="position:relative; z-index:2; max-width:800px;">
             <span class="section-label" style="color:var(--sage-light); font-weight:600; letter-spacing:0.1em; text-transform:uppercase; display:block; margin-bottom:1rem;">Služby</span>
             <h1 style="font-family:Georgia,serif; font-size:3.5rem; color:white; line-height:1.2;">
-                Spolupráce, která vede k jasným prioritám a plánu.
+                Spolupráce, která vede k… <span id="sluzby-typing" style="color:var(--sage-light);"></span>
             </h1>
         </div>
     </div>
@@ -272,7 +279,7 @@
         <div class="svc-hero-content wrap" style="position:relative; z-index:2; max-width:800px;">
             <span class="section-label" style="color:var(--sage-light); font-weight:600; letter-spacing:0.1em; text-transform:uppercase; display:block; margin-bottom:1rem;">Individuální konzultace</span>
             <h1 style="font-family:Georgia,serif; font-size:3.5rem; color:white; line-height:1.2;">
-                Pomůžu vám získat zpět jasný směr a jistotu v rozhodování.
+                Pomůžu vám získat zpět <span id="indiv-typing" style="color:var(--sage-light);"></span>
             </h1>
         </div>
     </div>
@@ -283,7 +290,7 @@
                 
                 <div class="sluzba-block fade-up" onclick="showPage('koucovani')">
                     <div>
-                        <h4 style="font-size:1.8rem;">1:1 Koučování</h4>
+                        <h4 style="font-size:1.8rem;">1:1 KOUČOVÁNÍ</h4>
                         <p style="font-size:1.05rem;">Pravidelná podpora při strategických rozhodnutích, nastavování hranic a prevenci vyhoření.</p>
                     </div>
                     <span class="sluzba-link">Zjistit více &rarr;</span>
@@ -291,7 +298,7 @@
 
                 <div class="sluzba-block fade-up" onclick="showPage('gallup')">
                     <div>
-                        <h4 style="font-size:1.8rem;">Gallup CliftonStrengths</h4>
+                        <h4 style="font-size:1.8rem;">GALLUP CLIFTONSTRENGTHS</h4>
                         <p style="font-size:1.05rem;">Odhalte svou unikátní talentovou DNA a postavte svůj další rozvoj na tom, co vám jde úplně samo.</p>
                     </div>
                     <span class="sluzba-link">Zjistit více &rarr;</span>
@@ -299,7 +306,7 @@
 
                 <div class="sluzba-block fade-up" onclick="showPage('prism')">
                     <div>
-                        <h4 style="font-size:1.8rem;">PRISM Brain Mapping</h4>
+                        <h4 style="font-size:1.8rem;">PRISM BRAIN MAPPING</h4>
                         <p style="font-size:1.05rem;">Zmapujte své přirozené chování z pohledu neurověd a zjistěte, proč vás některé role a situace zbytečně vyčerpávají.</p>
                     </div>
                     <span class="sluzba-link">Zjistit více &rarr;</span>
@@ -319,7 +326,7 @@
         </div>
     </div>
     <div class="wrap" style="max-width:800px;padding:4rem 2rem;">
-        <p style="font-size:1.1rem;color:var(--text-light);line-height:1.9;margin-bottom:3rem;">Koučování je pro vás, když ztrácíte půdu pod nohama, jedete na autopilota nebo nevidíte cestu ven.<br><br>Sedíte dvanáct hodin u počítače, hasíte jeden problém za druhým a cítíte, jak se dny slévají v jeden nekonečný kolotoč. Víte, že něco nefunguje, ale v tom shonu je těžké najít směr. Pomůžu vám z toho kolotoče vystoupit, získat nadhled a začít dělat konkrétní kroky k řešení.</p>
+        <p style="font-size:1.1rem;color:var(--text-light);line-height:1.9;margin-bottom:3rem;">Koučování je pro vás, když… <span id="kouc-typing" style="color:var(--sage-dark);font-weight:bold;"></span><br><br>Sedíte dvanáct hodin u počítače, hasíte jeden problém za druhým a cítíte, jak se dny slévají v jeden nekonečný kolotoč. Víte, že něco nefunguje, ale v tom shonu je těžké najít směr. Pomůžu vám z toho kolotoče vystoupit, získat nadhled a začít dělat konkrétní kroky k řešení.</p>
         
         <h2 style="font-family:Georgia,serif;font-size:1.8rem;font-weight:400;color:var(--text);margin-bottom:1.5rem;">CO VÁM TO PŘINESE</h2>
         <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:3rem;">
@@ -386,7 +393,7 @@
         </div>
     </div>
     <div class="wrap" style="max-width:800px;padding:4rem 2rem;">
-        <p style="font-size:1.1rem;color:var(--text-light);line-height:1.9;margin-bottom:3rem;">Gallup CliftonStrengths je pro vás, když chcete vědět, v čem vynikáte, hledáte, na čem stavět kariéru, nebo potřebujete lépe pochopit svůj tým.<br><br>Většinou se snažíme opravovat své slabiny. Stojí to hodně úsilí a výsledkem je často jen průměr. Gallupův přístup to otáčí — pojmenujeme vaše přirozené talenty a ukážeme vám, jak na nich stavět.</p>
+        <p style="font-size:1.1rem;color:var(--text-light);line-height:1.9;margin-bottom:3rem;">Gallup CliftonStrengths je pro vás, když… <span id="gallup-typing" style="color:var(--sage-dark);font-weight:bold;"></span><br><br>Většinou se snažíme opravovat své slabiny. Stojí to hodně úsilí a výsledkem je často jen průměr. Gallupův přístup to otáčí — pojmenujeme vaše přirozené talenty a ukážeme vám, jak na nich stavět.</p>
         
         <h2 style="font-family:Georgia,serif;font-size:1.8rem;font-weight:400;color:var(--text);margin-bottom:1.5rem;">CO VÁM TO PŘINESE</h2>
         <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:3rem;">
@@ -447,7 +454,7 @@
         </div>
     </div>
     <div class="wrap" style="max-width:800px;padding:4rem 2rem;">
-        <p style="font-size:1.1rem;color:var(--text-light);line-height:1.9;margin-bottom:3rem;">PRISM Brain Mapping je pro vás, když chcete vědět, proč vás práce vyčerpává, hledáte soulad mezi výkonem a energií, nebo potřebujete pochopit své reakce pod tlakem.<br><br>Někdy podáváme skvělé výkony, ale vnitřně nás to pálí. PRISM je mapa vašeho chování. Ukáže vám, kdy jednáte přirozeně a kdy se musíte do určitého způsobu fungování nutit, což vás stojí obrovské množství energie.</p>
+        <p style="font-size:1.1rem;color:var(--text-light);line-height:1.9;margin-bottom:3rem;">PRISM Brain Mapping je pro vás, když… <span id="prism-typing" style="color:var(--sage-dark);font-weight:bold;"></span><br><br>Někdy podáváme skvělé výkony, ale vnitřně nás to pálí. PRISM je mapa vašeho chování. Ukáže vám, kdy jednáte přirozeně a kdy se musíte do určitého způsobu fungování nutit, což vás stojí obrovské množství energie.</p>
         
         <h2 style="font-family:Georgia,serif;font-size:1.8rem;font-weight:400;color:var(--text);margin-bottom:1.5rem;">CO VÁM TO PŘINESE</h2>
         <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:3rem;">
@@ -504,7 +511,7 @@
         <div class="svc-hero-overlay"></div>
         <div class="svc-hero-content wrap">
             <span class="section-label">REDESIGN YOUR LIFE</span>
-            <h1>Jste jiný člověk než před deseti lety. Vaše kariéra to ještě neví.</h1>
+            <h1>Jste jiný člověk než před deseti lety. <span id="redesign-typing" style="color:var(--sage-light);"></span></h1>
         </div>
     </div>
     <div class="wrap" style="max-width:800px;padding:4rem 2rem;">
@@ -570,7 +577,7 @@
         <div class="svc-hero-overlay"></div>
         <div class="svc-hero-content wrap">
             <span class="section-label">KARIÉRNÍ PORADENSTVÍ</span>
-            <h1>Rozhodování o studiu a kariéře...</h1>
+            <h1>Rozhodování o studiu a kariéře… <span id="kariera-typing" style="color:var(--sage-light);"></span></h1>
         </div>
     </div>
     <div class="wrap" style="max-width:800px;padding:4rem 2rem;">
@@ -626,7 +633,7 @@
         <div class="svc-hero-overlay"></div>
         <div class="svc-hero-content wrap">
             <span class="section-label">FIREMNÍ SPOLUPRÁCE</span>
-            <h1>Když věci ve firmě začnou fungovat lépe, je to vidět na lidech i na výsledcích.</h1>
+            <h1>Když věci ve firmě začnou fungovat lépe… <span id="firemni-typing" style="color:var(--sage-light);"></span></h1>
         </div>
     </div>
     <div class="wrap" style="max-width:800px;padding:4rem 2rem;">
@@ -674,7 +681,7 @@
 <div class="page-header" style="background:var(--cream);padding:6rem 0 4rem;border-bottom:1px solid #eee;">
 <div class="wrap">
 <span class="section-label" style="color:var(--sage-dark);font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:600;display:block;margin-bottom:1rem;">O mně</span>
-<h1 style="font-family:Georgia,serif;font-size:3.5rem;color:var(--text);margin-bottom:1.5rem;">To, co se děje kolem vás, často odráží to, co se děje ve vás. Změna začíná uvnitř.</h1>
+<h1 style="font-family:Georgia,serif;font-size:3.5rem;color:var(--text);margin-bottom:1.5rem;">To, co se děje kolem vás, často odráží to, co se děje ve vás. <span id="omne-typing" style="color:var(--sage-dark);"></span></h1>
 <p style="font-size:1.1rem;color:var(--text-light);line-height:1.8;max-width:600px;">Jsem pragmatický a lidský partner pro změnu. Propojuji psychologii s reálným světem byznysu a pomáhám lidem stavět na tom, v čem jsou přirozeně dobří.</p>
 </div>
 </div>
@@ -686,7 +693,6 @@
 <p style="text-align:left;font-size:0.8rem;letter-spacing:0.1em;color:var(--text-light);text-transform:uppercase;margin-top:1.5rem;">Katka Hrouzková · Brno</p>
 </div>
 <div>
-<p style="font-size:1.05rem;color:var(--text);font-style:italic;margin-bottom:1.5rem;line-height:1.8;">Nepřikyvuji. Kladu otázky, které jsou někdy nepříjemné, ale důležité. A vždy směřujeme ke konkrétním krokům.</p>
 <p style="font-size:1rem;color:var(--text-light);line-height:1.8;margin-bottom:1.5rem;">Začínala jsem v recruitmentu. V Hays jsem se naučila číst lidi rychle a rozumět tomu, co firmy skutečně hledají — ne jen to, co napíšou do inzerátu.</p>
 <p style="font-size:1rem;color:var(--text-light);line-height:1.8;margin-bottom:1.5rem;">Pak přišly roky v HR ve velkých mezinárodních firmách. FEI, Avast, UNIQA. Firmy od stovek po tisíce lidí. Viděla jsem spoustu chytrých, pracovitých lidí, kteří se vyčerpávali tím, že se snažili fungovat způsobem, který jim přirozeně nesedí.</p>
 <p style="font-size:1rem;color:var(--text-light);line-height:1.8;margin-bottom:2.5rem;">Sama jsem to zažila a skoro jsem vyhořela. To mě přivedlo ke koučinku a k nástrojům, jako jsou PRISM Brain Mapping a Gallup CliftonStrengths. Hodně mi pomohly i v mé vlastní změně.</p>
@@ -706,6 +712,8 @@
 <img src="images/cert-gallup.png" alt="Gallup Certified" style="width:100%; height:auto; border-radius:4px; box-shadow:0 4px 15px rgba(0,0,0,0.06); border:1px solid #eee;">
 <img src="images/cert-prism.png" alt="PRISM Certified" style="width:100%; height:auto; border-radius:4px; box-shadow:0 4px 15px rgba(0,0,0,0.06); border:1px solid #eee;">
 <img src="images/cert-erickson.png" alt="Erickson Certified" style="width:100%; height:auto; border-radius:4px; box-shadow:0 4px 15px rgba(0,0,0,0.06); border:1px solid #eee;">
+<img src="images/cert-erickson%20team.png" alt="Erickson Team Certified" style="width:100%; height:auto; border-radius:4px; box-shadow:0 4px 15px rgba(0,0,0,0.06); border:1px solid #eee;">
+<img src="images/cert-facilitace.png" alt="Facilitace" style="width:100%; height:auto; border-radius:4px; box-shadow:0 4px 15px rgba(0,0,0,0.06); border:1px solid #eee;">
 </div>
 </div>
 
@@ -794,7 +802,7 @@
 </div>
 
 <div id="kontakt" class="page">
-<div class="page-header"><div class="wrap"><span class="section-label">KONTAKT</span><h1>Začněme společně</h1><p>Napište mi, zavolejte, nebo vyplňte krátký formulář — ozvu se do 2 pracovních dnů.<br>Nebo si rovnou rezervujte termín: <a href="#" style="color:var(--sage-dark);font-weight:bold;">Zarezervovat čas v kalendáři &rarr;</a></p></div></div>
+<div class="page-header"><div class="wrap"><span class="section-label">KONTAKT</span><h1>Začněme společně</h1><p>Napište mi, zavolejte, nebo vyplňte krátký formulář — ozvu se do 2 pracovních dnů.<br>Nebo si rovnou rezervujte termín: <a href="https://calendar.app.google/PFCb8STnoEWmZEep9" target="_blank" style="color:var(--sage-dark);font-weight:bold;">Zarezervovat čas v kalendáři &rarr;</a></p></div></div>
 <section style="background:white;padding:4rem 0 6rem"><div class="wrap" style="max-width:900px">
 <div class="contact-grid">
 <div>
@@ -810,7 +818,6 @@
 <p class="form-sub" style="color:var(--text-light);margin-bottom:2rem;">Pár vět mi stačí, abych se mohla připravit.</p>
 <div class="form-field" style="margin-bottom:1.5rem;"><label style="display:block;font-size:0.85rem;font-weight:600;margin-bottom:0.5rem;color:var(--text);">Jméno *</label><input type="text" placeholder="Vaše jméno" style="width:100%;padding:0.8rem;border:1px solid #ddd;border-radius:6px;font-family:inherit;"></div>
 <div class="form-field" style="margin-bottom:1.5rem;"><label style="display:block;font-size:0.85rem;font-weight:600;margin-bottom:0.5rem;color:var(--text);">Email *</label><input type="email" placeholder="vas@email.cz" style="width:100%;padding:0.8rem;border:1px solid #ddd;border-radius:6px;font-family:inherit;"></div>
-<div class="form-field" style="margin-bottom:1.5rem;"><label style="display:block;font-size:0.85rem;font-weight:600;margin-bottom:0.5rem;color:var(--text);">Co řešíte?</label><select style="width:100%;padding:0.8rem;border:1px solid #ddd;border-radius:6px;font-family:inherit;background:white;"><option value="">Vyberte téma...</option><option>Hledám nový směr / nevím co dál</option><option>Kariérní rozhodování</option><option>Leadership a vedení lidí</option><option>Midlife přehodnocení</option><option>AI a změna v mém odvětví</option><option>Work-life balance / vyhoření</option><option>Chci poznat své talenty (PRISM / Gallup)</option><option>Dlouhodobý program</option><option>Něco jiného</option></select></div>
 <div class="form-field" style="margin-bottom:2rem;"><label style="display:block;font-size:0.85rem;font-weight:600;margin-bottom:0.5rem;color:var(--text);">Krátce o vaší situaci</label><textarea rows="4" placeholder="Pár vět o tom, kde se teď nacházíte a co byste chtěli změnit..." style="width:100%;padding:0.8rem;border:1px solid #ddd;border-radius:6px;font-family:inherit;resize:vertical;"></textarea></div>
 <button class="btn" style="width:100%" onclick="handleForm(event)">Odeslat zprávu</button>
 <div class="form-success" id="form-success" style="display:none;margin-top:1rem;color:var(--sage-dark);font-weight:600;">✓ Zpráva odeslána! Ozvu se do 2 pracovních dnů.</div>
@@ -878,26 +885,48 @@ function handleForm(e) {
     document.getElementById('form-success').style.display = 'block';
 }
 
-// Logic pre Animacie
+// Logic pre Animacie (Typewriters)
 (function() {
-    // 1. Animacia pisania v Home Hero
-    const heroTyping = document.getElementById("hero-typing");
-    if (heroTyping) {
-        const phrases = ["žijte v souladu se sebou.", "pracujte způsobem, který vám sedí.", "poznejte své silné stránky.", "najděte svůj směr."];
-        let pIdx = 0, cIdx = 0, isDel = false;
-        function type() {
-            const currentTxt = phrases[pIdx];
-            if (isDel) cIdx--; else cIdx++;
-            heroTyping.textContent = currentTxt.substring(0, cIdx);
-            let speed = isDel ? 30 : 80;
-            if (!isDel && cIdx === currentTxt.length) { isDel = true; speed = 2500; }
-            else if (isDel && cIdx === 0) { isDel = false; pIdx = (pIdx + 1) % phrases.length; speed = 500; }
-            setTimeout(type, speed);
-        }
-        type();
-    }
+    const typewriters = [
+        { id: "hero-typing", phrases: ["žijte v souladu se sebou.", "pracujte způsobem, který vám sedí.", "poznejte své silné stránky.", "najděte svůj směr."] },
+        { id: "sluzby-typing", phrases: ["jasným prioritám a plánu.", "energii místo vyčerpání.", "rozhodnutím podloženým daty.", "výsledkům v reálné praxi."] },
+        { id: "indiv-typing", phrases: ["energii", "jasný směr", "jistotu v rozhodování", "radost z práce"] },
+        { id: "kouc-typing", phrases: ["ztrácíte půdu pod nohama.", "jedete na autopilota.", "nevidíte cestu ven."] },
+        { id: "gallup-typing", phrases: ["chcete vědět, v čem vynikáte.", "hledáte, na čem stavět kariéru.", "potřebujete lépe pochopit svůj tým."] },
+        { id: "prism-typing", phrases: ["chcete vědět, proč vás práce vyčerpává.", "hledáte soulad mezi výkonem a energií.", "potřebujete pochopit své reakce pod tlakem."] },
+        { id: "redesign-typing", phrases: ["Vaše kariéra to ještě neví."] },
+        { id: "kariera-typing", phrases: ["nemusí být stres.", "může dávat smysl.", "když víte, z čeho vycházet."] },
+        { id: "firemni-typing", phrases: ["je to vidět na lidech.", "i na výsledcích."] },
+        { id: "omne-typing", phrases: ["Změna začíná uvnitř."] }
+    ];
 
-    // 2. Scroll Observer pre animacie komponentov
+    typewriters.forEach(tw => {
+        const el = document.getElementById(tw.id);
+        if (el) {
+            let pIdx = 0, cIdx = 0, isDel = false;
+            function type() {
+                const currentTxt = tw.phrases[pIdx];
+                if (isDel) cIdx--; else cIdx++;
+                el.textContent = currentTxt.substring(0, cIdx);
+                let speed = isDel ? 30 : 80;
+                
+                if (!isDel && cIdx === currentTxt.length) { 
+                    isDel = true; 
+                    speed = tw.phrases.length === 1 ? 9999999 : 2500; 
+                } else if (isDel && cIdx === 0) { 
+                    isDel = false; 
+                    pIdx = (pIdx + 1) % tw.phrases.length; 
+                    speed = 500; 
+                }
+                
+                if (tw.phrases.length === 1 && cIdx === currentTxt.length) return; // Zastavit ak je len 1 fraza
+                setTimeout(type, speed);
+            }
+            type();
+        }
+    });
+
+    // Scroll Observer pre animacie komponentov
     const observerOptions = { threshold: 0.15 };
     const scrollObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
