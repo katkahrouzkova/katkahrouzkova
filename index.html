@@ -73,8 +73,8 @@
 
 /* Centrovany Hero Layout */
 .hero-centered {display:flex;flex-direction:column;align-items:flex-start;justify-content:center;text-align:left;padding:10rem 2rem 6rem;min-height:75vh;max-width:600px;}
-.hero-centered h1 {font-family:Georgia,serif;font-size:3.5rem;color:var(--text);line-height:1.2;margin-bottom:2rem;max-width:1000px;}
-@media (max-width:768px){.hero-centered h1 {font-size:2.5rem;}}
+.hero-centered h1 {font-family:Georgia,serif;font-size:2.4rem;color:var(--text);line-height:1.3;margin-bottom:1.5rem;max-width:600px;}
+@media (max-width:768px){.hero-centered h1 {font-size:1.8rem;}} @media (max-width:768px){[style*="grid-template-columns:1fr 1fr"]:first-of-type{grid-template-columns:1fr !important;}}
 
 /* Bloky v sluzbach a fix pre 4 stlpce */
 .services-grid-4 {display:grid; grid-template-columns:repeat(4, 1fr); gap:1.5rem;}
@@ -129,7 +129,8 @@
 </nav>
 
 <div id="home" class="page active">
-<div class="hero-centered wrap" style="background-image:linear-gradient(to right, rgba(255,255,255,0.92) 45%, rgba(255,255,255,0.3) 70%, rgba(255,255,255,0) 100%), url(images/foto-hero.jpg);background-size:cover;background-position:center top;">
+<div style="display:grid;grid-template-columns:1fr 1fr;min-height:80vh;width:100%;">
+<div style="display:flex;flex-direction:column;justify-content:center;padding:8rem 4rem 6rem 5%;background:white;">
 <span class="hero-eyebrow" style="text-transform:uppercase;letter-spacing:0.1em;color:var(--sage-dark);font-weight:600;font-size:0.85rem;margin-bottom:1.5rem;display:block;">Koučink &amp; Talentové poradenství</span>
 <h1 style="max-width:1000px;">Pomáhám lidem postavit kariéru i život na tom, v čem jsou přirozeně dobří.<br><span style="display:block;min-height:1.4em;"><span id="hero-typing" style="color:var(--sage-dark);"></span></span></h1>
 
@@ -151,6 +152,7 @@
 <div style="display:flex;gap:1.5rem;justify-content:flex-start;flex-wrap:wrap;">
     <button class="btn pulse-btn" onclick="showPage('kontakt')">Chci rezervovat úvodní konzultaci zdarma</button>
 </div>
+<div style="background-image:url(images/foto-hero.jpg);background-size:cover;background-position:center top;min-height:80vh;"></div>
 </div>
 
 <section style="background:var(--cream);padding:6rem 0;">
