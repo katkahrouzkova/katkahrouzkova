@@ -72,9 +72,9 @@
 }
 
 /* Centrovany Hero Layout */
-.hero-centered {display:flex;flex-direction:column;align-items:flex-start;justify-content:center;text-align:left;padding:10rem 2rem 6rem;min-height:75vh;max-width:600px;}
-.hero-centered h1 {font-family:Georgia,serif;font-size:2.4rem;color:var(--text);line-height:1.3;margin-bottom:1.5rem;max-width:600px;}
-@media (max-width:768px){.hero-centered h1 {font-size:1.8rem;}} @media (max-width:768px){[style*="grid-template-columns:1fr 1fr"]:first-of-type{grid-template-columns:1fr !important;}}
+.hero-centered {display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10rem 2rem 6rem;min-height:75vh;}
+.hero-centered h1 {font-family:Georgia,serif;font-size:3.5rem;color:var(--text);line-height:1.2;margin-bottom:2rem;max-width:1000px;}
+@media (max-width:768px){.hero-centered h1 {font-size:2.5rem;}}
 
 /* Bloky v sluzbach a fix pre 4 stlpce */
 .services-grid-4 {display:grid; grid-template-columns:repeat(4, 1fr); gap:1.5rem;}
@@ -129,12 +129,11 @@
 </nav>
 
 <div id="home" class="page active">
-<div style="display:grid;grid-template-columns:1fr 1fr;min-height:80vh;width:100%;">
-<div style="display:flex;flex-direction:column;justify-content:center;padding:8rem 4rem 6rem 5%;background:white;">
+<div class="hero-centered wrap">
 <span class="hero-eyebrow" style="text-transform:uppercase;letter-spacing:0.1em;color:var(--sage-dark);font-weight:600;font-size:0.85rem;margin-bottom:1.5rem;display:block;">Koučink &amp; Talentové poradenství</span>
 <h1 style="max-width:1000px;">Pomáhám lidem postavit kariéru i život na tom, v čem jsou přirozeně dobří.<br><span style="display:block;min-height:1.4em;"><span id="hero-typing" style="color:var(--sage-dark);"></span></span></h1>
 
-<div style="display:flex;gap:2rem;justify-content:flex-start;flex-wrap:wrap;margin:3rem 0;text-align:left;border-top:1px solid #eee;border-bottom:1px solid #eee;padding:2rem 0;">
+<div style="display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin:3rem 0;text-align:left;border-top:1px solid #eee;border-bottom:1px solid #eee;padding:2rem 0;">
     <div style="max-width:280px;" class="fade-up" style="transition-delay:0.1s;">
         <strong style="color:var(--petrol);font-size:1.1rem;display:block;margin-bottom:0.5rem;">17+ let v globálním HR</strong>
         <span style="font-size:0.95rem;color:var(--text-light);line-height:1.5;display:block;">Zkušenosti z náboru a strategického HR ve společnostech Hays, Avast, UNIQA a Thermo Fisher Scientific.</span>
@@ -149,10 +148,9 @@
     </div>
 </div>
 
-<div style="display:flex;gap:1.5rem;justify-content:flex-start;flex-wrap:wrap;">
+<div style="display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;">
     <button class="btn pulse-btn" onclick="showPage('kontakt')">Chci rezervovat úvodní konzultaci zdarma</button>
 </div>
-<div style="background-image:url(images/foto-hero.jpg);background-size:cover;background-position:center top;min-height:80vh;"></div>
 </div>
 
 <section style="background:var(--cream);padding:6rem 0;">
@@ -160,7 +158,7 @@
 <div style="display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start;">
 <div style="text-align:center;" class="slide-in-left">
 <div class="about-photo-wrapper">
-<div style="width:100%;aspect-ratio:1;border-radius:50%;overflow:hidden;background:#f0f0f0;"><img alt="Katka Hrouzková" src="images/foto-omne.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+<div style="width:100%;aspect-ratio:1;border-radius:50%;overflow:hidden;background:#f0f0f0;"><img alt="Katka Hrouzková" src="images/about-img.png" style="width:100%;height:100%;object-fit:cover;"></div>
 </div>
 <div style="margin-top:1.5rem;">
 <h3 style="font-family:Georgia,serif;font-style:italic;font-size:1.8rem;font-weight:normal;color:var(--text);margin-bottom:0.3rem;">Katka Hrouzková</h3>
@@ -241,14 +239,14 @@
 </div>
 
 <div id="sluzby-prehled" class="page">
-    <div style="display:grid;grid-template-columns:1fr 1fr;min-height:60vh;">
-        <div style="display:flex;flex-direction:column;justify-content:center;padding:6rem 4rem 6rem 5%;background:var(--cream);">
-            <span style="color:var(--sage-dark);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;font-size:0.85rem;display:block;margin-bottom:1rem;">Služby</span>
-            <h1 style="font-family:Georgia,serif;font-size:2.4rem;color:var(--text);line-height:1.3;margin:0;">
-                Spolupráce, která vede k…<br><span id="sluzby-typing" style="color:var(--sage-dark);font-style:italic;"></span>
+    <div class="svc-hero" style="min-height:60vh; display:flex; align-items:center; justify-content:center; text-align:center;">
+        <div class="svc-hero-overlay" style="background: rgba(0,0,0,0.6);"></div>
+        <div class="svc-hero-content wrap" style="position:relative; z-index:2; max-width:800px;">
+            <span class="section-label" style="color:var(--sage-light); font-weight:600; letter-spacing:0.1em; text-transform:uppercase; display:block; margin-bottom:1rem;">Služby</span>
+            <h1 style="font-family:Georgia,serif; font-size:3.5rem; color:white; line-height:1.2;">
+                Spolupráce, která vede k… <br><span id="sluzby-typing" style="color:var(--sage-light);"></span>
             </h1>
         </div>
-        <div style="background-image:url(images/foto-2.jpg);background-size:cover;background-position:center;min-height:60vh;"></div>
     </div>
 
     <section style="background:white; padding:6rem 0;">
@@ -338,7 +336,7 @@
 </div>
 
 <div id="koucovani" class="page">
-    <div class="svc-hero" style="background-image:url(images/foto-koucovani.jpg);background-size:cover;background-position:center;">
+    <div class="svc-hero">
         <div class="svc-hero-overlay"></div>
         <div class="svc-hero-content wrap">
             <span class="section-label">1:1 KOUČOVÁNÍ</span>
@@ -406,7 +404,7 @@
 </div>
 
 <div id="gallup" class="page">
-    <div class="svc-hero" style="background-image:url(images/foto-gallup.jpg);background-size:cover;background-position:center;">
+    <div class="svc-hero">
         <div class="svc-hero-overlay"></div>
         <div class="svc-hero-content wrap">
             <span class="section-label">GALLUP CLIFTONSTRENGTHS</span>
@@ -468,7 +466,7 @@
 </div>
 
 <div id="prism" class="page">
-    <div class="svc-hero" style="background-image:url(images/foto-prism.jpg);background-size:cover;background-position:center;">
+    <div class="svc-hero">
         <div class="svc-hero-overlay"></div>
         <div class="svc-hero-content wrap">
             <span class="section-label"><em>PRISM</em> BRAIN MAPPING</span>
@@ -530,7 +528,7 @@
 </div>
 
 <div id="transformace" class="page">
-    <div class="svc-hero" style="background-image:url(images/foto-redesign.jpg);background-size:cover;background-position:center;">
+    <div class="svc-hero">
         <div class="svc-hero-overlay"></div>
         <div class="svc-hero-content wrap">
             <span class="section-label">REDESIGN YOUR LIFE</span>
@@ -596,7 +594,7 @@
 </div>
 
 <div id="karierni-poradenstvi" class="page">
-    <div class="svc-hero" style="background-image:url(images/foto-nextgen.jpg);background-size:cover;background-position:center;">
+    <div class="svc-hero">
         <div class="svc-hero-overlay"></div>
         <div class="svc-hero-content wrap">
             <span class="section-label">NEXTGEN TALENT MANAGEMENT (15+)</span>
@@ -605,7 +603,7 @@
         </div>
     </div>
     <div class="wrap" style="max-width:800px;padding:4rem 2rem;">
-        <p style="font-size:1.1rem;color:var(--text-light);line-height:1.9;margin-bottom:3rem;">Nejtěžší kariérní rozhodnutí přicházejí často v době, kdy máme nejméně dat. Pomocí metodiky Gallup identifikujeme přirozené talenty a způsob fungování studentů (15+). Výsledkem není jen doporučení školy, ale hluboké porozumění vlastní hodnotě, které jim usnadní vstup do světa dospělých.</p>
+        <p style="font-size:1.1rem;color:var(--text-light);line-height:1.9;margin-bottom:3rem;">Nejtěžší kariérní rozhodnutí přicházejí často v době, kdy máme nejméně dat. Pomocí metodik Gallup a <em>PRISM</em> identifikujeme přirozené talenty a způsob fungování studentů (15+). Výsledkem není jen doporučení školy, ale hluboké porozumění vlastní hodnotě, které jim usnadní vstup do světa dospělých.</p>
 
         <h2 style="font-family:Georgia,serif;font-size:1.8rem;font-weight:400;color:var(--text);margin-bottom:1.5rem;">CO VÁM TO PŘINESE</h2>
         <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:3rem;">
@@ -652,7 +650,7 @@
     </div>
 </div>
 <div id="pro-firmy" class="page">
-    <div class="svc-hero" style="background-image:url(images/foto-firmy.jpg);background-size:cover;background-position:center top;">
+    <div class="svc-hero">
         <div class="svc-hero-overlay"></div>
         <div class="svc-hero-content wrap">
             <span class="section-label">FIREMNÍ SPOLUPRÁCE</span>
@@ -711,7 +709,7 @@
 <div class="wrap">
 <div style="display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start;">
 <div>
-<img src="images/foto-omne.jpg" alt="Katka Hrouzková" style="width:100%;max-width:400px;border-radius:12px;display:block;margin:0 auto;">
+<img src="images/about-img.png" alt="Katka Hrouzková" style="width:100%;max-width:400px;border-radius:12px;display:block;margin:0 auto;">
 <p style="text-align:left;font-size:0.8rem;letter-spacing:0.1em;color:var(--text-light);text-transform:uppercase;margin-top:1.5rem;">Katka Hrouzková · Brno</p>
 <ul style="list-style:none;padding:0;margin:2rem 0 0 0;">
 <li style="padding:0.6rem 0;border-bottom:1px solid #eee;color:var(--text-light);display:flex;gap:0.8rem;align-items:center;font-size:0.85rem;"><span style="width:5px;height:5px;background:var(--sage-dark);border-radius:50%;display:inline-block;flex-shrink:0;"></span>Psychologie, FF MU Brno</li>
