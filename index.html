@@ -105,7 +105,7 @@
 <button class="mobile-menu-btn" onclick="toggleMobileMenu()" id="mobileMenuBtn"><span></span><span></span><span></span></button>
 <ul class="nav-links" id="navLinks">
 <li><span class="nav-link active" id="nav-home" onclick="showPage('home')">Domů</span></li>
-<li class="dropdown"><span class="dropdown-toggle" onclick="toggleDropdown(event);showPage('sluzby-prehled')">Služby ▾</span>
+<li class="dropdown"><span class="dropdown-toggle" onclick="toggleDropdown(event); if(window.innerWidth > 768) showPage('sluzby-prehled')">Služby ▾</span>
 <div class="dropdown-menu"><div class="dmg">
 <div class="dmi" onclick="showPage('individualni-konzultace')">
     <h4>Individuální konzultace</h4>
