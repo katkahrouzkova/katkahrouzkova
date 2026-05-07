@@ -48,6 +48,27 @@
 @media (max-width:768px){
   .stats-grid{grid-template-columns:1fr 1fr;}
   .contact-grid{grid-template-columns:1fr;}
+  /* O mne grid */
+  .wrap [style*="grid-template-columns:1fr 2fr"]{grid-template-columns:1fr !important;}
+  /* Sluzby a homepage grid - vzdy 1 stlpec na mobile */
+  .services-grid-4{grid-template-columns:1fr !important;}
+  /* svc-hero nadpisy */
+  .svc-hero-content h1{font-size:2.2rem !important;}
+  .svc-hero-content h2{font-size:1.4rem !important;}
+  /* S cim prichazi gridy na strankach sluzieb */
+  [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;}
+  /* Pad stranok na mobile */
+  .wrap[style*="max-width:800px"]{padding:2rem 1rem !important;}
+  /* Hero */
+  .hero-centered{padding:7rem 1.5rem 4rem !important;}
+  /* Certifikaty */
+  .wrap [style*="justify-content:center"] img{height:90px !important;}
+  /* FAQ padding */
+  .faq-q{font-size:1rem !important;}
+}
+@media (max-width:480px){
+  .svc-hero-content h1{font-size:1.8rem !important;}
+  .hero-centered h1{font-size:2rem !important;}
 }
 
 /* Centrovany Hero Layout */
