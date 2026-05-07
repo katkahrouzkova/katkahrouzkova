@@ -83,7 +83,7 @@
 (function () {
     var translations = {
         /* === NAVIGÁCIA === */
-        'nav-sluzby':       { cz: 'Pro jednotlivce',          en: 'Services' },
+        'nav-sluzby':       { cz: 'Služby',          en: 'Services' },
         'nav-o-mne':        { cz: 'O mně',            en: 'About me' },
         'nav-kontakt':      { cz: 'Kontakt',          en: 'Contact' },
         'nav-cta':          { cz: 'Chci bezplatnou konzultaci', en: 'Free consultation' },
@@ -136,7 +136,7 @@
         'cta-btn':          { cz: 'Rezervovat konzultaci', en: 'Book a consultation' },
 
         /* === STRÁNKA PRO JEDNOTLIVCE === */
-        'pg-svc-h1':        { cz: 'Pro jednotlivce', en: 'Services' },
+        'pg-svc-h1':        { cz: 'Služby', en: 'Services' },
         'pg-svc-prolog':    { cz: 'Promluvíme si – a společně přijdeme na to, co dává smysl.', en: 'We will talk – and together figure out what makes sense.' },
 
         /* === KOUČOVANIE === */
@@ -249,7 +249,7 @@
         document.querySelectorAll('[data-lang-key]').forEach(function(el){var k=el.getAttribute('data-lang-key');if(t[k]&&t[k][lang])el.innerHTML=t[k][lang];});
         var n={cz:{'nav-home':'Domů','nav-o-mne':'O mně','nav-faq':'FAQ','nav-kontakt':'Kontakt'},en:{'nav-home':'Home','nav-o-mne':'About me','nav-faq':'FAQ','nav-kontakt':'Contact'}};
         ['nav-home','nav-o-mne','nav-faq','nav-kontakt'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=n[lang][id];});
-        var dt=document.querySelector('.dropdown-toggle');if(dt)dt.innerHTML=(lang==='en')?'Services':'Pro jednotlivce';
+        var dt=document.querySelector('.dropdown-toggle');if(dt)dt.innerHTML=(lang==='en')?'Services':'Služby';
         var h1=document.querySelector('.hero h1');if(h1)h1.innerHTML=(lang==='en')?'KNOW YOURSELF BETTER.<br><em>work and live in a way that suits you</em>':'POZNEJTE SE LÉPE.<br><em>pracujte a žijte způsobem, který vám sedí</em>';
         var hs=document.querySelector('.hero-sub');if(hs)hs.textContent=(lang==='en')?'I will help you understand yourself better – whether you are navigating a career change, workplace relationships, or simply looking for what comes next.':'Pomůžu vám lépe porozumět vlastnímu potenciálu. Nespoléhám jen na teorii – propojuji psychologii, poznatky z neurověd a práci s talenty s více než 17 lety praxe v globálním HR a certifikovaným koučinkem.';
         document.documentElement.lang=(lang==='en')?'en':'cs';
