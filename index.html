@@ -229,14 +229,20 @@
 
     <section style="background:white; padding:6rem 0;">
         <div class="wrap">
-            <div class="services-grid-4" style="margin-bottom: 4rem;">
+            <div class="services-grid-4" style="margin-bottom:4rem;grid-template-columns:repeat(3,1fr);">
                 
                 <div class="sluzba-block fade-up" style="transition-delay:0.1s;" onclick="showPage('individualni-konzultace')">
                     <div class="sluzba-icon"><svg viewBox="0 0 280 160" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 155 A130 130 0 0 1 270 155" stroke="currentColor" stroke-width="8" fill="none"/><path d="M50 155 A90 90 0 0 1 230 155" stroke="currentColor" stroke-width="8" fill="none"/><path d="M90 155 A50 50 0 0 1 190 155" stroke="currentColor" stroke-width="8" fill="none"/></svg></div>
                     <div>
                         <h4 style="font-size:1.8rem;">Individuální konzultace</h4>
-                        <p style="font-size:1.05rem;">Od jednoho setkání po dlouhodobou spolupráci — podle toho, co právě potřebujete.<br><span style="display:inline-block;margin-top:0.5rem;color:var(--sage-dark);" onclick="event.stopPropagation();showPage('koucovani')">→ 1:1 Koučování</span><br><span style="display:inline-block;color:var(--sage-dark);" onclick="event.stopPropagation();showPage('gallup')">→ Gallup CliftonStrengths®</span><br><span style="display:inline-block;color:var(--sage-dark);" onclick="event.stopPropagation();showPage('prism')">→ <em>PRISM</em> Brain Mapping®</span></p>
+                        <div style="display:flex;flex-direction:column;gap:0.4rem;margin-top:0.8rem;">
+                            <span onclick="event.stopPropagation();showPage('koucovani')" style="font-size:0.9rem;color:var(--sage-dark);cursor:pointer;padding:0.3rem 0;border-bottom:1px solid #eee;transition:padding 0.2s;" onmouseover="this.style.paddingLeft='0.5rem'" onmouseout="this.style.paddingLeft='0'">1:1 Koučování</span>
+                            <span onclick="event.stopPropagation();showPage('gallup')" style="font-size:0.9rem;color:var(--sage-dark);cursor:pointer;padding:0.3rem 0;border-bottom:1px solid #eee;transition:padding 0.2s;" onmouseover="this.style.paddingLeft='0.5rem'" onmouseout="this.style.paddingLeft='0'">Gallup CliftonStrengths®</span>
+                            <span onclick="event.stopPropagation();showPage('prism')" style="font-size:0.9rem;color:var(--sage-dark);cursor:pointer;padding:0.3rem 0;border-bottom:1px solid #eee;transition:padding 0.2s;" onmouseover="this.style.paddingLeft='0.5rem'" onmouseout="this.style.paddingLeft='0'"><em>PRISM</em> Brain Mapping®</span>
+                            <span onclick="event.stopPropagation();showPage('karierni-poradenstvi')" style="font-size:0.9rem;color:var(--sage-dark);cursor:pointer;padding:0.3rem 0;transition:padding 0.2s;" onmouseover="this.style.paddingLeft='0.5rem'" onmouseout="this.style.paddingLeft='0'">NextGen Talent Management (15+)</span>
+                        </div>
                     </div>
+                    <span class="sluzba-link">Zjistit více</span>
                 </div>
 
                 <div class="sluzba-block fade-up" style="transition-delay:0.2s; background:var(--mint); border-color:var(--sage-pale);" onclick="showPage('transformace')">
@@ -249,17 +255,7 @@
                     <span class="sluzba-link">Zjistit více</span>
                 </div>
 
-                <div class="sluzba-block fade-up" style="transition-delay:0.3s;" onclick="showPage('karierni-poradenstvi')">
-                    <div class="sluzba-icon"><svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="15" fill="currentColor"/><circle cx="80" cy="30" r="15" fill="currentColor"/><circle cx="130" cy="30" r="15" fill="currentColor"/><circle cx="30" cy="80" r="15" fill="currentColor"/><circle cx="80" cy="80" r="15" fill="currentColor"/><circle cx="130" cy="80" r="15" fill="currentColor"/><circle cx="30" cy="130" r="15" fill="currentColor"/><circle cx="80" cy="130" r="15" fill="currentColor"/><circle cx="130" cy="130" r="15" fill="currentColor"/></svg></div>
-                    <div>
-                        <span style="font-size:0.8rem; text-transform:uppercase; color:var(--sage-dark); font-weight:bold; letter-spacing:0.1em; display:block; margin-bottom:0.5rem;">Pro studenty a mladé dospělé (15+)</span>
-                        <h4 style="font-size:1.8rem;">Kariérní poradenství</h4>
-                        <p style="font-size:1.05rem;">Pomůžu vám zorientovat se ve vlastních silných stránkách a vybrat směr, který dává smysl.</p>
-                    </div>
-                    <span class="sluzba-link">Zjistit více</span>
-                </div>
-
-                <div class="sluzba-block fade-up" style="transition-delay:0.4s;" onclick="showPage('pro-firmy')">
+                <div class="sluzba-block fade-up" style="transition-delay:0.3s;" onclick="showPage('pro-firmy')">
                     <div class="sluzba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></div>
                     <div>
                         <span style="font-size:0.8rem; text-transform:uppercase; color:var(--sage-dark); font-weight:bold; letter-spacing:0.1em; display:block; margin-bottom:0.5rem;">Strategický partnering</span>
