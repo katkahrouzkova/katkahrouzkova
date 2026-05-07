@@ -66,8 +66,8 @@
 .sluzba-block p {margin:0;font-size:0.95rem;color:var(--text-light);line-height:1.6;}
 .sluzba-icon {position:absolute;bottom:-15px;right:-15px;width:130px;height:130px;display:flex;align-items:center;justify-content:center;background:none;border-radius:0;transition:all 0.3s;opacity:0.08;pointer-events:none;}
 .sluzba-icon svg {width:130px;height:130px;color:var(--sage-dark);}
-.sluzba-link {color:var(--sage-dark);font-size:0.95rem;font-weight:600;margin-top:auto;padding-top:1rem;display:inline-block;transition:transform 0.2s;}
-.sluzba-block:hover .sluzba-link {transform:translateX(5px);}
+.sluzba-link {color:var(--sage-dark);font-size:0.9rem;font-weight:600;margin-top:auto;padding:0.7rem 1.5rem;display:block;text-align:center;border:2px solid var(--sage-dark);border-radius:6px;transition:background 0.2s,color 0.2s;}
+.sluzba-block:hover .sluzba-link {background:var(--sage-dark);color:white;}
 .sluzba-block:hover .sluzba-icon {transform:scale(1.15) rotate(5deg);opacity:0.13;}
 
 /* Reference page stlpce */
@@ -148,7 +148,7 @@
 <p style="font-size:1.1rem;color:var(--text-light);line-height:1.8;margin-bottom:1.2rem;">Jsem pragmatický a lidský partner pro váš rozvoj. Do spolupráce vnáším nadhled ze 17 let v globálním HR a hluboké porozumění psychologii.</p>
 <p style="font-size:1.1rem;color:var(--text-light);line-height:1.8;margin-bottom:1.2rem;">Kladu otázky, které vedou k podstatě věci, a pomáhám vám stavět na tom, v čem jste přirozeně dobří.</p>
 <p style="font-size:1.1rem;color:var(--text-light);line-height:1.8;margin-bottom:2rem;">Odcházíte vždy s konkrétními kroky, které fungují v reálném životě i byznysu.</p>
-<button class="btn" style="background:transparent; color:var(--sage-dark); border:2px solid var(--sage-dark);" onclick="showPage('o-mne')">Více o mně a mém přístupu &rarr;</button>
+<button class="btn" style="background:transparent; color:var(--sage-dark); border:2px solid var(--sage-dark);" onclick="showPage('o-mne')">Více o mně a mém přístupu</button>
 </div>
 </div>
 </div>
@@ -168,25 +168,25 @@
             <span onclick="event.stopPropagation();showPage('gallup')" style="font-size:0.9rem;color:var(--sage-dark);cursor:pointer;padding:0.3rem 0;border-bottom:1px solid #eee;transition:padding 0.2s;" onmouseover="this.style.paddingLeft='0.5rem'" onmouseout="this.style.paddingLeft='0'">Gallup CliftonStrengths</span>
             <span onclick="event.stopPropagation();showPage('prism')" style="font-size:0.9rem;color:var(--sage-dark);cursor:pointer;padding:0.3rem 0;transition:padding 0.2s;" onmouseover="this.style.paddingLeft='0.5rem'" onmouseout="this.style.paddingLeft='0'"><em>PRISM</em> Brain Mapping</span>
         </div></div>
-        <span class="sluzba-link">Zjistit více &rarr;</span>
+        <span class="sluzba-link">Zjistit více</span>
     </div>
 
     <div class="sluzba-block fade-up" style="transition-delay:0.2s;" onclick="showPage('transformace')">
         <div class="sluzba-icon"><svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="10,140 60,80 10,20" stroke="currentColor" stroke-width="12" fill="none" stroke-linejoin="round" stroke-linecap="round"/><polyline points="55,140 105,80 55,20" stroke="currentColor" stroke-width="12" fill="none" stroke-linejoin="round" stroke-linecap="round"/><polyline points="100,140 150,80 100,20" stroke="currentColor" stroke-width="12" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg></div>
         <div><h4>Redesign Your Life</h4><p>Program pro hloubkovou osobní a kariérní změnu.</p></div>
-        <span class="sluzba-link">Zjistit více &rarr;</span>
+        <span class="sluzba-link">Zjistit více</span>
     </div>
 
     <div class="sluzba-block fade-up" style="transition-delay:0.3s;" onclick="showPage('karierni-poradenstvi')">
         <div class="sluzba-icon"><svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="15" fill="currentColor"/><circle cx="80" cy="30" r="15" fill="currentColor"/><circle cx="130" cy="30" r="15" fill="currentColor"/><circle cx="30" cy="80" r="15" fill="currentColor"/><circle cx="80" cy="80" r="15" fill="currentColor"/><circle cx="130" cy="80" r="15" fill="currentColor"/><circle cx="30" cy="130" r="15" fill="currentColor"/><circle cx="80" cy="130" r="15" fill="currentColor"/><circle cx="130" cy="130" r="15" fill="currentColor"/></svg></div>
         <div><h4>Kariérní poradenství</h4><p>Pro studenty a mladé dospělé na rozcestí (15+).</p></div>
-        <span class="sluzba-link">Zjistit více &rarr;</span>
+        <span class="sluzba-link">Zjistit více</span>
     </div>
 
     <div class="sluzba-block fade-up" style="transition-delay:0.4s;" onclick="showPage('pro-firmy')">
         <div class="sluzba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></div>
         <div><h4>Firemní spolupráce</h4><p>Strategický partnering, rozvoj týmů a HR projekty.</p></div>
-        <span class="sluzba-link">Zjistit více &rarr;</span>
+        <span class="sluzba-link">Zjistit více</span>
     </div>
 </div>
 </div>
@@ -251,7 +251,7 @@
                         <h4 style="font-size:1.8rem;">Redesign Your Life</h4>
                         <p style="font-size:1.05rem;">Dlouhodobější spolupráce pro ty, kteří chtějí větší změnu — v kariéře i v životě.</p>
                     </div>
-                    <span class="sluzba-link">Zjistit více &rarr;</span>
+                    <span class="sluzba-link">Zjistit více</span>
                 </div>
 
                 <div class="sluzba-block fade-up" style="transition-delay:0.3s;" onclick="showPage('karierni-poradenstvi')">
@@ -261,7 +261,7 @@
                         <h4 style="font-size:1.8rem;">Kariérní poradenství</h4>
                         <p style="font-size:1.05rem;">Pomůžu vám zorientovat se ve vlastních silných stránkách a vybrat směr, který dává smysl.</p>
                     </div>
-                    <span class="sluzba-link">Zjistit více &rarr;</span>
+                    <span class="sluzba-link">Zjistit více</span>
                 </div>
 
                 <div class="sluzba-block fade-up" style="transition-delay:0.4s;" onclick="showPage('pro-firmy')">
@@ -271,7 +271,7 @@
                         <h4 style="font-size:1.8rem;">Firemní spolupráce</h4>
                         <p style="font-size:1.05rem;">Spolupráce přizpůsobená situaci vaší firmy — od jednorázového projektu po dlouhodobé partnerství.</p>
                     </div>
-                    <span class="sluzba-link">Zjistit více &rarr;</span>
+                    <span class="sluzba-link">Zjistit více</span>
                 </div>
             </div>
         </div>
@@ -298,7 +298,7 @@
                         <h4 style="font-size:1.8rem;">1:1 KOUČOVÁNÍ</h4>
                         <p style="font-size:1.05rem;">Pravidelná podpora při strategických rozhodnutích, nastavování hranic a prevenci vyhoření.</p>
                     </div>
-                    <span class="sluzba-link">Zjistit více &rarr;</span>
+                    <span class="sluzba-link">Zjistit více</span>
                 </div>
 
                 <div class="sluzba-block fade-up" onclick="showPage('gallup')">
@@ -306,7 +306,7 @@
                         <h4 style="font-size:1.8rem;">GALLUP CLIFTONSTRENGTHS</h4>
                         <p style="font-size:1.05rem;">Odhalte svou unikátní talentovou DNA a postavte svůj další rozvoj na tom, v čem jste úplně samo.</p>
                     </div>
-                    <span class="sluzba-link">Zjistit více &rarr;</span>
+                    <span class="sluzba-link">Zjistit více</span>
                 </div>
 
                 <div class="sluzba-block fade-up" onclick="showPage('prism')">
@@ -314,7 +314,7 @@
                         <h4 style="font-size:1.8rem;"><em>PRISM</em> BRAIN MAPPING</h4>
                         <p style="font-size:1.05rem;">Zmapujte své přirozené chování z pohledu neurověd a zjistěte, proč vás některé role a situace zbytečně vyčerpávají.</p>
                     </div>
-                    <span class="sluzba-link">Zjistit více &rarr;</span>
+                    <span class="sluzba-link">Zjistit více</span>
                 </div>
 
             </div>
@@ -817,7 +817,7 @@
 </div>
 
 <div id="kontakt" class="page">
-<div class="page-header"><div class="wrap"><span class="section-label">KONTAKT</span><h1>Začněme společně</h1><p>Napište mi, zavolejte, nebo vyplňte krátký formulář — ozvu se do 2 pracovních dnů.<br>Nebo si rovnou rezervujte termín:<br><a href="https://calendar.app.google/PFCb8STnoEWmZEep9" target="_blank" class="btn" style="display:inline-block;margin-top:1rem;text-decoration:none;">Zarezervovat čas v kalendáři &rarr;</a></p></div></div>
+<div class="page-header"><div class="wrap"><span class="section-label">KONTAKT</span><h1>Začněme společně</h1><p>Napište mi, zavolejte, nebo vyplňte krátký formulář — ozvu se do 2 pracovních dnů.<br>Nebo si rovnou rezervujte termín:<br><a href="https://calendar.app.google/PFCb8STnoEWmZEep9" target="_blank" class="btn" style="display:inline-block;margin-top:1rem;text-decoration:none;">Zarezervovat čas v kalendáři</a></p></div></div>
 <section style="background:white;padding:4rem 0 6rem"><div class="wrap" style="max-width:900px">
 <div class="contact-grid">
 <div>
