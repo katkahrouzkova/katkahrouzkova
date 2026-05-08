@@ -210,34 +210,41 @@
 
 
 
-<style id="final-color-fix">
-    /* 1. HERO - Taupe / Šedohnedá */
-    .hero-section { 
+
+
+
+<style id="layout-fix">
+    /* Fix fontu */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600&display=swap');
+    * { font-family: 'Montserrat', sans-serif !important; box-sizing: border-box; }
+
+    /* HOME PAGE - BARVY SEKCI */
+    #home .hero-section { 
         background-color: #968F84 !important; 
-        background-image: none !important;
+        padding: 80px 20px !important;
+        text-align: center;
     }
-    .hero-section h1, .hero-section h2, .hero-section p, 
-    .hero-section .hero-benefit-title, .hero-section .hero-benefit-text { 
+    #home .hero-section *, #home .hero-section h1, #home .hero-section h2 { 
         color: #FFFFFF !important; 
     }
 
-    /* 2. KDO VÁS PROVEDE - Svetlá béžová */
-    #o-mne { 
+    #home #o-mne { 
         background-color: #D1CDC1 !important; 
-    }
-    #o-mne h2, #o-mne p, #o-mne li {
-        color: #615A51 !important;
+        padding: 60px 20px !important;
     }
 
-    /* 3. VYBERTE SI - Staroružová */
-    /* Cielime na ID sekcie, kde sú ponuky (často #sluzby alebo .selection-section) */
-    #home section:nth-of-type(3), .selection-section, #services { 
+    /* Sekce Vyberte si - starorůžová */
+    #home section:nth-of-type(3) { 
         background-color: #E2CFC8 !important; 
+        padding: 60px 20px !important;
     }
 
-    /* Globálny font Montserrat */
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600&display=swap');
-    * { font-family: 'Montserrat', sans-serif !important; }
+    /* Oprava rozhozeného textu (zrušení absolutního pozicování, pokud tam vzniklo) */
+    .hero-section h1, .hero-section h2, .hero-section p {
+        position: static !important;
+        margin: 20px auto !important;
+        max-width: 800px;
+    }
 </style>
 
 </head>
