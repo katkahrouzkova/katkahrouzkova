@@ -116,6 +116,16 @@
     * { font-family: 'Montserrat', sans-serif !important; }
 
 * { font-family: 'Montserrat', sans-serif !important; }
+
+    /* Efekt povyskočenia pre karty v záložke Reference */
+    #reference .testimonial-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+        cursor: default;
+    }
+    #reference .testimonial-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+    }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
 </head>
