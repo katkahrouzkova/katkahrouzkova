@@ -1,22 +1,22 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --sage: #8ca9ad;
-            --sage-dark: #6a9195;
-            --sage-light: #bbcbcd;
-            --sage-pale: #dde8e9;
-            --beige: #f5f7f8;
-            --beige-warm: #edf2f2;
-            --beige-dark: #b0c8c8;
-            --cream: #f8fafa;
+            --sage: #968F84;
+            --sage-dark: #615A51;
+            --sage-light: #B6A99D;
+            --sage-pale: #F2F2F2;
+            --beige: #F9F9F9;
+            --beige-warm: #F2F2F2;
+            --beige-dark: #968F84;
+            --cream: #F9F9F9;
             --white: #FFFFFF;
-            --text: #2e2e2e;
-            --text-light: #555555;
-            --text-muted: #777777;
+            --text: #615A51;
+            --text-light: #968F84;
+            --text-muted: #B6A99D;
             --sand: #e0ecec;
-            --sage-section: #f2f6f7;
+            --sage-section: #F2F2F2;
             --dark-section: #8ca9ad;
-            --petrol: #8ca9ad;
-            --mint: #e0f0f0;
+            --petrol: #615A51;
+            --mint: #E2CFC8;
         }
         html { scroll-behavior: smooth; }
         body {
