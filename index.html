@@ -127,9 +127,18 @@
         box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
     }
 
-    .page { display: none; }
+    
     .page.active { display: block; }
     #kontakt { display: block; } /* Ak ma byt kontakt vzdy viditelny naspodu */
+
+    /* Oprava navigácie a zobrazovania sekcií */
+    .page { display: none !important; }
+    .page.active { display: block !important; }
+    #home.active { display: block !important; }
+    #kontakt { display: block !important; margin-top: 5rem; }
+    #header, #footer { display: block !important; }
+
+* { font-family: 'Montserrat', sans-serif !important; }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
 </head>
