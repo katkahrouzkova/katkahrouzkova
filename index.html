@@ -96,6 +96,36 @@
 #hero-typing,#sluzby-typing,#indiv-typing,#kouc-typing,#gallup-typing,#prism-typing,#redesign-typing,#kariera-typing,#firemni-typing,#omne-typing {display:inline-block;min-height:1.3em;vertical-align:bottom;}
 .faq-item.open .faq-a {display:block !important;}
 @media (max-width:768px){.ref-grid{grid-template-columns:1fr;}}
+
+    /* Globálny font */
+    * { font-family: 'Montserrat', sans-serif !important; }
+
+    /* Hover efekt pre všetky tlačidlá (zosvetlenie pozadia, stmavenie textu) */
+    .btn:hover {
+        background-color: #F9F9F9 !important;
+        color: #615A51 !important;
+        border: 1px solid #615A51 !important;
+    }
+
+    /* Efekt povyskočenia pre referencie v záložke */
+    #reference .testimonial-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    }
+    #reference .testimonial-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+    }
+
+    /* Zosvetlenie benefitov v Hero sekcii */
+    .hero-benefit-title { color: #FFFFFF !important; }
+    .hero-benefit-text { color: #D1CDC1 !important; }
+
+
+    #reference .testimonial-card:nth-child(5n+1) { background-color: #F9F9F9 !important; }
+    #reference .testimonial-card:nth-child(5n+2) { background-color: #D1CDC1 !important; }
+    #reference .testimonial-card:nth-child(5n+3) { background-color: #E2CFC8 !important; }
+    #reference .testimonial-card:nth-child(5n+4) { background-color: #B6A99D !important; }
+    #reference .testimonial-card:nth-child(5n+5) { background-color: #F2F2F2 !important; }
 </style>
 </head>
 <body>
