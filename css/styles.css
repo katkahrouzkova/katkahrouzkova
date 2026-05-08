@@ -39,7 +39,7 @@
             display: flex; justify-content: space-between; align-items: center;
         }
         .logo {
-            font-family: 'Playfair Display', 'Playfair Display', Georgia, serif;
+            font-family: 'Playfair Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: 1.45rem; font-weight: 500;
             color: var(--sage-dark);
             letter-spacing: 0.02em; cursor: pointer;
@@ -138,14 +138,14 @@
             color: var(--sage-dark); font-weight: 400; margin-bottom: 1.4rem;
         }
         .hero h1 {
-            font-family: 'Playfair Display', 'Playfair Display', Georgia, serif;
+            font-family: 'Playfair Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: 2.6rem; font-weight: 300; line-height: 1.15;
             color: var(--petrol); margin-bottom: 0.5rem; letter-spacing: 0.04em;
             text-transform: uppercase;
         }
         .hero h1 em {
             font-style: normal;
-            font-family: 'Playfair Display', 'Playfair Display', Georgia, serif;
+            font-family: 'Playfair Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: 3.6rem; color: var(--sage);
             text-transform: none; letter-spacing: 0.02em;
             display: block; line-height: 1.1;
@@ -202,7 +202,7 @@
             color: var(--sage); font-weight: 400; margin-bottom: 0.9rem; display: block;
         }
         .section-title {
-            font-family: 'Playfair Display', 'Playfair Display', Georgia, serif;
+            font-family: 'Playfair Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             font-variant-ligatures: none; font-feature-settings: 'liga' 0;
             font-size: 2.8rem; font-weight: 400; line-height: 1.15;
             color: var(--text); margin-bottom: 1.5rem; letter-spacing: -0.01em;
@@ -218,7 +218,7 @@
             padding: 0.85rem 0.5rem;
             border-bottom: 1px solid #e0e0e0;
             margin-bottom: 0;
-            font-family: 'Playfair Display', 'Playfair Display', Georgia, serif;
+            font-family: 'Playfair Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             font-weight: 300; font-style: italic;
             cursor: pointer;
             transition: background 0.3s;
@@ -254,7 +254,7 @@
         .service-icon { font-size: 1.6rem; margin-bottom: 1.3rem; display: block; width:2.2rem;height:2.2rem; }
         .service-icon svg { width:100%;height:100%;stroke:var(--sage-dark);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round; }
         .service-card h3 {text-align:center;
-            font-family: 'Playfair Display', 'Playfair Display', Georgia, serif;
+            font-family: 'Playfair Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: 1.35rem; font-weight: 400; color: var(--text); margin-bottom: 0.7rem;
         }
         .service-card p { font-size: 0.86rem; color: var(--text-light); line-height: 1.6; text-align:center; }
@@ -280,12 +280,12 @@
 
         /* CTA BANNER */
         .cta-banner { background: var(--beige); color: var(--text); padding: 5rem 0; text-align: center; }
-        .cta-banner h2 { font-family: 'Playfair Display', 'Playfair Display', Georgia, serif; font-size: 2.8rem; font-weight: 400; margin-bottom: 1rem; color: var(--text); }
-        .cta-banner p { font-size: 1rem; color: var(--text-light); margin-bottom: 2.5rem; font-family: 'Playfair Display', Georgia, serif; }
+        .cta-banner h2 { font-family: 'Playfair Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 2.8rem; font-weight: 400; margin-bottom: 1rem; color: var(--text); }
+        .cta-banner p { font-size: 1rem; color: var(--text-light); margin-bottom: 2.5rem; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
 
         /* PAGE HEADER */
         .page-header { margin-top: 72px; padding: 0; background: var(--beige); border-bottom: none; overflow: hidden; }
-        .page-header h1 { font-family: 'Playfair Display', 'Playfair Display', Georgia, serif; font-size: 3.2rem; font-weight: 400; color: var(--text); margin-bottom: 1rem; line-height: 1.15; font-variant-ligatures: none; font-feature-settings: 'liga' 0, 'calt' 0; }
+        .page-header h1 { font-family: 'Playfair Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 3.2rem; font-weight: 400; color: var(--text); margin-bottom: 1rem; line-height: 1.15; font-variant-ligatures: none; font-feature-settings: 'liga' 0, 'calt' 0; }
         .page-header p { font-size: 1rem; color: var(--text-light); max-width: 600px; }
 
         /* SERVICE DETAIL */
@@ -317,7 +317,7 @@
             max-width: 900px;
         }
         .svc-hero-content .section-label { color: rgba(255,255,255,0.65); margin-bottom: 0.8rem; }
-        .svc-hero-content h1 { color: white; font-family: 'Playfair Display', Georgia, serif; font-size: 3rem; font-weight: 300; margin-bottom: 1rem; line-height: 1.15; }
+        .svc-hero-content h1 { color: white; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 3rem; font-weight: 300; margin-bottom: 1rem; line-height: 1.15; }
         .svc-hero-content h1 em { font-style: italic; color: var(--sage-pale); }
         .svc-hero-content p { color: rgba(255,255,255,0.82); font-size: 1.05rem; line-height: 1.7; max-width: 580px; }
 
@@ -336,24 +336,24 @@
             background: var(--cream); border-left: 2px solid var(--sage);
             padding: 2.5rem 3rem; margin: 3rem 0 4rem;
         }
-        .sd-intro h3 { font-family: 'Playfair Display', 'Playfair Display', Georgia, serif; font-size: 1.6rem; font-weight: 400; margin-bottom: 1rem; color: var(--text); font-variant-ligatures: none; font-feature-settings: 'liga' 0; }
+        .sd-intro h3 { font-family: 'Playfair Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 1.6rem; font-weight: 400; margin-bottom: 1rem; color: var(--text); font-variant-ligatures: none; font-feature-settings: 'liga' 0; }
         .sd-intro p { color: var(--text-light); line-height: 1.8; margin-bottom: 1.1rem; }
         .sd-intro p:last-child { margin-bottom: 0; }
         .sd-intro strong { color: var(--sage-dark); font-weight: 500; }
-        .sd-intro em { font-style: italic; font-family: 'Playfair Display', 'Playfair Display', Georgia, serif; font-size: 1.1em; }
+        .sd-intro em { font-style: italic; font-family: 'Playfair Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 1.1em; }
         .sd-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.2rem; margin: 3rem 0; }
         .sd-card { padding: 1.8rem 2rem; background: var(--cream); border: 1px solid var(--beige-warm); }
         .sd-card h4 { font-weight: 500; font-size: 0.93rem; margin-bottom: 0.6rem; color: var(--text); }
         .sd-card p { font-size: 0.88rem; color: var(--text-light); line-height: 1.65; }
-        .sd-card .quote-label { font-family: 'Playfair Display', 'Playfair Display', Georgia, serif; font-style: italic; color: var(--sage-dark); font-size: 1rem; margin-bottom: 0.5rem; display: block; }
+        .sd-card .quote-label { font-family: 'Playfair Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-style: italic; color: var(--sage-dark); font-size: 1rem; margin-bottom: 0.5rem; display: block; }
         .steps-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin: 3rem 0; border: 1px solid var(--beige-warm); }
         .step { padding: 2.5rem 2rem; border-right: 1px solid var(--beige-warm); }
         .step:last-child { border-right: none; }
-        .step-num { font-family: 'Playfair Display', 'Playfair Display', Georgia, serif; font-size: 80px; font-weight: 700; color: var(--sage); opacity: 0.25; line-height: 1; margin-bottom: 0.5rem; }
+        .step-num { font-family: 'Playfair Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 80px; font-weight: 700; color: var(--sage); opacity: 0.25; line-height: 1; margin-bottom: 0.5rem; }
         .step h4 { font-weight: 500; margin-bottom: 0.6rem; font-size: 0.95rem; }
         .step p { font-size: 0.88rem; color: var(--text-light); line-height: 1.65; }
         .price-box { text-align: center; padding: 3rem; background: var(--beige); margin: 3rem 0; }
-        .price-box .price { font-family: 'Playfair Display', 'Playfair Display', Georgia, serif; font-size: 3rem; font-weight: 400; color: var(--text); margin-bottom: 0.5rem; }
+        .price-box .price { font-family: 'Playfair Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 3rem; font-weight: 400; color: var(--text); margin-bottom: 0.5rem; }
         .price-box .note { color: var(--text-light); font-size: 0.88rem; }
 
         /* CONTACT */
@@ -382,7 +382,7 @@
         /* TRANSFORMACE */
         .transform-phases { margin: 3rem 0; }
         .phase { display: grid; grid-template-columns: 70px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--beige-warm); align-items: start; }
-        .phase-num { font-family: 'Playfair Display', 'Playfair Display', Georgia, serif; font-size: 2.5rem; font-weight: 300; color: var(--sage-pale); line-height: 1; }
+        .phase-num { font-family: 'Playfair Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 2.5rem; font-weight: 300; color: var(--sage-pale); line-height: 1; }
         .phase h4 { font-weight: 500; margin-bottom: 0.4rem; font-size: 0.95rem; }
         .phase p { font-size: 0.9rem; color: var(--text-light); line-height: 1.7; }
 
@@ -575,7 +575,7 @@
         .tc-slide { display: none; flex-direction: column; gap: 1.5rem; padding: 0 4rem; }
         .tc-slide.tc-active { display: flex; animation: tcFade 0.6s ease; }
         @keyframes tcFade { from { opacity: 0; } to { opacity: 1; } }
-        .tc-quote { font-family: 'Playfair Display', 'Playfair Display', Georgia, serif; font-size: 80px; color: white; opacity: 0.2; line-height: 1; margin-bottom: -0.5rem; user-select: none; }
+        .tc-quote { font-family: 'Playfair Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 80px; color: white; opacity: 0.2; line-height: 1; margin-bottom: -0.5rem; user-select: none; }
         .tc-text { font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.8; }
         .tc-text strong { color: white; }
         .tc-author { display: flex; align-items: center; gap: 0.9rem; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1.2rem; margin-top: 0.5rem; }
