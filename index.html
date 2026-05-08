@@ -131,6 +131,35 @@
     .hero-section .hero-benefit-title { color: #FFFFFF !important; font-weight: 600; }
     .hero-section .hero-benefit-text { color: #F9F9F9 !important; }
 
+
+    /* Vynucení pozadí pro hlavní sekce Home Page */
+    
+    /* 1. Hero sekce - úplně nahoře */
+    section:first-of-type, .hero-section { 
+        background-color: #968F84 !important; 
+    }
+    
+    /* 2. Sekce pod Hero (Kdo vás provede / Benefity) */
+    section:nth-of-type(2), #o-mne { 
+        background-color: #D1CDC1 !important; 
+    }
+    
+    /* 3. Sekce Vyberte si formu */
+    #home section:nth-of-type(3), section[style*="background-color: #E2CFC8"] {
+        background-color: #F9F9F9 !important; /* Změna z růžové na světlou */
+    }
+
+    /* Oprava textů v Hero, aby byly vidět */
+    section:first-of-type h1, 
+    section:first-of-type h2, 
+    section:first-of-type p,
+    section:first-of-type div { 
+        color: #FFFFFF !important; 
+    }
+    
+    /* Font Montserrat pro celý web */
+    * { font-family: 'Montserrat', sans-serif !important; }
+
 </style>
 </head>
 <body>
