@@ -207,44 +207,37 @@
 * { font-family: 'Montserrat', sans-serif !important; }
 </style>
 
-<style id="manual-fix">
-    /* Globálny font */
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600&display=swap');
-    * { font-family: 'Montserrat', sans-serif !important; }
 
-    /* HERO - Taupe / Šedohnedá */
-    #home .hero-section, section:first-of-type { 
+
+
+<style id="final-color-fix">
+    /* 1. HERO - Taupe / Šedohnedá */
+    .hero-section { 
         background-color: #968F84 !important; 
+        background-image: none !important;
     }
-    #home .hero-section *, section:first-of-type * { 
+    .hero-section h1, .hero-section h2, .hero-section p, 
+    .hero-section .hero-benefit-title, .hero-section .hero-benefit-text { 
         color: #FFFFFF !important; 
     }
 
-    /* KDO VÁS PROVEDE - Svetlá béžová */
-    #o-mne, section:nth-of-type(2) { 
+    /* 2. KDO VÁS PROVEDE - Svetlá béžová */
+    #o-mne { 
         background-color: #D1CDC1 !important; 
     }
-    #o-mne *, section:nth-of-type(2) * {
+    #o-mne h2, #o-mne p, #o-mne li {
         color: #615A51 !important;
     }
 
-    /* VYBERTE SI - Staroružová */
-    #home section:nth-of-type(3), .selection-section { 
+    /* 3. VYBERTE SI - Staroružová */
+    /* Cielime na ID sekcie, kde sú ponuky (často #sluzby alebo .selection-section) */
+    #home section:nth-of-type(3), .selection-section, #services { 
         background-color: #E2CFC8 !important; 
     }
 
-    /* REFERENCIE V ZÁLOŽKE - Podfarbenie kariet */
-    #reference .testimonial-card:nth-child(5n+1) { background-color: #F9F9F9 !important; }
-    #reference .testimonial-card:nth-child(5n+2) { background-color: #D1CDC1 !important; }
-    #reference .testimonial-card:nth-child(5n+3) { background-color: #E2CFC8 !important; }
-    #reference .testimonial-card:nth-child(5n+4) { background-color: #B6A99D !important; }
-    #reference .testimonial-card:nth-child(5n+5) { background-color: #F2F2F2 !important; }
-
-    /* Hover efekt pre tlačidlá */
-    .btn:hover {
-        background-color: #F9F9F9 !important;
-        color: #615A51 !important;
-    }
+    /* Globálny font Montserrat */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600&display=swap');
+    * { font-family: 'Montserrat', sans-serif !important; }
 </style>
 
 </head>
