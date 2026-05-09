@@ -169,15 +169,15 @@
             padding: 0.95rem 2.4rem;
             font-size: 0.85rem; letter-spacing: 0.09em; text-transform: uppercase;
             font-family: 'Montserrat', sans-serif; font-weight: 400;
-            border: none; cursor: pointer; transition: all 0.3s; text-decoration: none;
+            border: 2px solid var(--sage-dark); cursor: pointer; transition: all 0.3s; text-decoration: none;
         }
-        .btn:hover { background: var(--beige); }
+        .btn:hover { background: white; color: var(--sage-dark); border-color: var(--sage-dark); }
         .hero .btn { background: white; color: var(--sage-dark); }
-        .hero .btn:hover { background: var(--beige); }
+        .hero .btn:hover { background: white; color: var(--sage-dark); border-color: var(--sage-dark); }
         .btn-outline { background: transparent; color: var(--sage-dark); border: 1px solid var(--sage); }
         .btn-outline:hover { background: var(--petrol); color: white; }
         .btn-white { background: white; color: var(--sage-dark); }
-        .btn-white:hover { background: var(--beige); }
+        .btn-white:hover { background: var(--sage-dark); color: white; border-color: var(--sage-dark); }
         
         .hero-right {
             position: relative;
