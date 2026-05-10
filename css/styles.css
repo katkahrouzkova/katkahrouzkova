@@ -52,7 +52,7 @@
         }
         .nav-links { display: flex; gap: 2.2rem; list-style: none; align-items: center; }
         .nav-link {
-            font-size: 0.85rem; font-weight: 400; letter-spacing: 0.07em;
+            font-size: 0.85rem; font-weight: 500; letter-spacing: 0.07em;
             text-transform: uppercase; color: var(--sage-dark);
             cursor: pointer; transition: color 0.3s;
             padding-bottom: 2px; border-bottom: 1px solid transparent;
@@ -60,7 +60,7 @@
         .nav-link:hover, .nav-link.active { color: #D1CDC1; border-bottom-color: #D1CDC1; }
         .dropdown { position: relative; }
         .dropdown-toggle {
-            font-size: 0.85rem; font-weight: 400; letter-spacing: 0.07em;
+            font-size: 0.85rem; font-weight: 500; letter-spacing: 0.07em;
             text-transform: uppercase; color: var(--sage-dark);
             cursor: pointer; display: flex; align-items: center; gap: 0.3rem;
             transition: color 0.3s; padding-bottom: 2px; border-bottom: 1px solid transparent;
