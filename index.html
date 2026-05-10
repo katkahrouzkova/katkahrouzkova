@@ -952,13 +952,18 @@ document.addEventListener("DOMContentLoaded", function() {
             omneRunning = true;
             omneEl.textContent = '';
             const phrase = 'Začíná tím, že lépe rozumíte sami sobě.';
-            let i = 0;
-            function t() { if (i <= phrase.length) { omneEl.textContent = phrase.substring(0, i++); setTimeout(t, 80); } else { omneRunning = false; } }
+            let i = 0, del = false;
+            function t() {
+                if (!del) { i++; omneEl.textContent = phrase.substring(0, i); if (i === phrase.length) { del = true; setTimeout(t, 2500); return; } }
+                else { i--; omneEl.textContent = phrase.substring(0, i); if (i === 0) { del = false; setTimeout(t, 500); return; } }
+                setTimeout(t, del ? 30 : 80);
+            }
             t();
         }
         const omneObs = new MutationObserver(() => {
             const page = document.getElementById('o-mne');
             if (page && page.style.display !== 'none' && page.style.display !== '') startOmneTyper();
+            else omneRunning = false;
         });
         const omneDiv = document.getElementById('o-mne');
         if (omneDiv) omneObs.observe(omneDiv, { attributes: true, attributeFilter: ['style', 'class'] });
