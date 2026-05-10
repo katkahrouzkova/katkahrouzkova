@@ -627,3 +627,5 @@ p, span, li, a, button, input, textarea, label {
     letter-spacing: 0;
 }
 .great-vibes, .accent-script { font-family: 'Great Vibes', cursive; font-weight: 400; letter-spacing: 0; text-transform: none !important; }
+h2[style*='text-transform:none'] { text-transform: none !important; font-weight: 600 !important; letter-spacing: 0.05em !important; }
+h1[style*='text-transform:none'] { text-transform: none !important; }
