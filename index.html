@@ -704,7 +704,7 @@
 <div class="page-header" style="background:var(--cream);padding:6rem 0 4rem;border-bottom:1px solid #eee;">
 <div class="wrap">
 <span class="section-label" style="color:var(--sage-dark);font-size:1.3rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:600;display:block;margin-bottom:1rem;">O mně</span>
-<h1 style="font-family:'Montserrat',sans-serif;font-size:3.5rem;color:var(--text);margin-bottom:1.5rem;text-transform:none !important;">Změna většinou nezačíná okolím.<br><span style="display:block;min-height:1.4em;"><span id="omne-typing" style="color:var(--sage-dark);text-transform:none;"></span></span></h1>
+<h1 style="font-family:'Montserrat',sans-serif;font-size:3.5rem;color:var(--text);margin-bottom:1.5rem;text-transform:none !important;">Změna většinou nezačíná okolím.<br><span style="display:block;min-height:1.4em;"><span id="omne-typing" style="color:var(--sage-light);text-transform:none;"></span></span></h1>
 </div>
 </div>
 <section style="background:white;padding:5rem 0">
@@ -946,24 +946,24 @@ document.addEventListener("DOMContentLoaded", function() {
     // Restart omne-typing ked sa stranka O mne zobraz
     const omneEl = document.getElementById('omne-typing');
     if (omneEl) {
-        let omneRunning = false;
+        let omneTimer = null;
+        function stopOmneTyper() { if (omneTimer) { clearTimeout(omneTimer); omneTimer = null; } }
         function startOmneTyper() {
-            if (omneRunning) return;
-            omneRunning = true;
+            stopOmneTyper();
             omneEl.textContent = '';
             const phrase = 'Začíná tím, že lépe rozumíte sami sobě.';
             let i = 0, del = false;
             function t() {
-                if (!del) { i++; omneEl.textContent = phrase.substring(0, i); if (i === phrase.length) { del = true; setTimeout(t, 2500); return; } }
-                else { i--; omneEl.textContent = phrase.substring(0, i); if (i === 0) { del = false; setTimeout(t, 500); return; } }
-                setTimeout(t, del ? 30 : 80);
+                if (!del) { i++; omneEl.textContent = phrase.substring(0, i); if (i === phrase.length) { del = true; omneTimer = setTimeout(t, 2500); return; } }
+                else { i--; omneEl.textContent = phrase.substring(0, i); if (i === 0) { del = false; omneTimer = setTimeout(t, 500); return; } }
+                omneTimer = setTimeout(t, del ? 30 : 80);
             }
             t();
         }
         const omneObs = new MutationObserver(() => {
             const page = document.getElementById('o-mne');
             if (page && page.style.display !== 'none' && page.style.display !== '') startOmneTyper();
-            else omneRunning = false;
+            else stopOmneTyper();
         });
         const omneDiv = document.getElementById('o-mne');
         if (omneDiv) omneObs.observe(omneDiv, { attributes: true, attributeFilter: ['style', 'class'] });
