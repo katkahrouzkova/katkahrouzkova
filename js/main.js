@@ -6,6 +6,7 @@
     document.querySelectorAll('.nav-link').forEach(function(l){ l.classList.remove('active'); });
     var el = document.getElementById('nav-' + id);
     if(el) el.classList.add('active');
+    var dt=document.querySelector('.dropdown-toggle');if(dt){var sluzbyPages=['sluzby-prehled','individualni-konzultace','koucovani','gallup','prism','transformace','karierni-poradenstvi','pro-firmy','nabor','mentoring','rozvoj','firemni-spoluprace'];dt.style.fontWeight=sluzbyPages.indexOf(id)>=0?'700':'500';}
     window.scrollTo(0, 0);
     var nav = document.getElementById('navLinks');
     if(nav) nav.classList.remove('open');
