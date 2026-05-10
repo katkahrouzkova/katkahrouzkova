@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 <style>
+@keyframes heroFadeIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
 /* CSS Reset a základné triedy pre komponenty */
 .carousel-viewport {width:100%;overflow:hidden;position:relative;padding:1rem 0 3rem 0;}
 .carousel-track {display:flex;width:max-content;animation:scroll-left 40s linear infinite;}
@@ -132,9 +133,9 @@
 <div style="background:#968F84;width:100%;">
 <div class="hero-centered wrap">
 <span class="hero-eyebrow" style="display:block;margin-bottom:1.5rem;"><span style="display:block;font-size:2.6rem;font-weight:600;color:white;letter-spacing:-0.02em;line-height:1.15;">Talent Management</span><span style="display:block;font-size:0.85rem;color:#D1CDC1;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin-top:0.5rem;">a koučing</span></span>
-<p style="font-size:1.15rem;color:#D1CDC1;line-height:2;margin:0 0 0.5rem 0;">Kdy jste naposledy cítili, že to, co děláte, skutečně stojí za to?</p><p style="font-size:1.15rem;color:#D1CDC1;line-height:2;margin:0 0 0.5rem 0;">Co by se změnilo, kdybyste dělali to, co vám jde přirozeně?</p><p style="font-size:1.15rem;color:#D1CDC1;line-height:2;margin:0 0 2rem 0;">Kde byste byli za rok, kdybyste konečně udělali změnu, o které přemýšlíte?</p><p style="font-size:1rem;color:white;line-height:1.7;margin:0 0 2rem 0;max-width:680px;">Změna začíná rozhovorem, který nejde po povrchu. Pojďme společně zjistit, kde leží váš nevyužitý potenciál.</p>
-<p style="max-width:700px;font-size:2rem;font-weight:400;color:white;line-height:1.5;font-family:Montserrat,sans-serif;font-weight:300;margin:0 0 2rem 0;">Pomáhám lidem postavit kariéru i život na tom, v čem jsou přirozeně dobří.<br><span style="display:block;min-height:1.4em;"><span id="hero-typing" style="color:#D1CDC1;"></span></span></p>
-<button class="btn pulse-btn" onclick="showPage('kontakt')">Chci rezervovat úvodní konzultaci zdarma</button>
+<div style="min-height:3.5rem;margin:0 0 1.5rem 0;"><p id="hero-carousel" style="font-size:1.3rem;color:#D1CDC1;line-height:1.6;margin:0;opacity:1;transition:opacity 1s ease;"></p></div><p style="font-size:1rem;color:white;line-height:1.7;margin:0 0 2rem 0;max-width:680px;">Změna začíná rozhovorem, který nejde po povrchu. Pojďme společně zjistit, kde leží váš nevyužitý potenciál.</p>
+<p style="max-width:700px;font-size:2rem;font-weight:300;color:white;line-height:1.5;font-family:Montserrat,sans-serif;margin:0 0 2rem 0;opacity:0;animation:heroFadeIn 1s ease 1s forwards;">Pomáhám lidem postavit kariéru i život na tom, v čem jsou přirozeně dobří.<br><span style="display:block;min-height:1.4em;"><span id="hero-typing" style="color:#D1CDC1;"></span></span></p>
+<button class="btn pulse-btn" onclick="showPage('kontakt')" style="opacity:0;animation:heroFadeIn 1s ease 2s forwards;">Chci rezervovat úvodní konzultaci zdarma</button>
 
 
 </div>
@@ -926,6 +927,26 @@ document.addEventListener("DOMContentLoaded", function() {
             type();
         }
     });
+
+    // Hero carousel
+    const heroCarousel = document.getElementById('hero-carousel');
+    if (heroCarousel) {
+        const questions = [
+            'Kdy jste naposledy cítili, že to, co děláte, skutečně stojí za to?',
+            'Co by se změnilo, kdybyste dělali to, co vám jde přirozeně?',
+            'Kde byste byli za rok, kdybyste konečně udělali změnu, o které přemýšlíte?'
+        ];
+        let qi = 0;
+        heroCarousel.textContent = questions[0];
+        setInterval(() => {
+            heroCarousel.style.opacity = '0';
+            setTimeout(() => {
+                qi = (qi + 1) % questions.length;
+                heroCarousel.textContent = questions[qi];
+                heroCarousel.style.opacity = '1';
+            }, 1000);
+        }, 4500);
+    }
 
     // Scroll Observer pre animacie komponentov
     const observerOptions = { threshold: 0.15 };
