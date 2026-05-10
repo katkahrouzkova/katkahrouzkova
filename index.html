@@ -899,7 +899,7 @@ document.addEventListener("DOMContentLoaded", function() {
         { id: "redesign-typing", phrases: ["Vaše kariéra to ještě neví."] },
         { id: "kariera-typing", phrases: ["nemusí být stres.", "může dávat smysl.", "když víte, z čeho vycházet."] },
         { id: "firemni-typing", phrases: ["je to vidět na lidech.", "i na výsledcích."] },
-        { id: "omne-typing", phrases: ["Začíná tím, že lépe rozumíte sami sobě."] },
+        { id: "omne-typing", phrases: ["Začíná tím, že lépe rozumíte sami sobě.", "Začíná tím, že lépe rozumíte sami sobě."] },
         { id: "nextgen-typing", phrases: ["hledají svůj skutečný potenciál.", "nechtějí volit směr naslepo.", "chtějí stavět na svých talentech."] }
     ];
 
@@ -943,31 +943,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }, observerOptions);
     
-    // Restart omne-typing ked sa stranka O mne zobraz
-    const omneEl = document.getElementById('omne-typing');
-    if (omneEl) {
-        let omneTimer = null;
-        function stopOmneTyper() { if (omneTimer) { clearTimeout(omneTimer); omneTimer = null; } }
-        function startOmneTyper() {
-            stopOmneTyper();
-            omneEl.textContent = '';
-            const phrase = 'Začíná tím, že lépe rozumíte sami sobě.';
-            let i = 0, del = false;
-            function t() {
-                if (!del) { i++; omneEl.textContent = phrase.substring(0, i); if (i === phrase.length) { del = true; omneTimer = setTimeout(t, 2500); return; } }
-                else { i--; omneEl.textContent = phrase.substring(0, i); if (i === 0) { del = false; omneTimer = setTimeout(t, 500); return; } }
-                omneTimer = setTimeout(t, del ? 30 : 80);
-            }
-            t();
-        }
-        const omneObs = new MutationObserver(() => {
-            const page = document.getElementById('o-mne');
-            if (page && page.style.display !== 'none' && page.style.display !== '') startOmneTyper();
-            else stopOmneTyper();
-        });
-        const omneDiv = document.getElementById('o-mne');
-        if (omneDiv) omneObs.observe(omneDiv, { attributes: true, attributeFilter: ['style', 'class'] });
-    }
+
 
     document.querySelectorAll('.blur-to-focus, .slide-in-left, .slide-in-right, .fade-up').forEach(el => {
         scrollObserver.observe(el);
