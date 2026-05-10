@@ -46,7 +46,7 @@
         }
         .logo {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.45rem; font-weight: 500;
+            font-size: 1.45rem; font-weight: 500; text-transform: uppercase;
             color: var(--sage-dark);
             letter-spacing: 0.02em; cursor: pointer;
         }
@@ -57,7 +57,7 @@
             cursor: pointer; transition: color 0.3s;
             padding-bottom: 2px; border-bottom: 1px solid transparent;
         }
-        .nav-link:hover, .nav-link.active { color: var(--sage-dark); border-bottom-color: var(--sage); }
+        .nav-link:hover, .nav-link.active { color: #D1CDC1; border-bottom-color: #D1CDC1; }
         .dropdown { position: relative; }
         .dropdown-toggle {
             font-size: 0.85rem; font-weight: 400; letter-spacing: 0.07em;
