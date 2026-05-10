@@ -248,7 +248,7 @@
         document.getElementById('btn-en').classList.toggle('active', lang === 'en');
         var t=translations;
         document.querySelectorAll('[data-lang-key]').forEach(function(el){var k=el.getAttribute('data-lang-key');if(t[k]&&t[k][lang])el.innerHTML=t[k][lang];});
-        var n={cz:{'nav-home':'Domů','nav-o-mne':'O mně','nav-faq':'FAQ<span style="text-transform:none">s</span>','nav-kontakt':'Kontakt'},en:{'nav-home':'Home','nav-o-mne':'About me','nav-faq':'FAQ<span style="text-transform:none">s</span>','nav-kontakt':'Contact'}};
+        var n={cz:{'nav-home':'Domů','nav-o-mne':'O mně','nav-faq':'FAQ<span style="text-transform:none;font-weight:inherit">s</span>','nav-kontakt':'Kontakt'},en:{'nav-home':'Home','nav-o-mne':'About me','nav-faq':'FAQ<span style="text-transform:none;font-weight:inherit">s</span>','nav-kontakt':'Contact'}};
         ['nav-home','nav-o-mne','nav-faq','nav-kontakt'].forEach(function(id){var el=document.getElementById(id);if(el)el.innerHTML=n[lang][id];});
         var dt=document.querySelector('.dropdown-toggle');if(dt)dt.innerHTML=(lang==='en')?'Services':'Služby';
         var h1=document.querySelector('.hero h1');if(h1)h1.innerHTML=(lang==='en')?'KNOW YOURSELF BETTER.<br><em>work and live in a way that suits you</em>':'POZNEJTE SE LÉPE.<br><em>pracujte a žijte způsobem, který vám sedí</em>';
