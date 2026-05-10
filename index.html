@@ -943,6 +943,27 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }, observerOptions);
     
+    // Restart omne-typing ked sa stranka O mne zobraz
+    const omneEl = document.getElementById('omne-typing');
+    if (omneEl) {
+        let omneRunning = false;
+        function startOmneTyper() {
+            if (omneRunning) return;
+            omneRunning = true;
+            omneEl.textContent = '';
+            const phrase = 'Začíná tím, že lépe rozumíte sami sobě.';
+            let i = 0;
+            function t() { if (i <= phrase.length) { omneEl.textContent = phrase.substring(0, i++); setTimeout(t, 80); } else { omneRunning = false; } }
+            t();
+        }
+        const omneObs = new MutationObserver(() => {
+            const page = document.getElementById('o-mne');
+            if (page && page.style.display !== 'none' && page.style.display !== '') startOmneTyper();
+        });
+        const omneDiv = document.getElementById('o-mne');
+        if (omneDiv) omneObs.observe(omneDiv, { attributes: true, attributeFilter: ['style', 'class'] });
+    }
+
     document.querySelectorAll('.blur-to-focus, .slide-in-left, .slide-in-right, .fade-up').forEach(el => {
         scrollObserver.observe(el);
     });
