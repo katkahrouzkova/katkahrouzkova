@@ -47,6 +47,10 @@
 /* Kontakt a gridy */
 .contact-grid {display:grid;grid-template-columns:1fr 1fr;gap:4rem;}
 @media (max-width:768px){
+  /* Typing animacia — rezervuj miesto pre 3 riadky na mobile */
+  #hero-typing, #sluzby-typing, #indiv-typing, #kouc-typing,
+  #gallup-typing, #prism-typing, #redesign-typing, #kariera-typing,
+  #firemni-typing, #omne-typing, #nextgen-typing { min-height:3em !important; }
   .stats-grid{grid-template-columns:1fr 1fr;}
   .contact-grid{grid-template-columns:1fr;}
   /* O mne grid */
@@ -1056,6 +1060,22 @@ document.addEventListener("DOMContentLoaded", function() {
         { id: "omne-typing", phrases: ["Začíná tím, že lépe rozumíte sami sobě.", "Začíná tím, že lépe rozumíte sami sobě."] },
         { id: "nextgen-typing", phrases: ["hledají svůj skutečný potenciál.", "nechtějí volit směr naslepo.", "chtějí stavět na svých talentech."] }
     ];
+
+    // Predmer max vysku kazdeho typing kontajnera — zamedzuje poskakovaniu
+    typewriters.forEach(tw => {
+        const el = document.getElementById(tw.id);
+        if (el && el.parentElement) {
+            const wrap = el.parentElement;
+            let maxH = 0;
+            tw.phrases.forEach(function(p) {
+                el.textContent = p;
+                const h = wrap.offsetHeight;
+                if (h > maxH) maxH = h;
+            });
+            el.textContent = '';
+            if (maxH > 0) wrap.style.minHeight = maxH + 'px';
+        }
+    });
 
     typewriters.forEach(tw => {
         const el = document.getElementById(tw.id);
