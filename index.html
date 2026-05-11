@@ -71,7 +71,7 @@
   /* FAQ padding */
   .faq-q{font-size:1rem !important;}
   /* Typing wrap — rezervuj miesto pre zalomeny text na mobile */
-  .typing-wrap { min-height: 5em !important; }
+  .typing-wrap { min-height: 4rem !important; }
 }
 @media (max-width:480px){
   .svc-hero-content h1{font-size:1.8rem !important;}
@@ -1084,7 +1084,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Predmer max vysku — az po nacitani fontov
     function measureTypingHeights() {
-        if (window.innerWidth < 768) return;
         typewriters.forEach(tw => {
             const el = document.getElementById(tw.id);
             if (el && el.parentElement) {
