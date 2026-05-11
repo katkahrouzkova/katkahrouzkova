@@ -1106,9 +1106,12 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
     if (document.fonts && document.fonts.ready) {
-        document.fonts.ready.then(measureTypingHeights);
+        document.fonts.ready.then(function() {
+            measureTypingHeights();
+            setTimeout(measureTypingHeights, 300);
+        });
     } else {
-        measureTypingHeights();
+        setTimeout(measureTypingHeights, 300);
     }
     window.addEventListener('resize', measureTypingHeights);
 
@@ -1147,6 +1150,22 @@ document.addEventListener("DOMContentLoaded", function() {
         ];
         let qi = 0;
         heroCarousel.textContent = questions[0];
+
+        // Premeria max vysku vsetkych otazok a zafixuje kontajner
+        const carouselWrap = heroCarousel.parentElement;
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(function() {
+                let maxCH = 0;
+                questions.forEach(function(q) {
+                    heroCarousel.textContent = q;
+                    const h = carouselWrap.offsetHeight;
+                    if (h > maxCH) maxCH = h;
+                });
+                heroCarousel.textContent = questions[0];
+                if (maxCH > 0) carouselWrap.style.minHeight = maxCH + 'px';
+            });
+        }
+
         setInterval(() => {
             heroCarousel.style.opacity = '0';
             setTimeout(() => {
