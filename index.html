@@ -71,7 +71,7 @@
   /* FAQ padding */
   .faq-q{font-size:1rem !important;}
   /* Typing wrap — rezervuj miesto pre zalomeny text na mobile */
-  .typing-wrap { min-height: 4rem !important; }
+  .typing-wrap { min-height: 2em; }
 }
 @media (max-width:480px){
   .svc-hero-content h1{font-size:1.8rem !important;}
@@ -1088,7 +1088,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const el = document.getElementById(tw.id);
             if (el && el.parentElement) {
                 const wrap = el.parentElement;
-                const saved = wrap.style.minHeight;
+                wrap.style.height = '';
                 wrap.style.minHeight = '';
                 let maxH = 0;
                 tw.phrases.forEach(function(p) {
@@ -1097,7 +1097,11 @@ document.addEventListener("DOMContentLoaded", function() {
                     if (h > maxH) maxH = h;
                 });
                 el.textContent = '';
-                if (maxH > 0) wrap.style.minHeight = maxH + 'px';
+                if (maxH > 0) {
+                    wrap.style.height = maxH + 'px';
+                    wrap.style.minHeight = maxH + 'px';
+                    wrap.style.overflow = 'hidden';
+                }
             }
         });
     }
