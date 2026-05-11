@@ -310,19 +310,19 @@
         <div class="svc-hero-content wrap" style="position:relative; z-index:2; max-width:800px; margin-left:0; text-align:left;">
             <span class="section-label" style="color:var(--sage-light); font-weight:300; letter-spacing:0.1em; text-transform:uppercase; display:block; margin-bottom:1rem;">Individuální konzultace</span>
             <h1 style="font-family:'Montserrat',sans-serif; font-size:3.5rem; color:white; line-height:1.2; text-transform:none !important;">
-                Pomůžu vám získat zpět <br><span class="typing-wrap" style="display:block; min-height:1.5em; line-height:1.5;"><span id="indiv-typing" style="color:var(--sage-light);"></span></span>
+                Pomůžu vám lépe pochopit <span class="typing-wrap" style="display:block; min-height:1.5em; line-height:1.5;"><span id="indiv-typing" style="color:var(--sage-light);"></span></span>
             </h1>
         </div>
     </div>
     <section style="background:#D1CDC1; padding:6rem 0;">
         <div class="wrap">
             <h2 style="font-family:'Montserrat',sans-serif;font-size:2.2rem;font-weight:400;text-transform:none !important;letter-spacing:0.05em;color:var(--text);text-align:center;line-height:1.2;margin-bottom:1.5rem;">Vyberte si cestu, která odpovídá vaší situaci:</h2>
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+            <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
                 
                 <div class="sluzba-block fade-up" onclick="showPage('koucovani')">
                     <div>
                         <h4 style="font-size:1.4rem;font-weight:400;text-transform:none;">1:1 Koučování</h4>
-                        <p style="font-size:0.95rem;font-weight:500;">Pravidelná podpora při strategických rozhodnutích, nastavování hranic a prevenci vyhoření.</p>
+                        <p style="font-size:0.95rem;font-weight:500;">Spolupráce pro chvíle, kdy potřebujete věci zastavit, promyslet a uchopit jinak.</p>
                     </div>
                     <span class="sluzba-link">Zjistit více</span>
                 </div>
@@ -330,7 +330,7 @@
                 <div class="sluzba-block fade-up" onclick="showPage('gallup')">
                     <div>
                         <h4 style="font-size:1.4rem;font-weight:400;text-transform:none;">Gallup CliftonStrengths</h4>
-                        <p style="font-size:0.95rem;font-weight:500;">Odhalte svou unikátní talentovou DNA a postavte svůj další rozvoj na tom, v čem jste úplně samo.</p>
+                        <p style="font-size:0.95rem;font-weight:500;">Pochopte, v čem jste přirozeně silní, a postavte na tom svůj další rozvoj.</p>
                     </div>
                     <span class="sluzba-link">Zjistit více</span>
                 </div>
@@ -339,6 +339,14 @@
                     <div>
                         <h4 style="font-size:1.4rem;font-weight:400;text-transform:none;"><em>PRISM</em> Brain Mapping</h4>
                         <p style="font-size:0.95rem;font-weight:500;">Zmapujte své přirozené chování z pohledu neurověd a zjistěte, proč vás některé role a situace zbytečně vyčerpávají.</p>
+                    </div>
+                    <span class="sluzba-link">Zjistit více</span>
+                </div>
+
+                <div class="sluzba-block fade-up" onclick="showPage('karierni-poradenstvi')">
+                    <div>
+                        <h4 style="font-size:1.4rem;font-weight:400;text-transform:none;">NextGen Talent Management (15+)</h4>
+                        <p style="font-size:0.95rem;font-weight:500;">Pro mladé lidi, kteří chtějí udělat dobré rozhodnutí pro svou budoucnost.</p>
                     </div>
                     <span class="sluzba-link">Zjistit více</span>
                 </div>
@@ -1058,7 +1066,7 @@ document.addEventListener("DOMContentLoaded", function() {
         { id: "hero-typing", phrases: ["pracujte způsobem, který vám sedí.", "zjistěte, kde máte největší přínos.", "najděte svůj směr."] },
         { id: "sluzby-typing", phrases: ["změnu, která dává dlouhodobě smysl.", "jasné priority a plán.", "rozhodnutí opřená o data."] },
         { id: "hp-sluzby-typing", phrases: ["změnu, která dává dlouhodobě smysl.", "jasné priority a plán.", "rozhodnutí opřená o data."] },
-        { id: "indiv-typing", phrases: ["energii", "jasný směr", "jistotu v rozhodování", "radost z práce"] },
+        { id: "indiv-typing", phrases: ["co vám sedí.", "jak fungujete.", "kam dál."] },
         { id: "kouc-typing", phrases: ["ztrácíte půdu pod nohama.", "jedete na autopilota.", "nevidíte cestu ven."] },
         { id: "gallup-typing", phrases: ["chcete vědět, v čem vynikáte.", "hledáte, na čem stavět kariéru.", "potřebujete lépe pochopit svůj tým."] },
         { id: "prism-typing", phrases: ["chcete vědět, proč vás práce vyčerpává.", "hledáte soulad mezi výkonem a energií.", "potřebujete pochopit své reakce pod tlakem."] },
