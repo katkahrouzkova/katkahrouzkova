@@ -255,7 +255,7 @@
         <div class="svc-hero-content wrap" style="position:relative; z-index:2; max-width:800px; margin-left:0; text-align:left;">
             <span class="section-label" style="color:var(--sage-light); font-weight:300; letter-spacing:0.1em; text-transform:uppercase; display:block; margin-bottom:1rem; font-size:1.3rem;">Služby</span>
             <h1 style="font-family:'Montserrat',sans-serif; font-size:3.5rem; color:white; line-height:1.2; text-transform:none !important;">
-                Hledáme společná řešení, která vedou k… <br><span class="typing-wrap" style="display:block; min-height:1.5em; line-height:1.5;"><span id="sluzby-typing" style="color:var(--sage-light);"></span></span>
+                Společně hledáme řešení pro chvíle, kdy potřebujete <span class="typing-wrap" style="display:block; min-height:1.5em; line-height:1.5;"><span id="sluzby-typing" style="color:var(--sage-light);"></span></span>
             </h1>
         </div>
     </div>
@@ -269,6 +269,7 @@
                     <div>
                         <span style="font-size:0.8rem; text-transform:uppercase; color:var(--sage-dark); font-weight:bold; letter-spacing:0.1em; display:block; margin-bottom:0.5rem;">Osobní rozvoj na míru</span>
                         <h4 style="font-size:1.4rem;font-weight:400;text-transform:none;">Individuální konzultace</h4>
+                        <p style="font-size:0.9rem;color:var(--text);line-height:1.6;margin:0.5rem 0 1rem 0;font-weight:500;">Individuální rozvoj postavený na certifikovaných metodikách — pro lepší sebepoznání, kariérní rozhodnutí i využití přirozeného talentu.</p>
                         <div style="display:flex;flex-direction:column;gap:0.4rem;margin-top:0.8rem;">
                             <span onclick="event.stopPropagation();showPage('koucovani')" style="font-size:0.95rem;font-weight:500;color:var(--text);cursor:pointer;padding:0.3rem 0;border-bottom:1px solid #eee;transition:padding 0.2s;" onmouseover="this.style.paddingLeft='0.5rem'" onmouseout="this.style.paddingLeft='0'">1:1 Koučování</span>
                             <span onclick="event.stopPropagation();showPage('gallup')" style="font-size:0.95rem;font-weight:500;color:var(--text);cursor:pointer;padding:0.3rem 0;border-bottom:1px solid #eee;transition:padding 0.2s;" onmouseover="this.style.paddingLeft='0.5rem'" onmouseout="this.style.paddingLeft='0'">Gallup CliftonStrengths®</span>
@@ -282,9 +283,9 @@
                 <div class="sluzba-block fade-up" style="transition-delay:0.2s;" onclick="showPage('pro-firmy')">
                     <div class="sluzba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></div>
                     <div>
-                        <span style="font-size:0.8rem; text-transform:uppercase; color:var(--sage-dark); font-weight:bold; letter-spacing:0.1em; display:block; margin-bottom:0.5rem;">Strategický partnering</span>
+                        <span style="font-size:0.8rem; text-transform:uppercase; color:var(--sage-dark); font-weight:bold; letter-spacing:0.1em; display:block; margin-bottom:0.5rem;">Talent management pro firmy</span>
                         <h4 style="font-size:1.4rem;font-weight:400;text-transform:none;">Firemní spolupráce</h4>
-                        <p style="font-size:0.95rem;font-weight:500;">Zvyšuji efektivitu týmů a podporuji potenciál klíčových lidí skrze strategický partnering postavený na 17 letech zkušeností z globálního byznysu. Propojuji individuální rozvoj s prací na týmové dynamice.</p>
+                        <p style="font-size:0.9rem;font-weight:500;color:var(--text);line-height:1.6;">Od práce s jednotlivcem po rozvoj celého týmu. Strategický partnering postavený na 17 letech zkušeností z globálního byznysu — pro firmy, které chtějí dobře nastavené role, silnou spolupráci a stabilní klíčové lidi.</p>
                     </div>
                     <span class="sluzba-link">Zjistit více</span>
                 </div>
@@ -294,7 +295,7 @@
                     <div>
                         <span style="font-size:0.8rem; text-transform:uppercase; color:rgba(255,255,255,0.7); font-weight:bold; letter-spacing:0.1em; display:block; margin-bottom:0.5rem;">Program osobní změny</span>
                         <h4 style="font-size:1.4rem;font-weight:400;text-transform:none;color:white;">Redesign Your Life</h4>
-                        <p style="font-size:0.95rem;font-weight:500; color:rgba(255,255,255,0.85);">Vracím jistotu do vašeho rozhodování a aktivuji váš potenciál ke změně. Budujeme novou strategii postavenou na vašich přirozených talentech a propojujeme strukturované sebepoznání s akčním plánem pro udržitelný restart v kariéře i v životě.</p>
+                        <p style="font-size:0.95rem;font-weight:500; color:rgba(255,255,255,0.85);">Program pro ty, kteří cítí, že je čas na změnu — a chtějí ji postavit na tom, kým skutečně jsou.</p>
                     </div>
                     <span class="sluzba-link" style="color:white;border-color:rgba(255,255,255,0.4);cursor:pointer;transition:all 0.3s;" onmouseover="this.style.background='white';this.style.color='#615A51';" onmouseout="this.style.background='transparent';this.style.color='white';">Zjistit více</span>
                 </div>
@@ -1055,8 +1056,7 @@ window.handleForm = function(e) {
 document.addEventListener("DOMContentLoaded", function() {
     const typewriters = [
         { id: "hero-typing", phrases: ["pracujte způsobem, který vám sedí.", "zjistěte, kde máte největší přínos.", "najděte svůj směr."] },
-        { id: "sluzby-typing", phrases: ["jasným prioritám a plánu.", "energii místo vyčerpání.", "rozhodnutím podloženým daty.", "výsledkům v reálné praxi."] },
-        { id: "hp-sluzby-typing", phrases: ["změnu, která dává dlouhodobě smysl.", "jasné priority a plán.", "rozhodnutí opřená o data."] },
+        { id: "sluzby-typing", phrases: ["změnu, která dává dlouhodobě smysl.", "jasné priority a plán.", "rozhodnutí opřená o data."] },
         { id: "hp-sluzby-typing", phrases: ["změnu, která dává dlouhodobě smysl.", "jasné priority a plán.", "rozhodnutí opřená o data."] },
         { id: "indiv-typing", phrases: ["energii", "jasný směr", "jistotu v rozhodování", "radost z práce"] },
         { id: "kouc-typing", phrases: ["ztrácíte půdu pod nohama.", "jedete na autopilota.", "nevidíte cestu ven."] },
