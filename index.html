@@ -1069,6 +1069,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Predmer max vysku — az po nacitani fontov
     function measureTypingHeights() {
+        if (window.innerWidth < 768) return;
         typewriters.forEach(tw => {
             const el = document.getElementById(tw.id);
             if (el && el.parentElement) {
