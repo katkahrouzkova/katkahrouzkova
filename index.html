@@ -48,7 +48,7 @@
 .contact-grid {display:grid;grid-template-columns:1fr 1fr;gap:4rem;}
 @media (max-width:768px){
   /* Typing animacia — rezervuj miesto pre 3 riadky na mobile */
-  #hero-typing, #sluzby-typing, #indiv-typing, #kouc-typing,
+  #hero-typing, #sluzby-typing, #hp-sluzby-typing, #indiv-typing, #kouc-typing,
   #gallup-typing, #prism-typing, #redesign-typing, #kariera-typing,
   #firemni-typing, #omne-typing, #nextgen-typing { min-height:3em !important; }
   .stats-grid{grid-template-columns:1fr 1fr;}
@@ -190,12 +190,13 @@
 <section style="background:#E2CFC8;padding:6rem 0;">
 <div class="wrap">
 <span class="section-label" style="text-align:center;color:var(--sage-dark);font-size:1.3rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:400;display:block;margin-bottom:1rem;">Služby</span>
-<h2 style="font-family:'Montserrat',sans-serif;font-size:2.2rem;font-weight:600;text-transform:none;letter-spacing:0.05em;color:var(--text);text-align:center;line-height:1.2;margin-bottom:1.5rem;">Vyberte si formu, která vám teď dává největší smysl:</h2>
+<h2 style="font-family:'Montserrat',sans-serif;font-size:2.2rem;font-weight:600;text-transform:none;letter-spacing:0.05em;color:var(--text);text-align:center;line-height:1.2;margin-bottom:1.5rem;">Společně hledáme řešení pro chvíle, kdy potřebujete <span class="typing-wrap" style="display:block; min-height:1.5em; line-height:1.5;"><span id="hp-sluzby-typing" style="color:var(--sage-dark);"></span></span></h2>
 
 <div class="services-grid-4" style="grid-template-columns:repeat(3,1fr);">
     <div class="sluzba-block fade-up" style="transition-delay:0.1s;" onclick="showPage('individualni-konzultace')">
         <div class="sluzba-icon"><svg viewBox="0 0 280 160" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 155 A130 130 0 0 1 270 155" stroke="currentColor" stroke-width="8" fill="none"/><path d="M50 155 A90 90 0 0 1 230 155" stroke="currentColor" stroke-width="8" fill="none"/><path d="M90 155 A50 50 0 0 1 190 155" stroke="currentColor" stroke-width="8" fill="none"/></svg></div>
         <div><h4>Individuální konzultace</h4>
+        <p style="font-size:0.9rem;color:var(--text);line-height:1.6;margin:0.8rem 0 1rem 0;font-weight:500;">Individuální rozvoj postavený na certifikovaných metodikách — pro lepší sebepoznání, kariérní rozhodnutí i využití přirozeného talentu.</p>
         <div style="display:flex;flex-direction:column;gap:0.4rem;margin-top:0.8rem;">
             <span onclick="event.stopPropagation();showPage('koucovani')" style="font-size:0.95rem;font-weight:500;color:var(--text);cursor:pointer;padding:0.3rem 0;border-bottom:1px solid #eee;" onmouseover="this.style.paddingLeft='0.5rem'" onmouseout="this.style.paddingLeft='0'">1:1 Koučování</span>
             <span onclick="event.stopPropagation();showPage('gallup')" style="font-size:0.95rem;font-weight:500;color:var(--text);cursor:pointer;padding:0.3rem 0;border-bottom:1px solid #eee;transition:padding 0.2s;" onmouseover="this.style.paddingLeft='0.5rem'" onmouseout="this.style.paddingLeft='0'">Gallup CliftonStrengths</span>
@@ -207,13 +208,13 @@
 
     <div class="sluzba-block fade-up" style="transition-delay:0.2s;" onclick="showPage('pro-firmy')">
         <div class="sluzba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></div>
-        <div><h4 style="font-weight:400;text-transform:none !important;font-size:1.4rem;margin-bottom:0.5rem;">Firemní spolupráce</h4><p style="font-size:0.95rem;font-weight:500;color:var(--text);line-height:1.6;">Strategický partnering pro firmy.</p></div>
+        <div><h4 style="font-weight:400;text-transform:none !important;font-size:1.4rem;margin-bottom:0.5rem;">Firemní spolupráce</h4><p style="font-size:0.9rem;font-weight:600;color:var(--text);line-height:1.5;margin-bottom:0.7rem;">Talent management pro firmy — od práce s jednotlivcem po rozvoj celého týmu.</p><p style="font-size:0.9rem;color:var(--text);line-height:1.6;font-weight:500;">Strategický partnering postavený na 17 letech zkušeností z globálního byznysu — pro firmy, které chtějí dobře nastavené role, silnou spolupráci a stabilní klíčové lidi. Propojuji individuální rozvoj s prací na týmové dynamice.</p></div>
         <span class="sluzba-link">Zjistit více</span>
     </div>
 
     <div class="sluzba-block fade-up" style="transition-delay:0.3s; background:var(--sage-dark); border-color:var(--sage-dark);" onclick="showPage('transformace')">
         <div class="sluzba-icon" style="opacity:0.15;"><svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="10,140 60,80 10,20" stroke="white" stroke-width="12" fill="none" stroke-linejoin="round" stroke-linecap="round"/><polyline points="55,140 105,80 55,20" stroke="white" stroke-width="12" fill="none" stroke-linejoin="round" stroke-linecap="round"/><polyline points="100,140 150,80 100,20" stroke="white" stroke-width="12" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg></div>
-        <div><h4 style="color:white;">Redesign Your Life</h4><p style="color:rgba(255,255,255,0.85);">Program pro osobní a kariérní restart.</p></div>
+        <div><h4 style="color:white;">Redesign Your Life</h4><p style="color:rgba(255,255,255,0.85);font-weight:600;margin-bottom:0.5rem;">Program osobní změny</p><p style="color:rgba(255,255,255,0.85);">Program pro ty, kteří cítí, že je čas na změnu — a chtějí ji postavit na tom, kým skutečně jsou.</p></div>
         <span class="sluzba-link" style="color:white;border-color:rgba(255,255,255,0.4);cursor:pointer;transition:all 0.3s;" onmouseover="this.style.background='white';this.style.color='#615A51';" onmouseout="this.style.background='transparent';this.style.color='white';">Zjistit více</span>
     </div>
 </div>
@@ -1056,6 +1057,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const typewriters = [
         { id: "hero-typing", phrases: ["pracujte způsobem, který vám sedí.", "zjistěte, kde máte největší přínos.", "najděte svůj směr."] },
         { id: "sluzby-typing", phrases: ["jasným prioritám a plánu.", "energii místo vyčerpání.", "rozhodnutím podloženým daty.", "výsledkům v reálné praxi."] },
+        { id: "hp-sluzby-typing", phrases: ["změnu, která dává dlouhodobě smysl.", "jasné priority a plán.", "rozhodnutí opřená o data."] },
+        { id: "hp-sluzby-typing", phrases: ["změnu, která dává dlouhodobě smysl.", "jasné priority a plán.", "rozhodnutí opřená o data."] },
         { id: "indiv-typing", phrases: ["energii", "jasný směr", "jistotu v rozhodování", "radost z práce"] },
         { id: "kouc-typing", phrases: ["ztrácíte půdu pod nohama.", "jedete na autopilota.", "nevidíte cestu ven."] },
         { id: "gallup-typing", phrases: ["chcete vědět, v čem vynikáte.", "hledáte, na čem stavět kariéru.", "potřebujete lépe pochopit svůj tým."] },
