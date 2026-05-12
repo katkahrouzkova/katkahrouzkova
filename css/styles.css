@@ -91,7 +91,7 @@
             border: 1px solid transparent;
         }
         .dmi:hover { background: white; border-color: var(--sage-pale); }
-        .dmi h4 { font-size: 0.9rem; font-weight: 600; color: var(--sage-dark); margin-bottom: 0.2rem; letter-spacing: 0.08em; }
+        .dmi h4 { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.2rem; letter-spacing: 0.05em; text-transform: uppercase; }
         .dmi p { font-size: 0.78rem; color: var(--text-light); line-height: 1.4; }
         .lang-switch { display: flex; gap: 0.2rem; }
         .lang-switch button {
