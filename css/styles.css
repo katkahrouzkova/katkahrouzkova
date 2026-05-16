@@ -29,7 +29,7 @@
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 100;
-            text-transform: uppercase;
+            
             letter-spacing: 3px;
         }
         nav {
@@ -147,7 +147,7 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 2.6rem; font-weight: 300; line-height: 1.15;
             color: var(--petrol); margin-bottom: 0.5rem; letter-spacing: 0.04em;
-            text-transform: uppercase;
+            
         }
         .hero h1 em {
             font-style: normal;
