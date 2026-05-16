@@ -233,6 +233,10 @@ body { background: #F4F5F7; }
 .hp-card p { font-size:.95rem; color:#666C75; line-height:1.75; flex:1; }
 .hp-card-bottom { text-align:center; margin-top:1.6rem; padding-top:1.2rem; border-top:1px solid rgba(35,38,43,.07); font-size:.8rem; font-weight:500; color:#7A6F86; letter-spacing:.04em; transition:color .2s; }
 .hp-card:hover .hp-card-bottom { color:#2F343B; }
+
+.page-list { list-style:none; padding:0; margin:2rem 0 0; display:flex; flex-direction:column; gap:1rem; }
+.page-list li { font-size:1rem; color:#23262B; line-height:1.75; padding-left:1.5rem; position:relative; }
+.page-list li::before { content:'—'; position:absolute; left:0; color:#7A6F86; font-weight:300; }
 /* Reference page stlpce */
 .ref-grid {display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;}
 #hero-typing, #sluzby-typing, #indiv-typing, #kouc-typing, #gallup-typing, #prism-typing, #redesign-typing, #kariera-typing, #firemni-typing, #omne-typing, #nextgen-typing {display:inline-block; min-height:1.5em; vertical-align:bottom; overflow:hidden;}
@@ -282,7 +286,7 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
     <h4>Individuální a týmová spolupráce</h4>
     <p>Koučink, Gallup, <em>PRISM</em> a týmová spolupráce</p>
 </div>
-<div class="dmi" onclick="showPage('pro-firmy')">
+<div class="dmi" onclick="showPage('seniorni-hr')">
     <h4>Seniorní HR/L&amp;D podpora</h4>
     <p>HR mentoring, konzultace a rozvojové programy</p>
 </div>
@@ -338,7 +342,7 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
       <p>Pracuji s jednotlivci i týmy na osobních i pracovních tématech – například profesní směřování, vedení lidí, delegování, tlak, vyčerpání nebo fungování týmu v konkrétní situaci. Spolupracuji jak přímo s klienty, tak s firmami na podpoře manažerů a týmů.</p>
       <div class="hp-card-bottom">Zjistit více</div>
     </div>
-    <div class="hp-card" onclick="showPage('pro-firmy')" style="cursor:pointer;">
+    <div class="hp-card" onclick="showPage('seniorni-hr')" style="cursor:pointer;">
       <h3>Seniorní HR/L&amp;D podpora</h3>
       <p>Pomáhám firmám uchopit people témata tam, kde je potřeba zkušenější HR nebo L&amp;D pohled. Spolupráce může zahrnovat HR mentoring, revizi procesů, nastavení rozvojových aktivit nebo návrh funkční podpory pro konkrétní prostředí.</p>
       <div class="hp-card-bottom">Zjistit více</div>
@@ -425,7 +429,7 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
                     <span class="sluzba-link">Zjistit více</span>
                 </div>
 
-                <div class="sluzba-block fade-up" style="transition-delay:0.1s;" onclick="showPage('pro-firmy')">
+                <div class="sluzba-block fade-up" style="transition-delay:0.1s;" onclick="showPage('seniorni-hr')">
                     <div>
                         <h4>Seniorní HR/L&amp;D podpora</h4>
                         <p>Zkušenější HR a L&amp;D pohled pro firmy, které potřebují partnera u people a rozvojových témat.</p>
@@ -487,7 +491,7 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
                     </div>
                     <span class="sluzba-link">Zjistit více</span>
                 </div>
-                <div class="sluzba-block fade-up" onclick="showPage('pro-firmy')">
+                <div class="sluzba-block fade-up" onclick="showPage('tymova-spoluprace')">
                     <div>
                         <h4>Týmová spolupráce</h4>
                         <p>Rozvojová spolupráce s týmem zaměřená na konkrétní situaci — fungování, komunikace, role nebo zvládání změny.</p>
@@ -1014,6 +1018,116 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
     <button class="btn pulse-btn" style="background:transparent;border:2px solid white;color:white;" onclick="showPage('kontakt')" onmouseover="this.style.background='white';this.style.color='#2F343B';" onmouseout="this.style.background='transparent';this.style.color='white';">Pojďme si zavolat</button>
   </div>
 </section>
+</div>
+
+
+<div id="tymova-spoluprace" class="page">
+    <div class="page-header">
+        <div class="wrap">
+            <span class="section-label">Individuální a týmová spolupráce</span>
+            <h1>Týmová spolupráce</h1>
+        </div>
+    </div>
+
+    <section style="background:#F8F9FB;padding:5rem 0;">
+        <div class="wrap" style="max-width:760px;">
+            <h2>Co vám to přinese</h2>
+            <ul class="page-list">
+                <li>Sdílený jazyk pro práci se silnými stránkami v týmu</li>
+                <li>Lepší pochopení toho, jak jednotliví lidé v týmu fungují a co potřebují</li>
+                <li>Konkrétní domluvy, jak se o silné stránky a rozdíly opřít v každodenní spolupráci</li>
+            </ul>
+        </div>
+    </section>
+
+    <section style="background:white;padding:5rem 0;">
+        <div class="wrap" style="max-width:760px;">
+            <h2>S čím firmy nejčastěji přicházejí</h2>
+            <ul class="page-list">
+                <li>Manažeři chtějí navázat na individuální Gallup nebo <em>PRISM</em> konzultace a přenést vhled do fungování celého týmu</li>
+                <li>Tým prošel individuální diagnostikou a potřebuje společně vidět, jak do sebe jednotlivé rozdíly zapadají</li>
+                <li>Je potřeba, aby se lidé domluvili, jak budou silné stránky konkrétně používat v práci</li>
+            </ul>
+        </div>
+    </section>
+
+    <section style="background:#F8F9FB;padding:5rem 0;">
+        <div class="wrap" style="max-width:760px;">
+            <h2>Jak to probíhá</h2>
+            <ul class="page-list">
+                <li>Nejprve proběhnou individuální konzultace (Gallup nebo <em>PRISM</em>), kde se každý podívá na své silné stránky a preferovaný způsob fungování</li>
+                <li>Následně se potkáme na společném workshopu, kde si tým v bezpečném prostředí projde, jak jsou v týmu zastoupené různé typy fungování</li>
+                <li>Workshop vede k konkrétním domluvám — co komu pomáhá, co koho zatěžuje a jak s tím pracovat v každodenní spolupráci</li>
+            </ul>
+            <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(35,38,43,.1);">
+                <button class="hp-btn-dark" onclick="showPage('kontakt')">Domluvit úvodní rozhovor</button>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div id="seniorni-hr" class="page">
+    <div class="page-header">
+        <div class="wrap">
+            <span class="section-label">Služby pro firmy</span>
+            <h1>Seniorní HR/L&amp;D podpora</h1>
+        </div>
+    </div>
+
+    <section style="background:#F8F9FB;padding:5rem 0;">
+        <div class="wrap" style="max-width:760px;">
+            <p style="font-size:1.15rem;color:#23262B;line-height:1.85;margin-bottom:3rem;">Pomáhám firmám zorientovat se v HR a rozvojových tématech tam, kde interní zkušenost nebo kapacita nestačí. Opírám se o 17 let praxe v mezinárodních firmách a práci přímo s HR i vedením.</p>
+            <h2>Co vám to přinese</h2>
+            <div style="display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem;">
+                <div style="padding:1.5rem;background:white;border-radius:8px;border:1px solid rgba(35,38,43,.07);">
+                    <h3 style="font-size:1.05rem;font-weight:600;color:#2F343B;margin-bottom:.5rem;">Zkušenější HR pohled zvenku</h3>
+                    <p style="font-size:.95rem;color:#666C75;line-height:1.75;margin:0;">Získáte partnera, který vidí souvislosti napříč firmou a pomůže vám rozhodovat o HR a L&amp;D tématech s ohledem na realitu, ne jen na „best practices".</p>
+                </div>
+                <div style="padding:1.5rem;background:white;border-radius:8px;border:1px solid rgba(35,38,43,.07);">
+                    <h3 style="font-size:1.05rem;font-weight:600;color:#2F343B;margin-bottom:.5rem;">Smysluplnější HR procesy</h3>
+                    <p style="font-size:.95rem;color:#666C75;line-height:1.75;margin:0;">Zrevidujeme stávající postupy (například nástup, adaptaci, hodnocení, rozvoj), aby byly použitelné v praxi a odpovídaly tomu, v jaké fázi firma skutečně je.</p>
+                </div>
+                <div style="padding:1.5rem;background:white;border-radius:8px;border:1px solid rgba(35,38,43,.07);">
+                    <h3 style="font-size:1.05rem;font-weight:600;color:#2F343B;margin-bottom:.5rem;">Uchopitelný mentoring a rozvoj</h3>
+                    <p style="font-size:.95rem;color:#666C75;line-height:1.75;margin:0;">Nastavíme mentoring nebo jiné rozvojové formy tak, aby podporovaly sdílení zkušeností a růst lidí, místo aby byly jen další „program na seznamu".</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background:white;padding:5rem 0;">
+        <div class="wrap" style="max-width:760px;">
+            <h2>S čím firmy nejčastěji přicházejí</h2>
+            <div style="display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem;">
+                <div style="padding:1.5rem;background:#F8F9FB;border-radius:8px;border:1px solid rgba(35,38,43,.07);">
+                    <h3 style="font-size:1.05rem;font-weight:600;color:#2F343B;margin-bottom:.5rem;">Revidovat HR a L&amp;D nastavení</h3>
+                    <p style="font-size:.95rem;color:#666C75;line-height:1.75;margin:0;">Potřebují podívat se zvenku na stávající procesy (například nástup, adaptaci, hodnocení, rozvoj) a zjistit, co dává smysl a co je potřeba zjednodušit nebo změnit.</p>
+                </div>
+                <div style="padding:1.5rem;background:#F8F9FB;border-radius:8px;border:1px solid rgba(35,38,43,.07);">
+                    <h3 style="font-size:1.05rem;font-weight:600;color:#2F343B;margin-bottom:.5rem;">Nastavit mentoring nebo rozvojový program</h3>
+                    <p style="font-size:.95rem;color:#666C75;line-height:1.75;margin:0;">Uvažují o mentoringu, talent programu nebo strukturované podpoře lidí, ale nechtějí kopírovat generická řešení a hledají formu, která zapadne do jejich prostředí.</p>
+                </div>
+                <div style="padding:1.5rem;background:#F8F9FB;border-radius:8px;border:1px solid rgba(35,38,43,.07);">
+                    <h3 style="font-size:1.05rem;font-weight:600;color:#2F343B;margin-bottom:.5rem;">Mentoring pro HR / HR business partnera</h3>
+                    <p style="font-size:.95rem;color:#666C75;line-height:1.75;margin:0;">Hledají zkušenějšího partnera pro HR, se kterým mohou pravidelně 1:1 probírat situace z praxe, těžší rozhodnutí i vlastní roli v podpoře byznysu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background:#F8F9FB;padding:5rem 0;">
+        <div class="wrap" style="max-width:760px;">
+            <h2>Jak to probíhá</h2>
+            <ul class="page-list">
+                <li>Nejprve si projdeme vaši situaci a to, co od spolupráce očekáváte.</li>
+                <li>Domluvíme se, jestli dává smysl jednorázová konzultace, několik setkání, nebo delší doprovázení.</li>
+                <li>Průběžně ladíme, co funguje a co je potřeba upravit — cílem je, aby změny byly realizovatelné ve vaší každodenní realitě.</li>
+            </ul>
+            <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(35,38,43,.1);">
+                <button class="hp-btn-dark" onclick="showPage('kontakt')">Domluvit úvodní rozhovor</button>
+            </div>
+        </div>
+    </section>
 </div>
 
 <div id="o-mne" class="page">
