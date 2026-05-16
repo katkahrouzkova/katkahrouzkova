@@ -640,3 +640,6 @@ h1, h2, h3, h4 {
 h4.card-title, .sluzba-block h4, .hp-card h3 {
     font-weight: 600 !important;
 }
+
+/* HEADING UPPERCASE GLOBAL OVERRIDE */
+h1, h2, h3, h4 { text-transform: none !important; }
