@@ -235,6 +235,21 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
 .svc-hero { background: #2F343B !important; background-image: none !important; }
 .hp-btn-hero, .hp-btn-dark, .hp-btn-outline, .btn { font-size: 1.15rem !important; padding: 1.25rem 3.5rem !important; text-transform: uppercase !important; font-weight: 600 !important; letter-spacing: 0.05em !important; }
 
+
+/* Zjednotené farby pre všetky CTA pri hover a kliknutí (active) */
+.hp-btn-hero:hover, .hp-btn-dark:hover, .hp-btn-outline:hover, .btn:hover, .hover-btn:hover {
+    background-color: #968F84 !important;
+    color: #FFFFFF !important;
+    border-color: #968F84 !important;
+}
+.hp-btn-hero:active, .hp-btn-dark:active, .hp-btn-outline:active, .btn:active, .hover-btn:active {
+    background-color: #615A51 !important;
+    color: #FFFFFF !important;
+    border-color: #615A51 !important;
+    transform: scale(0.97) !important;
+    transition: all 0.1s ease !important;
+}
+
 </style>
 </head>
 <body>
