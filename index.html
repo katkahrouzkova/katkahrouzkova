@@ -237,6 +237,20 @@ body { background: #F4F5F7; }
 .page-list { list-style:none; padding:0; margin:2rem 0 0; display:flex; flex-direction:column; gap:1rem; }
 .page-list li { font-size:1rem; color:#23262B; line-height:1.75; padding-left:1.5rem; position:relative; }
 .page-list li::before { content:'—'; position:absolute; left:0; color:#7A6F86; font-weight:300; }
+
+/* Hero typewriter */
+.hero-cur {
+    display:inline-block;
+    width:3px;
+    height:0.85em;
+    background:#F8F9FB;
+    margin-left:3px;
+    vertical-align:middle;
+    animation:hero-blink 0.85s step-end infinite;
+    border-radius:1px;
+}
+@keyframes hero-blink { 0%,100%{opacity:1;} 50%{opacity:0;} }
+.hero-cur.done { display:none; }
 /* Reference page stlpce */
 .ref-grid {display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;}
 #hero-typing, #sluzby-typing, #indiv-typing, #kouc-typing, #gallup-typing, #prism-typing, #redesign-typing, #kariera-typing, #firemni-typing, #omne-typing, #nextgen-typing {display:inline-block; min-height:1.5em; vertical-align:bottom; overflow:hidden;}
@@ -1450,6 +1464,25 @@ document.addEventListener("DOMContentLoaded", function() {
             }, 1000);
         }, 4500);
     }
+
+// Hero typewriter
+(function() {
+    var text = "Pomáhám lidem postavit kariéru i život na tom, v čem jsou přirozeně dobří.";
+    var el = document.getElementById('hero-tw');
+    var cur = document.querySelector('.hero-cur');
+    if (!el) return;
+    var i = 0;
+    function type() {
+        if (i < text.length) {
+            el.textContent += text[i];
+            i++;
+            setTimeout(type, i < 10 ? 80 : 52);
+        } else {
+            if (cur) cur.classList.add('done');
+        }
+    }
+    setTimeout(type, 600);
+})();
 
     // Scroll Observer pre animacie komponentov
     const observerOptions = { threshold: 0.15 };
