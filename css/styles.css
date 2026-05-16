@@ -643,3 +643,23 @@ h4.card-title, .sluzba-block h4, .hp-card h3 {
 
 /* HEADING UPPERCASE GLOBAL OVERRIDE */
 h1, h2, h3, h4 { text-transform: none !important; }
+
+/* === COOL PALETTE OVERRIDES === */
+.svc-hero { background: #2F343B !important; }
+.svc-hero-overlay { background: rgba(47,52,59,0.45) !important; }
+
+h4 {
+    letter-spacing: 0 !important;
+    font-weight: 600 !important;
+}
+h1, h2, h3, h4 {
+    text-transform: none !important;
+}
+:root {
+    --sage-dark: #2F343B;
+    --sage: #7A6F86;
+    --sage-light: #9B92A8;
+    --beige: #F8F9FB;
+    --text: #23262B;
+    --text-light: #666C75;
+}
