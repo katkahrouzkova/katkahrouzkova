@@ -402,59 +402,54 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
 
 
 <div id="sluzby-prehled" class="page">
-    <div class="svc-hero" style="min-height:60vh; display:flex; align-items:center;  text-align:left;">
-        <div class="svc-hero-overlay" style="background: rgba(0,0,0,0.6);"></div>
-        <div class="svc-hero-content wrap" style="position:relative; z-index:2; max-width:800px; margin-left:0; text-align:left;">
-            <span class="section-label" style="color:var(--sage-light); font-weight:300; letter-spacing:0.1em; display:block; margin-bottom:1rem; font-size:1.3rem;">Služby</span>
-            <h1 style="font-family:'Montserrat',sans-serif; font-size:3.5rem; color:white; line-height:1.2; text-transform:none !important;">
-                Společně hledáme řešení pro chvíle, kdy potřebujete <span class="typing-wrap" style="display:block; min-height:1.5em; line-height:1.5;"><span id="sluzby-typing" style="color:var(--sage-light);"></span></span>
-            </h1>
+    <div class="page-header">
+        <div class="wrap">
+            <span class="section-label">Služby</span>
+            <h1>Vyberte si oblast spolupráce</h1>
         </div>
     </div>
-
-    <section style="background:#F8F9FB; padding:6rem 0;">
+    <section style="background:#F8F9FB;padding:5rem 0;">
         <div class="wrap">
-            <div class="services-grid-4" style="margin-bottom:4rem;grid-template-columns:repeat(3,1fr);">
-                
-                <div class="sluzba-block fade-up" style="transition-delay:0.1s;" onclick="showPage('individualni-konzultace')">
-                    <div class="sluzba-icon"><svg viewBox="0 0 280 160" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 155 A130 130 0 0 1 270 155" stroke="currentColor" stroke-width="8" fill="none"/><path d="M50 155 A90 90 0 0 1 230 155" stroke="currentColor" stroke-width="8" fill="none"/><path d="M90 155 A50 50 0 0 1 190 155" stroke="currentColor" stroke-width="8" fill="none"/></svg></div>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;">
+
+                <div class="sluzba-block fade-up" style="transition-delay:0.05s;" onclick="showPage('individualni-konzultace')">
                     <div>
-                        <span style="font-size:0.8rem; color:var(--sage-dark); font-weight:bold; letter-spacing:0.1em; display:block; margin-bottom:0.5rem;">Osobní rozvoj na míru</span>
-                        <h4 style="font-size:1.4rem;font-weight:400;text-transform:none;">Individuální konzultace</h4>
-                        <p style="font-size:0.9rem;color:var(--text);line-height:1.6;margin:0.5rem 0 1rem 0;font-weight:500;">Individuální rozvoj podložený certifikovanými metodikami — pro lepší sebepoznání, kariérní rozhodnutí i využití přirozeného talentu.</p>
-                        <div style="display:flex;flex-direction:column;gap:0.6rem;margin-top:1.5rem;padding-left:1rem;">
-                            <span onclick="event.stopPropagation();showPage('koucovani')" style="font-size:0.95rem;font-weight:500;color:var(--text);cursor:pointer;padding:0.3rem 0;border-bottom:1px solid #eee;transition:padding 0.2s;" onmouseover="this.style.paddingLeft='0.5rem'" onmouseout="this.style.paddingLeft='0'">1:1 Koučování</span>
-                            <span onclick="event.stopPropagation();showPage('gallup')" style="font-size:0.95rem;font-weight:500;color:var(--text);cursor:pointer;padding:0.3rem 0;border-bottom:1px solid #eee;transition:padding 0.2s;" onmouseover="this.style.paddingLeft='0.5rem'" onmouseout="this.style.paddingLeft='0'">Gallup CliftonStrengths®</span>
-                            <span onclick="event.stopPropagation();showPage('prism')" style="font-size:0.95rem;font-weight:500;color:var(--text);cursor:pointer;padding:0.3rem 0;border-bottom:1px solid #eee;transition:padding 0.2s;" onmouseover="this.style.paddingLeft='0.5rem'" onmouseout="this.style.paddingLeft='0'"><em>PRISM</em> Brain Mapping®</span>
-                            <span onclick="event.stopPropagation();showPage('karierni-poradenstvi')" style="font-size:0.95rem;font-weight:500;color:var(--text);cursor:pointer;padding:0.3rem 0;transition:padding 0.2s;" onmouseover="this.style.paddingLeft='0.5rem'" onmouseout="this.style.paddingLeft='0'">NextGen Talent Management (15+)</span>
-                        </div>
+                        <h4>Individuální a týmová spolupráce</h4>
+                        <p>Koučink, práce se silnými stránkami a rozvojová spolupráce pro jednotlivce i týmy — s osobními i pracovními tématy.</p>
                     </div>
                     <span class="sluzba-link">Zjistit více</span>
                 </div>
 
-                <div class="sluzba-block fade-up" style="transition-delay:0.2s;" onclick="showPage('pro-firmy')">
-                    <div class="sluzba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></div>
+                <div class="sluzba-block fade-up" style="transition-delay:0.1s;" onclick="showPage('pro-firmy')">
                     <div>
-                        <span style="font-size:0.8rem; color:var(--sage-dark); font-weight:bold; letter-spacing:0.1em; display:block; margin-bottom:0.5rem;">Talent management pro firmy</span>
-                        <h4 style="font-size:1.4rem;font-weight:400;text-transform:none;">Firemní spolupráce</h4>
-                        <p style="font-size:0.9rem;font-weight:500;color:var(--text);line-height:1.6;">Od práce s jednotlivcem po rozvoj celého týmu. Strategický partnering opřený o 17 let zkušeností z globálního byznysu — pro firmy, které chtějí dobře nastavené role, silnou spolupráci a stabilní klíčové lidi.</p>
+                        <h4>Seniorní HR/L&amp;D podpora</h4>
+                        <p>Zkušenější HR a L&amp;D pohled pro firmy, které potřebují partnera u people a rozvojových témat.</p>
                     </div>
                     <span class="sluzba-link">Zjistit více</span>
                 </div>
 
-                <div class="sluzba-block fade-up" style="transition-delay:0.3s; background:var(--sage-dark); border-color:var(--sage-dark);" onclick="showPage('transformace')">
-                    <div class="sluzba-icon" style="opacity:0.15;"><svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="10,140 60,80 10,20" stroke="white" stroke-width="12" fill="none" stroke-linejoin="round" stroke-linecap="round"/><polyline points="55,140 105,80 55,20" stroke="white" stroke-width="12" fill="none" stroke-linejoin="round" stroke-linecap="round"/><polyline points="100,140 150,80 100,20" stroke="white" stroke-width="12" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg></div>
+                <div class="sluzba-block fade-up" style="transition-delay:0.15s;" onclick="showPage('karierni-poradenstvi')">
                     <div>
-                        <span style="font-size:0.8rem; color:rgba(255,255,255,0.7); font-weight:bold; letter-spacing:0.1em; display:block; margin-bottom:0.5rem;">Program osobní změny</span>
-                        <h4 style="font-size:1.4rem;font-weight:400;text-transform:none;color:white;">Redesign Your Life</h4>
-                        <p style="font-size:0.95rem;font-weight:500; color:rgba(255,255,255,0.85);">Program pro ty, kteří cítí, že je čas na změnu — a chtějí ji postavit na tom, kým skutečně jsou.</p>
+                        <h4>Mladí lidé 15+ a rodiče</h4>
+                        <p>Talentové poradenství a podpora při volbě školy, oboru nebo dalšího kroku. Práce se silnými stránkami a hledání variant, které dávají smysl.</p>
                     </div>
-                    <span class="sluzba-link" style="color:white;border-color:rgba(255,255,255,0.4);cursor:pointer;transition:all 0.3s;" onmouseover="this.style.background='white';this.style.color='#2F343B';" onmouseout="this.style.background='transparent';this.style.color='white';">Zjistit více</span>
+                    <span class="sluzba-link">Zjistit více</span>
                 </div>
+
+                <div class="sluzba-block fade-up" style="transition-delay:0.2s;" onclick="showPage('transformace')">
+                    <div>
+                        <h4>Pro období větší změny</h4>
+                        <p>Práce s lidmi, kteří hledají nový směr — po letech v oboru, při návratu po pauze nebo v momentu, kdy dosavadní nastavení přestává fungovat.</p>
+                    </div>
+                    <span class="sluzba-link">Zjistit více</span>
+                </div>
+
             </div>
         </div>
     </section>
 </div>
+
+
 
 <div id="individualni-konzultace" class="page">
     <div class="page-header">
