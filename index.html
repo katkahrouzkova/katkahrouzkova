@@ -114,6 +114,33 @@
 .btn {transition:all 0.25s ease;}
 .btn:hover {filter:brightness(0.87);transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,0.18);}
 .section-label {text-transform:none !important;}
+
+/* === NOVÁ HOMEPAGE === */
+@keyframes hp-draw {to{stroke-dashoffset:0;}}
+@keyframes hp-pulse {0%,100%{opacity:.38;}60%{opacity:.56;}}
+.hp-lp1{stroke-dasharray:650;stroke-dashoffset:650;animation:hp-draw 3.2s cubic-bezier(.25,.1,.25,1) .5s forwards;}
+.hp-lp2{stroke-dasharray:220;stroke-dashoffset:220;animation:hp-draw 2s cubic-bezier(.25,.1,.25,1) 1.8s forwards;}
+@media(prefers-reduced-motion:reduce){.hp-lp1,.hp-lp2{animation:none;stroke-dashoffset:0;}}
+.hp-hero-g{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center;}
+.hp-cards-2x2{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
+.hp-card{background:white;border:1px solid rgba(35,38,43,.07);border-radius:10px;padding:2rem 1.8rem;transition:border-color .2s;}
+.hp-card:hover{border-color:rgba(122,111,134,.3);}
+.hp-card h3{font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:600;color:#2F343B;margin-bottom:.8rem;}
+.hp-card p{font-size:.95rem;color:#666C75;line-height:1.75;}
+.hp-skym-g{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.hp-ph{border-radius:6px;display:flex;align-items:center;justify-content:center;border:1px dashed;}
+.hp-ph-lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:300;text-align:center;line-height:2;}
+.hp-svg-wrap{position:absolute;top:-10px;right:-14px;animation:hp-pulse 6s ease-in-out 3.5s infinite;}
+.hp-btn-hero{display:inline-block;padding:.85rem 2.2rem;background:#F8F9FB;color:#2F343B;font-size:.88rem;font-weight:500;letter-spacing:.05em;border:none;cursor:pointer;font-family:'Montserrat',sans-serif;transition:background .2s;border-radius:2px;}
+.hp-btn-hero:hover{background:#E7EAEE;}
+.hp-btn-dark{display:inline-block;padding:.8rem 2rem;background:#2F343B;color:#F8F9FB;font-size:.85rem;font-weight:500;letter-spacing:.05em;border:none;cursor:pointer;font-family:'Montserrat',sans-serif;transition:background .2s;border-radius:2px;}
+.hp-btn-dark:hover{background:#23262B;}
+.hp-btn-outline{display:inline-block;padding:.8rem 2.2rem;background:rgba(248,249,251,.1);color:#F8F9FB;font-size:.85rem;font-weight:500;letter-spacing:.05em;border:1px solid rgba(248,249,251,.35);cursor:pointer;font-family:'Montserrat',sans-serif;transition:all .22s;border-radius:2px;}
+.hp-btn-outline:hover{background:rgba(248,249,251,.18);border-color:rgba(248,249,251,.6);}
+@media(max-width:768px){
+  .hp-hero-g,.hp-cards-2x2,.hp-skym-g{grid-template-columns:1fr;}
+}
+
 /* Reference page stlpce */
 .ref-grid {display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;}
 #hero-typing, #sluzby-typing, #indiv-typing, #kouc-typing, #gallup-typing, #prism-typing, #redesign-typing, #kariera-typing, #firemni-typing, #omne-typing, #nextgen-typing {display:inline-block; min-height:1.5em; vertical-align:bottom; overflow:hidden;}
@@ -157,52 +184,77 @@
 
 <div id="home" class="page active">
 
-<div style="background:#968F84;width:100%;">
-<div class="hero-centered wrap">
-<h1 style="font-family:'Montserrat',sans-serif;font-size:3.2rem;color:white;line-height:1.25;margin-bottom:1.5rem;max-width:900px;font-weight:400;">Pomáhám lidem postavit kariéru i život na tom, v čem jsou přirozeně dobrí.</h1>
-<p style="font-size:1.2rem;color:#D1CDC1;line-height:1.7;margin:0 0 2.5rem 0;max-width:720px;">Pracuji s manažery, jednotlivci i firmami v tématech kariérního směřování, rozvoje a pracovní změny. Opírám se o psychologii, 17+ let praxe v mezinárodním HR a certifikované metodiky.</p>
-<p style="font-size:0.75rem;color:rgba(209,205,193,0.78);letter-spacing:0.12em;margin:0 0 3rem 0;line-height:2.5;">Psychologie&nbsp;&nbsp;|&nbsp;&nbsp;Koučink&nbsp;&nbsp;|&nbsp;&nbsp;17+ let praxe&nbsp;&nbsp;|&nbsp;&nbsp;HR a rozvoj lidí&nbsp;&nbsp;|&nbsp;&nbsp;Gallup CliftonStrengths&#174;&nbsp;&nbsp;|&nbsp;&nbsp;<em>PRISM</em>&#174; Brain Mapping</p>
-<button class="btn pulse-btn" onclick="showPage('kontakt')">Domluvit úvodní rozhovor</button>
-</div>
-</div>
-
-<section style="background:white;padding:6rem 0;">
+<section style="background:#2F343B;padding:5rem 0 4rem;">
 <div class="wrap">
-<h2 style="font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:500;color:var(--text);text-align:center;line-height:1.35;margin-bottom:3rem;">S kým pracuji a v jakých situacích pomáhám</h2>
-<div class="skim-grid">
-<div class="skim-card fade-up" style="transition-delay:0.05s;"><h3>Manažeři</h3><p>Pracuji s lidmi, kteří přebírají novou roli, vedou tým nebo nesou větší zodpovědnost. Často řeší vedení lidí, delegování, tlak, vyčarpání nebo hledání vlastního stylu v roli.</p></div>
-<div class="skim-card fade-up" style="transition-delay:0.1s;"><h3>Jednotlivci</h3><p>Podporuji lidi, kteří stojí před pracovním rozhodnutím nebo procházejí obdobím změny. Otevíráme témata jako profesní směřování, návrat po pauze, změna role nebo ztráta smyslu v práci.</p></div>
-<div class="skim-card fade-up" style="transition-delay:0.15s;"><h3>HR a vedení firem</h3><p>Spolupracuji s HR i firmami, které chtějí lépe pracovat s rozvojem lidí, talenty a podporou manažerů. Bývá součástí kombinace koučinku, mentoringu, konzultace a rozvojových programů.</p></div>
-<div class="skim-card fade-up" style="transition-delay:0.2s;"><h3>Mladí lidé 15+ a rodiče</h3><p>Pracuji i s mladými lidmi, kteří stojí před volbou školy, oboru nebo dalšího kroku. V talentovém poradenství se opírám o práci se silnými stránkami.</p></div>
+<div class="hp-hero-g">
+<div>
+  <div style="width:28px;height:1px;background:#7A6F86;margin-bottom:1.2rem;opacity:.8;"></div>
+  <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(248,249,251,.28);font-weight:300;display:block;margin-bottom:1.4rem;">Talent management a koučink</span>
+  <h1 style="font-family:'Montserrat',sans-serif;font-size:2.6rem;font-weight:400;color:#F8F9FB;line-height:1.25;margin-bottom:1.2rem;max-width:580px;">Pomáhám lidem postavit kariéru i život na tom, v čem jsou přirozeně dobrí.</h1>
+  <p style="font-size:1.05rem;color:rgba(248,249,251,.65);line-height:1.75;margin-bottom:1.8rem;max-width:520px;font-weight:300;">Pracuji s manažery, jednotlivci i firmami v tématech kariérního směřování, rozvoje a pracovní změny. Opírám se o psychologii, 17+ let praxe v mezinárodním HR a certifikované metodiky.</p>
+  <p style="font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:rgba(248,249,251,.32);font-weight:500;line-height:2.6;margin-bottom:2.5rem;">PSYCHOLOGIE&nbsp;&nbsp;|&nbsp;&nbsp;KOUČINK&nbsp;&nbsp;|&nbsp;&nbsp;17+ LET PRAXE&nbsp;&nbsp;|&nbsp;&nbsp;HR A ROZVOJ LIDÍ&nbsp;&nbsp;|&nbsp;&nbsp;GALLUP CLIFTONSTRENGTHS®&nbsp;&nbsp;|&nbsp;&nbsp;<em style="font-style:italic;">PRISM</em>® BRAIN MAPPING</p>
+  <button class="hp-btn-hero" onclick="showPage('kontakt')">Domluvit úvodní rozhovor</button>
 </div>
-</div>
-</section>
-
-<section style="background:#D1CDC1;padding:6rem 0;">
-<div class="wrap">
-<div style="display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start;">
-<div style="text-align:center;" class="slide-in-left">
-<div class="about-photo-wrapper">
-<div style="width:100%;aspect-ratio:1;border-radius:50%;overflow:hidden;background:#f0f0f0;"><img alt="Katka Hrouzková" src="images/about-img.png" style="width:100%;height:100%;object-fit:cover;"></div>
-</div>
-<div style="margin-top:1.5rem;">
-<h3 style="font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:normal;color:var(--text);margin-bottom:0.9rem;">Katka Hrouzková</h3>
-<p style="color:var(--text-light);font-size:1rem;">Brno &amp; Online</p>
-</div>
-</div>
-<div class="slide-in-right">
-<span style="color:var(--sage-dark);font-size:0.95rem;font-weight:600;display:block;margin-bottom:1.5rem;">Jak pracuji</span>
-<p style="font-size:1.1rem;color:var(--text-light);line-height:1.8;margin-bottom:1.2rem;">Základem mé práce je koučovací rozhovor. Neprodávám univerzální návody ani motivační fráze. Opírám se o psychologické vzdělání, dlouholetou HR zkušenost a nástroje pro práci s talenty a pracovním stylem.</p>
-<p style="font-size:1.1rem;color:var(--text-light);line-height:1.8;margin-bottom:2rem;">Podle situace kombinuji koučink, mentoring, konzultaci a praktickou práci s konkrétním pracovním kontextem.</p>
-<button class="btn pulse-btn" style="background:transparent;color:var(--sage-dark);border:2px solid var(--sage-dark);" onclick="showPage('o-mne')">Více o mně</button>
+<div style="position:relative;">
+  <!-- Hero portrait photo -->
+  <div class="hp-ph" style="aspect-ratio:4/5;background:rgba(248,249,251,.05);border-color:rgba(248,249,251,.1);">
+    <div class="hp-ph-lbl" style="color:rgba(248,249,251,.18);">Hero portrait<br>4 : 5<br>object-fit: cover</div>
+  </div>
+  <svg class="hp-svg-wrap" width="92" height="140" viewBox="0 0 92 140" fill="none" aria-hidden="true">
+    <path class="hp-lp1" d="M 46 8 C 63 6 79 18 79 36 C 79 52 69 64 61 76 C 53 88 49 99 47 111 C 45 123 49 133 41 139 C 33 145 20 138 18 128 C 16 118 22 106 28 96 C 34 86 44 78 46 66 C 48 54 40 42 42 29 C 44 17 31 8 46 8 Z" stroke="#F8F9FB" stroke-width="1" fill="none"/>
+    <path class="hp-lp2" d="M 21 36 C 31 25 48 25 58 36 C 67 45 67 59 58 69" stroke="rgba(122,111,134,.7)" stroke-width=".9" fill="none"/>
+  </svg>
 </div>
 </div>
 </div>
 </section>
 
-<section style="background:white;padding:6rem 0;overflow:hidden;">
+<section style="background:#F8F9FB;padding:5rem 0;">
 <div class="wrap">
-<span style="text-align:center;color:var(--sage-dark);font-size:0.9rem;font-weight:600;display:block;margin-bottom:1rem;">Reference</span>
+  <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#666C75;font-weight:300;display:block;margin-bottom:1rem;">S kým pracuji</span>
+  <h2 style="font-family:'Montserrat',sans-serif;font-size:1.9rem;font-weight:400;color:#23262B;margin-bottom:2.5rem;line-height:1.35;max-width:620px;">S kým pracuji a v jakých situacích pomáhám</h2>
+  <div class="hp-cards-2x2">
+    <div class="hp-card">
+      <h3>Manažeři</h3>
+      <p>Pracuji s lidmi, kteří přebírají novou roli, vedou tým nebo nesou větší zodpovědnost. Často řeší vedení lidí, delegování, tlak, vyčerpání nebo hledání vlastního stylu v roli.</p>
+    </div>
+    <div class="hp-card">
+      <h3>Jednotlivci</h3>
+      <p>Podporuji lidi, kteří stojí před pracovním rozhodnutím nebo procházejí obdobím změny. V individuálním koučinku spolu otevíráme témata jako profesní směřování, návrat po pauze, změna role, změna oboru nebo ztráta smyslu v práci.</p>
+    </div>
+    <div class="hp-card">
+      <h3>HR a vedení firem</h3>
+      <p>Spolupracuji s HR i firmami, které chtějí lépe pracovat s rozvojem lidí, talenty a podporou manažerů. Součástí bývá kombinace koučinku, mentoringu a konzultace, rozvojové programy i hledání funkčních řešení pro konkrétní prostředí.</p>
+    </div>
+    <div class="hp-card">
+      <h3>Mladí lidé 15+ a rodiče</h3>
+      <p>Pracuji i s mladými lidmi, kteří stojí před volbou školy, oboru nebo dalšího kroku. V rozhovorech a talentovém poradenství se opírám o práci se silnými stránkami a podporu při rozhodování.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section style="background:#E7EAEE;padding:5rem 0;">
+<div class="wrap">
+<div class="hp-skym-g">
+  <!-- Secondary personal photo -->
+  <div class="hp-ph" style="aspect-ratio:4/5;background:rgba(35,38,43,.08);border-color:rgba(35,38,43,.14);">
+    <div class="hp-ph-lbl" style="color:rgba(35,38,43,.25);">Osobní foto<br>4 : 5</div>
+  </div>
+  <div>
+    <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#666C75;font-weight:300;display:block;margin-bottom:1rem;">S kým budete spolupracovat</span>
+    <h2 style="font-family:'Montserrat',sans-serif;font-size:1.7rem;font-weight:400;color:#23262B;margin-bottom:.3rem;line-height:1.2;">Katka Hrouzková</h2>
+    <p style="font-size:1rem;font-weight:500;color:#7A6F86;margin-bottom:1.8rem;letter-spacing:.02em;">Brno nebo online</p>
+    <p style="font-size:1rem;color:#23262B;line-height:1.85;margin-bottom:2rem;">Jsem pragmatický a lidský partner pro váš rozvoj. Základem mé práce je koučovací rozhovor. Neprodávám univerzální návody ani motivační fráze. Opírám se o psychologické vzdělání, dlouholetou HR zkušenost a nástroje pro práci s talenty a pracovním stylem. Podle situace kombinuji koučink, mentoring, konzultaci tak, aby odpovídali vašemu pracovnímu kontextu.</p>
+    <button class="hp-btn-dark" onclick="showPage('o-mne')">Více o mně</button>
+  </div>
+</div>
+</div>
+</section>
+
+<section style="background:white;padding:5rem 0;overflow:hidden;">
+<div class="wrap">
+<span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#666C75;font-weight:300;display:block;margin-bottom:1rem;text-align:center;">Reference</span>
 <div class="carousel-viewport">
     <div class="carousel-track">
         <div class="testimonial-card"><p class="quote">„Na Katce je vidět, že je profík. Má hluboké zkušenosti, ale přistupuje k vám s lidskostí a opravdovým zájmem.“</p><div class="author">Aleksandra Thomas <span class="position">Uniqa</span></div></div>
@@ -219,13 +271,14 @@
 </div>
 </section>
 
-<div class="cta-banner" style="background:var(--sage-dark);text-align:center;padding:5rem 2rem;">
-<div class="wrap blur-to-focus">
-<h2 style="font-family:'Montserrat',sans-serif;font-size:1.9rem;font-weight:400;color:white;text-align:center;line-height:1.6;margin-bottom:1.5rem;max-width:680px;margin-left:auto;margin-right:auto;">Pokud zvažujete změnu, jste v náročnějším období nebo hledáte podporu pro sebe, svůj tým nebo firmu, můžeme se podívat, jestli vám moje práce dává smysl.</h2>
-<p style="font-size:1.05rem;opacity:0.85;max-width:500px;margin:0 auto 2rem auto;line-height:1.6;color:white;">Začít můžeme krátkým úvodním rozhovorem — ozvěte se mi.</p>
-<button class="btn btn-white pulse-btn" onclick="showPage('kontakt')">Domluvit úvodní rozhovor</button>
+<section style="background:#2F343B;padding:5rem 0;text-align:center;">
+<div class="wrap">
+  <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(248,249,251,.22);font-weight:300;display:block;margin-bottom:1.5rem;">Kontakt</span>
+  <h2 style="font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:400;color:#F8F9FB;line-height:1.5;margin-bottom:1.2rem;max-width:600px;margin-left:auto;margin-right:auto;">Začněme krátkým rozhovorem</h2>
+  <p style="font-size:1rem;color:rgba(248,249,251,.58);max-width:520px;margin:0 auto 2.5rem;line-height:1.8;">Pokud zvažujete změnu, jste v náročnějším období nebo hledáte podporu pro sebe, svůj tým nebo firmu, můžeme se podívat, jestli vám moje práce dává smysl. Začít můžeme krátkým úvodním rozhovorem – ozvěte se mi.</p>
+  <button class="hp-btn-outline" onclick="showPage('kontakt')">Domluvit úvodní rozhovor</button>
 </div>
-</div>
+</section>
 
 </div>
 
