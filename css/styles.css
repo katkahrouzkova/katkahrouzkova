@@ -663,3 +663,16 @@ h1, h2, h3, h4 {
     --text: #23262B;
     --text-light: #666C75;
 }
+
+/* HIGH SPECIFICITY HEADING FIX */
+body h1, body h2, body h3, body h4,
+.page-header h1, .page-header h2,
+.svc-hero-content h1, .svc-hero-content h2,
+.wrap h1, .wrap h2, .wrap h3, .wrap h4 {
+    text-transform: none !important;
+    letter-spacing: normal !important;
+}
+body h4 {
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
+}
