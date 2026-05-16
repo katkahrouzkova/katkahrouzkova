@@ -676,3 +676,15 @@ body h4 {
     font-weight: 600 !important;
     letter-spacing: 0 !important;
 }
+
+/* SPACING FIXES */
+.page-header {
+    padding: 5rem 0 4rem !important;
+}
+.svc-hero {
+    min-height: 52vh !important;
+    padding-top: 5rem !important;
+}
+.svc-hero-content {
+    padding-top: 2rem !important;
+}
