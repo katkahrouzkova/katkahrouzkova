@@ -753,3 +753,8 @@ body { padding-top: 72px; }
     70%  { box-shadow: 0 0 0 12px rgba(248,249,251,0); }
     100% { box-shadow: 0 0 0 0 rgba(248,249,251,0); }
 }
+
+/* NAV KONTAKT + LANG SWITCHER SPACING */
+.nav-links { align-items: center; }
+.lang-switcher { margin-left: 1rem !important; }
+nav .nav-inner, nav > div { align-items: center !important; }
