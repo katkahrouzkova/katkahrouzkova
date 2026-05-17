@@ -792,3 +792,99 @@ img[src*="foto-koucovani.jpg"] {
     object-fit: contain !important;
     display: block !important;
 }
+
+
+/* Oprava zobrazenia pre fotku Seniorni HR */
+img[src*="foto-seniorni-hr.jpg"] {
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+
+/* Zmenšenie a úprava fotky v sekcii Kontakt na Homepage */
+#kontakt img {
+    max-width: 100% !important;
+    max-height: 380px !important; /* Toto číslo určuje maximálnu výšku fotky */
+    width: auto !important;
+    height: auto !important;
+    object-fit: cover !important;
+    object-position: center 20% !important; /* Zarovná fotku jemne na tvár */
+    display: block !important;
+    margin: 0 auto !important; /* Vycentruje ju, ak by bola užšia ako stĺpec */
+}
+
+
+
+
+
+
+
+/* ── TYPING SKOK FIX ── */
+.typing-wrap {
+    display: block;
+    min-height: 1.6em;
+    overflow: hidden;
+}
+.hero-cur {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    vertical-align: middle;
+}
+
+/* ── MOBILE HERO GRID ── */
+@media (max-width: 768px) {
+    div[style*="grid-template-columns:1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+    }
+    div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+    }
+    /* Hero sekcie na mobile - obrazok skry alebo zmenssi */
+    div[style*="margin-top:72px"][style*="grid"] > div:last-child {
+        display: none;
+    }
+    /* Kontakt - foto zachovaj ale daj pod text */
+    .kontakt-hero {
+        grid-template-columns: 1fr !important;
+    }
+    .kontakt-hero > div:first-child {
+        max-height: 280px;
+    }
+    /* Padding na mobile */
+    div[style*="padding:4.5rem 2rem 4.5rem 4rem"] {
+        padding: 3rem 1.5rem !important;
+    }
+    div[style*="padding:4rem 4rem 4rem 5rem"] {
+        padding: 3rem 1.5rem !important;
+    }
+    /* Hero min-height na mobile */
+    div[style*="min-height:480px"] {
+        min-height: auto !important;
+    }
+    div[style*="min-height:520px"] {
+        min-height: auto !important;
+    }
+    /* Gallup sroubovica na mobile - menssia */
+    #gallup-bar { max-height: 60px; }
+    /* Hero nadpisy na mobile */
+    div[style*="margin-top:72px"] h1 {
+        font-size: 1.8rem !important;
+    }
+    /* Homepage hero grid */
+    .hp-hero-g {
+        grid-template-columns: 1fr !important;
+    }
+    .hp-hero-g > div:last-child {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    div[style*="margin-top:72px"] h1 {
+        font-size: 1.5rem !important;
+    }
+}
