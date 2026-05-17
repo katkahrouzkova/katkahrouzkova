@@ -772,3 +772,12 @@ nav .nav-inner, nav > div { align-items: center !important; }
     display: block;
     object-fit: contain;
 }
+
+/* Zobrazenie celej fotky v sekcii Koucovani */
+#koucovani img {
+    max-width: 100%;
+    height: auto !important;
+    max-height: none !important;
+    display: block;
+    object-fit: contain !important;
+}
