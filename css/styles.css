@@ -733,3 +733,10 @@ nav, .navbar, header { padding: 1.2rem 0 !important; }
 @media (max-width: 500px) {
     .hp-cards-2x2 { grid-template-columns: 1fr !important; }
 }
+
+/* NAV FIXED OFFSET */
+body { padding-top: 72px; }
+.svc-hero, section:first-of-type { scroll-margin-top: 72px; }
+@media (max-width: 768px) {
+    body { padding-top: 64px; }
+}
