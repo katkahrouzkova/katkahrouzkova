@@ -645,7 +645,7 @@ h4.card-title, .sluzba-block h4, .hp-card h3 {
 h1, h2, h3, h4 { text-transform: none !important; }
 
 /* === COOL PALETTE OVERRIDES === */
-.svc-hero { background: #2F343B !important; }
+.svc-hero { background: #2F343B; }
 .svc-hero-overlay { background: rgba(47,52,59,0.45) !important; }
 
 h4 {
@@ -758,3 +758,8 @@ body { padding-top: 72px; }
 .nav-links { align-items: center; }
 .lang-switcher { margin-left: 1rem !important; }
 nav .nav-inner, nav > div { align-items: center !important; }
+
+/* SVC-HERO s fotkami */
+.svc-hero { position: relative; min-height: 55vh; display: flex; align-items: flex-end; }
+.svc-hero-overlay { position: absolute; inset: 0; z-index: 0; }
+.svc-hero-content { position: relative; z-index: 1; padding-bottom: 3rem; }
