@@ -667,52 +667,53 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
 <div class="wrap">
 <div style="display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;">
 <div><h1 style="font-size:2.6rem !important;font-weight:400 !important;color:white !important;line-height:1.2;margin-bottom:1.5rem;text-transform:none !important;">Stavte na tom, co vám jde samo</h1>
-<svg id="gallup-bar" viewBox="0 0 760 110" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;margin:1.8rem 0;">
+<div style="overflow:hidden;margin:1.8rem 0;width:100%;">
+<svg id="gallup-bar" viewBox="0 0 760 110" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;animation:gallup-reveal 1.8s cubic-bezier(.4,0,.2,1) .4s both;">
   <defs>
     <clipPath id="gcL"><path d="M 10,55 L 52,5 L 128,5 L 165,55 L 128,105 L 52,105 Z"/></clipPath>
     <clipPath id="gcR"><path d="M 142,55 L 168,5 L 698,5 L 742,55 L 698,105 L 168,105 Z"/></clipPath>
   </defs>
-  <path d="M 10,55 L 52,5 L 128,5 L 165,55 L 128,105 L 52,105 Z" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.28)" stroke-width="1.2"/>
-  <path d="M 142,55 L 168,5 L 698,5 L 742,55 L 698,105 L 168,105 Z" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.28)" stroke-width="1.2"/>
-  <g id="gbDots"></g>
-</svg>
+  <!-- Left shape -->
+  <path d="M 10,55 L 52,5 L 128,5 L 165,55 L 128,105 L 52,105 Z" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.5)" stroke-width="1.2"/>
+  <!-- Right shape -->
+  <path d="M 142,55 L 168,5 L 698,5 L 742,55 L 698,105 L 168,105 Z" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.5)" stroke-width="1.2"/>
+  <!-- Left stripes (5, domain 1) -->
+  <g clip-path="url(#gcL)">
+    <line x1="30"  y1="0" x2="30"  y2="120" stroke="rgba(255,255,255,1)"   stroke-width="5"/>
+    <line x1="54"  y1="0" x2="54"  y2="120" stroke="rgba(255,255,255,1)"   stroke-width="5"/>
+    <line x1="78"  y1="0" x2="78"  y2="120" stroke="rgba(255,255,255,1)"   stroke-width="5"/>
+    <line x1="102" y1="0" x2="102" y2="120" stroke="rgba(255,255,255,1)"   stroke-width="5"/>
+    <line x1="126" y1="0" x2="126" y2="120" stroke="rgba(255,255,255,1)"   stroke-width="5"/>
+  </g>
+  <!-- Right stripes (29, 4 domain groups with opacity) -->
+  <g clip-path="url(#gcR)" id="grs"></g>
+</svg></div>
+<style>
+@keyframes gallup-reveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0% 0 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #gallup-bar { animation: none; }
+}
+</style>
 <script>
 (function(){
   var ns="http://www.w3.org/2000/svg";
-  var g=document.getElementById("gbDots");
-  var DOTS=9;
-  var domainOp=[1,.72,.48,.28];
-
-  function addStripe(cx, op, globalIdx, isLeft){
-    for(var d=0;d<DOTS;d++){
-      var cy=12+d*10;
-      var c=document.createElementNS(ns,"circle");
-      c.setAttribute("cx",cx);
-      c.setAttribute("cy",cy);
-      c.setAttribute("r","1.8");
-      c.setAttribute("fill","rgba(255,255,255,"+op+")");
-      c.style.opacity="0";
-      c.style.transition="opacity .25s ease";
-      g.appendChild(c);
-      var delay = isLeft
-        ? (400 + globalIdx*80 + d*30)
-        : (900 + globalIdx*55 + d*25);
-      (function(el,ms){setTimeout(function(){el.style.opacity="1";},ms);})(c,delay);
-    }
-  }
-
-  // Left shape: 5 stripes
-  [30,54,78,102,126].forEach(function(x,i){ addStripe(x,1.0,i,true); });
-
-  // Right shape: 29 stripes in 4 domain groups
-  var domains=[{n:9,op:1},{n:8,op:.72},{n:9,op:.48},{n:8,op:.28}];
-  var x=182, idx=0;
+  var g=document.getElementById("grs");
+  var domains=[{n:9,op:1},{n:8,op:.7},{n:9,op:.45},{n:8,op:.25}];
+  var x=182;
   domains.forEach(function(d,di){
     for(var i=0;i<d.n;i++){
-      addStripe(x, d.op, idx, false);
-      x+=17.8; idx++;
+      var l=document.createElementNS(ns,"line");
+      l.setAttribute("x1",x);l.setAttribute("y1",0);
+      l.setAttribute("x2",x);l.setAttribute("y2",120);
+      l.setAttribute("stroke","rgba(255,255,255,"+d.op+")");
+      l.setAttribute("stroke-width","5");
+      g.appendChild(l);
+      x+=17.8;
     }
-    if(di<3) x+=8;
+    if(di<3)x+=8;
   });
 })();
 </script>
