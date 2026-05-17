@@ -709,3 +709,27 @@ nav, .navbar, header { padding: 1.2rem 0 !important; }
 .logo span:first-child { font-size: 1rem !important; letter-spacing: 0.06em !important; }
 .logo span:last-child { font-size: 8.5px !important; letter-spacing: 0.15em !important; }
 .nav-links { gap: 2.8rem !important; }
+
+/* HOMEPAGE KARTY — 4 vedla seba + hover */
+.hp-cards-2x2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 1.2rem;
+}
+.hp-card {
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease !important;
+}
+.hp-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 12px 32px rgba(35,38,43,0.13) !important;
+    border-color: #7A6F86 !important;
+}
+.hp-card:hover .hp-card-bottom {
+    color: #2F343B !important;
+}
+@media (max-width: 900px) {
+    .hp-cards-2x2 { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 500px) {
+    .hp-cards-2x2 { grid-template-columns: 1fr !important; }
+}
