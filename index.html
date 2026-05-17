@@ -252,6 +252,21 @@ body { background: #F4F5F7; }
 }
 @keyframes hero-blink { 0%,100%{opacity:1;} 50%{opacity:0;} }
 .hero-cur.done { display:none; }
+
+/* Lightbox certifikaty */
+.cert-img-hover:hover { transform:scale(1.05); box-shadow:0 8px 25px rgba(0,0,0,0.15); }
+#cert-lb { display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+    background:rgba(0,0,0,0.88); z-index:9999; align-items:center;
+    justify-content:center; padding:2rem; flex-direction:column; gap:1rem; }
+#cert-lb.open { display:flex; }
+#cert-lb img { max-width:90vw; max-height:82vh; border-radius:8px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.5); }
+#cert-lb-close { position:absolute; top:1.5rem; right:2rem; color:white;
+    font-size:2.5rem; cursor:pointer; line-height:1; opacity:0.8;
+    transition:opacity 0.2s; background:none; border:none; }
+#cert-lb-close:hover { opacity:1; }
+#cert-lb-caption { color:rgba(255,255,255,0.6); font-size:0.9rem;
+    font-family:'Montserrat',sans-serif; }
 /* Reference page stlpce */
 .ref-grid {display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;}
 #hero-typing, #sluzby-typing, #indiv-typing, #kouc-typing, #gallup-typing, #prism-typing, #redesign-typing, #kariera-typing, #firemni-typing, #omne-typing, #nextgen-typing {display:inline-block; min-height:1.5em; vertical-align:bottom; overflow:hidden;}
@@ -1207,11 +1222,11 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
 <section style="background:white;padding:3rem 0;border-top:1px solid #eee;">
 <div class="wrap">
 <div style="display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;align-items:center;">
-    <img src="images/cert-gallup.png" alt="Gallup Certified" style="height:140px;width:auto;border-radius:6px;box-shadow:0 4px 15px rgba(0,0,0,0.08);border:1px solid #eee;">
-    <img src="images/cert-prism.png" alt="PRISM Certified" style="height:140px;width:auto;border-radius:6px;box-shadow:0 4px 15px rgba(0,0,0,0.08);border:1px solid #eee;">
-    <img src="images/cert-erickson.png" alt="Erickson Certified" style="height:140px;width:auto;border-radius:6px;box-shadow:0 4px 15px rgba(0,0,0,0.08);border:1px solid #eee;">
-    <img src="images/cert-erickson%20team.png" alt="Erickson Team Certified" style="height:140px;width:auto;border-radius:6px;box-shadow:0 4px 15px rgba(0,0,0,0.08);border:1px solid #eee;">
-    <img src="images/cert-facilitace.png" alt="Facilitace" style="height:140px;width:auto;border-radius:6px;box-shadow:0 4px 15px rgba(0,0,0,0.08);border:1px solid #eee;">
+    <img src="images/cert-gallup.png" alt="Gallup Certified" style="cursor:zoom-in;transition:transform 0.2s;height:140px" onclick="openCertLightbox(this);width:auto;border-radius:6px;box-shadow:0 4px 15px rgba(0,0,0,0.08);border:1px solid #eee;">
+    <img src="images/cert-prism.png" alt="PRISM Certified" style="cursor:zoom-in;transition:transform 0.2s;height:140px" onclick="openCertLightbox(this);width:auto;border-radius:6px;box-shadow:0 4px 15px rgba(0,0,0,0.08);border:1px solid #eee;">
+    <img src="images/cert-erickson.png" alt="Erickson Certified" style="cursor:zoom-in;transition:transform 0.2s;height:140px" onclick="openCertLightbox(this);width:auto;border-radius:6px;box-shadow:0 4px 15px rgba(0,0,0,0.08);border:1px solid #eee;">
+    <img src="images/cert-erickson%20team.png" alt="Erickson Team Certified" style="cursor:zoom-in;transition:transform 0.2s;height:140px" onclick="openCertLightbox(this);width:auto;border-radius:6px;box-shadow:0 4px 15px rgba(0,0,0,0.08);border:1px solid #eee;">
+    <img src="images/cert-facilitace.png" alt="Facilitace" style="cursor:zoom-in;transition:transform 0.2s;height:140px" onclick="openCertLightbox(this);width:auto;border-radius:6px;box-shadow:0 4px 15px rgba(0,0,0,0.08);border:1px solid #eee;">
 </div>
 </div>
 </section>
@@ -1473,7 +1488,22 @@ document.addEventListener("DOMContentLoaded", function() {
     setTimeout(type, 600);
 })();
 
-    // Scroll Observer pre animacie komponentov
+    
+window.openCertLightbox = function(img) {
+    document.getElementById('cert-lb-img').src = img.src;
+    document.getElementById('cert-lb-caption').textContent = img.alt;
+    document.getElementById('cert-lb').classList.add('open');
+    document.body.style.overflow = 'hidden';
+};
+window.closeCertLb = function() {
+    document.getElementById('cert-lb').classList.remove('open');
+    document.body.style.overflow = '';
+};
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') window.closeCertLb();
+});
+
+// Scroll Observer pre animacie komponentov
     const observerOptions = { threshold: 0.15 };
     const scrollObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -1497,5 +1527,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </script>
 <script src="js/main.js"></script>
+
+<!-- Lightbox certifikaty -->
+<div id="cert-lb" onclick="if(event.target===this)closeCertLb()">
+  <button id="cert-lb-close" onclick="closeCertLb()">×</button>
+  <img id="cert-lb-img" src="" alt="">
+  <span id="cert-lb-caption"></span>
+</div>
 </body>
 </html>
