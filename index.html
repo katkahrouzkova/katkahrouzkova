@@ -446,12 +446,24 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
 </div>
 </section>
 
-<section style="background:#2F343B;padding:5rem 0;text-align:center;">
-<div class="wrap">
-  <h2 style="font-weight: 300 !important; font-family:\'Montserrat\',sans-serif;font-size:1.9rem;color:#F8F9FB;margin-bottom:1rem;line-height:1.35;text-transform:none !important;text-align:center;">Kontakt</h2>
-  <h2 style="font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:400;color:#F8F9FB;line-height:1.5;margin-bottom:1.2rem;max-width:600px;margin-left:auto;margin-right:auto;">Začněme krátkým rozhovorem</h2>
-  <p style="font-size:1rem;color:rgba(248,249,251,.58);max-width:520px;margin:0 auto 2.5rem;line-height:1.8;">Pokud zvažujete změnu, jste v náročnějším období nebo hledáte podporu pro sebe, svůj tým nebo firmu, můžeme se podívat, jestli vám moje práce dává smysl. Začít můžeme krátkým úvodním rozhovorem – ozvěte se mi.</p>
-  <button class="hp-btn-outline" style="font-size:1.15rem; padding:1.2rem 3rem;" onclick="showPage('kontakt')">Domluvit úvodní rozhovor</button>
+<section style="background:#2F343B;padding:0;overflow:hidden;">
+<div style="display:grid;grid-template-columns:1fr 1fr;min-height:520px;">
+  <!-- foto vlavo -->
+  <div style="overflow:hidden;">
+    <img src="images/Homepage kontakt.jpg" alt="Katka Hrouzková"
+      style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+  </div>
+  <!-- text vpravo -->
+  <div style="display:flex;flex-direction:column;justify-content:center;padding:4rem 4rem 4rem 5rem;">
+    <h2 style="font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:400;color:#F8F9FB;
+      line-height:1.4;margin-bottom:1.5rem;text-transform:none;">Začněme krátkým rozhovorem</h2>
+    <p style="font-size:1rem;color:rgba(248,249,251,.68);line-height:1.8;margin-bottom:2.5rem;max-width:420px;">
+      Pokud zvažujete změnu, jste v náročnějším období nebo hledáte podporu pro sebe, svůj tým nebo firmu,
+      můžeme se podívat, jestli vám moje práce dává smysl. Začít můžeme krátkým úvodním rozhovorem – ozvěte se mi.</p>
+    <div>
+      <button class="hp-btn-outline" onclick="showPage('kontakt')">Domluvit úvodní rozhovor</button>
+    </div>
+  </div>
 </div>
 </section>
 
