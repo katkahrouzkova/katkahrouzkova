@@ -706,7 +706,7 @@ h1, h2, h3, h4, h5, h6 {
 nav, .navbar, header { padding: 1.2rem 0 !important; }
 .nav-inner, .nav-container { padding: 0 3rem !important; }
 .logo { gap: 8px !important; line-height: 1.3 !important; }
-.logo span:first-child { font-size: 1rem !important; letter-spacing: 0.04em !important; color: #23262B !important; font-weight: 600 !important; }
+.logo span:first-child { font-size: 1.05rem !important; font-weight: 700 !important; color: #1A1E26 !important; }
 .logo span:last-child { font-size: 8.5px !important; letter-spacing: 0.15em !important; }
 .nav-links { gap: 2.8rem !important; }
 
