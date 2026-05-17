@@ -314,6 +314,18 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
 .hp-card { cursor: pointer; transition: all 0.3s ease; }
 .hp-card:hover .hover-btn { background-color: #7A6F86 !important; color: #FFFFFF !important; border-color: #7A6F86 !important; }
 .hp-card:active .hover-btn { background-color: #4A5568 !important; color: #FFFFFF !important; border-color: #4A5568 !important; transform: scale(0.98) !important; transition: all 0.1s ease !important; }
+
+/* Sjednoceni velikosti podnadpisu v detailech sluzeb */
+.service-page h4, 
+.service-detail h4, 
+.sub-page h4,
+.detail-section h4,
+.sluzba-detail h4 {
+    font-size: 1.4rem !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    font-weight: 600 !important;
+}
 </style>
 </head>
 <body>
@@ -449,7 +461,7 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
 <section style="background:#2F343B;padding:0;overflow:hidden;">
 <div class="kontakt-hero" style="display:grid;grid-template-columns:1fr 1fr;min-height:400px;">
   <div style="overflow:hidden;height:100%;">
-    <img src="images/homepage-kontakt.jpg" alt="Katka Hrouzková" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;">
+    <img src="images/foto-homepage kontakt.jpg" alt="Katka Hrouzková" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;">
   </div>
   <div style="display:flex;flex-direction:column;justify-content:center;padding:3rem 4rem;">
     <h2 style="font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:400;color:#F8F9FB;line-height:1.4;margin-bottom:1rem;text-transform:none;">Začněme krátkým rozhovorem</h2>
@@ -583,15 +595,15 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
     <h2 style="font-family:'Montserrat',sans-serif;font-size:2.2rem;font-weight:400;text-transform:none !important;letter-spacing:0.05em;color:var(--text);text-align:center;line-height:1.2;margin-bottom:2rem;">Co vám to přinese</h2>
     <div style="display:flex;flex-direction:column;gap:0;">
       <div style="padding:2.5rem 0;border-bottom:1px solid rgba(35,38,43,0.2);">
-        <h4 style="font-size:0.78rem;font-weight:500;color:var(--text);margin-bottom:1rem;text-transform:none;letter-spacing:0.05em;">Rozhodnutí</h4>
+        <h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Rozhodnutí</h4>
         <p style="font-size:1rem;color:var(--text);line-height:1.85;font-weight:400;margin:0;">Pomůžu vám udělat si v důležitých rozhodnutích větší jasno a převést je do konkrétních kroků.</p>
       </div>
       <div style="padding:2.5rem 0;border-bottom:1px solid rgba(35,38,43,0.2);">
-        <h4 style="font-size:0.78rem;font-weight:500;color:var(--text);margin-bottom:1rem;text-transform:none;letter-spacing:0.05em;">Dlouhodobé fungování</h4>
+        <h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Dlouhodobé fungování</h4>
         <p style="font-size:1rem;color:var(--text);line-height:1.85;font-weight:400;margin:0;">Lépe pochopíte, co vás dlouhodobě vyčerpává, co vám sedí a jak fungovat způsobem, který je pro vás udržitelný.</p>
       </div>
       <div style="padding:2.5rem 0;">
-        <h4 style="font-size:0.78rem;font-weight:500;color:var(--text);margin-bottom:1rem;text-transform:none;letter-spacing:0.05em;">Jiný pohled</h4>
+        <h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Jiný pohled</h4>
         <p style="font-size:1rem;color:var(--text);line-height:1.85;font-weight:400;margin:0;">Kladu otázky, které jsou někdy nepříjemné, ale důležité. Přináším pohledy, které vám možná nikdo jiný neřekne — s respektem, ale na rovinu.</p>
       </div>
     </div>
@@ -635,15 +647,15 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
     <div style="display:flex;flex-direction:column;gap:0;">
             <div style="display:flex;gap:2rem;align-items:flex-start;padding:2rem 0;border-bottom:1px solid rgba(35,38,43,0.15);">
                 <div style="font-size:2.5rem;font-weight:300;color:#7A6F86;min-width:60px;line-height:1;">01</div>
-                <div style="padding-top:0.8rem;"><h4 style="color:#23262B;margin-bottom:0.5rem;font-weight:600;font-size:1.1rem;text-transform:none !important;">Nejdřív se poznáme</h4></div>
+                <div style="padding-top:0.8rem;"><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Nejdřív se poznáme</h4></div>
             </div>
             <div style="display:flex;gap:2rem;align-items:flex-start;padding:2rem 0;border-bottom:1px solid rgba(35,38,43,0.15);">
                 <div style="font-size:2.5rem;font-weight:300;color:#7A6F86;min-width:60px;line-height:1;">02</div>
-                <div style="padding-top:0.8rem;"><h4 style="color:#23262B;margin-bottom:0.5rem;font-weight:600;font-size:1.1rem;text-transform:none !important;">Pravidelná setkání — osobně v Brně nebo online</h4></div>
+                <div style="padding-top:0.8rem;"><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Pravidelná setkání — osobně v Brně nebo online</h4></div>
             </div>
             <div style="display:flex;gap:2rem;align-items:flex-start;padding:2rem 0;border-bottom:1px solid rgba(35,38,43,0.15);">
                 <div style="font-size:2.5rem;font-weight:300;color:#7A6F86;min-width:60px;line-height:1;">03</div>
-                <div style="padding-top:0.8rem;"><h4 style="color:#23262B;margin-bottom:0.5rem;font-weight:600;font-size:1.1rem;text-transform:none !important;">Konkrétní kroky do reálného života</h4></div>
+                <div style="padding-top:0.8rem;"><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Konkrétní kroky do reálného života</h4></div>
             </div>
         </div>
         <div style="text-align:center;padding:2rem 0;"><button class="btn pulse-btn" onclick="showPage('kontakt')">Chci koučing</button></div>
@@ -656,9 +668,7 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
 <div style="display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;">
 <div><h1 style="font-size:2.6rem !important;font-weight:400 !important;color:white !important;line-height:1.2;margin-bottom:1.5rem;text-transform:none !important;">Stavte na tom, co vám jde samo</h1>
             <h2 style="font-family:'Montserrat',sans-serif; font-size:1.2rem; color:white; font-weight:300; margin-top:0.8rem; line-height:1.6; text-transform:none !important;">Gallup CliftonStrengths je pro vás, když… <br><span class="typing-wrap" style="display:block; min-height:1.5em; line-height:1.5;"><span id="gallup-typing" style="color:#E2D9F3;"></span></span></h2></div>
-<div style="border-radius:6px;overflow:hidden;">
-  <img src="images/foto-gallup.jpg" alt="" style="width:100%;display:block;object-fit:cover;object-position:center top;max-height:480px;">
-</div>
+
 </div>
 </div>
 </div>
@@ -673,15 +683,15 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
     <h2 style="font-family:'Montserrat',sans-serif;font-size:2.2rem;font-weight:400;text-transform:none !important;letter-spacing:0.05em;color:var(--text);text-align:center;line-height:1.2;margin-bottom:2rem;">Co vám to přinese</h2>
     <div style="display:flex;flex-direction:column;gap:0;">
       <div style="padding:2.5rem 0;border-bottom:1px solid rgba(35,38,43,0.2);">
-        <h4 style="font-size:0.78rem;font-weight:500;color:var(--text);margin-bottom:1rem;text-transform:none;letter-spacing:0.05em;">Větší pochopení sebe sama</h4>
+        <h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Větší pochopení sebe sama</h4>
         <p style="font-size:1rem;color:var(--text);line-height:1.85;font-weight:400;margin:0;">Pochopíte, proč vám některé věci jdou samy, zatímco jiné pro vás nikdy nebudou tak přirozené.</p>
       </div>
       <div style="padding:2.5rem 0;border-bottom:1px solid rgba(35,38,43,0.2);">
-        <h4 style="font-size:0.78rem;font-weight:500;color:var(--text);margin-bottom:1rem;text-transform:none;letter-spacing:0.05em;">Efektivitu</h4>
+        <h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Efektivitu</h4>
         <p style="font-size:1rem;color:var(--text);line-height:1.85;font-weight:400;margin:0;">Budete vědět, do čeho se pouštět a co raději delegovat, abyste dosahovali výsledků s menší námahou.</p>
       </div>
       <div style="padding:2.5rem 0;">
-        <h4 style="font-size:0.78rem;font-weight:500;color:var(--text);margin-bottom:1rem;text-transform:none;letter-spacing:0.05em;">Sebevědomí</h4>
+        <h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Sebevědomí</h4>
         <p style="font-size:1rem;color:var(--text);line-height:1.85;font-weight:400;margin:0;">Lépe pochopíte, v čem jste silní a kde můžete být pro tým nebo firmu největším přínosem.</p>
       </div>
     </div>
@@ -719,15 +729,15 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
     <div style="display:flex;flex-direction:column;gap:0;">
             <div style="display:flex;gap:2rem;align-items:flex-start;padding:2rem 0;border-bottom:1px solid rgba(35,38,43,0.15);">
                 <div style="font-size:2.5rem;font-weight:300;color:#7A6F86;min-width:60px;line-height:1;">01</div>
-                <div style="padding-top:0.8rem;"><h4 style="color:#23262B;margin-bottom:0.5rem;font-weight:600;font-size:1.1rem;text-transform:none !important;">Online dotazník</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">Získáte přehled o tom, které talenty jsou pro vás nejpřirozenější a jak ovlivňují vaše fungování.</p></div>
+                <div style="padding-top:0.8rem;"><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Online dotazník</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">Získáte přehled o tom, které talenty jsou pro vás nejpřirozenější a jak ovlivňují vaše fungování.</p></div>
             </div>
             <div style="display:flex;gap:2rem;align-items:flex-start;padding:2rem 0;border-bottom:1px solid rgba(35,38,43,0.15);">
                 <div style="font-size:2.5rem;font-weight:300;color:#7A6F86;min-width:60px;line-height:1;">02</div>
-                <div style="padding-top:0.8rem;"><h4 style="color:#23262B;margin-bottom:0.5rem;font-weight:600;font-size:1.1rem;text-transform:none !important;">Delší konzultace</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">Rozebereme, co vaše výsledky znamenají pro vaši práci, vztahy nebo kariérní rozhodnutí.</p></div>
+                <div style="padding-top:0.8rem;"><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Delší konzultace</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">Rozebereme, co vaše výsledky znamenají pro vaši práci, vztahy nebo kariérní rozhodnutí.</p></div>
             </div>
             <div style="display:flex;gap:2rem;align-items:flex-start;padding:2rem 0;border-bottom:1px solid rgba(35,38,43,0.15);">
                 <div style="font-size:2.5rem;font-weight:300;color:#7A6F86;min-width:60px;line-height:1;">03</div>
-                <div style="padding-top:0.8rem;"><h4 style="color:#23262B;margin-bottom:0.5rem;font-weight:600;font-size:1.1rem;text-transform:none !important;">Přenos do praxe</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">2–3 koučovací setkání, kde přijdeme na to, jak silné stránky reálně zapojíte do každodenní praxe.</p></div>
+                <div style="padding-top:0.8rem;"><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Přenos do praxe</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">2–3 koučovací setkání, kde přijdeme na to, jak silné stránky reálně zapojíte do každodenní praxe.</p></div>
             </div>
         </div>
   </div>
@@ -746,9 +756,7 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
 <div style="display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;">
 <div><h1 style="font-size:2.6rem !important;font-weight:400 !important;color:white !important;line-height:1.2;text-transform:none !important;">Proč fungujete jinak, než je vám přirozené?</h1>
             <h2 style="font-family:'Montserrat',sans-serif; font-size:1.2rem; color:white; font-weight:300; margin-top:0.8rem; line-height:1.6; text-transform:none !important;"><em>PRISM</em> Brain Mapping je pro vás, když… <br><span class="typing-wrap" style="display:block; min-height:1.5em; line-height:1.5;"><span id="prism-typing" style="color:#E2D9F3;"></span></span></h2></div>
-<div style="border-radius:6px;overflow:hidden;">
-  <img src="images/foto-prism.jpg" alt="" style="width:100%;display:block;object-fit:cover;object-position:center top;max-height:480px;">
-</div>
+
 </div>
 </div>
 </div>
@@ -764,15 +772,15 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
     <h2 style="font-family:'Montserrat',sans-serif;font-size:2.2rem;font-weight:400;text-transform:none !important;letter-spacing:0.05em;color:var(--text);text-align:center;line-height:1.2;margin-bottom:2rem;">Co vám to přinese</h2>
     <div style="display:flex;flex-direction:column;gap:0;">
       <div style="padding:2.5rem 0;border-bottom:1px solid rgba(35,38,43,0.2);">
-        <h4 style="font-size:0.78rem;font-weight:500;color:var(--text);margin-bottom:1rem;text-transform:none;letter-spacing:0.05em;">Porozumění vlastnímu fungování</h4>
+        <h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Porozumění vlastnímu fungování</h4>
         <p style="font-size:1rem;color:var(--text);line-height:1.85;font-weight:400;margin:0;">Pochopíte, proč vás některé situace vyčerpávají, i když v nich máte výsledky.</p>
       </div>
       <div style="padding:2.5rem 0;border-bottom:1px solid rgba(35,38,43,0.2);">
-        <h4 style="font-size:0.78rem;font-weight:500;color:var(--text);margin-bottom:1rem;text-transform:none;letter-spacing:0.05em;">Kontrolu</h4>
+        <h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Kontrolu</h4>
         <p style="font-size:1rem;color:var(--text);line-height:1.85;font-weight:400;margin:0;">Zjistíte, jak vypadá váš „autopilot" pod tlakem a jak se včas rozhodnout pro jinou reakci.</p>
       </div>
       <div style="padding:2.5rem 0;">
-        <h4 style="font-size:0.78rem;font-weight:500;color:var(--text);margin-bottom:1rem;text-transform:none;letter-spacing:0.05em;">Lepší rozhodování</h4>
+        <h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Lepší rozhodování</h4>
         <p style="font-size:1rem;color:var(--text);line-height:1.85;font-weight:400;margin:0;">Získáte objektivní data o svém fungování a o tom, jaké role vám budou dlouhodobě sedět.</p>
       </div>
     </div>
@@ -810,15 +818,15 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
     <div style="display:flex;flex-direction:column;gap:0;">
             <div style="display:flex;gap:2rem;align-items:flex-start;padding:2rem 0;border-bottom:1px solid rgba(35,38,43,0.15);">
                 <div style="font-size:2.5rem;font-weight:300;color:#7A6F86;min-width:60px;line-height:1;">01</div>
-                <div style="padding-top:0.8rem;"><h4 style="color:#23262B;margin-bottom:0.5rem;font-weight:600;font-size:1.1rem;text-transform:none !important;">Online dotazník</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">Vyplníte <em>PRISM</em> dotazník doma — zhruba 30–40 minut. Zmapuje vaše přirozené chování i to, jak se přizpůsobujete okolí.</p></div>
+                <div style="padding-top:0.8rem;"><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Online dotazník</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">Vyplníte <em>PRISM</em> dotazník doma — zhruba 30–40 minut. Zmapuje vaše přirozené chování i to, jak se přizpůsobujete okolí.</p></div>
             </div>
             <div style="display:flex;gap:2rem;align-items:flex-start;padding:2rem 0;border-bottom:1px solid rgba(35,38,43,0.15);">
                 <div style="font-size:2.5rem;font-weight:300;color:#7A6F86;min-width:60px;line-height:1;">02</div>
-                <div style="padding-top:0.8rem;"><h4 style="color:#23262B;margin-bottom:0.5rem;font-weight:600;font-size:1.1rem;text-transform:none !important;">Konzultace</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">90 minut osobně v Brně nebo online. Výsledky probereme do hloubky — co říkají o vašem fungování, reakcích pod tlakem a způsobu spolupráce.</p></div>
+                <div style="padding-top:0.8rem;"><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Konzultace</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">90 minut osobně v Brně nebo online. Výsledky probereme do hloubky — co říkají o vašem fungování, reakcích pod tlakem a způsobu spolupráce.</p></div>
             </div>
             <div style="display:flex;gap:2rem;align-items:flex-start;padding:2rem 0;border-bottom:1px solid rgba(35,38,43,0.15);">
                 <div style="font-size:2.5rem;font-weight:300;color:#7A6F86;min-width:60px;line-height:1;">03</div>
-                <div style="padding-top:0.8rem;"><h4 style="color:#23262B;margin-bottom:0.5rem;font-weight:600;font-size:1.1rem;text-transform:none !important;">Praxe</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">Neodejdete jen s hezkým grafem. Ukážeme si, co z výsledků můžete reálně využít v práci i běžném fungování.</p></div>
+                <div style="padding-top:0.8rem;"><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Praxe</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">Neodejdete jen s hezkým grafem. Ukážeme si, co z výsledků můžete reálně využít v práci i běžném fungování.</p></div>
             </div>
         </div>
         <div style="text-align:center;padding:2rem 0;"><button class="btn pulse-btn" onclick="showPage('kontakt')">Chci zjistit, jak přirozeně funguji</button></div>
@@ -850,15 +858,15 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
     <h2 style="font-family:'Montserrat',sans-serif;font-size:2.2rem;font-weight:400;text-transform:none !important;letter-spacing:0.05em;color:var(--text);text-align:center;line-height:1.2;margin-bottom:3rem;">Co vám to přinese</h2>
     <div style="display:flex;flex-direction:column;gap:0;">
       <div style="padding:2.5rem 0;border-bottom:1px solid rgba(35,38,43,0.2);">
-        <h4 style="font-size:0.78rem;font-weight:500;color:var(--text);margin-bottom:1rem;text-transform:none;letter-spacing:0.05em;">Směr</h4>
+        <h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Směr</h4>
         <p style="font-size:1rem;color:var(--text);line-height:1.85;font-weight:400;margin:0;">Lépe pochopíte, jaké role, prostředí a způsob práce odpovídají tomu, kdo jste dnes.</p>
       </div>
       <div style="padding:2.5rem 0;border-bottom:1px solid rgba(35,38,43,0.2);">
-        <h4 style="font-size:0.78rem;font-weight:500;color:var(--text);margin-bottom:1rem;text-transform:none;letter-spacing:0.05em;">Plán</h4>
+        <h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Plán</h4>
         <p style="font-size:1rem;color:var(--text);line-height:1.85;font-weight:400;margin:0;">Odnesete si konkrétní představu o tom, jak změnu reálně uchopit v práci i běžném životě.</p>
       </div>
       <div style="padding:2.5rem 0;">
-        <h4 style="font-size:0.78rem;font-weight:500;color:var(--text);margin-bottom:1rem;text-transform:none;letter-spacing:0.05em;">Jistotu</h4>
+        <h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Jistotu</h4>
         <p style="font-size:1rem;color:var(--text);line-height:1.85;font-weight:400;margin:0;">Rozhodnutí budete dělat na základě objektivních dat o svých talentech a fungování.</p>
       </div>
     </div>
@@ -900,19 +908,19 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
     <div style="display:flex;flex-direction:column;gap:0;">
       <div style="display:flex;gap:2rem;align-items:flex-start;padding:2rem 0;border-bottom:1px solid rgba(35,38,43,0.15);">
         <div style="font-size:4rem;font-weight:200;color:#7A6F86;min-width:80px;line-height:1;">01</div>
-        <div style="padding-top:0.8rem;"><h4 style="color:#23262B;margin-bottom:0.5rem;font-weight:600;font-size:1.1rem;text-transform:none !important;">Zmapování <em>PRISM</em> a Gallup</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">Podíváme se na vaše talenty, fungování a přirozený způsob práce.</p></div>
+        <div style="padding-top:0.8rem;"><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Zmapování <em>PRISM</em> a Gallup</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">Podíváme se na vaše talenty, fungování a přirozený způsob práce.</p></div>
       </div>
       <div style="display:flex;gap:2rem;align-items:flex-start;padding:2rem 0;border-bottom:1px solid rgba(35,38,43,0.15);">
         <div style="font-size:4rem;font-weight:200;color:#7A6F86;min-width:80px;line-height:1;">02</div>
-        <div style="padding-top:0.8rem;"><h4 style="color:#23262B;margin-bottom:0.5rem;font-weight:600;font-size:1.1rem;text-transform:none !important;">Kariérní strategie</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">Konkrétní role, směry a možnosti, které odpovídají tomu, kdo jste dnes.</p></div>
+        <div style="padding-top:0.8rem;"><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Kariérní strategie</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">Konkrétní role, směry a možnosti, které odpovídají tomu, kdo jste dnes.</p></div>
       </div>
       <div style="display:flex;gap:2rem;align-items:flex-start;padding:2rem 0;border-bottom:1px solid rgba(35,38,43,0.15);">
         <div style="font-size:4rem;font-weight:200;color:#7A6F86;min-width:80px;line-height:1;">03</div>
-        <div style="padding-top:0.8rem;"><h4 style="color:#23262B;margin-bottom:0.5rem;font-weight:600;font-size:1.1rem;text-transform:none !important;">Akční fáze</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">Životopis, příprava na pohovory, první reálné kroky.</p></div>
+        <div style="padding-top:0.8rem;"><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Akční fáze</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">Životopis, příprava na pohovory, první reálné kroky.</p></div>
       </div>
       <div style="display:flex;gap:2rem;align-items:flex-start;padding:2rem 0;">
         <div style="font-size:4rem;font-weight:200;color:#7A6F86;min-width:80px;line-height:1;">04</div>
-        <div style="padding-top:0.8rem;"><h4 style="color:#23262B;margin-bottom:0.5rem;font-weight:600;font-size:1.1rem;text-transform:none !important;">Konsolidace</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">Nastavíme změny tak, aby fungovaly dlouhodobě i v běžném životě.</p></div>
+        <div style="padding-top:0.8rem;"><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Konsolidace</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">Nastavíme změny tak, aby fungovaly dlouhodobě i v běžném životě.</p></div>
       </div>
     </div>
   </div>
@@ -948,15 +956,15 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
     <h2 style="font-family:'Montserrat',sans-serif;font-size:2.2rem;font-weight:400;text-transform:none !important;letter-spacing:0.05em;color:var(--text);text-align:center;line-height:1.2;margin-bottom:2rem;">Co vám to přinese</h2>
     <div style="display:flex;flex-direction:column;gap:0;">
       <div style="padding:2.5rem 0;border-bottom:1px solid rgba(35,38,43,0.2);">
-        <h4 style="font-size:0.78rem;font-weight:500;color:var(--text);margin-bottom:1rem;text-transform:none;letter-spacing:0.05em;">Pevnější základ</h4>
+        <h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Pevnější základ</h4>
         <p style="font-size:1rem;color:var(--text);line-height:1.85;font-weight:400;margin:0;">Místo tipování naslepo budete vědět, na čem stavět.</p>
       </div>
       <div style="padding:2.5rem 0;border-bottom:1px solid rgba(35,38,43,0.2);">
-        <h4 style="font-size:0.78rem;font-weight:500;color:var(--text);margin-bottom:1rem;text-transform:none;letter-spacing:0.05em;">Směr</h4>
+        <h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Směr</h4>
         <p style="font-size:1rem;color:var(--text);line-height:1.85;font-weight:400;margin:0;">Zjistíte, jaké prostředí, role a způsob práce vám přirozeně sedí — a proč.</p>
       </div>
       <div style="padding:2.5rem 0;">
-        <h4 style="font-size:0.78rem;font-weight:500;color:var(--text);margin-bottom:1rem;text-transform:none;letter-spacing:0.05em;">Větší jistotu</h4>
+        <h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Větší jistotu</h4>
         <p style="font-size:1rem;color:var(--text);line-height:1.85;font-weight:400;margin:0;">Rozhodnutí budete dělat s konkrétními daty o svých talentech a fungování.</p>
       </div>
     </div>
@@ -991,15 +999,15 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
     <div style="display:flex;flex-direction:column;gap:0;">
             <div style="display:flex;gap:2rem;align-items:flex-start;padding:2rem 0;border-bottom:1px solid rgba(35,38,43,0.15);">
                 <div style="font-size:2.5rem;font-weight:300;color:#7A6F86;min-width:60px;line-height:1;">01</div>
-                <div style="padding-top:0.8rem;"><h4 style="color:#23262B;margin-bottom:0.5rem;font-weight:600;font-size:1.1rem;text-transform:none !important;">Gallup dotazník</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">Zjistíme vaše přirozené talenty — Gallup je dostupný od 15 let.</p></div>
+                <div style="padding-top:0.8rem;"><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Gallup dotazník</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">Zjistíme vaše přirozené talenty — Gallup je dostupný od 15 let.</p></div>
             </div>
             <div style="display:flex;gap:2rem;align-items:flex-start;padding:2rem 0;border-bottom:1px solid rgba(35,38,43,0.15);">
                 <div style="font-size:2.5rem;font-weight:300;color:#7A6F86;min-width:60px;line-height:1;">02</div>
-                <div style="padding-top:0.8rem;"><h4 style="color:#23262B;margin-bottom:0.5rem;font-weight:600;font-size:1.1rem;text-transform:none !important;">Konzultace</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">Rozebereme výsledky v kontextu vašich možností a konkrétní situace.</p></div>
+                <div style="padding-top:0.8rem;"><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Konzultace</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">Rozebereme výsledky v kontextu vašich možností a konkrétní situace.</p></div>
             </div>
             <div style="display:flex;gap:2rem;align-items:flex-start;padding:2rem 0;border-bottom:1px solid rgba(35,38,43,0.15);">
                 <div style="font-size:2.5rem;font-weight:300;color:#7A6F86;min-width:60px;line-height:1;">03</div>
-                <div style="padding-top:0.8rem;"><h4 style="color:#23262B;margin-bottom:0.5rem;font-weight:600;font-size:1.1rem;text-transform:none !important;">Další směr</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">Odejdete s konkrétnější představou o tom, jaké možnosti dávají vzhledem k vašim talentům a fungování největší smysl.</p></div>
+                <div style="padding-top:0.8rem;"><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Další směr</h4><p style="font-size:1rem;color:var(--text);line-height:1.8;font-weight:500;">Odejdete s konkrétnější představou o tom, jaké možnosti dávají vzhledem k vašim talentům a fungování největší smysl.</p></div>
             </div>
         </div>
   </div>
@@ -1036,15 +1044,15 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
     <h2 style="font-family:'Montserrat',sans-serif;font-size:2.2rem;font-weight:400;text-transform:none !important;letter-spacing:0.05em;color:var(--text);text-align:center;line-height:1.2;margin-bottom:2rem;">Co vám to přinese</h2>
     <div style="display:flex;flex-direction:column;gap:0;">
       <div style="padding:2.5rem 0;border-bottom:1px solid rgba(35,38,43,0.2);">
-        <h4 style="font-size:0.78rem;font-weight:500;color:var(--text);margin-bottom:1rem;text-transform:none;letter-spacing:0.05em;">Strategickou oporu</h4>
+        <h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Strategickou oporu</h4>
         <p style="font-size:1rem;color:var(--text);line-height:1.85;font-weight:400;margin:0;">Získáte partnera, který rozumí vašemu kontextu a pomůže vám budovat věci, které mají dlouhodobý smysl.</p>
       </div>
       <div style="padding:2.5rem 0;border-bottom:1px solid rgba(35,38,43,0.2);">
-        <h4 style="font-size:0.78rem;font-weight:500;color:var(--text);margin-bottom:1rem;text-transform:none;letter-spacing:0.05em;">Správné lidi</h4>
+        <h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Správné lidi</h4>
         <p style="font-size:1rem;color:var(--text);line-height:1.85;font-weight:400;margin:0;">Obsadíte role lidmi, kteří do nich přirozeně zapadají — a zvyšujete šanci, že ve firmě dlouhodobě zůstanou.</p>
       </div>
       <div style="padding:2.5rem 0;">
-        <h4 style="font-size:0.78rem;font-weight:500;color:var(--text);margin-bottom:1rem;text-transform:none;letter-spacing:0.05em;">Silnější tým</h4>
+        <h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Silnější tým</h4>
         <p style="font-size:1rem;color:var(--text);line-height:1.85;font-weight:400;margin:0;">Uvidíte, co v týmu funguje dobře, kde vzniká napětí a jak lépe využít silné stránky jednotlivých lidí.</p>
       </div>
     </div>
@@ -1104,9 +1112,9 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
             <p style="font-size:1.1rem;color:var(--text-light);line-height:1.9;margin-bottom:3rem;">Pomáhám novým i stávajícím týmům lépe se sehrát. Zmapujeme přirozenou dynamiku týmu, pojmenujeme příčiny nedorozumění a nastavíme spolupráci tak, aby lidé nedělali jen to, co je potřeba, ale to, v čem jsou výjimeční.</p>
             <h2 style="font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:400;color:var(--text);text-align:center;margin-bottom:1.5rem;">Co vám to přinese</h2>
             <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:2.5rem;margin-top:2rem;">
-                <div style="margin-bottom:0;padding-bottom:0;border-bottom:none;"><h4 style="font-size:1.05rem;font-weight:600;color:#23262B;margin-bottom:0.4rem;">Sdílený jazyk</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.75;margin:0;">Tým získá společný způsob, jak mluvit o silných stránkách a rozdílech — bez hodnocení, s konkrétním využitím v praxi.</p></div>
-                <div style="margin-bottom:0;padding-bottom:0;border-bottom:none;"><h4 style="font-size:1.05rem;font-weight:600;color:#23262B;margin-bottom:0.4rem;">Lepší pochopení</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.75;margin:0;">Každý člen týmu lépe rozumí tomu, jak ostatní fungují, co potřebují a kde přirozeně vynikají.</p></div>
-                <div style="margin-bottom:0;padding-bottom:0;border-bottom:none;"><h4 style="font-size:1.05rem;font-weight:600;color:#23262B;margin-bottom:0.4rem;">Konkrétní domluvy</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.75;margin:0;">Workshop nevede k obecným závěrům, ale k domluvám, jak silné stránky a rozdíly opřít do každodenní spolupráce.</p></div>
+                <div style="margin-bottom:0;padding-bottom:0;border-bottom:none;"><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Sdílený jazyk</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.75;margin:0;">Tým získá společný způsob, jak mluvit o silných stránkách a rozdílech — bez hodnocení, s konkrétním využitím v praxi.</p></div>
+                <div style="margin-bottom:0;padding-bottom:0;border-bottom:none;"><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Lepší pochopení</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.75;margin:0;">Každý člen týmu lépe rozumí tomu, jak ostatní fungují, co potřebují a kde přirozeně vynikají.</p></div>
+                <div style="margin-bottom:0;padding-bottom:0;border-bottom:none;"><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Konkrétní domluvy</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.75;margin:0;">Workshop nevede k obecným závěrům, ale k domluvám, jak silné stránky a rozdíly opřít do každodenní spolupráce.</p></div>
             </div>
         </div>
     </section>
@@ -1134,15 +1142,15 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
             <div style="display:flex;flex-direction:column;gap:1.5rem;margin-bottom:3rem;">
                 <div style="display:flex;gap:1.5rem;align-items:flex-start;">
                     <div style="font-size:2.5rem;font-weight:300;color:#7A6F86;min-width:60px;line-height:1;">01</div>
-                    <div><h4 style="color:var(--text);margin-bottom:0.4rem;">Individuální konzultace</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin:0;">Nejprve proběhnou individuální konzultace (Gallup nebo <em>PRISM</em>), kde se každý podívá na své silné stránky a preferovaný způsob fungování.</p></div>
+                    <div><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Individuální konzultace</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin:0;">Nejprve proběhnou individuální konzultace (Gallup nebo <em>PRISM</em>), kde se každý podívá na své silné stránky a preferovaný způsob fungování.</p></div>
                 </div>
                 <div style="display:flex;gap:1.5rem;align-items:flex-start;">
                     <div style="font-size:2.5rem;font-weight:300;color:#7A6F86;min-width:60px;line-height:1;">02</div>
-                    <div><h4 style="color:var(--text);margin-bottom:0.4rem;">Společný workshop</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin:0;">Setkáme se jako tým a v bezpečném prostředí si projdeme, jak jsou v týmu zastoupené různé typy fungování.</p></div>
+                    <div><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Společný workshop</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin:0;">Setkáme se jako tým a v bezpečném prostředí si projdeme, jak jsou v týmu zastoupené různé typy fungování.</p></div>
                 </div>
                 <div style="display:flex;gap:1.5rem;align-items:flex-start;">
                     <div style="font-size:2.5rem;font-weight:300;color:#7A6F86;min-width:60px;line-height:1;">03</div>
-                    <div><h4 style="color:var(--text);margin-bottom:0.4rem;">Konkrétní domluvy</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin:0;">Workshop vede k jasným domluvám — co komu pomáhá, co koho zatěžuje a jak s tím pracovat každý den.</p></div>
+                    <div><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Konkrétní domluvy</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin:0;">Workshop vede k jasným domluvám — co komu pomáhá, co koho zatěžuje a jak s tím pracovat každý den.</p></div>
                 </div>
             </div>
             <div style="text-align:center;padding-top:2rem;">
@@ -1166,9 +1174,9 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
             <p style="font-size:1.1rem;color:var(--text-light);line-height:1.9;margin-bottom:3rem;">Pomáhám firmám zorientovat se v HR a rozvojových tématech tam, kde interní zkušenost nebo kapacita nestačí. Opírám se o 17 let praxe v mezinárodních firmách a práci přímo s HR i vedením.</p>
             <h2 style="font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:400;color:var(--text);text-align:center;margin-bottom:1.5rem;">Co vám to přinese</h2>
             <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:2.5rem;margin-top:2rem;">
-                <div style="margin-bottom:0;padding-bottom:0;border-bottom:none;"><h4 style="font-size:1.05rem;font-weight:600;color:#23262B;margin-bottom:0.4rem;">Zkušenější HR pohled zvenku</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.75;margin:0;">Získáte partnera, který vidí souvislosti napříč firmou a pomůže vám rozhodovat o HR a L&amp;D tématech s ohledem na realitu, ne jen na „best practices".</p></div>
-                <div style="margin-bottom:0;padding-bottom:0;border-bottom:none;"><h4 style="font-size:1.05rem;font-weight:600;color:#23262B;margin-bottom:0.4rem;">Smysluplnější HR procesy</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.75;margin:0;">Zrevidujeme stávající postupy (například nástup, adaptaci, hodnocení, rozvoj), aby byly použitelné v praxi a odpovídaly tomu, v jaké fázi firma skutečně je.</p></div>
-                <div style="margin-bottom:0;padding-bottom:0;border-bottom:none;"><h4 style="font-size:1.05rem;font-weight:600;color:#23262B;margin-bottom:0.4rem;">Uchopitelný mentoring a rozvoj</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.75;margin:0;">Nastavíme mentoring nebo jiné rozvojové formy tak, aby podporovaly sdílení zkušeností a růst lidí, místo aby byly jen další „program na seznamu".</p></div>
+                <div style="margin-bottom:0;padding-bottom:0;border-bottom:none;"><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Zkušenější HR pohled zvenku</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.75;margin:0;">Získáte partnera, který vidí souvislosti napříč firmou a pomůže vám rozhodovat o HR a L&amp;D tématech s ohledem na realitu, ne jen na „best practices".</p></div>
+                <div style="margin-bottom:0;padding-bottom:0;border-bottom:none;"><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Smysluplnější HR procesy</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.75;margin:0;">Zrevidujeme stávající postupy (například nástup, adaptaci, hodnocení, rozvoj), aby byly použitelné v praxi a odpovídaly tomu, v jaké fázi firma skutečně je.</p></div>
+                <div style="margin-bottom:0;padding-bottom:0;border-bottom:none;"><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Uchopitelný mentoring a rozvoj</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.75;margin:0;">Nastavíme mentoring nebo jiné rozvojové formy tak, aby podporovaly sdílení zkušeností a růst lidí, místo aby byly jen další „program na seznamu".</p></div>
             </div>
         </div>
     </section>
@@ -1178,15 +1186,15 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
             <h2 style="font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:400;color:var(--text);text-align:center;margin-bottom:1.5rem;">S čím firmy nejčastěji přicházejí</h2>
             <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.2rem;">
                 <div style="padding:1.5rem;background:white;border-left:3px solid #7A6F86;">
-                    <h4 style="color:var(--text);margin-bottom:0.5rem;">Revidovat HR a L&amp;D nastavení</h4>
+                    <h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Revidovat HR a L&amp;D nastavení</h4>
                     <p style="font-size:0.9rem;color:var(--text-light);line-height:1.7;margin:0;">Potřebují pohled zvenku na stávající procesy a zjistit, co dává smysl a co zjednodušit nebo změnit.</p>
                 </div>
                 <div style="padding:1.5rem;background:white;border-left:3px solid #7A6F86;">
-                    <h4 style="color:var(--text);margin-bottom:0.5rem;">Nastavit mentoring nebo rozvojový program</h4>
+                    <h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Nastavit mentoring nebo rozvojový program</h4>
                     <p style="font-size:0.9rem;color:var(--text-light);line-height:1.7;margin:0;">Hledají formu, která zapadne do jejich prostředí — ne kopii generického řešení.</p>
                 </div>
                 <div style="padding:1.5rem;background:white;border-left:3px solid #7A6F86;">
-                    <h4 style="color:var(--text);margin-bottom:0.5rem;">Mentoring pro HR / HR business partnera</h4>
+                    <h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Mentoring pro HR / HR business partnera</h4>
                     <p style="font-size:0.9rem;color:var(--text-light);line-height:1.7;margin:0;">Hledají zkušenějšího partnera, se kterým mohou pravidelně probírat situace z praxe, těžší rozhodnutí i vlastní roli v podpoře byznysu.</p>
                 </div>
             </div>
@@ -1199,15 +1207,15 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
             <div style="display:flex;flex-direction:column;gap:1.5rem;margin-bottom:3rem;">
                 <div style="display:flex;gap:1.5rem;align-items:flex-start;">
                     <div style="font-size:2.5rem;font-weight:300;color:#7A6F86;min-width:60px;line-height:1;">01</div>
-                    <div><h4 style="color:var(--text);margin-bottom:0.4rem;">Projdeme si vaši situaci</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin:0;">Nejprve si projdeme vaši situaci a to, co od spolupráce očekáváte.</p></div>
+                    <div><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Projdeme si vaši situaci</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin:0;">Nejprve si projdeme vaši situaci a to, co od spolupráce očekáváte.</p></div>
                 </div>
                 <div style="display:flex;gap:1.5rem;align-items:flex-start;">
                     <div style="font-size:2.5rem;font-weight:300;color:#7A6F86;min-width:60px;line-height:1;">02</div>
-                    <div><h4 style="color:var(--text);margin-bottom:0.4rem;">Domluvíme formu spolupráce</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin:0;">Domluvíme se, jestli dává smysl jednorázová konzultace, několik setkání, nebo delší doprovázení.</p></div>
+                    <div><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Domluvíme formu spolupráce</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin:0;">Domluvíme se, jestli dává smysl jednorázová konzultace, několik setkání, nebo delší doprovázení.</p></div>
                 </div>
                 <div style="display:flex;gap:1.5rem;align-items:flex-start;">
                     <div style="font-size:2.5rem;font-weight:300;color:#7A6F86;min-width:60px;line-height:1;">03</div>
-                    <div><h4 style="color:var(--text);margin-bottom:0.4rem;">Průběžně ladíme</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin:0;">Průběžně ladíme, co funguje a co je potřeba upravit — cílem je, aby změny byly realizovatelné ve vaší každodenní realitě.</p></div>
+                    <div><h4 style="color:var(--text);margin-bottom:0.8rem;font-weight:600;font-size:1rem;text-transform:none !important;letter-spacing:0 !important;">Průběžně ladíme</h4><p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin:0;">Průběžně ladíme, co funguje a co je potřeba upravit — cílem je, aby změny byly realizovatelné ve vaší každodenní realitě.</p></div>
                 </div>
             </div>
             <div style="text-align:center;padding-top:2rem;">
