@@ -667,23 +667,53 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
 <div class="wrap">
 <div style="display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;">
 <div><h1 style="font-size:2.6rem !important;font-weight:400 !important;color:white !important;line-height:1.2;margin-bottom:1.5rem;text-transform:none !important;">Stavte na tom, co vám jde samo</h1>
-<svg id="gallup-bar" viewBox="0 0 760 110" xmlns="http://www.w3.org/2000/svg" style="width:88%;max-width:600px;display:block;margin:1.8rem 0;">
+<svg id="gallup-bar" viewBox="0 0 760 110" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;margin:1.8rem 0;">
   <defs>
     <clipPath id="gcL"><path d="M 10,55 L 52,5 L 128,5 L 165,55 L 128,105 L 52,105 Z"/></clipPath>
     <clipPath id="gcR"><path d="M 142,55 L 168,5 L 698,5 L 742,55 L 698,105 L 168,105 Z"/></clipPath>
   </defs>
-  <path d="M 10,55 L 52,5 L 128,5 L 165,55 L 128,105 L 52,105 Z" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.32)" stroke-width="1.2"/>
-  <path d="M 142,55 L 168,5 L 698,5 L 742,55 L 698,105 L 168,105 Z" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.32)" stroke-width="1.2"/>
-  <g id="gbL" clip-path="url(#gcL)"></g>
-  <g id="gbR" clip-path="url(#gcR)"></g>
+  <path d="M 10,55 L 52,5 L 128,5 L 165,55 L 128,105 L 52,105 Z" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.28)" stroke-width="1.2"/>
+  <path d="M 142,55 L 168,5 L 698,5 L 742,55 L 698,105 L 168,105 Z" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.28)" stroke-width="1.2"/>
+  <g id="gbDots"></g>
 </svg>
 <script>
-(function(){var ns="http://www.w3.org/2000/svg";function s(x,op){var l=document.createElementNS(ns,"line");l.setAttribute("x1",x);l.setAttribute("y1",0);l.setAttribute("x2",x);l.setAttribute("y2",120);l.setAttribute("stroke","rgba(255,255,255,"+op+")");l.setAttribute("stroke-width","5.2");l.style.opacity="0";l.style.transition="opacity .3s ease";return l;}
-var gL=document.getElementById("gbL");
-[30,54,78,102,126].forEach(function(x,i){var l=s(x,1);gL.appendChild(l);setTimeout(function(){l.style.opacity="1";},500+i*90);});
-var gR=document.getElementById("gbR");
-var x=182,idx=0;
-[{n:9,op:1},{n:8,op:.72},{n:9,op:.48},{n:8,op:.28}].forEach(function(d,di){for(var i=0;i<d.n;i++){var l=s(x,d.op);gR.appendChild(l);(function(el,dl){setTimeout(function(){el.style.opacity="1";},dl);})(l,1200+idx*65);x+=17.8;idx++;}if(di<3)x+=8;});
+(function(){
+  var ns="http://www.w3.org/2000/svg";
+  var g=document.getElementById("gbDots");
+  var DOTS=9;
+  var domainOp=[1,.72,.48,.28];
+
+  function addStripe(cx, op, globalIdx, isLeft){
+    for(var d=0;d<DOTS;d++){
+      var cy=12+d*10;
+      var c=document.createElementNS(ns,"circle");
+      c.setAttribute("cx",cx);
+      c.setAttribute("cy",cy);
+      c.setAttribute("r","1.8");
+      c.setAttribute("fill","rgba(255,255,255,"+op+")");
+      c.style.opacity="0";
+      c.style.transition="opacity .25s ease";
+      g.appendChild(c);
+      var delay = isLeft
+        ? (400 + globalIdx*80 + d*30)
+        : (900 + globalIdx*55 + d*25);
+      (function(el,ms){setTimeout(function(){el.style.opacity="1";},ms);})(c,delay);
+    }
+  }
+
+  // Left shape: 5 stripes
+  [30,54,78,102,126].forEach(function(x,i){ addStripe(x,1.0,i,true); });
+
+  // Right shape: 29 stripes in 4 domain groups
+  var domains=[{n:9,op:1},{n:8,op:.72},{n:9,op:.48},{n:8,op:.28}];
+  var x=182, idx=0;
+  domains.forEach(function(d,di){
+    for(var i=0;i<d.n;i++){
+      addStripe(x, d.op, idx, false);
+      x+=17.8; idx++;
+    }
+    if(di<3) x+=8;
+  });
 })();
 </script>
             <h2 style="font-family:'Montserrat',sans-serif; font-size:1.2rem; color:white; font-weight:300; margin-top:0.8rem; line-height:1.6; text-transform:none !important;">Gallup CliftonStrengths je pro vás, když… <br><span class="typing-wrap" style="display:block; min-height:1.5em; line-height:1.5;"><span id="gallup-typing" style="color:#E2D9F3;"></span></span></h2></div>
