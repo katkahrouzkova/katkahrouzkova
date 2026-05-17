@@ -802,22 +802,27 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
 </div>
 
 <div id="prism" class="page">
-    <div style="background:#2F343B;margin-top:72px;min-height:480px;display:flex;align-items:center;position:relative;overflow:hidden;">
-  <!-- Obrazok vpravo vsadeny do pozadia -->
-  <div style="position:absolute;right:0;top:0;width:55%;height:100%;">
-    <div style="position:absolute;inset:0;background-image:url('images/hero-prism.png');background-size:cover;background-position:center center;opacity:0.7;"></div>
-    <!-- Gradient fade dolava -->
-    <div style="position:absolute;inset:0;background:linear-gradient(to right, #2F343B 0%, rgba(47,52,59,0.6) 40%, rgba(47,52,59,0) 100%);"></div>
-  </div>
-  <!-- Text vlavo -->
-  <div class="wrap" style="position:relative;z-index:1;padding:4.5rem 0 3.5rem;">
-    <div style="max-width:520px;">
+<div style="background:#2F343B;margin-top:72px;min-height:480px;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;">
+  <!-- Lavy stlpec: text na tmavomodrom pozadi -->
+  <div style="display:flex;align-items:center;padding:4.5rem 3rem 4.5rem 0;position:relative;z-index:2;">
+    <div class="wrap" style="padding:0;">
 <h1 style="font-size:2.6rem !important;font-weight:400 !important;color:white !important;line-height:1.2;text-transform:none !important;">Proč fungujete jinak, než je vám přirozené?</h1>
 <h2 style="font-family:'Montserrat',sans-serif; font-size:1.2rem; color:white; font-weight:300; margin-top:0.8rem; line-height:1.6; text-transform:none !important;"><em>PRISM</em> Brain Mapping je pro vás, když… <br><span class="typing-wrap" style="display:block; min-height:1.5em; line-height:1.5;"><span id="prism-typing" style="color:#E2D9F3;"></span></span></h2>
     </div>
   </div>
+  <!-- Pravy stlpec: cela hlava vsadena do pozadia -->
+  <div style="position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;
+      background-image:url('images/hero-prism.png');
+      background-size:contain;
+      background-position:center right;
+      background-repeat:no-repeat;
+      opacity:0.85;">
+    </div>
+    <!-- Fade vlavo aby splynul s textom -->
+    <div style="position:absolute;inset:0;background:linear-gradient(to right, #2F343B 0%, rgba(47,52,59,0.4) 35%, rgba(47,52,59,0) 100%);"></div>
+  </div>
 </div>
-
 <section style="background:white;padding:5rem 0;">
   <div class="wrap">
         <p style="font-size:1.1rem;color:var(--text);line-height:1.9;font-weight:500;">Někdy podáváme skvělé výkony, ale dlouhodobě nás to stojí mnohem víc sil, než by mělo. <em>PRISM</em> je mapa vašeho chování. Ukáže vám, kdy jednáte přirozeně a kdy se musíte do určitého způsobu fungování nutit, což dlouhodobě nejde bez následků.</p>
