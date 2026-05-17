@@ -682,45 +682,27 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
 </div>
 
 <div id="gallup" class="page">
-<div style="background:#2F343B;padding:4.5rem 0 3.5rem;margin-top:72px;">
-<div class="wrap">
-<div style="display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;">
-
+<div style="background:#2F343B;margin-top:72px;min-height:480px;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;">
   <!-- Lavy stlpec: text -->
-  <div>
-    <h1 style="font-size:2.6rem !important;font-weight:400 !important;color:white !important;line-height:1.2;margin-bottom:1.5rem;text-transform:none !important;">Stavte na tom, co vám jde samo</h1>
+  <div style="display:flex;align-items:center;padding:4.5rem 2rem 4.5rem 4rem;position:relative;z-index:2;">
+    <div>
+<h1 style="font-size:2.6rem !important;font-weight:400 !important;color:white !important;line-height:1.2;margin-bottom:1.5rem;text-transform:none !important;">Stavte na tom, co vám jde samo</h1>
     <h2 style="font-family:'Montserrat',sans-serif;font-size:1.2rem;color:white;font-weight:300;margin-top:0.8rem;line-height:1.6;text-transform:none !important;">Gallup CliftonStrengths je pro vás, když…<br>
       <span class="typing-wrap" style="display:block;min-height:1.5em;line-height:1.5;">
         <span id="gallup-typing" style="color:#E2D9F3;"></span>
       </span>
     </h2>
-  </div>
 
-  <!-- Pravy stlpec: Gallup sroubovica -->
-  <div style="display:flex;align-items:center;justify-content:flex-start;">
-    <div style="overflow:hidden;width:100%;">
-      <svg id="gallup-bar" viewBox="0 0 760 110" xmlns="http://www.w3.org/2000/svg"
-        style="width:100%;display:block;animation:gallup-reveal 1.8s cubic-bezier(.4,0,.2,1) .5s both;">
-        <defs>
-          <clipPath id="gcL"><path d="M 10,55 L 52,5 L 128,5 L 165,55 L 128,105 L 52,105 Z"/></clipPath>
-          <clipPath id="gcR"><path d="M 142,55 L 168,5 L 698,5 L 742,55 L 698,105 L 168,105 Z"/></clipPath>
-        </defs>
-        <path d="M 10,55 L 52,5 L 128,5 L 165,55 L 128,105 L 52,105 Z" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.45)" stroke-width="1.2"/>
-        <path d="M 142,55 L 168,5 L 698,5 L 742,55 L 698,105 L 168,105 Z" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.45)" stroke-width="1.2"/>
-        <g clip-path="url(#gcL)">
-          <line x1="30"  y1="0" x2="30"  y2="120" stroke="rgba(255,255,255,1)" stroke-width="5"/>
-          <line x1="54"  y1="0" x2="54"  y2="120" stroke="rgba(255,255,255,1)" stroke-width="5"/>
-          <line x1="78"  y1="0" x2="78"  y2="120" stroke="rgba(255,255,255,1)" stroke-width="5"/>
-          <line x1="102" y1="0" x2="102" y2="120" stroke="rgba(255,255,255,1)" stroke-width="5"/>
-          <line x1="126" y1="0" x2="126" y2="120" stroke="rgba(255,255,255,1)" stroke-width="5"/>
-        </g>
-        <g clip-path="url(#gcR)" id="grs"></g>
-      </svg>
     </div>
   </div>
-
-</div>
-</div>
+  <!-- Pravy stlpec: obrazok vsadeny -->
+  <div style="position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:-2px;background-image:url('images/hero-gallup.jpg');background-size:cover;background-position:center center;opacity:0.9;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to right, #2F343B 0%, transparent 30%);"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to left, #2F343B 0%, transparent 15%);"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom, #2F343B 0%, transparent 20%);"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to top, #2F343B 0%, transparent 20%);"></div>
+  </div>
 </div>
 <section style="background:white;padding:5rem 0;">
   <div class="wrap">
