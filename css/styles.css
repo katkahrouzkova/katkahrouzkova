@@ -846,7 +846,7 @@ img[src*="foto-seniorni-hr.jpg"] {
     /* Hero sekcie na mobile - obrazok zobraz pod textom */
     div[style*="margin-top:72px"][style*="grid"] > div:last-child {
         display: block;
-        height: 240px;
+        height: 360px;
         overflow: hidden;
     }
     /* Kontakt - foto zachovaj ale daj pod text */
@@ -854,8 +854,8 @@ img[src*="foto-seniorni-hr.jpg"] {
         grid-template-columns: 1fr !important;
     }
     .kontakt-hero > div:first-child {
-        height: 280px !important;
-        min-height: 280px !important;
+        height: 360px !important;
+        min-height: 360px !important;
     }
     /* Padding na mobile */
     div[style*="padding:4.5rem 2rem 4.5rem 4rem"] {
@@ -883,7 +883,7 @@ img[src*="foto-seniorni-hr.jpg"] {
     }
     .hp-hero-g > div:last-child {
         display: block;
-        height: 280px;
+        height: 360px;
         overflow: hidden;
     }
 }
