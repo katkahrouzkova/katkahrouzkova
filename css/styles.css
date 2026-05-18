@@ -880,7 +880,9 @@ img[src*="foto-seniorni-hr.jpg"] {
         grid-template-columns: 1fr !important;
     }
     .hp-hero-g > div:last-child {
-        display: none;
+        display: block;
+        height: 280px;
+        overflow: hidden;
     }
 }
 
