@@ -20,7 +20,7 @@
 @keyframes scroll-left {0%{transform:translateX(0);}100%{transform:translateX(calc(-350px * 5 - 10rem));}}
 
 /* O mne na Home page */
-.stats-grid {display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center;margin-top:3rem;padding-top:3rem;border-top:1px solid #eee;}
+.stats-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;text-align:center;margin-top:3rem;padding-top:3rem;border-top:1px solid #eee;}
 .stat-number {font-family:'Montserrat',sans-serif;font-size:3rem;color:var(--sage-dark);margin-bottom:0.5rem;line-height:1;}
 .stat-label {font-size:0.85rem;color:var(--text-light);letter-spacing:0.05em;}
 .about-photo-wrapper {position:relative;display:inline-block;width:100%;max-width:350px;margin:0 auto;}
@@ -106,7 +106,7 @@
 .skim-card p {font-size:0.98rem;color:var(--text-light);line-height:1.75;margin:0;}
 @media (max-width:768px){.skim-grid{grid-template-columns:1fr;}}
 
-.skim-grid {display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+.skim-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;}
 .skim-card {background:#f8f7f5;border:1px solid #eee;border-radius:16px;padding:1.8rem 1.5rem;}
 .skim-card h3 {font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:600;color:var(--text);margin:0 0 0.8rem 0;}
 .skim-card p {font-size:0.9rem;color:var(--text-light);line-height:1.75;margin:0;}
@@ -498,7 +498,7 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
     </div>
     <section style="background:#F8F9FB;padding:5rem 0;">
         <div class="wrap">
-            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;">
 
                 <div class="sluzba-block fade-up" style="transition-delay:0.05s;" onclick="showPage('individualni-konzultace')">
                     <div>
@@ -548,7 +548,7 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
     <section style="background:#F8F9FB;padding:5rem 0;">
         <div class="wrap">
             <p style="font-size:1.05rem;color:var(--text-light);line-height:1.8;margin-bottom:2.5rem;">Pracuji s jednotlivci i týmy na osobních i pracovních tématech – například profesní směřování, vedení lidí, delegování, tlak, vyčerpání nebo fungování týmu v konkrétní situaci. Spolupracuji jak přímo s klienty, tak s firmami na podpoře manažerů a týmů.</p>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;">
                 <div class="sluzba-block fade-up" onclick="showPage('koucovani')">
                     <div>
                         <h4>1:1 Koučování</h4>
