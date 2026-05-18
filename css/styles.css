@@ -852,8 +852,8 @@ img[src*="foto-seniorni-hr.jpg"] {
         grid-template-columns: 1fr !important;
     }
     .kontakt-hero > div:first-child {
-        height: 280px;
-        min-height: 280px;
+        height: 280px !important;
+        min-height: 280px !important;
     }
     /* Padding na mobile */
     div[style*="padding:4.5rem 2rem 4.5rem 4rem"] {
