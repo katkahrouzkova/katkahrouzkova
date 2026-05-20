@@ -1630,30 +1630,40 @@ document.addEventListener('keydown', function(e){
 
   // Typing pre service page H1 - spusti sa vzdy ked sa stranka zobrazi
   function setupTypeH1(elId, text) {
-    var el = document.getElementById(elId);
-    if (!el) return;
-    var page = el.closest('.page');
-    if (!page) return;
-    function startType() {
-      el.textContent = '';
-      var cur = el.nextElementSibling;
-      if (cur) cur.classList.remove('done');
-      var i = 0;
-      function type() {
-        if (i <= text.length) {
-          el.textContent = text.slice(0, i);
-          i++;
-          setTimeout(type, 55);
-        } else {
-          if (cur) cur.classList.add('done');
-        }
+  var el = document.getElementById(elId);
+  if (!el) return;
+  var page = el.closest('.page');
+  if (!page) return;
+  var isTyping = false;
+  function startType() {
+    if (isTyping) return;
+    isTyping = true;
+    el.textContent = '';
+    var cur = el.nextElementSibling;
+    if (cur) cur.classList.remove('done');
+    var i = 0;
+    function type() {
+      if (page.style.display === 'none' || (!page.classList.contains('active') && page.style.display === '')) {
+        isTyping = false;
+        return;
       }
-      setTimeout(type, 300);
+      if (i <= text.length) {
+        el.textContent = text.slice(0, i);
+        i++;
+        setTimeout(type, 55);
+      } else {
+        if (cur) cur.classList.add('done');
+        isTyping = false;
+      }
     }
-    new MutationObserver(function() {
-      if (page.style.display !== 'none' && page.style.display !== '') startType();
-    }).observe(page, { attributes: true, attributeFilter: ['style'] });
+    setTimeout(type, 300);
   }
+  new MutationObserver(function() {
+    if (page.classList.contains('active') || (page.style.display !== 'none' && page.style.display !== '')) {
+      startType();
+    }
+  }).observe(page, { attributes: true, attributeFilter: ['style', 'class'] });
+}
   setupTypeH1('gallup-tw', 'Stavte na tom, co vám jde samo.');
   setupTypeH1('kouc-tw', 'Myslíte lépe, když nejste sami.');
   setupTypeH1('prism-tw', 'Proč fungujete jinak, než je vám přirozené?');
