@@ -84,15 +84,18 @@
             from { opacity: 0; transform: translateX(-50%) translateY(-5px); }
             to { opacity: 1; transform: translateX(-50%) translateY(0); }
         }
-        .dmg { display: grid; grid-template-columns: 1fr; gap: 0.5rem; }
-        .dmi {
-            padding: 1rem 1.1rem; background: var(--cream);
-            cursor: pointer; transition: all 0.2s;
-            border: 1px solid transparent;
-        }
-        .dmi:hover { background: white; border-color: var(--sage-pale); }
-        .dmi h4 { font-size: 1.05rem; font-weight: 600; color: var(--sage-dark); margin-bottom: 0.4rem; border-bottom: 1px solid var(--sage-pale); padding-bottom: 0.3rem; }
-        .dmi p { font-size: 0.78rem; color: var(--text-light); line-height: 1.4; }
+        .dmg { display: flex; gap: 0; min-width: 560px; }
+        .dmg-left { flex: 0 0 185px; border-right: 1px solid rgba(35,38,43,0.08); padding: 0.5rem 0; }
+        .dmg-right { flex: 1; display: none; padding: 0.5rem 0.5rem; }
+        .dmg-right.visible { display: block; }
+        .dmi-lvl1 { padding: 0.65rem 1rem; cursor: pointer; transition: all 0.18s; border-left: 2px solid transparent; display: flex; justify-content: space-between; align-items: center; }
+        .dmi-lvl1:hover, .dmi-lvl1.active { background: var(--cream); border-left-color: var(--sage); }
+        .dmi-lvl1 h4 { font-size: 0.88rem; font-weight: 500; color: var(--sage-dark); }
+        .dmi-lvl1 .arr { font-size: 0.75rem; color: var(--text-light); }
+        .dmi { padding: 0.7rem 0.9rem; background: transparent; cursor: pointer; transition: all 0.2s; border-radius: 4px; }
+        .dmi:hover { background: var(--cream); }
+        .dmi h4 { font-size: 0.92rem; font-weight: 600; color: var(--sage-dark); margin-bottom: 0.25rem; }
+        .dmi p { font-size: 0.76rem; color: var(--text-light); line-height: 1.4; }
         .lang-switch { display: flex; gap: 0.2rem; }
         .lang-switch button {
             background: none; border: 1px solid var(--beige-dark);
@@ -410,7 +413,9 @@
             nav { padding: 0 1.2rem; }
             .nav-links { display: none; }
             .dropdown-menu { position: static; width: 100%; transform: none; box-shadow: none; border: none; border-radius: 0; padding: 0.5rem 0 0.5rem 1rem; background: var(--beige); }
-            .dmg { grid-template-columns: 1fr !important; gap: 0 !important; }
+            .dmg { flex-direction: column !important; min-width: 0 !important; }
+            .dmg-left { flex: none !important; border-right: none !important; border-bottom: 1px solid var(--beige-warm); }
+            .dmg-right { display: block !important; flex: none !important; }
             .dmi { padding: 0.7rem 0.5rem; border-bottom: 1px solid var(--beige-warm); }
             .dmi h4 { font-size: 0.9rem; margin-bottom: 0.2rem; }
             .dmi p { font-size: 0.8rem; }

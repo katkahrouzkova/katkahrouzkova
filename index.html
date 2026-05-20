@@ -355,28 +355,38 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
 <li><span class="nav-link active" id="nav-home" onclick="showPage('home')">Domů</span></li>
 <li class="dropdown"><span class="dropdown-toggle" onclick="toggleDropdown(event); if(window.innerWidth > 768) showPage('sluzby-prehled')">Služby ▾</span>
 <div class="dropdown-menu"><div class="dmg">
-<div class="dmi" onclick="showPage('individualni-konzultace')">
-    <h4>Individuální spolupráce</h4>
-    <p>1:1 koučování, Gallup, <em>PRISM</em> a rozvojová spolupráce</p>
-    <div style="display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.6rem;" onclick="event.stopPropagation()">
-      <span onclick="showPage('koucovani')" style="font-size:0.75rem;color:#7A6F86;border:1px solid #c9c2d1;border-radius:3px;padding:0.2rem 0.5rem;cursor:pointer;white-space:nowrap;">1:1 Koučování</span>
-      <span onclick="showPage('gallup')" style="font-size:0.75rem;color:#7A6F86;border:1px solid #c9c2d1;border-radius:3px;padding:0.2rem 0.5rem;cursor:pointer;white-space:nowrap;">Gallup CliftonStrengths</span>
-      <span onclick="showPage('prism')" style="font-size:0.75rem;color:#7A6F86;border:1px solid #c9c2d1;border-radius:3px;padding:0.2rem 0.5rem;cursor:pointer;white-space:nowrap;"><em>PRISM</em> Brain Mapping</span>
-      <span onclick="showPage('transformace')" style="font-size:0.75rem;color:#7A6F86;border:1px solid #c9c2d1;border-radius:3px;padding:0.2rem 0.5rem;cursor:pointer;white-space:nowrap;">Program pro kariérní změnu</span>
+  <div class="dmg-left">
+    <div class="dmi-lvl1 active" onmouseenter="navShowSub('sub-indiv',this)" onclick="showPage('individualni-konzultace')">
+      <h4>Individuální spolupráce</h4><span class="arr">›</span>
     </div>
-</div>
-<div class="dmi" onclick="showPage('tymova-spoluprace')">
-    <h4>Týmová spolupráce</h4>
-    <p>Gallup a <em>PRISM</em> workshopy pro týmy</p>
-</div>
-<div class="dmi" onclick="showPage('karierni-poradenstvi')">
-    <h4>Gallup pro mladé lidi 15+</h4>
-    <p>Talentové poradenství při volbě školy a oboru</p>
-</div>
-<div class="dmi" onclick="showPage('seniorni-hr')">
-    <h4>HR partnering</h4>
-    <p>Mentoring a konzultace pre firmy</p>
-</div>
+    <div class="dmi-lvl1" onmouseenter="navHideSub(this)" onclick="showPage('tymova-spoluprace')">
+      <h4>Týmová spolupráce</h4>
+    </div>
+    <div class="dmi-lvl1" onmouseenter="navHideSub(this)" onclick="showPage('karierni-poradenstvi')">
+      <h4>Gallup pro mladé lidi 15+</h4>
+    </div>
+    <div class="dmi-lvl1" onmouseenter="navHideSub(this)" onclick="showPage('seniorni-hr')">
+      <h4>HR partnering</h4>
+    </div>
+  </div>
+  <div id="sub-indiv" class="dmg-right visible">
+    <div class="dmi" onclick="showPage('koucovani')">
+      <h4>1:1 Koučování</h4>
+      <p>Podpora při důležitých rozhodnutích a změnách</p>
+    </div>
+    <div class="dmi" onclick="showPage('gallup')">
+      <h4>Gallup CliftonStrengths</h4>
+      <p>Zjistěte, v čem máte přirozené předpoklady</p>
+    </div>
+    <div class="dmi" onclick="showPage('prism')">
+      <h4><em>PRISM</em> Brain Mapping</h4>
+      <p>Pochopte, jak přirozeně fungujete v práci</p>
+    </div>
+    <div class="dmi" onclick="showPage('transformace')">
+      <h4>Program pro kariérní změnu</h4>
+      <p>Dlouhodobější program pro větší životní změny</p>
+    </div>
+  </div>
 </div></div></li>
 <li><span class="nav-link" id="nav-o-mne" onclick="showPage('o-mne')">O mně</span></li>
 <li><span class="nav-link" id="nav-reference" onclick="showPage('reference')">Reference</span></li>
@@ -1474,6 +1484,18 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
 
 <script>
 // Globálne funkcie
+window.navShowSub = function(id, el) {
+    document.querySelectorAll('.dmi-lvl1').forEach(function(d){ d.classList.remove('active'); });
+    el.classList.add('active');
+    document.querySelectorAll('.dmg-right').forEach(function(s){ s.classList.remove('visible'); });
+    var sub = document.getElementById(id);
+    if (sub) sub.classList.add('visible');
+};
+window.navHideSub = function(el) {
+    document.querySelectorAll('.dmi-lvl1').forEach(function(d){ d.classList.remove('active'); });
+    if (el) el.classList.add('active');
+    document.querySelectorAll('.dmg-right').forEach(function(s){ s.classList.remove('visible'); });
+};
 window.toggleFaq = function(btn) {
     const answer = btn.nextElementSibling;
     const arrow = btn.querySelector('.faq-arrow');
