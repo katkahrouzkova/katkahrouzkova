@@ -293,7 +293,7 @@
         .cta-banner p { font-size: 1rem; color: var(--text-light); margin-bottom: 2.5rem; font-family: 'Montserrat', sans-serif; }
 
         /* PAGE HEADER */
-        .page-header { margin-top: 72px; padding: 0; background: var(--beige); border-bottom: none; overflow: hidden; }
+        .page-header { margin-top: 0; padding: 0; background: var(--beige); border-bottom: none; overflow: hidden; }
         .page-header h1 { font-family: 'Montserrat', sans-serif; font-size: 3.2rem; font-weight: 400; color: var(--text); margin-bottom: 1rem; line-height: 1.15; font-variant-ligatures: none; font-feature-settings: 'liga' 0, 'calt' 0; }
         .page-header p { font-size: 1rem; color: var(--text-light); max-width: 600px; }
 
