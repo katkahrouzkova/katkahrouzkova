@@ -91,7 +91,8 @@
         .dmi-lvl1 { padding: 0.65rem 1rem; cursor: pointer; transition: all 0.18s; border-left: 2px solid transparent; display: flex; justify-content: space-between; align-items: center; }
         .dmi-lvl1:hover, .dmi-lvl1.active { background: var(--cream); border-left-color: var(--sage); }
         .dmi-lvl1 h4 { font-size: 0.88rem; font-weight: 500; color: var(--sage-dark); }
-        .dmi-lvl1 .arr { font-size: 0.75rem; color: var(--text-light); }
+        .dmi-lvl1 .arr { font-size: 0.8rem; color: var(--sage); font-weight: 600; transition: transform 0.2s; }
+        .dmi-lvl1:hover .arr, .dmi-lvl1.active .arr { transform: translateX(3px); color: var(--sage-dark); }
         .dmi { padding: 0.7rem 0.9rem; background: transparent; cursor: pointer; transition: all 0.2s; border-radius: 4px; }
         .dmi:hover { background: var(--cream); }
         .dmi h4 { font-size: 0.92rem; font-weight: 600; color: var(--sage-dark); margin-bottom: 0.25rem; }
