@@ -354,22 +354,25 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
 <ul class="nav-links" id="navLinks">
 <li><span class="nav-link active" id="nav-home" onclick="showPage('home')">Domů</span></li>
 <li class="dropdown"><span class="dropdown-toggle" onclick="toggleDropdown(event); if(window.innerWidth > 768) showPage('sluzby-prehled')">Služby ▾</span>
-<div class="dropdown-menu"><div class="dmg">
+<div class="dropdown-menu"><div class="dropdown-inner"><div class="dmg">
   <div class="dmg-left">
-    <div class="dmi-lvl1" onmouseenter="navShowSub('sub-indiv',this)" onclick="showPage('individualni-konzultace')">
+    <div class="dmi-lvl1" onclick="navShowSub('sub-indiv',this)">
       <h4>Individuální spolupráce</h4><span class="arr">›</span>
     </div>
-    <div class="dmi-lvl1" onmouseenter="navHideSub(this)" onclick="showPage('tymova-spoluprace')">
+    <div class="dmi-lvl1" onclick="showPage('tymova-spoluprace')">
       <h4>Týmová spolupráce</h4>
     </div>
-    <div class="dmi-lvl1" onmouseenter="navHideSub(this)" onclick="showPage('karierni-poradenstvi')">
+    <div class="dmi-lvl1" onclick="showPage('karierni-poradenstvi')">
       <h4>Gallup pro mladé lidi 15+</h4>
     </div>
-    <div class="dmi-lvl1" onmouseenter="navHideSub(this)" onclick="showPage('seniorni-hr')">
+    <div class="dmi-lvl1" onclick="showPage('seniorni-hr')">
       <h4>HR partnering</h4>
     </div>
   </div>
   <div id="sub-indiv" class="dmg-right">
+    <div style="padding:0.4rem 0.9rem 0.6rem;border-bottom:1px solid rgba(35,38,43,0.08);margin-bottom:0.3rem;">
+      <span onclick="showPage('individualni-konzultace')" style="font-size:0.78rem;color:#7A6F86;cursor:pointer;text-decoration:underline;">Přejít na přehled →</span>
+    </div>
     <div class="dmi" onclick="showPage('koucovani')">
       <h4>1:1 Koučování</h4>
       <p>Podpora při důležitých rozhodnutích a změnách</p>
