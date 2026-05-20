@@ -756,8 +756,8 @@ h1, h2, h3, h4, h5, h6, .section-label { text-transform: none !important; }
   <!-- Lavy stlpec: text -->
   <div style="display:flex;align-items:center;padding:4.5rem 2rem 4.5rem 4rem;position:relative;z-index:2;">
     
-<div><h1 style="font-size:2.6rem !important;font-weight:400 !important;color:white !important;line-height:1.2;text-transform:none !important;">Proč fungujete jinak, než je vám přirozené?</h1>
-<h2 style="font-family:'Montserrat',sans-serif; font-size:1.2rem; color:white; font-weight:300; margin-top:0.8rem; line-height:1.6; text-transform:none !important;"><em>PRISM</em> Brain Mapping je pro vás, když… <br><span class="typing-wrap" style="display:block; min-height:1.5em; line-height:1.5;"><span id="prism-typing" style="color:#E2D9F3;"></span></span></h2></div>
+<div><h1 style="font-size:2.6rem !important;font-weight:400 !important;color:white !important;line-height:1.2;text-transform:none !important;min-height:1.3em;"><span id="prism-tw"></span><span class="hero-cur"></span></h1>
+</div>
   </div>
   <!-- Pravy stlpec: obrazok bez viditelnych okrajov -->
   <div style="position:relative;overflow:hidden;">
@@ -1610,25 +1610,35 @@ document.addEventListener('keydown', function(e){
 });
 
 
-  // Typing pre service page H1
-  function typeH1(elId, text) {
+  // Typing pre service page H1 - spusti sa vzdy ked sa stranka zobrazi
+  function setupTypeH1(elId, text) {
     var el = document.getElementById(elId);
     if (!el) return;
-    var cur = el.nextElementSibling;
-    var i = 0;
-    function type() {
-      if (i <= text.length) {
-        el.textContent = text.slice(0, i);
-        i++;
-        setTimeout(type, 55);
-      } else {
-        if (cur) cur.classList.add('done');
+    var page = el.closest('.page');
+    if (!page) return;
+    function startType() {
+      el.textContent = '';
+      var cur = el.nextElementSibling;
+      if (cur) cur.classList.remove('done');
+      var i = 0;
+      function type() {
+        if (i <= text.length) {
+          el.textContent = text.slice(0, i);
+          i++;
+          setTimeout(type, 55);
+        } else {
+          if (cur) cur.classList.add('done');
+        }
       }
+      setTimeout(type, 300);
     }
-    setTimeout(type, 400);
+    new MutationObserver(function() {
+      if (page.style.display !== 'none' && page.style.display !== '') startType();
+    }).observe(page, { attributes: true, attributeFilter: ['style'] });
   }
-  typeH1('gallup-tw', 'Stavte na tom, co vám jde samo.');
-  typeH1('kouc-tw', 'Myslíte lépe, když nejste sami.');
+  setupTypeH1('gallup-tw', 'Stavte na tom, co vám jde samo.');
+  setupTypeH1('kouc-tw', 'Myslíte lépe, když nejste sami.');
+  setupTypeH1('prism-tw', 'Proč fungujete jinak, než je vám přirozené?');
 </script>
 <script src="js/main.js"></script>
 
