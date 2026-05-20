@@ -902,3 +902,10 @@ img[src*="foto-seniorni-hr.jpg"] {
         font-size: 1.5rem !important;
     }
 }
+
+/* Hero text alignment na wide screens */
+@media (min-width: 1200px) {
+    .hero-text-inner {
+        padding-left: calc((100vw - 1180px) / 2 + 2.5rem) !important;
+    }
+}
